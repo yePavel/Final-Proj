@@ -1,0 +1,41 @@
+[
+    {
+        "fullname": "Daniel Yacovi",
+        "username": "dannyyacovi6@gmail.com",
+        "password": "123",
+        "imgUrl": "http://some-img.jpg",
+        "mentions": [
+            {
+                "id": "m101",
+                "boardId": "b1",
+                "taskId": "c101"
+            }
+        ]
+    },
+    {
+        "fullname": "Pavel Yelsukov",
+        "username": "pavel.yv@gmail.com",
+        "password": "123",
+        "imgUrl": "http://some-img.jpg",
+        "mentions": [
+            {
+                "id": "m101",
+                "boardId": "b1",
+                "taskId": "c102"
+            }
+        ]
+    },
+    {
+        "fullname": "Sean Mamistalov",
+        "username": "Mamistalovsean@gmail.com",
+        "password": "123",
+        "imgUrl": "http://some-img.jpg",
+        "mentions": [
+            {
+                "id": "m101",
+                "boardId": "b1",
+                "taskId": "c104"
+            }
+        ]
+    }
+]
