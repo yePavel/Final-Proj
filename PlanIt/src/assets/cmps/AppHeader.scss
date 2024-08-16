@@ -1,0 +1,101 @@
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    background-color: $secondary-color;
+    height: 48px;
+    color: $text-color;
+    box-shadow: $box-shadow;
+
+    .left-section {
+        display: flex;
+        align-items: center;
+
+        .icon-container {
+            margin-right: 10px; 
+            cursor: pointer; 
+        }
+
+        .hover-icon {
+            transition: transform 0.3s ease; 
+
+            &:hover {
+                animation: moveAnimation 0.5s ease forwards;
+            }
+        }
+
+        .logo {
+            color: #172b4d;
+            font-size: 18px;
+            font-weight: bold;
+            margin-right: 16px;
+        }
+    }
+
+    .nav {
+        display: flex;
+        align-items: center;
+
+        .nav-item {
+            margin-right: 12px;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 3px;
+            transition: background-color 0.2s;
+
+            &:hover {
+                background-color: $hover-background-color; 
+            }
+        }
+
+        .create-button {
+            color: white;
+            background-color: $primary-color;
+            padding: 4px 12px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+    }
+
+    .right-section {
+        display: flex;
+        align-items: center;
+
+        .search-bar {
+            padding: 6px;
+            border-radius: 3px;
+            border: none;
+            margin-right: 12px;
+        }
+
+        .icon {
+            margin-left: 12px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .user-logo {
+            width: 32px;
+            height: 32px;
+            background-color: $user-logo-bg-color;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-size: 16px;
+        }
+    }
+}
+
+@keyframes moveAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); 
+    }
+    100% {
+        transform: translateY(0); 
+    }
+}

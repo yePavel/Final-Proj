@@ -1,5 +1,4 @@
 import React from 'react';
-import '../assets/AppHeader.css'; 
 
 export function AppHeader() {
     return (
