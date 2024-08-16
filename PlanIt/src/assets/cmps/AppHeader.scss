@@ -13,12 +13,12 @@
         align-items: center;
 
         .icon-container {
-            margin-right: 10px; 
-            cursor: pointer; 
+            margin-right: 10px;
+            cursor: pointer;
         }
 
         .hover-icon {
-            transition: transform 0.3s ease; 
+            transition: transform 0.3s ease;
 
             &:hover {
                 animation: moveAnimation 0.5s ease forwards;
@@ -38,14 +38,17 @@
         align-items: center;
 
         .nav-item {
+            display: flex;
+            align-items: center;
             margin-right: 12px;
-            cursor: pointer;
             padding: 4px 8px;
+            cursor: pointer;
             border-radius: 3px;
             transition: background-color 0.2s;
+            gap: 2px;
 
             &:hover {
-                background-color: $hover-background-color; 
+                background-color: $hover-background-color;
             }
         }
 
@@ -55,6 +58,10 @@
             padding: 4px 12px;
             border-radius: 3px;
             font-weight: bold;
+
+            &:hover {
+                background-color: $create-btn-hover-color;
+            }
         }
     }
 
@@ -63,10 +70,10 @@
         align-items: center;
 
         .search-bar {
+            border: 1px solid grey;
             padding: 6px;
-            border-radius: 3px;
-            border: none;
             margin-right: 12px;
+            border-radius: 5px;
         }
 
         .icon {
@@ -92,10 +99,12 @@
     0% {
         transform: translateY(0);
     }
+
     50% {
-        transform: translateY(-10px); 
+        transform: translateY(-10px);
     }
+
     100% {
-        transform: translateY(0); 
+        transform: translateY(0);
     }
 }
