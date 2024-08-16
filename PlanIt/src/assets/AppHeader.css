@@ -1,0 +1,76 @@
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    background-color: #ffffff;
+    height: 48px;
+    color: #44546f;
+    box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    color: #172b4d;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 16px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    margin-right: 12px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+.nav-item:hover {
+    background-color: rgb(155, 154, 154); 
+}
+
+.create-button {
+    color: white;
+    background-color: #0c66e4;
+    padding: 4px 12px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    padding: 6px;
+    border-radius: 3px;
+    border: none;
+    margin-right: 12px;
+}
+
+.icon {
+    margin-left: 12px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.user-logo {
+    width: 32px;
+    height: 32px;
+    background-color: #0052CC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 16px;
+}
