@@ -111,6 +111,75 @@
                     }
                 ],
                 "style": {}
+            },
+            {
+                "id": "g103",
+                "title": "In development",
+                "archivedAt": 1589983468418,
+                "tasks": [
+                    {
+                        "id": "c105",
+                        "title": "Main home page"
+                    },
+                    {
+                        "id": "c106",
+                        "title": "Footer"
+                    }
+                ],
+                "style": {}
+            },
+            {
+                "id": "g104",
+                "title": "Done",
+                "archivedAt": 1589983468418,
+                "tasks": [
+                    {
+                        "id": "c107",
+                        "title": "Login-cmp"
+                    },
+                    {
+                        "id": "c108",
+                        "title": "SCSS vars"
+                    }
+                ],
+                "style": {}
+            },
+            {
+                "id": "g105",
+                "title": "QA",
+                "tasks": [
+                    {
+                        "id": "c108",
+                        "title": "Conduct User Testing",
+                        "status": "pending",
+                        "priority": "high"
+                    },
+                    {
+                        "id": "c109",
+                        "title": "Bug Fixes",
+                        "status": "pending",
+                        "priority": "high"
+                    }
+                ],
+                "style": {}
+            },
+            {
+                "id": "g106",
+                "title": "Ready for Production",
+                "tasks": [
+                    {
+                        "id": "c110",
+                        "title": "Finalize Documentation",
+                        "status": "pending"
+                    },
+                    {
+                        "id": "c114",
+                        "title": "Deploy to Staging",
+                        "status": "pending",
+                        "priority": "high"
+                    }
+                ],
+                "style": {}
             }
         ],
         "activities": [
