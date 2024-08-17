@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react"
 import { getProjectData } from "../services/local.service.js"
 
@@ -18,8 +17,8 @@ export function BoardList() {
     const getInitials = (fullname) => {
         const nameParts = fullname.split(' ')
         const initials = nameParts.map(part => part[0].toUpperCase()).join('')
-        return initials;
-    };
+        return initials
+    }
 
     useEffect(() => {
         loadBoards()
@@ -30,14 +29,14 @@ export function BoardList() {
             {boards.map(board => (
                 <div key={board.title} className="board-card">
                     <h2 className="board-title">{board.title}</h2>
-                    <div className="board-groups">
+                    <div className="board-golders">
                         {board.groups.map(group => (
                             <div key={group.id} className="group-card">
-                                <h3>{group.title}</h3>
+                                <h3 className="group-title">{group.title}</h3>
                                 <div className="tasks">
                                     {group.tasks.map(task => (
                                         <div key={task.id} className="task">
-                                            <p>{task.title}</p>
+                                            <p className="task-title">{task.title}</p>
                                             <div className="labels">
                                                 {board.labels.map(label => (
                                                     <span
