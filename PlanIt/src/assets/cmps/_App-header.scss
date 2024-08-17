@@ -65,16 +65,10 @@
         .search-bar {
             padding: 6px;
             border-radius: 3px;
-            border: 1px solid #ccc;
+            border: none;
             margin-right: 12px;
-            outline: none;
-            transition: border-color 0.3s ease;
         }
-        
-        .search-bar:focus {
-            border-color: #007bff;
-        }
-        
+
         .icon {
             margin-left: 12px;
             cursor: pointer;
