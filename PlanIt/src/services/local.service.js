@@ -20,7 +20,7 @@ const data = [
       {
         id: "l102",
         title: "Progress",
-        color: "#61bd33",
+        color: "#9f8fef",
       },
     ],
     members: [
@@ -203,8 +203,6 @@ const data = [
 
 export const getProjectData = () => {
   return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(data);
-    }, 1000);
-  });
-};
+      resolve(data)
+  })
+}
