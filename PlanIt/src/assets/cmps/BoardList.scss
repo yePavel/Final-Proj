@@ -6,9 +6,7 @@
 }
 
 .board-card {
-    background-color: #ffffff;
     border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     padding: 16px;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     display: flex;
@@ -44,6 +42,33 @@
                 font-size: 1.2rem;
                 color: #333333;
                 font-weight: bold;
+            }
+
+            .add-a-card-btn{
+                border: none;
+            }
+
+            .add-card-btn{
+                background-color: #0c66e4;
+                color: #ffffff;
+                font-size: 14px;
+                line-height: 20px;
+                text-align: center;
+                border-radius: 3px;
+                border: none;
+            }
+
+            .task-input{
+                font-size: 14px;
+                line-height: 20px;
+                text-align: start;
+                letter-spacing: normal;
+            
+            }
+
+            .delete-add-card{
+                border: none;
+                color: #172b4d;
             }
 
             .tasks {

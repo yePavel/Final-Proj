@@ -3,6 +3,8 @@ import { getProjectData } from "../services/local.service.js"
 
 export function BoardList() {
     const [boards, setBoards] = useState([])
+    const [newTask, setNewTask] = useState({ groupId: null, title: '' })
+    const [ isAddingTask, setIsAddingTask ] = useState(null)
 
     function loadBoards() {
         getProjectData()
@@ -18,6 +20,39 @@ export function BoardList() {
         const nameParts = fullname.split(' ')
         const initials = nameParts.map(part => part[0].toUpperCase()).join('')
         return initials
+    }
+
+    const handleNewTaskChange = (event) => {
+        setNewTask({ ...newTask, title: event.target.value })
+    }
+
+    function addTask(groupId) {
+        if (!newTask.title) return
+
+        setBoards(prevBoards => {
+            const updatedBoards = prevBoards.map(board => ({
+                ...board,
+                groups: board.groups.map(group =>
+                    group.id === groupId
+                        ? {
+                            ...group,
+                            tasks: [...group.tasks, { id: Date.now(), title: newTask.title }]
+                        }
+                        : group
+                )
+            }))
+
+            localStorage.setItem('boards', JSON.stringify(updatedBoards))
+
+            return updatedBoards
+        })
+        setNewTask({ groupId: null, title: '' })
+        setIsAddingTask(null)
+    }
+
+    const handleDeleteClick = () => {
+        setNewTask({groupId: null, title: ''})
+        setIsAddingTask(null)
     }
 
     useEffect(() => {
@@ -56,6 +91,24 @@ export function BoardList() {
                                             </div>
                                         </div>
                                     ))}
+                                </div>
+                                <div className="add-task">
+                                    {isAddingTask === group.id ? (
+                                        <div className="task-input">
+                                            <input className="task-input"
+                                                type="text"
+                                                value={newTask.title}
+                                                onChange={handleNewTaskChange}
+                                                placeholder="Enter a name for this card..."
+                                            />
+                                            <button onClick={() => addTask(group.id)} className="add-card-btn">Add card</button>
+                                            <button onClick={handleDeleteClick} className="delete-add-card">X</button>
+                                        </div>
+                                    ) : (
+                                        <button onClick={() => setIsAddingTask(group.id)} className="add-a-card-btn">
+                                            + Add a card
+                                        </button>
+                                    )}
                                 </div>
                             </div>
                         ))}

@@ -202,7 +202,11 @@ const data = [
 ];
 
 export const getProjectData = () => {
-  return new Promise((resolve) => {
-      resolve(data)
-  })
+  const storedData = localStorage.getItem('boards')
+  if (storedData) {
+    return new Promise(resolve => resolve(JSON.parse(storedData)))
+  } else {
+    localStorage.setItem('board', JSON.stringify(data))
+    return new Promise(resolve => resolve(data))
+  }
 }
