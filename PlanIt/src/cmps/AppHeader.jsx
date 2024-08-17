@@ -3,6 +3,12 @@ import { useNavigate } from 'react-router-dom'
 
 export function AppHeader() {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+    const [notifications, setNotifications] = useState([
+        "New comment on your task",
+        "Task deadline approaching",
+        "You were mentioned in a board"
+    ])
+    const [isNotificationsOpen, setIsNotificationsOpen] = useState(false)
 
     const boards = ["final-proj"]
     const navigate = useNavigate()
@@ -18,6 +24,10 @@ export function AppHeader() {
 
     const handleMenuClick = () => {
         navigate('/')
+    }
+
+    const handleNotificationClick = () => {
+        setIsNotificationsOpen(!isNotificationsOpen)
     }
 
     const getInitials = (name) => {
@@ -99,7 +109,27 @@ export function AppHeader() {
             </div>
             <div className="right-section">
                 <input type="text" className="search-bar" placeholder="Search..." />
-                <img src="/notification.svg" alt="Notifications" className="icon notification-icon" />
+                <div className="icon-container">
+                    <div className="notification-icon" onClick={handleNotificationClick}>
+                        <img src="/notification.svg" alt="Notifications" />
+                        {notifications.length > 0 && (
+                            <div className="notification-badge">{notifications.length}</div>
+                        )}
+                    </div>
+                    {isNotificationsOpen && (
+                        <div className="notifications-dropdown">
+                            {notifications.length > 0 ? (
+                                notifications.map((notification, index) => (
+                                    <div key={index} className="notification-item">
+                                        {notification}
+                                    </div>
+                                ))
+                            ) : (
+                                <div className="notification-item">No notifications</div>
+                            )}
+                        </div>
+                    )}
+                </div>
                 <img src="/questionmark.svg" alt="Help" className="icon help-icon" />
                 <div className="user-logo">{initials}</div>
             </div>
