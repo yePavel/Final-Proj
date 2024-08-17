@@ -1,0 +1,75 @@
+.homepage-container {
+    background:
+        url(https://images.ctfassets.net/rz1oowkt5gyp/7lTGeXbBRNRLaVk2MdBjtJ/99c266ed4cb8cc63bd0c388071f01ff6/white-wave-bg.svg) center bottom -0.5px / 100% 14% no-repeat scroll padding-box border-box, linear-gradient(60deg, rgb(82, 67, 170), rgb(237, 80, 180)) 0% 0% / auto repeat scroll padding-box border-box rgb(82, 67, 170);
+    height: 705.2px;
+
+    .main-prev {
+        display: flex;
+        justify-content: center;
+        margin: 0px 50px 0px 50px;
+        gap: 10px;
+
+        .conversation-img {
+            padding-top: 3rem;
+            justify-self: end;
+            width: rem(650px);
+        }
+
+        .intro {
+            padding: 128px 16px 128px 16px;
+            text-align: left;
+            max-width: 635px;
+
+            h1 {
+                font-size: 3rem;
+                margin-block-end: rem(8px);
+                line-height: 1.25;
+                font-weight: 500;
+                color: $secondary-color;
+            }
+
+            p {
+                color: $secondary-color;
+            }
+
+            form {
+                display: flex;
+                gap: 1rem;
+
+                input {
+                    font-size: 1rem;
+                    padding: 0.7rem 0.75rem 0.8rem;
+                    border-radius: 0.3rem;
+                    border: 1px solid rgb(223, 225, 230);
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                button {
+                    align-items: center;
+                    padding: 0.7rem 1rem 0.8rem;
+
+                    text-align: center;
+                    text-decoration: none;
+
+                    background-color: $btn-color;
+                    color: $secondary-color;
+
+                    border: 1px solid $btn-color;
+                    border-radius: 0.3rem;
+                    font-size: 1rem;
+                    transition: 250ms ease-out;
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: $btn-hover-color;
+                        border-color: $btn-hover-color;
+                    }
+                }
+            }
+        }
+    }
+
+}
