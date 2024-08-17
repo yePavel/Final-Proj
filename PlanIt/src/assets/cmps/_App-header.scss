@@ -13,12 +13,12 @@
         align-items: center;
 
         .icon-container {
-            margin-right: 10px; 
-            cursor: pointer; 
+            margin-right: 10px;
+            cursor: pointer;
         }
 
         .hover-icon {
-            transition: transform 0.3s ease; 
+            transition: transform 0.3s ease;
 
             &:hover {
                 animation: moveAnimation 0.5s ease forwards;
@@ -45,7 +45,7 @@
             transition: background-color 0.2s;
 
             &:hover {
-                background-color: $hover-background-color; 
+                background-color: $hover-bg-color;
             }
         }
 
@@ -92,10 +92,12 @@
     0% {
         transform: translateY(0);
     }
+
     50% {
-        transform: translateY(-10px); 
+        transform: translateY(-10px);
     }
+
     100% {
-        transform: translateY(0); 
+        transform: translateY(0);
     }
 }
