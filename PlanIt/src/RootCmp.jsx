@@ -13,8 +13,8 @@ export function RootCmp() {
                 <main className="main-layout">
                     <Routes>
                         <Route path="" element={<HomePage />} />
-                        <Route path="/boards" element={<BoardList />} />
-                    </Routes>
+                        <Route path="/boards/:boardId" element={<BoardList />} />
+                        </Routes>
                 </main>
             </section>
         </Router>
