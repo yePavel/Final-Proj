@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Notifications } from "./Notifications";
+import { NavItem } from "./NavItem";
 
 export function AppHeader() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -75,101 +77,39 @@ export function AppHeader() {
           </a>
         </div>
         <nav className="nav">
-          <div className="nav-item" onClick={handleWorkspaceClick}>
-            Workspaces
-            <svg width="16" height="16" viewBox="0 0 24 24">
-              <path
-                d="M11.2929 16.7071L4.22185 9.63606C3.83132 9.24554 3.83132 8.61237 4.22185 8.22185C4.61237 7.83133 5.24554 7.83133 5.63606 8.22185L12 14.5858L18.364 8.22185C18.7545 7.83132 19.3877 7.83132 19.7782 8.22185C20.1687 8.61237 20.1687 9.24554 19.7782 9.63606L12.7071 16.7071C12.3166 17.0977 11.6834 17.0977 11.2929 16.7071Z"
-                fill="currentColor"
-              />
-            </svg>
-            {isDropdownOpen && (
-              <div className="dropdown-menu show">
-                {boards.map((board) => (
-                  <div
-                    key={board}
-                    className="dropdown-item"
-                    onClick={() => handleBoardSelection(board)}
-                  >
-                    {board}
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-          <div className="nav-item">
-            Recent{" "}
-            <svg
-              width="16"
-              height="16"
-              role="presentation"
-              focusable="false"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M11.2929 16.7071L4.22185 9.63606C3.83132 9.24554 3.83132 8.61237 4.22185 8.22185C4.61237 7.83133 5.24554 7.83133 5.63606 8.22185L12 14.5858L18.364 8.22185C18.7545 7.83132 19.3877 7.83132 19.7782 8.22185C20.1687 8.61237 20.1687 9.24554 19.7782 9.63606L12.7071 16.7071C12.3166 17.0977 11.6834 17.0977 11.2929 16.7071Z"
-                fill="currentColor"
-              ></path>
-            </svg>
-          </div>
-          <div className="nav-item">
-            Starred{" "}
-            <svg
-              width="16"
-              height="16"
-              role="presentation"
-              focusable="false"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M11.2929 16.7071L4.22185 9.63606C3.83132 9.24554 3.83132 8.61237 4.22185 8.22185C4.61237 7.83133 5.24554 7.83133 5.63606 8.22185L12 14.5858L18.364 8.22185C18.7545 7.83132 19.3877 7.83132 19.7782 8.22185C20.1687 8.61237 20.1687 9.24554 19.7782 9.63606L12.7071 16.7071C12.3166 17.0977 11.6834 17.0977 11.2929 16.7071Z"
-                fill="currentColor"
-              ></path>
-            </svg>
-          </div>
-          <div className="nav-item">
-            Templates{" "}
-            <svg
-              width="16"
-              height="16"
-              role="presentation"
-              focusable="false"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M11.2929 16.7071L4.22185 9.63606C3.83132 9.24554 3.83132 8.61237 4.22185 8.22185C4.61237 7.83133 5.24554 7.83133 5.63606 8.22185L12 14.5858L18.364 8.22185C18.7545 7.83132 19.3877 7.83132 19.7782 8.22185C20.1687 8.61237 20.1687 9.24554 19.7782 9.63606L12.7071 16.7071C12.3166 17.0977 11.6834 17.0977 11.2929 16.7071Z"
-                fill="currentColor"
-              ></path>
-            </svg>
-          </div>
-          <div className="nav-item create-button">Create</div>
+          <NavItem
+            label="Workspaces"
+            iconPath="M11.2929 16.7071L4.22185 9.63606C3.83132 9.24554 3.83132 8.61237 4.22185 8.22185C4.61237 7.83133 5.24554 7.83133 5.63606 8.22185L12 14.5858L18.364 8.22185C18.7545 7.83132 19.3877 7.83132 19.7782 8.22185C20.1687 8.61237 20.1687 9.24554 19.7782 9.63606L12.7071 16.7071C12.3166 17.0977 11.6834 17.0977 11.2929 16.7071Z"
+            onClick={handleWorkspaceClick}
+            isDropdownOpen={isDropdownOpen}
+            dropdownItems={boards}
+            onDropdownItemClick={handleBoardSelection}
+            isDropdown={true}
+          />
+          <NavItem
+            label="Recent"
+            iconPath="M11.2929 16.7071L4.22185 9.63606C3.83132 9.24554 3.83132 8.61237 4.22185 8.22185C4.61237 7.83133 5.24554 7.83133 5.63606 8.22185L12 14.5858L18.364 8.22185C18.7545 7.83132 19.3877 7.83132 19.7782 8.22185C20.1687 8.61237 20.1687 9.24554 19.7782 9.63606L12.7071 16.7071C12.3166 17.0977 11.6834 17.0977 11.2929 16.7071Z"
+          />
+          <NavItem
+            label="Starred"
+            iconPath="M11.2929 16.7071L4.22185 9.63606C3.83132 9.24554 3.83132 8.61237 4.22185 8.22185C4.61237 7.83133 5.24554 7.83133 5.63606 8.22185L12 14.5858L18.364 8.22185C18.7545 7.83132 19.3877 7.83132 19.7782 8.22185C20.1687 8.61237 20.1687 9.24554 19.7782 9.63606L12.7071 16.7071C12.3166 17.0977 11.6834 17.0977 11.2929 16.7071Z"
+          />
+          <NavItem
+            label="Templates"
+            iconPath="M11.2929 16.7071L4.22185 9.63606C3.83132 9.24554 3.83132 8.61237 4.22185 8.22185C4.61237 7.83133 5.24554 7.83133 5.63606 8.22185L12 14.5858L18.364 8.22185C18.7545 7.83132 19.3877 7.83132 19.7782 8.22185C20.1687 8.61237 20.1687 9.24554 19.7782 9.63606L12.7071 16.7071C12.3166 17.0977 11.6834 17.0977 11.2929 16.7071Z"
+          />
+          <NavItem label="Create" isCreateButton={true} />
         </nav>
       </div>
+
       <div className="right-section">
         <input type="text" className="search-bar" placeholder="Search..." />
         <div className="icon-container">
-          <div className="notification-icon" onClick={handleNotificationClick}>
-            <img src="/notification.svg" alt="Notifications" />
-            {notifications.length > 0 && (
-              <div className="notification-badge">{notifications.length}</div>
-            )}
-          </div>
-          {isNotificationsOpen && (
-            <div className="notifications-dropdown">
-              {notifications.length > 0 ? (
-                notifications.map((notification, index) => (
-                  <div key={index} className="notification-item">
-                    {notification}
-                  </div>
-                ))
-              ) : (
-                <div className="notification-item">No notifications</div>
-              )}
-            </div>
-          )}
+          <Notifications
+            notifications={notifications}
+            isNotificationsOpen={isNotificationsOpen}
+            handleNotificationClick={handleNotificationClick}
+          />
         </div>
         <img src="/questionmark.svg" alt="Help" className="icon help-icon" />
         <div className="user-logo">{initials}</div>
