@@ -1,153 +1,124 @@
 import { useEffect, useState } from "react";
 import { boardService } from "../services/board/board.service.local.js";
 import { AddGroup } from "./AddGroup";
+import { AddTask } from "./AddTask.jsx";
 
 export function BoardList() {
-    const [boards, setBoards] = useState([]);
-    const [newTask, setNewTask] = useState({ groupId: null, title: '' });
-    const [isAddingTask, setIsAddingTask] = useState(null);
-    const [isAddingGroup, setIsAddingGroup] = useState(null);
+  const [boards, setBoards] = useState([]);
+  const [isAddingTask, setIsAddingTask] = useState(null);
+  const [isAddingGroup, setIsAddingGroup] = useState(null);
 
-    function loadBoards() {
-        boardService.query()
-            .then(data => {
-                setBoards(data);
-            })
-            .catch(error => {
-                console.error("Error loading boards", error);
-            });
-    }
+  function loadBoards() {
+    boardService
+      .query()
+      .then((data) => {
+        setBoards(data);
+      })
+      .catch((error) => {
+        console.error("Error loading boards", error);
+      });
+  }
 
-    const getInitials = (fullname) => {
-        const nameParts = fullname.split(' ');
-        const initials = nameParts.map(part => part[0].toUpperCase()).join('');
-        return initials;
-    };
+  const getInitials = (fullname) => {
+    const nameParts = fullname.split(" ");
+    const initials = nameParts.map((part) => part[0].toUpperCase()).join("");
+    return initials;
+  };
 
-    const handleNewTaskChange = (event) => {
-        setNewTask({ ...newTask, title: event.target.value });
-    };
+  function addGroup(boardId, title) {
+    setBoards((prevBoards) => {
+      const updatedBoards = prevBoards.map((board) =>
+        board.id === boardId
+          ? {
+              ...board,
+              groups: [
+                ...board.groups,
+                { id: Date.now(), title: title, tasks: [] },
+              ],
+            }
+          : board
+      );
 
-    function addTask(groupId) {
-        if (!newTask.title) return;
+      localStorage.setItem("boards", JSON.stringify(updatedBoards));
+      return updatedBoards;
+    });
+    setIsAddingGroup(null);
+  }
 
-        setBoards(prevBoards => {
-            const updatedBoards = prevBoards.map(board => ({
-                ...board,
-                groups: board.groups.map(group =>
-                    group.id === groupId
-                        ? {
-                            ...group,
-                            tasks: [...group.tasks, { id: Date.now(), title: newTask.title }]
-                        }
-                        : group
-                )
-            }));
+  useEffect(() => {
+    loadBoards();
+  }, []);
 
-            localStorage.setItem('boards', JSON.stringify(updatedBoards));
-
-            return updatedBoards;
-        });
-        setNewTask({ groupId: null, title: '' });
-        setIsAddingTask(null);
-    }
-
-    const handleDeleteClick = () => {
-        setNewTask({ groupId: null, title: '' });
-        setIsAddingTask(null);
-    };
-
-    function addGroup(boardId, title) {
-        setBoards(prevBoards => {
-            const updatedBoards = prevBoards.map(board =>
-                board.id === boardId
-                    ? {
-                        ...board,
-                        groups: [
-                            ...board.groups,
-                            { id: Date.now(), title: title, tasks: [] }
-                        ]
-                    }
-                    : board
-            );
-
-            localStorage.setItem('boards', JSON.stringify(updatedBoards));
-            return updatedBoards;
-        });
-        setIsAddingGroup(null);
-    }
-
-    useEffect(() => {
-        loadBoards();
-    }, []);
-
-    return (
-        <div className="board-list">
-            {boards.map(board => (
-                <div key={board.id} className="board-card">
-                    <h2 className="board-title">{board.title}</h2>
-                    <div className="board-golders">
-                        {board.groups.map(group => (
-                            <div key={group.id} className="group-card">
-                                <h3 className="group-title">{group.title}</h3>
-                                <div className="tasks">
-                                    {group.tasks.map(task => (
-                                        <div key={task.id} className="task">
-                                            <p className="task-title">{task.title}</p>
-                                            <div className="labels">
-                                                {board.labels.map(label => (
-                                                    <span
-                                                        key={label.id}
-                                                        className="label"
-                                                        style={{ backgroundColor: label.color }}>
-                                                        {label.title}
-                                                    </span>
-                                                ))}
-                                            </div>
-                                            <div className="members">
-                                                {board.members.map(member => (
-                                                    <div key={member._id} className="member">
-                                                        {getInitials(member.fullname)}
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                                <div className="add-task">
-                                    {isAddingTask === group.id ? (
-                                        <div className="task-input">
-                                            <input className="task-input"
-                                                type="text"
-                                                value={newTask.title}
-                                                onChange={handleNewTaskChange}
-                                                placeholder="Enter a name for this card..."
-                                            />
-                                            <button onClick={() => addTask(group.id)} className="add-card-btn">Add card</button>
-                                            <button onClick={handleDeleteClick} className="delete-add-card">X</button>
-                                        </div>
-                                    ) : (
-                                        <button onClick={() => setIsAddingTask(group.id)} className="add-a-card-btn">
-                                            + Add a card
-                                        </button>
-                                    )}
-                                </div>
-                            </div>
+  return (
+    <div className="board-list">
+      {boards.map((board) => (
+        <div key={board.id} className="board-card">
+          <h2 className="board-title">{board.title}</h2>
+          <div className="board-golders">
+            {board.groups.map((group) => (
+              <div key={group.id} className="group-card">
+                <h3 className="group-title">{group.title}</h3>
+                <div className="tasks">
+                  {group.tasks.map((task) => (
+                    <div key={task.id} className="task">
+                      <p className="task-title">{task.title}</p>
+                      <div className="labels">
+                        {board.labels.map((label) => (
+                          <span
+                            key={label.id}
+                            className="label"
+                            style={{ backgroundColor: label.color }}
+                          >
+                            {label.title}
+                          </span>
                         ))}
-                        {isAddingGroup === board.id ? (
-                            <AddGroup
-                                boardId={board.id}
-                                onAddGroup={addGroup}
-                                onCancel={() => setIsAddingGroup(null)}
-                            />
-                        ) : (
-                            <button onClick={() => setIsAddingGroup(board.id)} className="add-group-btn">
-                                + Add another list
-                            </button>
-                        )}
+                      </div>
+                      <div className="members">
+                        {board.members.map((member) => (
+                          <div key={member._id} className="member">
+                            {getInitials(member.fullname)}
+                          </div>
+                        ))}
+                      </div>
                     </div>
+                  ))}
                 </div>
+                <div className="add-task">
+                  {isAddingTask === group.id ? (
+                    <AddTask
+                      groupId={group.id}
+                      boards={boards}
+                      setBoards={setBoards}
+                      onCancel={() => setIsAddingTask(null)}
+                    />
+                  ) : (
+                    <button
+                      onClick={() => setIsAddingTask(group.id)}
+                      className="add-a-card-btn"
+                    >
+                      + Add a card
+                    </button>
+                  )}
+                </div>
+              </div>
             ))}
+            {isAddingGroup === board.id ? (
+              <AddGroup
+                boardId={board.id}
+                onAddGroup={addGroup}
+                onCancel={() => setIsAddingGroup(null)}
+              />
+            ) : (
+              <button
+                onClick={() => setIsAddingGroup(board.id)}
+                className="add-group-btn"
+              >
+                + Add another list
+              </button>
+            )}
+          </div>
         </div>
-    );
+      ))}
+    </div>
+  );
 }
