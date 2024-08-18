@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export function HomePage() {
 
-    const [isActive, setIsActive] = useState(false)
+    const [isActive, setIsActive] = useState('c1')
+    const navigate = useNavigate();
 
     function setActiveCard(SelectedCard) {
         setIsActive(SelectedCard)
+    }
+
+    function getBoardIndex(ev) {
+        navigate('/boards')
     }
 
     return (
@@ -20,6 +26,7 @@ export function HomePage() {
                             <input type="text"
                                 placeholder='Email' />
                             <button>Sign up - it's free!</button>
+                            <button onClick={() => getBoardIndex()}>Start Free trail</button>
                         </form>
                     </div>
                     <img className='conversation-img' src="/src/assets/imgs/TrelloUICollage.png" alt="" />
@@ -38,17 +45,17 @@ export function HomePage() {
 
                 <div className='productivity-slider'>
                     <div className='cards'>
-                        <button className={`card ${isActive === 'card1' ? 'active' : ''}`} onClick={() => setActiveCard('card1')}>
+                        <button className={`card ${isActive === 'c1' ? 'active' : ''}`} onClick={() => setActiveCard('c1')}>
                             <h3>Boards</h3>
                             <p>Trello boards keep tasks organized and work moving forward.
                                 In a glance, see everything from “things to do” to “aww yeah, we did it!”</p>
                         </button >
-                        <button className={`card ${isActive === 'card2' ? 'active' : ''}`} onClick={() => setActiveCard('card2')}>
+                        <button className={`card ${isActive === 'c2' ? 'active' : ''}`} onClick={() => setActiveCard('c2')}>
                             <h3>Lists</h3>
                             <p>The different stages of a task. Start as simple as To Do,
                                 Doing or Done—or build a workflow custom fit to your team’s needs. There’s no wrong way to Trello.</p>
                         </button>
-                        <button className={`card ${isActive === 'card3' ? 'active' : ''}`} onClick={() => setActiveCard('card3')}>
+                        <button className={`card ${isActive === 'c3' ? 'active' : ''}`} onClick={() => setActiveCard('c3')}>
                             <h3>Cards</h3>
                             <p>Cards represent tasks and ideas and hold all the information to get the job done.
                                 As you make progress, move cards across lists to show their status.

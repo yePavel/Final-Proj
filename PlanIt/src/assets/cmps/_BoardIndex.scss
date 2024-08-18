@@ -4,6 +4,20 @@
     margin-top: 50px;
     height: 100vh;
 
+    .starred-tittle {
+        display: flex;
+        gap: 10px;
+
+        svg {
+            width: 24px;
+        }
+
+    }
+
+    ul {
+        list-style: none;
+    }
+
     .boards-manu {
         display: flex;
         flex-direction: column;
@@ -28,6 +42,52 @@
                 }
             }
         }
+    }
 
+    .board-list-container {
+        margin-inline-start: 30px;
+
+        ul {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            margin: 0;
+
+            li {
+                display: flex;
+                justify-content: start;
+                width: 194px;
+                height: 96px;
+                border-radius: 3px;
+
+                &:nth-child(1) {
+                    background: linear-gradient(to right, #ff7e5f, #feb47b);
+                }
+
+                &:nth-child(2) {
+                    background: linear-gradient(to right, #00c6ff, #0072ff);
+                }
+
+                &:nth-child(3) {
+                    background: linear-gradient(to right, #8e2de2, #4a00e0);
+                }
+
+                &:nth-child(4) {
+                    background: linear-gradient(to right, #11998e, #38ef7d);
+                }
+
+                div {
+                    color: white;
+                    font-weight: 700;
+                    margin: 3px;
+                }
+            }
+        }
+
+        .starred-boards {
+            display: flex;
+            flex-direction: column;
+
+        }
     }
 }
