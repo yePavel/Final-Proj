@@ -1,5 +1,5 @@
 
-export function Boards() {
+export function BoardIndex() {
     return <section className="main-boards-container">
         <nav className="boards-manu">
             <div className="upper-manu">
