@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getProjectData } from "../services/local.service.js";
+import { boardService } from "../services/board/board.service.local.js";
 import { AddGroup } from "./AddGroup";
 
 export function BoardList() {
@@ -9,7 +9,7 @@ export function BoardList() {
     const [isAddingGroup, setIsAddingGroup] = useState(null);
 
     function loadBoards() {
-        getProjectData()
+        boardService.query()
             .then(data => {
                 setBoards(data);
             })
