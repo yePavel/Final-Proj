@@ -56,7 +56,7 @@ export function HomePage() {
             </section>
             <section className='homepage-get-started'>
                 <div className='sign-up'>
-                    <h2>Get Started with Trilili today</h2>
+                    <h2>Get Started with PlanIt today</h2>
                     <form action="">
                         <input type="text"
                             placeholder='Email' />
