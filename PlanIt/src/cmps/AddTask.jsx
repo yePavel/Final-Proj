@@ -27,15 +27,18 @@ export function AddTask({ groupId, boards, setBoards, onCancel }) {
     };
 
     return (
-        <div className="task-input">
+        <section className="task-input">
             <input
                 type="text"
                 value={taskTitle}
                 onChange={handleInputChange}
                 placeholder="Enter a name for this card..."
             />
-            <button onClick={handleAddTask} className="add-card-btn">Add card</button>
-            <button onClick={onCancel} className="delete-add-card">X</button>
-        </div>
+            <div className="task-actions">
+                <button onClick={handleAddTask} className="add-card-btn">Add card</button>
+                <button onClick={onCancel} className="delete-add-card">X</button>
+            </div>
+        </section>
+
     );
 }

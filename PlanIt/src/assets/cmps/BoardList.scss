@@ -15,11 +15,17 @@
     cursor: pointer;
 
     .board-title {
-        margin: 0;
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #333333;
+        width: 148px;
+        // border-bottom: 1px solid #e0e0e0;
+        height: 32px;
+        font-size: 18px;
+        line-height: 32px;
+        text-align: start;
+        letter-spacing: normal;
+        color: #172b4d;
+        background-color: #ffffff, opacity 24.0%;
     }
+
 
     .board-golders {
         display: flex;
@@ -30,14 +36,21 @@
         align-items: flex-start;
     
         .group-card {
-            background-color: #f4f5f7;
-            border-radius: 6px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            padding: 12px;
-            width: 250px;
             display: flex;
             flex-direction: column;
-            min-height: 100px;
+            padding: 12px;
+            width: 272px;
+            min-height: 398px;
+            
+            font-size: 14px;
+            text-align: left;
+            line-height: 20px;
+            letter-spacing: normal;
+
+            background-color: #f4f5f7;
+
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px 0px, rgba(9, 30, 66, 0.31) 0px 0px 1px 0px;
+            border-radius: 12px;
         }
     
         .add-group-btn {
