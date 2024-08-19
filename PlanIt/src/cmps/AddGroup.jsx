@@ -1,42 +1,46 @@
-import { useState } from 'react';
+import { useState } from "react";
+import { boardService } from "../services/board/board.service.local.js";
 
-export function AddGroup({ boardId, onAddGroup, onCancel }) {
-    const [newGroupTitle, setNewGroupTitle] = useState('');
-    const [error, setError] = useState('');
-
-    function handleNewGroupChange(event) {
-        setNewGroupTitle(event.target.value);
-    }
+export function AddGroup({ boardId, boards, setBoards, onCancel }) {
+    const [groupTitle, setGroupTitle] = useState("");
 
     async function addGroup() {
-        if (newGroupTitle.trim()) {
-            try {
-                await onAddGroup(boardId, newGroupTitle);
-                setNewGroupTitle('');
-                setError('');
-            } catch (e) {
-                setError('Failed to add group. Please try again.');
-            }
-        } else {
-            setError('Group title cannot be empty.');
-        }
+        {
+            const updatedBoards = boards.map((board) => {
+                if (board.id === boardId) {
+                    const newGroup = {
+                        id: Date.now(),
+                        title: groupTitle,
+                        tasks: [],
+                    };
+                    return {
+                        ...board,
+                        groups: [...board.groups, newGroup],
+                    };
+                }
+                return board;
+            });
+
+            setBoards(updatedBoards);
+
+            localStorage.setItem('boards', JSON.stringify(updatedBoards));
+
+            await boardService.save(updatedBoards);
+
+            onCancel();
+        };
     }
 
     return (
-        <div className="add-group">
+        <section className="add-group-form">
             <input
                 type="text"
-                value={newGroupTitle}
-                onChange={handleNewGroupChange}
-                placeholder="Enter list name..."
+                value={groupTitle}
+                onChange={(e) => setGroupTitle(e.target.value)}
+                placeholder="Enter list title"
             />
-            <button onClick={addGroup} className="add-group-btn">
-                Add Group
-            </button>
-            <button onClick={onCancel} className="cancel-add-group">
-                X
-            </button>
-            {error && <p className="error-message">{error}</p>}
-        </div>
+            <button onClick={addGroup}>Add List</button>
+            <button onClick={onCancel}>X</button>
+        </section>
     );
 }

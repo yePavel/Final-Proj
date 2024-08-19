@@ -1,8 +1,9 @@
 .board-list {
     display: flex;
-    flex-direction: column;
     gap: 16px;
     padding: 20px;
+    overflow-x: auto;
+    align-items: flex-start;
 }
 
 .board-card {
@@ -21,12 +22,13 @@
     }
 
     .board-golders {
-        margin-top: 16px;
         display: flex;
         gap: 16px;
         overflow-x: auto;
         padding-bottom: 8px;
-
+        flex-wrap: nowrap;
+        align-items: flex-start;
+    
         .group-card {
             background-color: #f4f5f7;
             border-radius: 6px;
@@ -36,92 +38,89 @@
             display: flex;
             flex-direction: column;
             min-height: 100px;
-
-            .group-title {
-                margin: 0;
+        }
+    
+        .add-group-btn {
+            background-color: #f4f5f7;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            padding: 12px;
+            width: 250px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            margin-top: 0;
+    
+            &:hover {
+                background-color: #d4d4d4;
+            }
+    
+            .add-list-text {
                 font-size: 1.2rem;
                 color: #333333;
                 font-weight: bold;
             }
+        }
 
-            .add-a-card-btn{
-                border: none;
-            }
+        .group-title {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #333333;
+            font-weight: bold;
+        }
 
-            .add-card-btn{
-                background-color: #0c66e4;
-                color: #ffffff;
-                font-size: 14px;
-                line-height: 20px;
-                text-align: center;
-                border-radius: 3px;
-                border: none;
-            }
+        .tasks {
+            margin-top: 8px;
 
-            .task-input{
-                font-size: 14px;
-                line-height: 20px;
-                text-align: start;
-                letter-spacing: normal;
-            
-            }
+            .task {
+                background-color: #ffffff;
+                border-radius: 4px;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+                padding: 8px;
+                margin-bottom: 8px;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
 
-            .delete-add-card{
-                border: none;
-                color: #172b4d;
-            }
+                .task-title {
+                    margin: 0;
+                    font-size: 1rem;
+                    color: #333333;
+                }
 
-            .tasks {
-                margin-top: 8px;
-
-                .task {
-                    background-color: #ffffff;
-                    border-radius: 4px;
-                    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-                    padding: 8px;
-                    margin-bottom: 8px;
+                .labels {
+                    margin-top: 4px;
                     display: flex;
-                    flex-direction: column;
+                    flex-wrap: wrap;
+                    gap: 6px;
+
+                    .label {
+                        padding: 4px 8px;
+                        font-size: 0.8rem;
+                        color: #ffffff;
+                        border-radius: 4px;
+                        text-align: center;
+                    }
+                }
+
+                .members {
+                    display: flex;
+                    flex-wrap: wrap;
                     gap: 8px;
+                    margin-top: auto;
+                    justify-content: flex-end;
+                    align-items: center;
 
-                    .task-title {
-                        margin: 0;
-                        font-size: 1rem;
-                        color: #333333;
-                    }
-
-                    .labels {
-                        margin-top: 4px;
-                        display: flex;
-                        flex-wrap: wrap;
-                        gap: 6px;
-
-                        .label {
-                            padding: 4px 8px;
-                            font-size: 0.8rem;
-                            color: #ffffff;
-                            border-radius: 4px;
-                            text-align: center;
-                        }
-                    }
-
-                    .members {
-                        display: flex;
-                        flex-wrap: wrap;
-                        gap: 8px;
-                        margin-top: auto;
-                        justify-content: flex-end;
-                        align-items: center;
-
-                        .member {
-                            background-color: #f3f4f6;
-                            padding: 4px 8px;
-                            border-radius: 100%;
-                            font-size: 0.8rem;
-                            text-align: center;
-                            line-height: 24px;
-                            color: #172b4d;
-                        }
+                    .member {
+                        background-color: #f3f4f6;
+                        padding: 4px 8px;
+                        border-radius: 100%;
+                        font-size: 0.8rem;
+                        text-align: center;
+                        line-height: 24px;
+                        color: #172b4d;
                     }
                 }
             }

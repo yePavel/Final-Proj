@@ -1,55 +1,75 @@
-.group-card {
-  background-color: #f4f5f7;
-  border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  min-height: 100px;
-  width: 250px;
-}
-
 .add-group {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 8px;
-  margin-top: 8px;
   padding: 8px;
+  margin-top: 60px;
+  background-color: rgba(236, 240, 241, 0.5);
   border-radius: 6px;
-  background-color: #f4f5f7;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  width: 250px;
   cursor: pointer;
-}
 
-.add-group-btn {
-  background-color: rgba(236, 233, 233, 0.24); 
-  color: #172b4d;
-  font-size: 14px;
-  line-height: 20px;
-  text-align: center;
-  border-radius: 3px;
-  border: none;
-  padding: 8px;
-  cursor: pointer;
-}
+  .add-group-btn {
+      padding: 8px;
+      border-radius: 3px;
+      border: none;
+      font-size: 14px;
+      cursor: pointer;
+  }
 
+  .cancel-add-group {
+      background-color: #e0e0e0;
+      color: #333;
+      padding: 8px;
+      border-radius: 3px;
+      border: none;
+      font-size: 14px;
+      cursor: pointer;
 
+      &:hover {
+          background-color: #c0c0c0;
+      }
+  }
+      .add-list {
+        background-color: #e0e0e0;
+        border-radius: 6px;
+        padding: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        min-width: 250px;
+        height: 100px;
 
-.cancel-add-group {
-  background-color: #e0e0e0;
-  color: #333;
-  font-size: 14px;
-  line-height: 20px;
-  text-align: center;
-  border-radius: 3px;
-  border: none;
-  padding: 8px;
-  cursor: pointer;
-}
+        &:hover {
+            background-color: #d4d4d4;
+        }
 
-.hidden {
-  display: none;
+        .add-list-text {
+            font-size: 1.2rem;
+            color: #333333;
+            font-weight: bold;
+        }
+    }
+    .add-list {
+      background-color: #e0e0e0;
+      border-radius: 6px;
+      padding: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      min-width: 250px;
+      height: 100px;
+
+      &:hover {
+          background-color: #d4d4d4;
+      }
+
+      .add-list-text {
+          font-size: 1.2rem;
+          color: #333333;
+          font-weight: bold;
+      }
+  }
 }
