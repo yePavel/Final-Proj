@@ -61,12 +61,37 @@ const data = [
           {
             id: "c101",
             title: "Replace logo",
+            labels: [
+              {
+                id: "l1010",
+                title: "Done",
+                color: "#61bd4f",
+              },
+              {
+                id: "l1011",
+                title: "Progress",
+                color: "#9f8fef",
+              },
+            ],
+            members: [
+              {
+                _id: "u102",
+                fullname: "Sean Mamistalov",
+                imgUrl: "",
+              },
+              {
+                _id: "u103",
+                fullname: "Pavel Yelsukov",
+                imgUrl: "",
+              },
+            ]
           },
           {
             id: "c102",
             title: "Add Samples",
           },
         ],
+
         style: {},
       },
       {
@@ -136,6 +161,18 @@ const data = [
           {
             id: "c106",
             title: "Footer",
+            labels: [
+              {
+                id: "l1010",
+                title: "Done",
+                color: "#61bd4f",
+              },
+              {
+                id: "l1011",
+                title: "Progress",
+                color: "#9f8fef",
+              },
+            ],
           },
         ],
         style: {},

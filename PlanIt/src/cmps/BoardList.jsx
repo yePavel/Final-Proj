@@ -1,14 +1,12 @@
 import { Link } from "react-router-dom";
+import { BoardPreview } from "./BoardPreview.jsx";
 
 export function BoardList({ boards }) {
-
     return <ul className="starred-boards-list">
         {boards.map(board =>
-            <Link to={`${board._id}`} key={board._id}>
-                <li className="board-item">
-                    <div>{board.title}</div>
-                </li>
-            </Link>
+            <li key={board._id}>
+                <BoardPreview board={board} />
+            </li>
         )}
     </ul>
 

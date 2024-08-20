@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { AddGroup } from '../cmps/AddGroup.jsx';
-import { BoardPreview } from '../cmps/BoardPreview.jsx';
 import { loadBoard, updateBoard } from '../store/actions/board.actions.js';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { BoardGroup } from '../cmps/BoardGroup.jsx';
 
 export function BoardDetails() {
     const { boardId } = useParams()
@@ -20,13 +20,13 @@ export function BoardDetails() {
     }
 
     if (!board) return <div>Loading...</div>
-    console.log("🚀 ~ BoardDetails ~ board:", board)
 
     return (
         <section className="board-list">
-            <BoardPreview
-                board={board}
-                handleBoardUpdate={handleBoardUpdate} />
+            <section className="board-card">
+                <h2 className="board-title">{board.title}</h2>
+                <BoardGroup handleBoardUpdate={handleBoardUpdate} groups={board.groups} />
+            </section>
             <div className="add-group">
                 {isAddingGroup === board.id ? (
                     <AddGroup
