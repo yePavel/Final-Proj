@@ -1,22 +1,14 @@
 import { useEffect, useState } from "react";
-import { boardService } from "../services/board/board.service.local.js";
 import { BoardList } from "../cmps/BoardList.jsx";
+import { useSelector } from "react-redux";
+import { loadBoards } from '../store/actions/board.actions.js'
 
 export function BoardIndex() {
-    const [boards, setBoards] = useState([]);
+    const boards = useSelector(storeState => storeState.boardModule.boards)
 
     useEffect(() => {
         loadBoards();
     }, []);
-
-    async function loadBoards() {
-        try {
-            const data = await boardService.query();
-            setBoards(data);
-        } catch (error) {
-            console.error("Error loading boards", error);
-        }
-    }
 
     console.log('boards:', boards)
 

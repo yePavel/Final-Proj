@@ -15,18 +15,18 @@ export function BoardDetails() {
         loadBoard(boardId)
     }, [boardId])
 
-
-    function handleAddTask(board) {
+    function handleBoardUpdate(board) {
         updateBoard(board)
     }
 
     if (!board) return <div>Loading...</div>
+    console.log("🚀 ~ BoardDetails ~ board:", board)
 
     return (
         <section className="board-list">
             <BoardPreview
                 board={board}
-                handleAddTask={handleAddTask} />
+                handleBoardUpdate={handleBoardUpdate} />
             <div className="add-group">
                 {isAddingGroup === board.id ? (
                     <AddGroup

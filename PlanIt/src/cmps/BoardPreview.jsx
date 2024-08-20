@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { AddTask } from './AddTask.jsx';
 
-export function BoardPreview({ board, handleAddTask }) {
+export function BoardPreview({ board, handleBoardUpdate }) {
     const [isAddingTask, setIsAddingTask] = useState(null);
 
     const getInitials = (fullname) => {
@@ -9,7 +9,6 @@ export function BoardPreview({ board, handleAddTask }) {
         const initials = nameParts.map((part) => part[0].toUpperCase()).join("");
         return initials;
     };
-
 
     return (
         <section key={board.id} className="board-card">
@@ -47,7 +46,8 @@ export function BoardPreview({ board, handleAddTask }) {
                                 <AddTask
                                     groupId={group.id}
                                     onCancel={() => setIsAddingTask(null)}
-                                    handleAddTask={handleAddTask} />
+                                    handleBoardUpdate={handleBoardUpdate}
+                                />
                             ) : (
                                 <button
                                     onClick={() => setIsAddingTask(group.id)}

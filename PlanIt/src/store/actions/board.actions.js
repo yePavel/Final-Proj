@@ -45,7 +45,6 @@ export async function addBoard(board) {
 }
 
 export async function updateBoard(board) {
-    console.log('board:', board)
     try {
         const savedBoard = await boardService.save(board)
         console.log("🚀 ~ updateBoard ~ savedBoard:", savedBoard)

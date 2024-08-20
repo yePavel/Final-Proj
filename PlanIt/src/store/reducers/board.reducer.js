@@ -7,7 +7,7 @@ export const ADD_BOARD_MSG = 'ADD_BOARD_MSG'
 
 const initialState = {
     boards: [],
-    board: null
+    board: null,
 }
 
 export function boardReducer(state = initialState, action) {
