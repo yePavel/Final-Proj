@@ -1,10 +1,15 @@
 
 export function BoardIndex() {
+
+
     return <section className="main-boards-container">
         <nav className="boards-manu">
             <div className="upper-manu">
                 <ul>
-                    <li className="active">Boards</li>
+                    <li className="active">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" role="presentation" focusable="false" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M3 5C3 3.89543 3.89543 3 5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5ZM5 6C5 5.44772 5.44772 5 6 5H10C10.5523 5 11 5.44772 11 6V16C11 16.5523 10.5523 17 10 17H6C5.44772 17 5 16.5523 5 16V6ZM14 5C13.4477 5 13 5.44772 13 6V12C13 12.5523 13.4477 13 14 13H18C18.5523 13 19 12.5523 19 12V6C19 5.44772 18.5523 5 18 5H14Z" fill="#000000">
+                        </path>
+                        </svg> Boards</li>
                     <li>Templates</li>
                     <li>Home</li>
                 </ul>
@@ -12,7 +17,11 @@ export function BoardIndex() {
             <div className="lower-manu">
                 <ul>
                     <li>Gatting started</li>
-                    <li>Boards</li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" role="presentation" focusable="false" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M3 5C3 3.89543 3.89543 3 5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5ZM5 6C5 5.44772 5.44772 5 6 5H10C10.5523 5 11 5.44772 11 6V16C11 16.5523 10.5523 17 10 17H6C5.44772 17 5 16.5523 5 16V6ZM14 5C13.4477 5 13 5.44772 13 6V12C13 12.5523 13.4477 13 14 13H18C18.5523 13 19 12.5523 19 12V6C19 5.44772 18.5523 5 18 5H14Z" fill="#000000">
+                        </path>
+                        </svg> Boards
+                    </li>
                     <li>Collections</li>
                     <li>Highlights</li>
                     <li>Views</li>
@@ -31,7 +40,6 @@ export function BoardIndex() {
                     </svg>
                     <h3> Starred boards</h3>
                 </div>
-
                 <ul className="starred-boards-list">
                     <li className="board-item"><div>Final proj</div></li>
                     <li className="board-item"><div>Project 1</div></li>
@@ -40,7 +48,9 @@ export function BoardIndex() {
                 </ul>
             </div>
             <div className="user-boards">
-                <h3>👷 Your workspaces</h3>
+                <div className="starred-tittle">
+                    <h3> Your workspaces</h3>
+                </div>
                 <ul className="user-boards-list">
                     <li className="board-item"><div>workSpace 1</div></li>
                     <li className="board-item"><div>workSpace 2</div></li>

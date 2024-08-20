@@ -23,7 +23,12 @@
         flex-direction: column;
         grid-column: 2/3;
 
+
         .upper-manu {
+            ul {
+                padding: 0;
+            }
+
             box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.1);
         }
 
@@ -49,8 +54,8 @@
 
         ul {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(4, 194px);
+            gap: 30px;
             margin: 0;
 
             li {
