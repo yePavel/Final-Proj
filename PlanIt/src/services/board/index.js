@@ -6,11 +6,9 @@ import { boardService as local } from './board.service.local'
 import { boardService as remote } from './board.service.remote'
 
 function getEmptyBoard() {
-	return {
-		vendor: makeId(),
-		speed: getRandomIntInclusive(80, 240),
-		msgs: [],
-	}
+    return {
+        title: '',
+    }
 }
 
 function getDefaultFilter() {
@@ -22,7 +20,7 @@ function getDefaultFilter() {
     }
 }
 
-const service = VITE_LOCAL === 'true' ? local : remote
+const service = VITE_LOCAL === 'true' ? remote : local
 export const boardService = { getEmptyBoard, getDefaultFilter, ...service }
 
 // Easy access to this service from the dev tools console

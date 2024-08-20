@@ -1,6 +1,24 @@
+import { useEffect, useState } from "react";
+import { boardService } from "../services/board/board.service.local.js";
+import { BoardList } from "../cmps/BoardList.jsx";
 
 export function BoardIndex() {
+    const [boards, setBoards] = useState([]);
 
+    useEffect(() => {
+        loadBoards();
+    }, []);
+
+    async function loadBoards() {
+        try {
+            const data = await boardService.query();
+            setBoards(data);
+        } catch (error) {
+            console.error("Error loading boards", error);
+        }
+    }
+
+    console.log('boards:', boards)
 
     return <section className="main-boards-container">
         <nav className="boards-manu">
@@ -40,12 +58,7 @@ export function BoardIndex() {
                     </svg>
                     <h3> Starred boards</h3>
                 </div>
-                <ul className="starred-boards-list">
-                    <li className="board-item"><div>Final proj</div></li>
-                    <li className="board-item"><div>Project 1</div></li>
-                    <li className="board-item"><div>Project 2</div></li>
-                    <li className="board-item"><div>Project 3</div></li>
-                </ul>
+                <BoardList boards={boards} />
             </div>
             <div className="user-boards">
                 <div className="starred-tittle">

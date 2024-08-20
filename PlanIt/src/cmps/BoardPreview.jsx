@@ -1,11 +1,15 @@
+import { useState } from 'react';
 import { AddTask } from './AddTask.jsx';
 
-export function BoardPreview ({ board, isAddingTask, setIsAddingTask, boards, setBoards }) {
+export function BoardPreview({ board, handleAddTask }) {
+    const [isAddingTask, setIsAddingTask] = useState(null);
+
     const getInitials = (fullname) => {
         const nameParts = fullname.split(" ");
         const initials = nameParts.map((part) => part[0].toUpperCase()).join("");
         return initials;
     };
+
 
     return (
         <section key={board.id} className="board-card">
@@ -42,9 +46,8 @@ export function BoardPreview ({ board, isAddingTask, setIsAddingTask, boards, se
                             {isAddingTask === group.id ? (
                                 <AddTask
                                     groupId={group.id}
-                                    boards={boards}
-                                    setBoards={setBoards}
-                                    onCancel={() => setIsAddingTask(null)} />
+                                    onCancel={() => setIsAddingTask(null)}
+                                    handleAddTask={handleAddTask} />
                             ) : (
                                 <button
                                     onClick={() => setIsAddingTask(group.id)}

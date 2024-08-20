@@ -13,7 +13,7 @@ async function query(filterBy = { txt: '', price: 0 }) {
 }
 
 function getById(boardId) {
-    return httpService.get(`board/${boardId}`)
+    return httpService.get(`boards/${boardId}`)
 }
 
 async function remove(boardId) {
@@ -30,6 +30,6 @@ async function save(board) {
 }
 
 async function addBoardMsg(boardId, txt) {
-    const savedMsg = await httpService.post(`board/${boardId}/msg`, {txt})
+    const savedMsg = await httpService.post(`board/${boardId}/msg`, { txt })
     return savedMsg
 }

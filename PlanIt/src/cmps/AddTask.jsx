@@ -1,30 +1,30 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
-export function AddTask({ groupId, boards, setBoards, onCancel }) {
+
+export function AddTask({ groupId, onCancel, handleAddTask }) {
     const [taskTitle, setTaskTitle] = useState('');
+    const board = useSelector(storeState => storeState.boardModule.board)
 
-    const handleInputChange = ({ target: { value } }) => setTaskTitle(value);
+    function handleInputChange({ target }) {
+        const { value } = target
+        setTaskTitle(value)
+    }
 
-    const updateBoardsWithNewTask = () => {
-        return boards.map(board => ({
+    function onAddTask() {
+        const updatedBoard = {
             ...board,
             groups: board.groups.map(group =>
                 group.id === groupId
                     ? { ...group, tasks: [...group.tasks, { id: Date.now(), title: taskTitle }] }
                     : group
             )
-        }));
+        }
+        handleAddTask(updatedBoard)
+        setTaskTitle('');
+        onCancel();
     };
 
-    const handleAddTask = () => {
-        if (taskTitle.trim()) {
-            const updatedBoards = updateBoardsWithNewTask();
-            setBoards(updatedBoards);
-            localStorage.setItem('boards', JSON.stringify(updatedBoards));
-            setTaskTitle('');
-            onCancel();
-        }
-    };
 
     return (
         <section className="task-input">
@@ -35,7 +35,7 @@ export function AddTask({ groupId, boards, setBoards, onCancel }) {
                 placeholder="Enter a name for this card..."
             />
             <div className="task-actions">
-                <button onClick={handleAddTask} className="add-card-btn">Add card</button>
+                <button onClick={onAddTask} className="add-card-btn">Add card</button>
                 <button onClick={onCancel} className="delete-add-card">X</button>
             </div>
         </section>
