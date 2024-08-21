@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AddGroup } from '../cmps/AddGroup.jsx';
 import { loadBoard, updateBoard } from '../store/actions/board.actions.js';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { BoardGroup } from '../cmps/BoardGroup.jsx';
+import { BoardHeader } from '../cmps/BoardHeader.jsx';
 
 export function BoardDetails() {
     const { boardId } = useParams()
@@ -23,10 +24,10 @@ export function BoardDetails() {
 
     return (
         <section className="board-list">
-            <section className="board-card">
-                <h2 className="board-title">{board.title}</h2>
+            <BoardHeader board={board} />
+            <div className="board-card">
                 <BoardGroup handleBoardUpdate={handleBoardUpdate} groups={board.groups} />
-            </section>
+            </div>
             <div className="add-group">
                 {isAddingGroup === board.id ? (
                     <AddGroup
