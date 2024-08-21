@@ -3,6 +3,7 @@ import { AddTask } from "../cmps/AddTask.jsx";
 import { LabelPreview } from "./LabelPreview.jsx";
 import { AssignedMember } from "./AssignedMember.jsx";
 import { TaskModal } from "./TaskModal.jsx"; 
+import { GroupMenu } from "./GroupMenu.jsx";
 
 export function BoardGroup({ groups, handleBoardUpdate }) {
   const [isAddingTask, setIsAddingTask] = useState(null);
@@ -22,7 +23,10 @@ export function BoardGroup({ groups, handleBoardUpdate }) {
     <div className="board-golders">
       {groups.map((group) => (
         <div key={group.id} className="group-card">
-          <h3 className="group-title">{group.title}</h3>
+          <div className="group-header">
+            <h3 className="group-title">{group.title}</h3>
+            <GroupMenu />
+          </div>
           <div className="tasks">
             {group.tasks.map((task) => (
               <div
