@@ -1,8 +1,10 @@
 .main-boards-container {
     display: grid;
-    grid-template-columns: $layoutPadding*3 250px 1fr $layoutPadding*3;
-    margin-top: 50px;
-    height: 100vh;
+    grid-template-columns: $layoutPadding*4.2 292px 1fr $layoutPadding*4.2;
+    margin-top: 48px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif;
+
+
 
     .starred-tittle {
         display: flex;
@@ -11,7 +13,6 @@
         svg {
             width: 24px;
         }
-
     }
 
     ul {
@@ -22,14 +23,16 @@
         display: flex;
         flex-direction: column;
         grid-column: 2/3;
+        font-size: 14px;
+        margin-top: 10px;
+        padding: 16px;
+        max-height: 90vh;
+        color: #172b4d;
+        max-width: 290px;
 
-
-        .upper-manu {
-            ul {
-                padding: 0;
-            }
-
-            box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.1);
+        svg {
+            height: 16px;
+            width: 16px;
         }
 
         ul {
@@ -47,16 +50,92 @@
                 }
             }
         }
+
+        .upper-manu {
+            box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.1);
+
+            ul {
+                padding: 0;
+
+                li {
+                    display: flex;
+                    gap: 15px;
+                    margin-bottom: 10px;
+                    font-weight: 500;
+                }
+            }
+
+        }
+
+        .lower-manu {
+            padding: 5px 0px 12px;
+
+            .workspace-title {
+                padding-left: 12px;
+                height: 32px;
+                font-size: 12px;
+            }
+
+            .Planit-workspace-title {
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+                font-weight: 500;
+                padding: 0px 8px;
+
+                .letter-p {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 24px;
+                    height: 24px;
+                    margin: 0;
+                    border-radius: 4px;
+                    font-size: 14px;
+                    color: white;
+                    font-weight: 500;
+                    background: linear-gradient(#006644, #00875a88);
+                }
+            }
+
+            ul {
+
+                li {
+                    display: flex;
+                    gap: 8px;
+                    margin-bottom: 4px;
+
+                    svg {
+                        display: flex;
+                        align-self: center;
+                    }
+                }
+            }
+        }
     }
 
     .board-list-container {
-        margin-inline-start: 30px;
+        margin: 40px 16px 0;
+
+        .starred-tittle {
+            h3 {
+                margin: 0;
+            }
+
+            svg {
+                width: 24px;
+                height: 24px;
+                align-items: center;
+            }
+        }
+
 
         ul {
             display: grid;
             grid-template-columns: repeat(4, 194px);
-            gap: 30px;
-            margin: 0;
+            gap: 12px;
+            padding: 0;
+            margin: 10px 0px 55px 0px;
 
             li {
                 display: flex;
@@ -64,6 +143,25 @@
                 width: 194px;
                 height: 96px;
                 border-radius: 3px;
+                justify-content: space-between;
+
+                .star {
+                    align-self: flex-end;
+
+                    &:hover {
+                        color: yellow;
+                    }
+                }
+
+                article {
+                    a {
+                        text-decoration: none;
+                    }
+
+                    .board-name {
+                        padding: 3px 0px 0px 5px;
+                    }
+                }
 
                 &:nth-child(1) {
                     background: linear-gradient(to right, #ff7e5f, #feb47b);
@@ -92,7 +190,6 @@
         .starred-boards {
             display: flex;
             flex-direction: column;
-
         }
     }
 }

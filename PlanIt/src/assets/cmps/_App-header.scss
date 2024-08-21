@@ -1,22 +1,26 @@
 .app-header {
   display: flex;
+  position: absolute;
+  inset: 0;
   justify-content: space-between;
   align-items: center;
+  color: #172b4d;
   background-color: #ffffff;
   border-bottom: 1px solid #e0e0e0;
-  padding: 0 16px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  height: 60px;
+  max-height: 48px;
+  padding: 4px;
+  font-size: 14px;
 
   .left-section {
     display: flex;
     align-items: center;
 
     .menu-icon {
-      width: 24px;
-      height: 24px;
+      width: 20px;
+      height: 20px;
       cursor: pointer;
-      margin-right: 16px;
+      margin-left: 4px;
+      margin-right: 12px;
       transition: transform 0.2s ease-in-out;
 
       &:hover {
@@ -27,14 +31,15 @@
     .icon-container {
       display: flex;
       align-items: center;
-      gap: 8px;
+      height: 18px;
+      gap: 6px;
 
       svg {
-        fill: #333333;
+        fill: #44546F;
       }
 
       .hover-icon {
-        fill: #333333;
+        fill: #44546F;
         transition: opacity 0.3s ease-in-out;
         animation: moveAnimation 2s infinite;
         width: 100%;
@@ -47,10 +52,10 @@
     }
 
     .logo {
-      font-size: 1.5rem;
+      font-size: 20px;
       font-weight: bold;
-      color: #333333;
-      margin-right: 24px;
+      color: #44546F;
+      margin-right: 20px;
       text-decoration: none;
     }
 
@@ -65,21 +70,22 @@
     .nav {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 7px;
 
       .nav-item {
         position: relative;
         cursor: pointer;
         display: flex;
         align-items: center;
-        gap: 4px;
+        gap: 8px;
         padding: 8px;
         border-radius: 4px;
         transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        font-weight: 500;
 
         &:hover {
-          background-color: #e0e0e0;
-          color: #0079bf;
+          background-color: #0055cc;
+          color: white;
         }
 
         svg {
@@ -185,6 +191,7 @@
     .notification-item:hover {
       background-color: #f5f5f5;
     }
+
     .search-bar {
       padding: 6px 12px;
       border: 1px solid #e0e0e0;
