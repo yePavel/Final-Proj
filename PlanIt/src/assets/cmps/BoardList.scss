@@ -4,6 +4,10 @@
     padding: 20px;
     overflow-x: auto;
     align-items: flex-start;
+    padding: 16px;
+
+    margin-top: 100px;
+
 }
 
 .board-card {
@@ -16,7 +20,6 @@
 
     .board-title {
         width: 148px;
-        // border-bottom: 1px solid #e0e0e0;
         height: 32px;
         font-size: 18px;
         line-height: 32px;
@@ -25,7 +28,6 @@
         color: #172b4d;
         background-color: #ffffff, opacity 24.0%;
     }
-
 
     .board-golders {
         display: flex;
