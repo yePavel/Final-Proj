@@ -1,4 +1,3 @@
-
 import { storageService } from '../async-storage.service'
 import { makeId, saveToStorage } from '../util.service'
 import { userService } from '../user'
@@ -340,7 +339,7 @@ const data = [
   },
   {
     _id: 'b2',
-    title: "Final Proj",
+    title: "Coding",
     isStarred: false,
     archivedAt: 1589983468418,
     createdBy: {
@@ -355,11 +354,31 @@ const data = [
       {
         id: "l101",
         title: "Done",
-        color: "#61bd4f",
+        color: "#4bce97",
       },
       {
         id: "l102",
         title: "Progress",
+        color: "#9f8fef",
+      },
+      {
+        id: "l103",
+        title: "Full Of Bugs",
+        color: "#579dff",
+      },
+      {
+        id: "l104",
+        title: "Check Befor Done",
+        color: "#f87168",
+      },
+      {
+        id: "l105",
+        title: "Next Round",
+        color: "#fea362",
+      },
+      {
+        id: "l106",
+        title: "To Do",
         color: "#9f8fef",
       },
     ],
@@ -372,6 +391,11 @@ const data = [
       {
         _id: "u103",
         fullname: "Pavel Yelsukov",
+        imgUrl: "",
+      },
+      {
+        _id: "u101",
+        fullname: "Daniel Yacovi",
         imgUrl: "",
       },
     ],
@@ -471,7 +495,32 @@ const data = [
           {
             id: "c107",
             title: "Login-cmp",
+            labels: [
+              {
+                id: "l101",
+                title: "Done",
+                color: "#4bce97",
+              },
+            ],
+            members: [
+              {
+                _id: "u102",
+                fullname: "Sean Mamistalov",
+                imgUrl: "",
+              },
+              {
+                _id: "u103",
+                fullname: "Pavel Yelsukov",
+                imgUrl: "",
+              },
+              {
+                _id: "u101",
+                fullname: "Daniel Yacovi",
+                imgUrl: "",
+              },
+            ],
           },
+          
           {
             id: "c108",
             title: "SCSS vars",
@@ -480,6 +529,23 @@ const data = [
                 id: "l101",
                 title: "Done",
                 color: "#4bce97",
+              },
+            ],
+            members: [
+              {
+                _id: "u102",
+                fullname: "Sean Mamistalov",
+                imgUrl: "",
+              },
+              {
+                _id: "u103",
+                fullname: "Pavel Yelsukov",
+                imgUrl: "",
+              },
+              {
+                _id: "u101",
+                fullname: "Daniel Yacovi",
+                imgUrl: "",
               },
             ],
           },
@@ -497,14 +563,9 @@ const data = [
             priority: "high",
             labels: [
               {
-                id: "l1010",
-                title: "Done",
-                color: "#61bd4f",
-              },
-              {
-                id: "l1011",
-                title: "Progress",
-                color: "#9f8fef",
+                id: "l103",
+                title: "Full Of Bugs",
+                color: "#579dff",
               },
             ],
           },
