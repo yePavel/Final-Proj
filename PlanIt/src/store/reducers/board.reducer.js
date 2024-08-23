@@ -7,6 +7,7 @@ export const ADD_BOARD_MSG = 'ADD_BOARD_MSG'
 
 export const SET_STARRED = 'SET_STARRED'
 export const ADD_STARRED_BOARD = 'ADD_STARRED_BOARD'
+export const REMOVE_STARRED_BOARD = 'REMOVE_STARRED_BOARD'
 
 const initialState = {
     boards: [],
@@ -49,6 +50,10 @@ export function boardReducer(state = initialState, action) {
                 newState = { ...updatedState, starredBoards: [...updatedState.starredBoards, action.board] }
             }
             break
+        case REMOVE_STARRED_BOARD:
+            var starredItems = state.starredBoards.filter(board => board._id !== action.board._id)
+            const updatedState = { ...state, starredBoards: starredItems }
+            newState = { ...updatedState, boards: [...updatedState.boards, action.board] }
         default:
     }
     return newState

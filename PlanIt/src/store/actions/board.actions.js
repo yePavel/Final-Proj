@@ -1,6 +1,6 @@
 import { boardService } from '../../services/board'
 import { store } from '../store'
-import { ADD_BOARD, REMOVE_BOARD, SET_BOARDS, SET_BOARD, UPDATE_BOARD, ADD_BOARD_MSG, SET_STARRED, ADD_STARRED_BOARD } from '../reducers/board.reducer'
+import { ADD_BOARD, REMOVE_BOARD, SET_BOARDS, SET_BOARD, UPDATE_BOARD, ADD_BOARD_MSG, SET_STARRED, ADD_STARRED_BOARD, REMOVE_STARRED_BOARD } from '../reducers/board.reducer'
 
 export async function loadBoards(filterBy) {
     try {
@@ -81,11 +81,20 @@ export async function addStaredBoard(board) {
         const updatedBoard = await boardService.save(board)
         store.dispatch(getCmdAddStarBoards(updatedBoard))
     } catch (err) {
-        console.log('Cannot load starred boards', err)
+        console.log('Cannot add starred boards', err)
         throw err
     }
 }
 
+export async function removeStaredBoard(board) {
+    try {
+        const updatedBoard = await boardService.save(board)
+        store.dispatch(getCmdRemoveStarBoards(updatedBoard))
+    } catch (err) {
+        console.log('Cannot remove starred boards', err)
+        throw err
+    }
+}
 
 // Command Creators:
 function getCmdSetBoards(boards) {
@@ -105,6 +114,13 @@ function getCmdSetStarBoards(boards) {
 function getCmdAddStarBoards(board) {
     return {
         type: ADD_STARRED_BOARD,
+        board
+    }
+}
+
+function getCmdRemoveStarBoards(board) {
+    return {
+        type: REMOVE_STARRED_BOARD,
         board
     }
 }

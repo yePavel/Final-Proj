@@ -1,17 +1,17 @@
-import { FiStar } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import { addStaredBoard } from "../store/actions/board.actions";
+import { addStaredBoard, removeStaredBoard } from "../store/actions/board.actions";
+import { MdOutlineStarOutline, MdOutlineStarPurple500 } from "react-icons/md";
 
 export function BoardPreview({ board }) {
 
-    function handleStarClick(ev, type) {
+    function handleStarClick(ev) {
         ev.stopPropagation();
         ev.preventDefault();
+
         const starStatus = board.isStarred
         const currBoard = { ...board, isStarred: !starStatus }
-        if (type === 'ADD') addStaredBoard(currBoard)
-        else removeStaredBoard()
-
+        if (!currBoard.isStarred) removeStaredBoard(currBoard)
+        else addStaredBoard(currBoard)
 
     }
 
@@ -19,7 +19,12 @@ export function BoardPreview({ board }) {
         <Link to={`${board._id}`}>
             <li className="board-item">
                 <div className="board-name">{board.title}</div>
-                <div className="star"><FiStar onClick={(ev) => handleStarClick(ev, 'ADD')} /></div>
+                <div className={`star ${board.isStarred ? 'star-filled' : ''}`}>
+                    {board.isStarred ?
+                        <MdOutlineStarPurple500 onClick={(ev) => handleStarClick(ev)} /> :
+                        <MdOutlineStarOutline onClick={(ev) => handleStarClick(ev)} />
+                    }
+                </div>
             </li>
         </Link>
     </article>

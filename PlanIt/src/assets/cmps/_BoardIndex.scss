@@ -148,13 +148,39 @@
                 border-radius: 3px;
                 justify-content: space-between;
 
+                .board-name {
+                    color: white;
+                    font-weight: 700;
+                    margin: 3px;
+                }
+
                 .star {
+                    margin: 0px 8px 6px 0px;
+                    color: white;
                     align-self: flex-end;
+                    transition: .4s;
+
+                    svg {
+                        width: 18px;
+                        height: 18px;
+                    }
 
                     &:hover {
                         color: yellow;
                     }
+
+
+                    &.star-filled {
+                        color: yellow;
+
+                        &:hover {
+                            color: white;
+                            transform: scale(1.3)
+                        }
+                    }
                 }
+
+
 
                 article {
                     a {
@@ -180,12 +206,6 @@
 
                 &:nth-child(4) {
                     background: linear-gradient(to right, #11998e, #38ef7d);
-                }
-
-                div {
-                    color: white;
-                    font-weight: 700;
-                    margin: 3px;
                 }
             }
         }
