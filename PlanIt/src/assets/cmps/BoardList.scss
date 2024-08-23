@@ -14,7 +14,6 @@
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     display: flex;
     flex-direction: column;
-    cursor: pointer;
 
     .board-title {
         width: 148px;
@@ -34,7 +33,7 @@
         padding-bottom: 8px;
         flex-wrap: nowrap;
         align-items: flex-start;
-    
+
         .group-card {
             border-radius: 6px;
             padding: 16px;
@@ -45,28 +44,28 @@
             background-color: #f4f5f7;
             box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px 0px, rgba(9, 30, 66, 0.31) 0px 0px 1px 0px;
             border-radius: 12px;
-            
+
             .group-header {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 margin-bottom: 8px;
             }
-        
+
             .group-title {
                 margin: 0;
                 font-size: 1.2rem;
                 color: #333333;
                 font-weight: bold;
             }
-        
+
             .group-menu {
                 margin-left: auto;
             }
-            
+
             .tasks {
                 margin-top: 8px;
-        
+
                 .task {
                     background-color: #ffffff;
                     border-radius: 4px;
@@ -76,19 +75,19 @@
                     display: flex;
                     flex-direction: column;
                     gap: 8px;
-        
+
                     .task-title {
                         margin: 0;
                         font-size: 1rem;
                         color: #333333;
                     }
-        
+
                     .labels {
                         margin-top: 4px;
                         display: flex;
                         flex-wrap: wrap;
                         gap: 10px;
-        
+
                         .label {
                             padding: 4px 8px;
                             font-size: 0.8rem;
@@ -97,7 +96,7 @@
                             text-align: center;
                         }
                     }
-        
+
                     .members {
                         display: flex;
                         flex-wrap: wrap;
@@ -105,7 +104,7 @@
                         margin-top: auto;
                         justify-content: flex-end;
                         align-items: center;
-        
+
                         .member {
                             background-color: #f3f4f6;
                             padding: 4px 8px;
@@ -116,9 +115,14 @@
                             color: #172b4d;
                         }
                     }
+
+                    &:hover {
+                        outline: #388bff auto 2px;
+                        // background-color: #172b4d;
+                    }
                 }
             }
         }
-        
-}
+
+    }
 }
