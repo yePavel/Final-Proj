@@ -1,0 +1,27 @@
+.color-picker {
+    h4 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #333;
+    }
+  
+    .color-options {
+      display: grid;
+      grid-template-columns: repeat(3, 30px);
+      gap: 40px;
+    }
+  
+    .color-btn {
+      width: 55px;
+      height: 57px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+  
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  

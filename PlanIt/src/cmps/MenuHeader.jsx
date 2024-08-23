@@ -5,14 +5,21 @@ import { RiEyeLine } from "react-icons/ri";
 import { TbSettings } from "react-icons/tb";
 import { RxActivityLog } from "react-icons/rx";
 import { IoMdExit } from "react-icons/io";
-
 import { useState } from "react";
+import { ColorPicker } from './ColorPicker';
 
-export function MenuHeader({ onChangeBaceground }) {
+export function MenuHeader({ onChangeBackground }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isColorPickerOpen, setIsColorPickerOpen] = useState(false);
 
     function toggleMenu() {
         setIsMenuOpen(!isMenuOpen);
+        setIsColorPickerOpen(false);
+    }
+
+    function handleColorSelect(color) {
+        onChangeBackground(color);
+        setIsColorPickerOpen(false);
     }
 
     return (
@@ -28,7 +35,12 @@ export function MenuHeader({ onChangeBaceground }) {
                     <li><button> <RxActivityLog /> Activity</button></li>
                     <li><button>Archived items</button></li>
                     <li className='end-section'><button> <TbSettings /> Settings</button></li>
-                    <li><button onClick={onChangeBaceground}>Change background</button></li>
+                    <li>
+                        <button onClick={() => setIsColorPickerOpen(!isColorPickerOpen)}>
+                            Change background
+                        </button>
+                        {isColorPickerOpen && <ColorPicker onColorSelect={handleColorSelect} />}
+                    </li>
                     <li><button>Custom Fields</button></li>
                     <li><button>Automation</button></li>
                     <li><button>Labels</button></li>
