@@ -4,15 +4,15 @@ import { GiLightningFrequency } from "react-icons/gi";
 import { MdOutlineCollections } from "react-icons/md";
 import { IoIosArrowUp, IoMdHeartEmpty } from "react-icons/io";
 import { IoSettingsOutline } from "react-icons/io5";
-import { LuClock4, LuUsers } from "react-icons/lu";
+import { LuUsers } from "react-icons/lu";
 
 export function UppderMenu() {
     return <nav className="boards-manu">
         <div className="upper-manu">
             <ul>
-                <li className="active"><RiTrelloFill />Boards</li>
-                <li><TbTemplate />Templates</li>
-                <li><GiLightningFrequency />Home</li>
+                <li className="active"><RiTrelloFill /><a href="">Boards</a></li>
+                <li><TbTemplate /><a href="">Templates</a></li>
+                <li><GiLightningFrequency /><a href="">Home</a></li>
             </ul>
         </div>
         <div className="lower-manu">
@@ -21,14 +21,14 @@ export function UppderMenu() {
                 <div className="letter-p">P</div>PlanIt Workspace<IoIosArrowUp />
             </div>
             <ul>
-                <li><RiBriefcase5Line />Gatting started</li>
-                <li><RiTrelloFill />Boards</li>
-                <li><MdOutlineCollections />Collections</li>
-                <li><IoMdHeartEmpty />Highlights</li>
-                <li><RiGalleryView2 />Views</li>
-                <li><LuUsers />Members</li>
-                <li><IoSettingsOutline />Settings</li>
-                <li><RiBriefcase5Line />Billing</li>
+                <li><RiBriefcase5Line /><a href="">Gatting started</a></li>
+                <li><RiTrelloFill /><a href="">Boards</a></li>
+                <li><MdOutlineCollections /><a href="">Collections</a></li>
+                <li><IoMdHeartEmpty /><a href="">Highlights</a></li>
+                <li><RiGalleryView2 /><a href="">Views</a></li>
+                <li><LuUsers /><a href="">Members</a></li>
+                <li><IoSettingsOutline /><a href="">Settings</a></li>
+                <li><RiBriefcase5Line /><a href="">Billing</a></li>
             </ul>
         </div>
     </nav>
