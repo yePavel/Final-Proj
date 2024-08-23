@@ -1,8 +1,20 @@
+import React, { useState } from 'react';
 import StarIcon from '../assets/imgs/star-icon.svg';
 import DropDownIcon from '../assets/imgs/dropdown-icon.svg';
 import { MenuHeader } from './MenuHeader.jsx';
+import { Map } from './Map.jsx';
 
 export function BoardHeader({ board }) {
+    const [showMap, setShowMap] = useState(false);
+
+    const handleMapButtonClick = () => {
+        setShowMap(true);
+    };
+
+    const handleCloseMap = () => {
+        setShowMap(false);
+    };
+
     return (
         <header className="board-header">
             <div className="board-header-left">
@@ -13,9 +25,19 @@ export function BoardHeader({ board }) {
                 <button className="board-button">Calendar</button>
                 <button className="board-button">Dashboard</button>
                 <button className="board-button">Timeline</button>
-                <button className="board-button">Map</button>
+                <div className='map'>
+                    <button className="board-button" onClick={handleMapButtonClick}>Map</button>
+                </div>
+                {showMap && (
+                <div className="map-modal">
+                    <div className="map-modal-content">
+                        <button className="close-button" onClick={handleCloseMap}>Close</button>
+                        <Map />
+                    </div>
+                </div>
+            )}
                 <div className="dropdown">
-                <img src={DropDownIcon} alt="drop-down Icon" className="board-drop-down" />
+                    <img src={DropDownIcon} alt="drop-down Icon" className="board-drop-down" />
                     <div className="dropdown-content">
                         <button className="dropdown-item">Option 1</button>
                         <button className="dropdown-item">Option 2</button>

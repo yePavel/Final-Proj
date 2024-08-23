@@ -5,6 +5,11 @@ import { RiEyeLine } from "react-icons/ri";
 import { TbSettings } from "react-icons/tb";
 import { RxActivityLog } from "react-icons/rx";
 import { IoMdExit } from "react-icons/io";
+import { PiWarningCircleBold } from "react-icons/pi";
+import { MdMailOutline } from "react-icons/md";
+import { CiShare2 } from "react-icons/ci";
+import { TiArchive } from "react-icons/ti";
+import { BsArrowsCollapseVertical } from "react-icons/bs";
 import { useState } from "react";
 import { ColorPicker } from './ColorPicker';
 
@@ -31,10 +36,10 @@ export function MenuHeader({ onChangeBackground }) {
                 <button className="close-btn" onClick={toggleMenu}>×</button>
                 <h3 className='end-section'>Menu</h3>
                 <ul className='menu-actions'>
-                    <li><button>About this board</button></li>
+                    <li><button> <PiWarningCircleBold /> About this board</button></li>
                     <li><button> <RxActivityLog /> Activity</button></li>
-                    <li><button>Archived items</button></li>
-                    <li className='end-section'><button> <TbSettings /> Settings</button></li>
+                    <li className='end-section'><button> <TiArchive /> Archived items</button></li>
+                    <li><button> <TbSettings /> Settings</button></li>
                     <li>
                         <button onClick={() => setIsColorPickerOpen(!isColorPickerOpen)}>
                             Change background
@@ -46,10 +51,10 @@ export function MenuHeader({ onChangeBackground }) {
                     <li><button>Labels</button></li>
                     <li className='end-section'><button> <TbSticker /> Stickers</button></li>
                     <li><button> <RiEyeLine /> Watch</button></li>
-                    <li><button>Collapse all lists</button></li>
+                    <li><button> <BsArrowsCollapseVertical /> Collapse all lists</button></li>
                     <li><button> <LuCopy /> Copy board</button></li>
-                    <li><button>Email-to-board</button></li>
-                    <li><button>Print, export, and share</button></li>
+                    <li><button> <MdMailOutline /> Email-to-board</button></li>
+                    <li><button> <CiShare2 /> Print, export, and share</button></li>
                     <li><button> <IoMdExit /> Leave board</button></li>
                 </ul>
             </div>
