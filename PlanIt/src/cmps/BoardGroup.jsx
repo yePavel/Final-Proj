@@ -20,6 +20,8 @@ export function BoardGroup({ groups, handleBoardUpdate }) {
   if (!groups) return <div>loading</div>;
 
   return (
+    <div className="board-container">
+
     <div className="board-golders">
       {groups.map((group) => (
         <div key={group.id} className="group-card">
@@ -62,5 +64,7 @@ export function BoardGroup({ groups, handleBoardUpdate }) {
         <TaskModal taskId={selectedTaskId} onClose={handleCloseModal} />
       )}
     </div>
+    </div>
+
   );
 }
