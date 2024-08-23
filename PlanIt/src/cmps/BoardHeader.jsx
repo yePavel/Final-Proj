@@ -3,7 +3,7 @@ import StarIcon from '../assets/imgs/star-icon.svg';
 import DropDownIcon from '../assets/imgs/dropdown-icon.svg';
 import { MenuHeader } from './MenuHeader.jsx';
 import { Map } from './Map.jsx';
-// import { Calendar } from './Calendar.jsx';
+import { CustomCalendar } from './Calendar.jsx';
 
 export function BoardHeader({ board }) {
     const [showMap, setShowMap] = useState(false);
@@ -33,14 +33,14 @@ export function BoardHeader({ board }) {
                 <button className="board-button">Board</button>
                 <button className="board-button">Table</button>
                 <button className="board-button" onClick={handleCalendarButtonClick}>Calendar</button>
-                {/* {showCalendar && (
+                {showCalendar && (
                     <div className="calendar-modal">
                         <div className="calendar-modal-content">
                             <button className="close-button" onClick={handleCloseCalendar}>Close</button>
-                            <Calendar />
+                            <CustomCalendar />
                         </div>
                     </div>
-                )} */}
+                )}
                 <button className="board-button">Dashboard</button>
                 <button className="board-button">Timeline</button>
                 <div className='map'>
