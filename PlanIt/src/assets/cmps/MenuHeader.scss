@@ -1,0 +1,91 @@
+section {
+
+    .menu-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .side-menu {
+        position: fixed;
+        top: 48px;
+        right: -300px;
+        width: 300px;
+        height: 100%;
+        background-color: white;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+        transition: right 0.3s ease;
+        z-index: 2000;
+        padding: 20px;
+    }
+
+    .side-menu.open {
+        right: 0;
+    }
+
+    .close-btn {
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    h3 {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        
+        li {
+            margin-bottom: 10px;
+        }
+
+        button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            text-align: left;
+            font-size: 16px;
+
+            &:hover {
+                background-color: #f5f5f5;
+            }
+        }
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        display: none;
+    }
+
+    .overlay.show {
+        display: block;
+    }
+
+    .end-section{
+        border-bottom: 1px solid lightgray;
+        
+    }
+
+    .menu-actions{
+        font-size: 14px;
+        line-height: 20px;
+        text-align: left;
+
+        border-radius: 8px;
+    }
+}

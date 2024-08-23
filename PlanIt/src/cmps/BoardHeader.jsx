@@ -1,5 +1,6 @@
 import StarIcon from '../assets/imgs/star-icon.svg';
 import DropDownIcon from '../assets/imgs/dropdown-icon.svg';
+import { MenuHeader } from './MenuHeader.jsx';
 
 export function BoardHeader({ board }) {
     return (
@@ -30,7 +31,7 @@ export function BoardHeader({ board }) {
                     ))}
                 </div>
                 <button className="board-button">Share</button>
-                <span className="more-options">•••</span>
+                <MenuHeader />
             </div>
         </header>
     );
