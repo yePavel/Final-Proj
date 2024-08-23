@@ -1,46 +1,38 @@
 import { useEffect, useState } from "react";
 import { BoardList } from "../cmps/BoardList.jsx";
 import { useSelector } from "react-redux";
-import { loadBoards } from '../store/actions/board.actions.js'
-import { LuClock4, LuStar, LuUsers } from "react-icons/lu";
+import { loadBoards, loadStarredBoards } from '../store/actions/board.actions.js'
+import { LuClock4, LuStar } from "react-icons/lu";
 import { UppderMenu } from "../cmps/UppderMenu.jsx";
+import { StarredBoardList } from "../cmps/StarredBoardList.jsx";
 
 export function BoardIndex() {
     const boards = useSelector(storeState => storeState.boardModule.boards)
+    const starredBoards = useSelector(storeState => storeState.boardModule.starredBoards)
 
     useEffect(() => {
-        loadBoards();
+        loadBoards()
+        loadStarredBoards()
     }, []);
 
 
     return <section className="main-boards-container">
         <UppderMenu />
         <div className="board-list-container">
+
             <div className="starred-boards">
-                <div className="starred-tittle">
+                <div className="workspace-title">
                     <LuStar />
                     <h3>Starred boards</h3>
                 </div>
-                <BoardList boards={boards} />
+                <StarredBoardList boards={starredBoards} />
             </div>
+
             <div className="user-boards">
-                <div className="starred-tittle">
+                <div className="workspace-title">
                     <LuClock4 /><h3>Your workspaces</h3>
                 </div>
-                <ul className="user-boards-list">
-                    <li className="board-item">
-                        <div className="board-name">workSpace 1</div>
-                    </li>
-                    <li className="board-item">
-                        <div className="board-name">workSpace 2</div>
-                    </li>
-                    <li className="board-item">
-                        <div className="board-name">workSpace 3</div>
-                    </li>
-                    <li className="board-item">
-                        <div className="board-name">workSpace 4</div>
-                    </li>
-                </ul>
+                <BoardList boards={boards} />
             </div>
         </div>
     </section>

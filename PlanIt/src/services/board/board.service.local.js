@@ -9,7 +9,8 @@ export const boardService = {
   getById,
   save,
   remove,
-  addBoardMsg
+  addBoardMsg,
+  getStarredBoards
 }
 window.cs = boardService
 
@@ -17,7 +18,7 @@ const data = [
   {
     _id: 'b1',
     title: "Final Proj",
-    isStarred: false,
+    isStarred: true,
     archivedAt: 1589983468418,
     createdBy: {
       _id: "u101",
@@ -520,7 +521,7 @@ const data = [
               },
             ],
           },
-          
+
           {
             id: "c108",
             title: "SCSS vars",
@@ -636,9 +637,7 @@ _createBoard()
 
 
 async function query(filterBy = { title: '' }) {
-  var boards = JSON.parse(localStorage.getItem('boards'))
-  if (boards) return boards
-  boards = await storageService.query(STORAGE_KEY)
+  const boards = await storageService.query(STORAGE_KEY)
   const { title } = filterBy
 
   if (title) {
@@ -648,8 +647,14 @@ async function query(filterBy = { title: '' }) {
   return boards
 }
 
+async function getStarredBoards() {
+  const boards = await storageService.query(STORAGE_KEY)
+  var starredBoards = boards.filter(board => board.isStarred === true)
+  if (!starredBoards) return
+  return starredBoards
+}
+
 function getById(boardId) {
-  console.log('boardId:', boardId)
   return storageService.get(STORAGE_KEY, boardId)
 }
 
