@@ -6,7 +6,7 @@ export function NavItem({
   onClick,
   isDropdownOpen,
   dropdownItems,
-  onDropdownItemClick,
+  onDropdownItemClick = () => {},
   isCreateButton,
   isDropdown,
 }) {
@@ -27,7 +27,7 @@ export function NavItem({
             <div
               key={item}
               className="dropdown-item"
-              onClick={() => onDropdownItemClick(item)}
+              onClick={() => onDropdownItemClick(item) && onDropdownItemClick(item)}
             >
               {item}
             </div>
