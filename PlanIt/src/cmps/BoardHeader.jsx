@@ -4,6 +4,7 @@ import DropDownIcon from '../assets/imgs/dropdown-icon.svg';
 import { MenuHeader } from './MenuHeader.jsx';
 import { Map } from './Map.jsx';
 import { CustomCalendar } from './Calendar.jsx';
+import { AssignedMember } from './AssignedMember.jsx';
 
 export function BoardHeader({ board }) {
     const [showMap, setShowMap] = useState(false);
@@ -56,19 +57,11 @@ export function BoardHeader({ board }) {
                 )}
                 <div className="dropdown">
                     <img src={DropDownIcon} alt="drop-down Icon" className="board-drop-down" />
-                    <div className="dropdown-content">
-                        <button className="dropdown-item">Option 1</button>
-                        <button className="dropdown-item">Option 2</button>
-                    </div>
                 </div>
             </div>
             <div className="board-header-right">
-                <div className="board-members">
-                    {board.members.map((member, idx) => (
-                        <div key={idx} className="member-circle">
-                            {member.initials}
-                        </div>
-                    ))}
+                <div className='members'>
+                    <AssignedMember members={board.members} />
                 </div>
                 <button className="board-button">Share</button>
                 <MenuHeader />
