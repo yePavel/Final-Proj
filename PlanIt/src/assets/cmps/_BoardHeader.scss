@@ -18,9 +18,10 @@
         align-items: center;
 
         .board-title {
-            font-size: 1.5rem;
+            font-size: 18px;
+            line-height: 32px;
+            text-align: start;
             margin-right: 0.5rem;
-            font-weight: bold;
         }
 
         .board-star {

@@ -7,7 +7,6 @@ import { BoardGroup } from '../cmps/BoardGroup.jsx';
 import { BoardHeader } from '../cmps/BoardHeader.jsx';
 
 export function BoardDetails() {
-
     const { boardId } = useParams();
     const board = useSelector(storeState => storeState.boardModule.board);
 
@@ -17,7 +16,6 @@ export function BoardDetails() {
         loadBoard(boardId)
     }, [boardId])
 
-
     function handleBoardUpdate(updatedBoard) {
         updateBoard(updatedBoard)
             .then(updatedBoards => setBoards(updatedBoards));
@@ -26,7 +24,9 @@ export function BoardDetails() {
     if (!board) return <div>Loading...</div>;
 
     return (
-        <section className="board-list">
+        <section 
+            className="board-list" 
+            style={{ background: board.style.background || '#ffffff' }}>
             <BoardHeader board={board} />
             <div className="board-card">
                 <BoardGroup handleBoardUpdate={handleBoardUpdate} groups={board.groups} />
