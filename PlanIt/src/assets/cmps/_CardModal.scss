@@ -1,0 +1,67 @@
+.click-screen {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    scrollbar-gutter: stable;
+    overflow: scroll;
+
+    .card-details-modal {
+        height: 866px;
+        width: 768px;
+        background-color: #f0f0f0;
+        border-radius: 8px;
+        z-index: 20;
+
+        svg {
+            width: 17px;
+            height: 17px;
+            align-self: center;
+            grid-column: 1/2;
+        }
+
+        .card-header {
+            display: flex;
+            flex-direction: column;
+            min-height: 32px;
+            gap: 10px;
+            padding: 8px 52px 8px 16px;
+            position: relative;
+            z-index: 1;
+
+            .card-title {
+                display: grid;
+                grid-template-columns: 30px 1fr;
+                align-items: center;
+                font-size: 20px;
+                padding: 12px 0 0;
+
+                svg {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+
+            .card-group-info {
+                font-size: 14px;
+                margin: 0 8px 8px 2px;
+                padding-left: 33px;
+
+                span {
+                    text-decoration: underline;
+                }
+
+                svg {
+                    width: 14px;
+                    height: 14px;
+                }
+            }
+        }
+
+    }
+}

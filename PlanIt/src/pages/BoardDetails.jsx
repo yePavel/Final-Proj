@@ -31,8 +31,6 @@ export function BoardDetails() {
             <div className="add-group">
                 {isAddingGroup === board.id ? (
                     <AddGroup
-                        boardId={board.id}
-                        setBoards={setBoards}
                         onCancel={() => setIsAddingGroup(null)} />
                 ) : (
                     <button

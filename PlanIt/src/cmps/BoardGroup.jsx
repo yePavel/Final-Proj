@@ -2,17 +2,18 @@ import { useState } from "react";
 import { AddTask } from "../cmps/AddTask.jsx";
 import { LabelPreview } from "./LabelPreview.jsx";
 import { AssignedMember } from "./AssignedMember.jsx";
-import { TaskModal } from "./TaskModal.jsx";
 import { GroupMenu } from "./GroupMenu.jsx";
-import { TaskCardModal } from "./TaskCardModal.jsx";
+import { CardModal } from "./CardModal.jsx";
 
 export function BoardGroup({ groups, handleBoardUpdate }) {
   const [isAddingTask, setIsAddingTask] = useState(null);
   const [isTaskSelected, setIsTaskSelected] = useState(null)
   const [selectedTask, setSelectedTask] = useState(null);
+  const [groupName, setGroupName] = useState(null)
 
-  function handleTaskClick(task) {
+  function handleTaskClick(task, groupName) {
     setSelectedTask(task)
+    setGroupName(groupName)
     setIsTaskSelected(task.id)
   };
 
@@ -21,9 +22,6 @@ export function BoardGroup({ groups, handleBoardUpdate }) {
   };
 
   if (!groups) return <div>loading</div>;
-
-  console.log('isTaskSelected:', isTaskSelected)
-  console.log('selectedTask:', selectedTask)
 
   return (
     <div className="board-golders">
@@ -36,7 +34,7 @@ export function BoardGroup({ groups, handleBoardUpdate }) {
           <div className="tasks">
             {group.tasks.map((task) => (
               <div key={task.id} className="task"
-                onClick={() => handleTaskClick(task)}>
+                onClick={() => handleTaskClick(task, group.title)}>
                 <LabelPreview labels={task.labels} />
                 <p className="task-title">{task.title}</p>
                 <AssignedMember members={task.members} />
@@ -62,8 +60,7 @@ export function BoardGroup({ groups, handleBoardUpdate }) {
         </div>
       ))}
       {isTaskSelected && (
-        <TaskCardModal task={selectedTask} onClose={handleCloseModal} />
-        // <TaskModal taskId={selectedTaskId} onClose={handleCloseModal} />
+        <CardModal task={selectedTask} groupName={groupName} onClose={handleCloseModal} />
       )}
     </div>
   );

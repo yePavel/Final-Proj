@@ -1,212 +1,587 @@
-[
-    {
-        "_id": "b1",
-        "title": "Final Proj",
-        "isStarred": false,
-        "archivedAt": 1589983468418,
-        "createdBy": {
-            "_id": "u101",
-            "fullname": "Daniel Yacovi",
-            "imgUrl": "http://some-img"
-        },
-        "style": {
-            "backgroundImage": ""
-        },
-        "labels": [
-            {
-                "id": "l101",
-                "title": "Done",
-                "color": "#61bd4f"
+{
+    "data": [
+        {
+            "_id": "b1",
+            "title": "Final Proj",
+            "isStarred": true,
+            "archivedAt": 1589983468418,
+            "createdBy": {
+                "_id": "u101",
+                "fullname": "Daniel Yacovi",
+                "imgUrl": ""
             },
-            {
-                "id": "l102",
-                "title": "Progress",
-                "color": "#61bd33"
-            }
-        ],
-        "members": [
-            {
-                "_id": "u102",
-                "fullname": "Sean Mamistalov",
-                "imgUrl": "https://www.google.com"
+            "style": {
+                "background": ""
             },
-            {
-                "_id": "u103",
-                "fullname": "Pavel Yelsukov",
-                "imgUrl": "https://www.google.com"
-            }
-        ],
-        "groups": [
-            {
-                "id": "g101",
-                "title": "Backlog Server",
-                "archivedAt": 1589983468418,
-                "tasks": [
-                    {
-                        "id": "c101",
-                        "title": "Replace logo"
-                    },
-                    {
-                        "id": "c102",
-                        "title": "Add Samples"
-                    }
-                ],
-                "style": {}
-            },
-            {
-                "id": "g102",
-                "title": "Backlog Client",
-                "tasks": [
-                    {
-                        "id": "c103",
-                        "title": "Do that",
-                        "archivedAt": 1589983468418
-                    },
-                    {
-                        "id": "c104",
-                        "title": "Help me",
-                        "status": "inProgress",
-                        "priority": "high",
-                        "dueDate": "2024-09-24",
-                        "description": "description",
-                        "comments": [
-                            {
-                                "id": "ZdPnm",
-                                "title": "also @yaronb please CR this",
-                                "createdAt": 1590999817436,
-                                "byMember": {
+            "labels": [
+                {
+                    "id": "l101",
+                    "title": "Done",
+                    "color": "#4bce97"
+                },
+                {
+                    "id": "l102",
+                    "title": "Progress",
+                    "color": "#9f8fef"
+                },
+                {
+                    "id": "l103",
+                    "title": "Full Of Bugs",
+                    "color": "#579dff"
+                },
+                {
+                    "id": "l104",
+                    "title": "Check Befor Done",
+                    "color": "#f87168"
+                },
+                {
+                    "id": "l105",
+                    "title": "Next Round",
+                    "color": "#fea362"
+                },
+                {
+                    "id": "l106",
+                    "title": "To Do",
+                    "color": "#9f8fef"
+                }
+            ],
+            "members": [
+                {
+                    "_id": "u102",
+                    "fullname": "Sean Mamistalov",
+                    "imgUrl": ""
+                },
+                {
+                    "_id": "u103",
+                    "fullname": "Pavel Yelsukov",
+                    "imgUrl": ""
+                },
+                {
+                    "_id": "u101",
+                    "fullname": "Daniel Yacovi",
+                    "imgUrl": ""
+                }
+            ],
+            "groups": [
+                {
+                    "id": "g101",
+                    "title": "Backlog Server",
+                    "archivedAt": 1589983468418,
+                    "tasks": [
+                        {
+                            "id": "c101",
+                            "title": "Replace logo",
+                            "labels": [
+                                {
+                                    "id": "l101",
+                                    "title": "Done",
+                                    "color": "#4bce97"
+                                }
+                            ],
+                            "members": [
+                                {
+                                    "_id": "u102",
+                                    "fullname": "Sean Mamistalov",
+                                    "imgUrl": ""
+                                },
+                                {
+                                    "_id": "u103",
+                                    "fullname": "Pavel Yelsukov",
+                                    "imgUrl": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "c102",
+                            "title": "Add Samples"
+                        }
+                    ],
+                    "style": {}
+                },
+                {
+                    "id": "g102",
+                    "title": "Backlog Client",
+                    "tasks": [
+                        {
+                            "id": "c103",
+                            "title": "Do that",
+                            "archivedAt": 1589983468418,
+                            "labels": [
+                                {
+                                    "id": "l103",
+                                    "title": "full of bugs",
+                                    "color": "#579dff"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "c104",
+                            "title": "Help me",
+                            "status": "inProgress",
+                            "priority": "high",
+                            "dueDate": "2024-09-24",
+                            "description": "description",
+                            "comments": [
+                                {
+                                    "id": "ZdPnm",
+                                    "title": "also @yaronb please CR this",
+                                    "createdAt": 1590999817436,
+                                    "byMember": {
+                                        "_id": "u101",
+                                        "fullname": "Daniel Yacovi",
+                                        "imgUrl": ""
+                                    }
+                                }
+                            ],
+                            "checklists": [
+                                {
+                                    "id": "YEhmF",
+                                    "title": "Checklist",
+                                    "todos": [
+                                        {
+                                            "id": "212jX",
+                                            "title": "To Do 1",
+                                            "isDone": false
+                                        }
+                                    ]
+                                }
+                            ],
+                            "memberIds": [
+                                "u102"
+                            ],
+                            "labelIds": [
+                                "l101",
+                                "l102"
+                            ],
+                            "byMember": {
+                                "_id": "u103",
+                                "fullname": "Pavel Yelsukov",
+                                "imgUrl": ""
+                            },
+                            "style": {
+                                "backgroundColor": "#26de81"
+                            }
+                        }
+                    ],
+                    "style": {}
+                },
+                {
+                    "id": "g103",
+                    "title": "In development",
+                    "archivedAt": 1589983468418,
+                    "tasks": [
+                        {
+                            "id": "c105",
+                            "title": "Main home page"
+                        },
+                        {
+                            "id": "c106",
+                            "title": "Footer",
+                            "labels": [
+                                {
+                                    "id": "l106",
+                                    "title": "To Do",
+                                    "color": "#9f8fef"
+                                }
+                            ],
+                            "members": [
+                                {
+                                    "_id": "u103",
+                                    "fullname": "Pavel Yelsukov",
+                                    "imgUrl": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "style": {}
+                },
+                {
+                    "id": "g104",
+                    "title": "Done",
+                    "archivedAt": 1589983468418,
+                    "tasks": [
+                        {
+                            "id": "c107",
+                            "title": "Login-cmp",
+                            "labels": [
+                                {
+                                    "id": "l101",
+                                    "title": "Done",
+                                    "color": "#4bce97"
+                                }
+                            ],
+                            "members": [
+                                {
+                                    "_id": "u103",
+                                    "fullname": "Pavel Yelsukov",
+                                    "imgUrl": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "c108",
+                            "title": "SCSS vars"
+                        }
+                    ],
+                    "style": {}
+                },
+                {
+                    "id": "g105",
+                    "title": "QA",
+                    "tasks": [
+                        {
+                            "id": "c108",
+                            "title": "Conduct User Testing",
+                            "status": "pending",
+                            "priority": "high",
+                            "labels": [
+                                {
+                                    "id": "l103",
+                                    "title": "full of bugs",
+                                    "color": "#579dff"
+                                }
+                            ],
+                            "members": [
+                                {
                                     "_id": "u101",
                                     "fullname": "Daniel Yacovi",
                                     "imgUrl": ""
                                 }
-                            }
-                        ],
-                        "checklists": [
-                            {
-                                "id": "YEhmF",
-                                "title": "Checklist",
-                                "todos": [
-                                    {
-                                        "id": "212jX",
-                                        "title": "To Do 1",
-                                        "isDone": false
-                                    }
-                                ]
-                            }
-                        ],
-                        "memberIds": [
-                            "u102"
-                        ],
-                        "labelIds": [
-                            "l101",
-                            "l102"
-                        ],
-                        "byMember": {
-                            "_id": "u103",
-                            "fullname": "Pavel Yelsukov",
-                            "imgUrl": ""
+                            ]
                         },
-                        "style": {
-                            "backgroundColor": "#26de81"
+                        {
+                            "id": "c109",
+                            "title": "Bug Fixes",
+                            "status": "pending",
+                            "priority": "high"
                         }
-                    }
-                ],
-                "style": {}
-            },
-            {
-                "id": "g103",
-                "title": "In development",
-                "archivedAt": 1589983468418,
-                "tasks": [
-                    {
-                        "id": "c105",
-                        "title": "Main home page"
+                    ],
+                    "style": {}
+                },
+                {
+                    "id": "g106",
+                    "title": "Ready for Production",
+                    "tasks": [
+                        {
+                            "id": "c110",
+                            "title": "Finalize Documentation",
+                            "status": "pending",
+                            "labels": [
+                                {
+                                    "id": "l105",
+                                    "title": "Next Round",
+                                    "color": "#fea362"
+                                }
+                            ],
+                            "members": [
+                                {
+                                    "_id": "u101",
+                                    "fullname": "Daniel Yacovi",
+                                    "imgUrl": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "c114",
+                            "title": "Deploy to Staging",
+                            "status": "pending",
+                            "priority": "high",
+                            "labels": [
+                                {
+                                    "id": "l104",
+                                    "title": "Check Befor Done",
+                                    "color": "#f87168"
+                                }
+                            ],
+                            "members": [
+                                {
+                                    "_id": "u102",
+                                    "fullname": "Sean Mamistalov",
+                                    "imgUrl": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "style": {}
+                }
+            ],
+            "activities": [
+                {
+                    "id": "a101",
+                    "title": "Changed Color",
+                    "createdAt": 154514,
+                    "byMember": {
+                        "_id": "u101",
+                        "fullname": "Daniel Yacovi",
+                        "imgUrl": ""
                     },
-                    {
-                        "id": "c106",
-                        "title": "Footer"
-                    }
-                ],
-                "style": {}
-            },
-            {
-                "id": "g104",
-                "title": "Done",
-                "archivedAt": 1589983468418,
-                "tasks": [
-                    {
-                        "id": "c107",
-                        "title": "Login-cmp"
+                    "group": {
+                        "id": "g101",
+                        "title": "Backlog Server"
                     },
-                    {
-                        "id": "c108",
-                        "title": "SCSS vars"
+                    "task": {
+                        "id": "c101",
+                        "title": "Replace Logo"
                     }
-                ],
-                "style": {}
+                }
+            ],
+            "cmpsOrder": [
+                "StatusPicker",
+                "MemberPicker",
+                "DatePicker"
+            ]
+        },
+        {
+            "_id": "b2",
+            "title": "Coding",
+            "isStarred": false,
+            "archivedAt": 1589983468418,
+            "createdBy": {
+                "_id": "u101",
+                "fullname": "Daniel Yacovi",
+                "imgUrl": ""
             },
-            {
-                "id": "g105",
-                "title": "QA",
-                "tasks": [
-                    {
-                        "id": "c108",
-                        "title": "Conduct User Testing",
-                        "status": "pending",
-                        "priority": "high"
-                    },
-                    {
-                        "id": "c109",
-                        "title": "Bug Fixes",
-                        "status": "pending",
-                        "priority": "high"
-                    }
-                ],
-                "style": {}
+            "style": {
+                "backgroundImage": ""
             },
-            {
-                "id": "g106",
-                "title": "Ready for Production",
-                "tasks": [
-                    {
-                        "id": "c110",
-                        "title": "Finalize Documentation",
-                        "status": "pending"
-                    },
-                    {
-                        "id": "c114",
-                        "title": "Deploy to Staging",
-                        "status": "pending",
-                        "priority": "high"
-                    }
-                ],
-                "style": {}
-            }
-        ],
-        "activities": [
-            {
-                "id": "a101",
-                "title": "Changed Color",
-                "createdAt": 154514,
-                "byMember": {
+            "labels": [
+                {
+                    "id": "l101",
+                    "title": "Done",
+                    "color": "#4bce97"
+                },
+                {
+                    "id": "l102",
+                    "title": "Progress",
+                    "color": "#9f8fef"
+                },
+                {
+                    "id": "l103",
+                    "title": "Full Of Bugs",
+                    "color": "#579dff"
+                },
+                {
+                    "id": "l104",
+                    "title": "Check Befor Done",
+                    "color": "#f87168"
+                },
+                {
+                    "id": "l105",
+                    "title": "Next Round",
+                    "color": "#fea362"
+                },
+                {
+                    "id": "l106",
+                    "title": "To Do",
+                    "color": "#9f8fef"
+                }
+            ],
+            "members": [
+                {
+                    "_id": "u102",
+                    "fullname": "Sean Mamistalov",
+                    "imgUrl": ""
+                },
+                {
+                    "_id": "u103",
+                    "fullname": "Pavel Yelsukov",
+                    "imgUrl": ""
+                },
+                {
                     "_id": "u101",
                     "fullname": "Daniel Yacovi",
-                    "imgUrl": "http://some-img"
-                },
-                "group": {
-                    "id": "g101",
-                    "title": "Backlog Server"
-                },
-                "task": {
-                    "id": "c101",
-                    "title": "Replace Logo"
+                    "imgUrl": ""
                 }
-            }
-        ],
-        "cmpsOrder": [
-            "StatusPicker",
-            "MemberPicker",
-            "DatePicker"
-        ]
-    }
-]
+            ],
+            "groups": [
+                {
+                    "id": "g101",
+                    "title": "Backlog Server",
+                    "archivedAt": 1589983468418,
+                    "tasks": [
+                        {
+                            "id": "c101",
+                            "title": "Replace logo",
+                            "labels": [
+                                {
+                                    "id": "l101",
+                                    "title": "Done",
+                                    "color": "#4bce97"
+                                }
+                            ],
+                            "members": [
+                                {
+                                    "_id": "u102",
+                                    "fullname": "Sean Mamistalov",
+                                    "imgUrl": ""
+                                },
+                                {
+                                    "_id": "u103",
+                                    "fullname": "Pavel Yelsukov",
+                                    "imgUrl": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "c102",
+                            "title": "Add Samples"
+                        }
+                    ],
+                    "style": {}
+                },
+                {
+                    "id": "g102",
+                    "title": "Backlog Client",
+                    "tasks": [
+                        {
+                            "id": "c103",
+                            "title": "Do that",
+                            "archivedAt": 1589983468418,
+                            "labels": [
+                                {
+                                    "id": "l103",
+                                    "title": "full of bugs",
+                                    "color": "#579dff"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "c104",
+                            "title": "Help me",
+                            "status": "inProgress",
+                            "priority": "high",
+                            "dueDate": "2024-09-24",
+                            "description": "description",
+                            "comments": [
+                                {
+                                    "id": "ZdPnm",
+                                    "title": "also @yaronb please CR this",
+                                    "createdAt": 1590999817436,
+                                    "byMember": {
+                                        "_id": "u101",
+                                        "fullname": "Daniel Yacovi",
+                                        "imgUrl": ""
+                                    }
+                                }
+                            ],
+                            "checklists": [
+                                {
+                                    "id": "YEhmF",
+                                    "title": "Checklist",
+                                    "todos": [
+                                        {
+                                            "id": "212jX",
+                                            "title": "To Do 1",
+                                            "isDone": false
+                                        }
+                                    ]
+                                }
+                            ],
+                            "memberIds": [
+                                "u102"
+                            ],
+                            "labelIds": [
+                                "l101",
+                                "l102"
+                            ],
+                            "byMember": {
+                                "_id": "u103",
+                                "fullname": "Pavel Yelsukov",
+                                "imgUrl": ""
+                            },
+                            "style": {
+                                "backgroundColor": "#26de81"
+                            }
+                        }
+                    ],
+                    "style": {}
+                },
+                {
+                    "id": "g103",
+                    "title": "In development",
+                    "archivedAt": 1589983468418,
+                    "tasks": [
+                        {
+                            "id": "c105",
+                            "title": "Main home page"
+                        },
+                        {
+                            "id": "c106",
+                            "title": "Footer",
+                            "labels": [
+                                {
+                                    "id": "l106",
+                                    "title": "To Do",
+                                    "color": "#9f8fef"
+                                }
+                            ],
+                            "members": [
+                                {
+                                    "_id": "u103",
+                                    "fullname": "Pavel Yelsukov",
+                                    "imgUrl": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "style": {}
+                },
+                {
+                    "id": "g104",
+                    "title": "Done",
+                    "archivedAt": 1589983468418,
+                    "tasks": [
+                        {
+                            "id": "c107",
+                            "title": "Login-cmp",
+                            "labels": [
+                                {
+                                    "id": "l101",
+                                    "title": "Done",
+                                    "color": "#4bce97"
+                                }
+                            ],
+                            "members": [
+                                {
+                                    "_id": "u103",
+                                    "fullname": "Pavel Yelsukov",
+                                    "imgUrl": ""
+                                }
+                            ]
+                        },
+                        {
+                            "id": "c108",
+                            "title": "SCSS vars"
+                        }
+                    ],
+                    "style": {}
+                }
+            ],
+            "activities": [
+                {
+                    "id": "a101",
+                    "title": "Changed Color",
+                    "createdAt": 154514,
+                    "byMember": {
+                        "_id": "u101",
+                        "fullname": "Daniel Yacovi",
+                        "imgUrl": ""
+                    },
+                    "group": {
+                        "id": "g101",
+                        "title": "Backlog Server"
+                    },
+                    "task": {
+                        "id": "c101",
+                        "title": "Replace Logo"
+                    }
+                }
+            ],
+            "cmpsOrder": [
+                "StatusPicker",
+                "MemberPicker",
+                "DatePicker"
+            ]
+        }
+    ]
+}

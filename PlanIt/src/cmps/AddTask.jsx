@@ -26,7 +26,6 @@ export function AddTask({ groupId, onCancel, handleBoardUpdate }) {
         onCancel();
     };
 
-
     return (
         <section className="task-input">
             <input

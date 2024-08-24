@@ -1,5 +1,5 @@
 import { storageService } from '../async-storage.service'
-import { makeId, saveToStorage } from '../util.service'
+import { loadFromStorage, makeId, saveToStorage } from '../util.service'
 import { userService } from '../user'
 
 const STORAGE_KEY = 'board'
@@ -92,6 +92,11 @@ const data = [
                 title: "Done",
                 color: "#4bce97",
               },
+              {
+                id: "l104",
+                title: "Check Befor Done",
+                color: "#f87168",
+              },
             ],
             members: [
               {
@@ -136,7 +141,7 @@ const data = [
             status: "inProgress",
             priority: "high",
             dueDate: "2024-09-24",
-            description: "description",
+            description: "Please help me to fix this bug",
             comments: [
               {
                 id: "ZdPnm",
@@ -624,7 +629,6 @@ const data = [
 
 _createBoard()
 
-
 // export const getProjectData = () => {
 //   const storedData = localStorage.getItem('boards')
 //   if (storedData) {
@@ -687,5 +691,8 @@ async function addBoardMsg(boardId, txt) {
 }
 
 function _createBoard() {
-  saveToStorage(STORAGE_KEY, data)
+  let boards = loadFromStorage(STORAGE_KEY)
+  if (!boards || !boards.length) {
+    saveToStorage(STORAGE_KEY, data)
+  }
 }

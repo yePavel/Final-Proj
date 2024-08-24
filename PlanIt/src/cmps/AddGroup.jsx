@@ -1,34 +1,24 @@
 import { useState } from "react";
-import { boardService } from "../services/board/board.service.local.js";
+import { useSelector } from "react-redux";
+import { updateBoard } from "../store/actions/board.actions.js";
 
-export function AddGroup({ boardId, boards, setBoards, onCancel }) {
+export function AddGroup({ onCancel }) {
     const [groupTitle, setGroupTitle] = useState("");
+    const board = useSelector(storeState => storeState.boardModule.board)
 
     async function addGroup() {
-        {
-            const updatedBoards = boards.map((board) => {
-                if (board.id === boardId) {
-                    const newGroup = {
-                        id: Date.now(),
-                        title: groupTitle,
-                        tasks: [],
-                    };
-                    return {
-                        ...board,
-                        groups: [...board.groups, newGroup],
-                    };
-                }
-                return board;
-            });
+        const { groups } = board
 
-            setBoards(updatedBoards);
-
-            localStorage.setItem('boards', JSON.stringify(updatedBoards));
-
-            await boardService.save(updatedBoards);
-
-            onCancel();
-        };
+        const updatedGroup = {
+            id: Date.now(),
+            title: groupTitle,
+            tasks: [],
+        }
+        const updatedBoard = {
+            ...board,
+            groups: [...groups, updatedGroup]
+        }
+        updateBoard(updatedBoard)
     }
 
     return (
@@ -39,8 +29,10 @@ export function AddGroup({ boardId, boards, setBoards, onCancel }) {
                 onChange={(e) => setGroupTitle(e.target.value)}
                 placeholder="Enter list title"
             />
-            <button onClick={addGroup}>Add List</button>
-            <button onClick={onCancel}>X</button>
+            <button onClick={() => addGroup()}>Add List</button>
+            <button onClick={() => onCancel()}>X</button>
         </section>
     );
 }
+
+
