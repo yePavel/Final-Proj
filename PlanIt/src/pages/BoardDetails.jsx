@@ -7,20 +7,28 @@ import { BoardGroup } from '../cmps/BoardGroup.jsx';
 import { BoardHeader } from '../cmps/BoardHeader.jsx';
 
 export function BoardDetails() {
-    const { boardId } = useParams()
-    const board = useSelector(storeState => storeState.boardModule.board)
+    const [boards, setBoards] = useState([]);
+    const { boardId } = useParams();
+    const board = useSelector(storeState => storeState.boardModule.board);
 
     const [isAddingGroup, setIsAddingGroup] = useState(null);
-
     useEffect(() => {
-        loadBoard(boardId)
-    }, [boardId])
+        async function fetchBoard() {
+            const loadedBoard = await loadBoard(boardId);
+            if (loadedBoard && loadedBoard.boards) {
+                setBoards(loadedBoard.boards);
+            }
+        }
+        fetchBoard();
+    }, [boardId]);
+    
 
-    function handleBoardUpdate(board) {
-        updateBoard(board)
+    function handleBoardUpdate(updatedBoard) {
+        updateBoard(updatedBoard)
+            .then(updatedBoards => setBoards(updatedBoards));
     }
 
-    if (!board) return <div>Loading...</div>
+    if (!board) return <div>Loading...</div>;
 
     return (
         <section className="board-list">
@@ -30,10 +38,13 @@ export function BoardDetails() {
             </div>
             <div className="add-group">
                 {isAddingGroup === board.id ? (
-                    <AddGroup
-                        boardId={board.id}
-                        setBoards={setBoards}
-                        onCancel={() => setIsAddingGroup(null)} />
+                  <AddGroup
+                  boardId={board.id}
+                  boards={boards}
+                  setBoards={setBoards}
+                  onCancel={() => setIsAddingGroup(null)} 
+              />
+              
                 ) : (
                     <button
                         onClick={() => setIsAddingGroup(board.id)}

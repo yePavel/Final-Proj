@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import StarIcon from '../assets/imgs/star-icon.svg';
 import DropDownIcon from '../assets/imgs/dropdown-icon.svg';
 import { MenuHeader } from './MenuHeader.jsx';

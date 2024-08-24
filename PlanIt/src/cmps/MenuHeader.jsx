@@ -13,7 +13,11 @@ import { BsArrowsCollapseVertical } from "react-icons/bs";
 import { useState } from "react";
 import { ColorPicker } from './ColorPicker';
 
-export function MenuHeader({ onChangeBackground }) {
+import { useDispatch } from 'react-redux';
+import { setBackgroundColor } from '../store/actions/board.actions';
+
+export function MenuHeader() {
+    const dispatch = useDispatch();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isColorPickerOpen, setIsColorPickerOpen] = useState(false);
 
@@ -23,7 +27,7 @@ export function MenuHeader({ onChangeBackground }) {
     }
 
     function handleColorSelect(color) {
-        onChangeBackground(color);
+        dispatch(setBackgroundColor(color));
         setIsColorPickerOpen(false);
     }
 
