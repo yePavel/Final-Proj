@@ -1,5 +1,3 @@
-
-
 export function AssignedMember({ members }) {
 
     function getInitials(fullname) {
