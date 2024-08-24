@@ -1,6 +1,6 @@
 import { boardService } from '../../services/board'
 import { store } from '../store'
-import { ADD_BOARD, REMOVE_BOARD, SET_BOARDS, SET_BOARD, UPDATE_BOARD, ADD_BOARD_MSG, SET_STARRED, ADD_STARRED_BOARD, REMOVE_STARRED_BOARD } from '../reducers/board.reducer'
+import { ADD_BOARD, REMOVE_BOARD, SET_BOARDS, SET_BOARD, UPDATE_BOARD, ADD_BOARD_MSG, SET_STARRED, ADD_STARRED_BOARD, REMOVE_STARRED_BOARD, SET_BACKGROUND_COLOR } from '../reducers/board.reducer'
 
 export async function loadBoards(filterBy) {
     try {
@@ -96,6 +96,15 @@ export async function removeStaredBoard(board) {
     }
 }
 
+export async function setBackgroundColor(color) {
+    try {
+        store.dispatch(getCmdSetBackgroundColor(color));
+    } catch (err) {
+        console.log('Cannot set background color', err);
+        throw err;
+    }
+}
+
 // Command Creators:
 function getCmdSetBoards(boards) {
     return {
@@ -154,6 +163,13 @@ function getCmdAddBoardMsg(msg) {
         type: ADD_BOARD_MSG,
         msg
     }
+}
+
+function getCmdSetBackgroundColor(color) {
+    return {
+        type: SET_BACKGROUND_COLOR,
+        color
+    };
 }
 
 // unitTestActions()

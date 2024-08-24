@@ -9,10 +9,13 @@ export const SET_STARRED = 'SET_STARRED'
 export const ADD_STARRED_BOARD = 'ADD_STARRED_BOARD'
 export const REMOVE_STARRED_BOARD = 'REMOVE_STARRED_BOARD'
 
+export const SET_BACKGROUND_COLOR = 'SET_BACKGROUND_COLOR'
+
 const initialState = {
     boards: [],
     board: null,
-    starredBoards: []
+    starredBoards: [],
+    backgroundColor: '#ffffff'
 }
 
 export function boardReducer(state = initialState, action) {
@@ -54,6 +57,9 @@ export function boardReducer(state = initialState, action) {
             var starredItems = state.starredBoards.filter(board => board._id !== action.board._id)
             const updatedState = { ...state, starredBoards: starredItems }
             newState = { ...updatedState, boards: [...updatedState.boards, action.board] }
+        case SET_BACKGROUND_COLOR:
+            newState = { ...state, backgroundColor: action.color };
+            break;
         default:
     }
     return newState
