@@ -21,7 +21,7 @@ export function UppderMenu() {
                 <div className="letter-p">P</div>PlanIt Workspace<IoIosArrowUp />
             </div>
             <ul>
-                <li><RiBriefcase5Line /><a href="">Gatting started</a></li>
+                <li><RiBriefcase5Line /><a href="">Getting started</a></li>
                 <li><RiTrelloFill /><a href="">Boards</a></li>
                 <li><MdOutlineCollections /><a href="">Collections</a></li>
                 <li><IoMdHeartEmpty /><a href="">Highlights</a></li>

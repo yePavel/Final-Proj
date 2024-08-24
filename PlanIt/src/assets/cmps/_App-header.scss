@@ -35,11 +35,11 @@
       gap: 6px;
 
       svg {
-        fill: #44546F;
+        fill: #44546f;
       }
 
       .hover-icon {
-        fill: #44546F;
+        fill: #44546f;
         transition: opacity 0.3s ease-in-out;
         animation: moveAnimation 2s infinite;
         width: 100%;
@@ -54,7 +54,7 @@
     .logo {
       font-size: 20px;
       font-weight: bold;
-      color: #44546F;
+      color: #44546f;
       margin-right: 20px;
       text-decoration: none;
     }
@@ -253,4 +253,17 @@
 .hover-icon {
   display: flex;
   align-items: center;
+}
+
+.dropdown-item {
+  flex: 1;
+  color: #172b4d;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: start;
+  letter-spacing: normal;
+  font-size: 14px;
+  line-height: 20px;
+  width: 18px;
 }

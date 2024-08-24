@@ -230,3 +230,62 @@
         }
     }
 }
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .main-boards-container {
+      grid-template-columns: 1fr minmax(250px, 290px) 1fr;
+  
+      .boards-manu {
+        max-width: 250px; 
+      }
+  
+      .board-list-container {
+        margin: 40px 8px 0; 
+      }
+  
+      .board-list-container ul {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .main-boards-container {
+      grid-template-columns: 1fr;
+      padding: 0;
+    }
+  
+    .boards-manu {
+      grid-column: auto;
+      max-width: 100%; 
+      padding: 8px; 
+    }
+  
+    .board-list-container {
+      margin: 20px 8px 0;
+    }
+  
+    .board-list-container ul {
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); 
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .boards-manu {
+      font-size: 12px; 
+    }
+  
+    .board-list-container {
+      margin: 10px 4px 0; 
+    }
+  
+    .board-list-container ul {
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+  
+    .workspace-title h3 {
+      font-size: 14px;
+    }
+  }
+  
