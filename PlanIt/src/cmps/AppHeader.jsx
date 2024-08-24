@@ -1,14 +1,17 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Notifications } from "./Notifications";
-import { NavItem } from "./NavItem";
+// src/components/AppHeader.js
+
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Notifications } from './Notifications';
+import { NavItem } from './NavItem';
+import { SearchComponent } from './SearchComponent'; // Import the SearchComponent
 
 export function AppHeader() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [notifications, setNotifications] = useState([
-    "New comment on your task",
-    "Task deadline approaching",
-    "You were mentioned in a board",
+    'New comment on your task',
+    'Task deadline approaching',
+    'You were mentioned in a board',
   ]);
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
 
@@ -20,11 +23,11 @@ export function AppHeader() {
 
   const handleBoardSelection = () => {
     setIsDropdownOpen(false);
-    navigate("/boards");
+    navigate('/boards');
   };
 
   const handleMenuClick = () => {
-    navigate("/boards");
+    navigate('/boards');
   };
 
   const handleNotificationClick = () => {
@@ -35,7 +38,7 @@ export function AppHeader() {
   };
 
   const getInitials = (name) => {
-    const nameParts = name.split(" ");
+    const nameParts = name.split(' ');
     if (nameParts.length > 1) {
       const firstInitial = nameParts[0][0].toUpperCase();
       const lastInitial = nameParts[nameParts.length - 1][0].toUpperCase();
@@ -45,8 +48,13 @@ export function AppHeader() {
     }
   };
 
-  const userName = "Sean Mamistalov";
+  const userName = 'Sean Mamistalov';
   const initials = getInitials(userName);
+
+  // Handler for search results
+  const handleSearchResults = (results) => {
+    console.log('Search results:', results);
+  };
 
   return (
     <header className="app-header">
@@ -109,7 +117,7 @@ export function AppHeader() {
       </div>
 
       <div className="right-section">
-        <input type="text" className="search-bar" placeholder="Search..." />
+        <SearchComponent onSearchResults={handleSearchResults} />
         <div className="icon-container">
           <Notifications
             notifications={notifications}
