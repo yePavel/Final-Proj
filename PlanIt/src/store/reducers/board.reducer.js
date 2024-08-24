@@ -15,7 +15,7 @@ const initialState = {
     boards: [],
     board: null,
     starredBoards: [],
-    backgroundColor: '#ffffff'
+    backgroundColor: '#ffffff',
 }
 
 export function boardReducer(state = initialState, action) {
@@ -57,9 +57,10 @@ export function boardReducer(state = initialState, action) {
             var starredItems = state.starredBoards.filter(board => board._id !== action.board._id)
             const updatedState = { ...state, starredBoards: starredItems }
             newState = { ...updatedState, boards: [...updatedState.boards, action.board] }
-        case SET_BACKGROUND_COLOR:
-            newState = { ...state, backgroundColor: action.color };
-            break;
+            break
+            case SET_BACKGROUND_COLOR:
+                return { ...state, backgroundColor: action.color };
+            break
         default:
     }
     return newState

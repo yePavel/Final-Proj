@@ -10,7 +10,8 @@ export function ColorPicker({ onColorSelect }) {
         "#cd5a91",
         "#4bbf6b",
         "#00aecc",
-        "#838c91"];
+        "#838c91"
+    ];
         
     return (
         <div className="color-picker">
