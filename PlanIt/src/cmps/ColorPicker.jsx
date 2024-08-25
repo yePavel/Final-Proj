@@ -1,6 +1,5 @@
-import { useState } from "react";
-
 export function ColorPicker({ onColorSelect }) {
+
     const colors = [
         "#0079bf",
         "#d29034",
@@ -10,7 +9,8 @@ export function ColorPicker({ onColorSelect }) {
         "#cd5a91",
         "#4bbf6b",
         "#00aecc",
-        "#838c91"
+        "#838c91",
+        "#ffffff"
     ];
         
     return (

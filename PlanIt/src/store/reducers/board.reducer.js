@@ -19,6 +19,8 @@ const initialState = {
 }
 
 export function boardReducer(state = initialState, action) {
+
+    console.log(action, state)
     var newState = state
     var boards
     switch (action.type) {
@@ -58,8 +60,17 @@ export function boardReducer(state = initialState, action) {
             const updatedState = { ...state, starredBoards: starredItems }
             newState = { ...updatedState, boards: [...updatedState.boards, action.board] }
             break
-            case SET_BACKGROUND_COLOR:
-                return { ...state, backgroundColor: action.color };
+        case SET_BACKGROUND_COLOR:
+            return {
+                ...state,
+                board: {
+                    ...state.board,
+                    style: {
+                        ...state.board.style,
+                        background: action.color
+                    }
+                }
+            };
             break
         default:
     }
@@ -92,4 +103,3 @@ function unitTestReducer() {
     state = boardReducer(state, { type: REMOVE_BOARD, boardId: board1._id })
     console.log('After REMOVE_BOARD:', state)
 }
-

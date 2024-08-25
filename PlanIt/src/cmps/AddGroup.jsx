@@ -19,6 +19,7 @@ export function AddGroup({ onCancel }) {
             groups: [...groups, updatedGroup]
         }
         updateBoard(updatedBoard)
+        setGroupTitle("")
     }
 
     return (

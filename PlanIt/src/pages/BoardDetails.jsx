@@ -21,6 +21,8 @@ export function BoardDetails() {
             .then(updatedBoards => setBoards(updatedBoards));
     }
 
+    console.log({board})
+
     if (!board) return <div>Loading...</div>;
 
     return (
