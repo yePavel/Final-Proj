@@ -6,7 +6,6 @@ export async function loadTask(boardId, groupId, taskId) {
 
     try {
         const task = await taskService.query(boardId, groupId, taskId)
-        console.log('task:', task)
         store.dispatch({ type: SET_TASK, task })
     } catch (err) {
         console.log('Task: err in loadTask', err)
