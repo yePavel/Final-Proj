@@ -20,7 +20,6 @@ const initialState = {
 
 export function boardReducer(state = initialState, action) {
 
-    console.log(action, state)
     var newState = state
     var boards
     switch (action.type) {

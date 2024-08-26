@@ -3,9 +3,10 @@ import { PiSubtitlesBold } from "react-icons/pi";
 import { IoEyeOutline } from "react-icons/io5";
 import { CardMainCol } from "./CardMainCol";
 import { CardSideBar } from "./CardSideBar";
+import { useSelector } from "react-redux";
 
-export function CardModal({ task, groupName, onClose }) {
-    if (!task) return null;
+export function CardModal({ groupName, onClose }) {
+    const currTask = useSelector(storeState => storeState.taskModule.task)
 
     return (
         <section className="click-screen" onClick={onClose} >
@@ -13,11 +14,11 @@ export function CardModal({ task, groupName, onClose }) {
                 <div className="card-header">
                     <div className="card-title">
                         <PiSubtitlesBold />
-                        <span>{task.title}</span>
+                        <span>{currTask.title}</span>
                     </div>
                     <div className="card-group-info">in list: <span>{`${groupName}`}</span>  <IoEyeOutline /></div>
                 </div>
-                <CardMainCol task={task} />
+                <CardMainCol />
                 <CardSideBar />
             </div>
         </section>

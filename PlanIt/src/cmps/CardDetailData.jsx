@@ -1,8 +1,10 @@
+import { useSelector } from "react-redux"
 import { AssignedMember } from "./AssignedMember"
 import { LabelPreview } from "./LabelPreview"
 
 
-export function CardDetailData({ task }) {
+export function CardDetailData() {
+    const task = useSelector(storeState => storeState.taskModule.task)
 
     return <div className="card-detail-data">
         {task.members &&
