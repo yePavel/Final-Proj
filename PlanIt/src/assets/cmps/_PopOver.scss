@@ -1,0 +1,95 @@
+.pop-over {
+    position: absolute;
+    display: block;
+    width: max-content;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 304px;
+    z-index: 50;
+
+    .pop-header {
+        display: grid;
+        position: relative;
+        align-items: center;
+        grid-template-columns: 32px 1fr 32px;
+        padding: 4px 8px;
+        text-align: center;
+
+        h3 {
+            display: block;
+            position: relative;
+            grid-row: 1;
+
+            height: 40px;
+            margin: 0;
+            padding: 0 32px;
+
+            font-size: 14px;
+            font-weight: 600;
+            grid-column: 1 / span 3;
+            line-height: 40px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color: #44546f;
+            z-index: 60;
+        }
+    }
+
+    .pop-content-container {
+        max-height: 579px;
+        padding: 0 12px 12px;
+        font-size: 14px;
+
+        input {
+            display: block;
+            margin: 4px 0 12px;
+            width: 100%;
+
+            background-color: #fff;
+            border: none;
+            border-radius: 3px;
+            box-shadow: inset 0 0 0 1px rgb(9 30 66 / 50%);
+            line-height: 20px;
+            margin-bottom: 12px;
+            padding: 8px 12px;
+
+            &:focus-visible {
+                outline-color: #388bff;
+            }
+        }
+
+        h4 {
+            margin: 0 0 8px;
+            margin-top: 16px;
+            color: #44546f;
+            font-size: 12px;
+            line-height: 16px;
+            font-weight: 600;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                button {
+                    .member {
+                        margin-right: 8px;
+                    }
+
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: flex-start;
+                    width: 100%;
+                    height: 40px;
+                    margin: 0;
+                    padding: 4px 8px 4px 4px;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}

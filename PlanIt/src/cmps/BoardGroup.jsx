@@ -70,6 +70,5 @@ export function BoardGroup({ groups, handleBoardUpdate }) {
         )}
       </div>
     </div>
-
   );
 }
