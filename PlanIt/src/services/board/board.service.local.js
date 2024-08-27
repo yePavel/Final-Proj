@@ -64,16 +64,19 @@ const data = [
       {
         _id: "u102",
         fullname: "Sean Mamistalov",
+        color: 'red',
         imgUrl: "",
       },
       {
         _id: "u103",
         fullname: "Pavel Yelsukov",
+        color: 'green',
         imgUrl: "",
       },
       {
         _id: "u101",
         fullname: "Daniel Yacovi",
+        color: 'blue',
         imgUrl: "",
       },
     ],
@@ -102,11 +105,13 @@ const data = [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
+                color: 'red',
                 imgUrl: "",
               },
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
+                color: 'green',
                 imgUrl: "",
               },
             ]
@@ -172,6 +177,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
+              color: 'green',
               imgUrl: "",
             },
             style: {
@@ -204,6 +210,7 @@ const data = [
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
+                color: 'green',
                 imgUrl: "",
               },
             ],
@@ -230,6 +237,7 @@ const data = [
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
+                color: 'green',
                 imgUrl: "",
               },
             ],
@@ -261,6 +269,7 @@ const data = [
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
+                color: 'blue',
                 imgUrl: "",
               },
             ],
@@ -293,6 +302,7 @@ const data = [
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
+                color: 'blue',
                 imgUrl: "",
               },
             ],
@@ -313,6 +323,7 @@ const data = [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
+                color: 'green',
                 imgUrl: "",
               },
             ],
@@ -392,16 +403,19 @@ const data = [
       {
         _id: "u102",
         fullname: "Sean Mamistalov",
+        color: 'red',
         imgUrl: "",
       },
       {
         _id: "u103",
         fullname: "Pavel Yelsukov",
+        color: 'green',
         imgUrl: "",
       },
       {
         _id: "u101",
         fullname: "Daniel Yacovi",
+        color: 'blue',
         imgUrl: "",
       },
     ],
@@ -468,6 +482,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
+              color: 'green',
               imgUrl: "",
             },
             style: {
@@ -512,16 +527,19 @@ const data = [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
+                color: 'red',
                 imgUrl: "",
               },
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
+                color: 'green',
                 imgUrl: "",
               },
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
+                color: 'blue',
                 imgUrl: "",
               },
             ],
@@ -541,16 +559,19 @@ const data = [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
+                color: 'red',
                 imgUrl: "",
               },
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
+                color: 'green',
                 imgUrl: "",
               },
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
+                color: 'blue',
                 imgUrl: "",
               },
             ],
@@ -611,6 +632,7 @@ const data = [
         byMember: {
           _id: "u101",
           fullname: "Daniel Yacovi",
+          color: 'blue',
           imgUrl: "",
         },
         group: {

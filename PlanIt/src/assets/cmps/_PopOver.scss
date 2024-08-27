@@ -75,6 +75,8 @@
 
             li {
                 button {
+                    flex: 1;
+
                     .member {
                         margin-right: 8px;
                     }
@@ -87,7 +89,10 @@
                     height: 40px;
                     margin: 0;
                     padding: 4px 8px 4px 4px;
-                    background-color: transparent;
+
+                    .remove-user {
+                        justify-content: right;
+                    }
                 }
             }
         }

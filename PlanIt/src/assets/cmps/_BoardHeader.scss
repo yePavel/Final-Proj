@@ -103,19 +103,21 @@
         align-items: center;
     }
 }
+
 .members {
     display: flex;
     align-items: center;
 }
 
 .member {
+    display: flex;
     width: 30px;
     height: 30px;
     border-radius: 50%;
     background-color: #ccc;
-    display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff; 
+    color: #fff;
     text-align: center;
+    font-size: 14px;
 }

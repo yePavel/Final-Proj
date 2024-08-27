@@ -1,14 +1,12 @@
-export function AssignedMember({ members }) {
+import { getInitials } from "../services/util.service";
 
-    function getInitials(fullname) {
-        const nameParts = fullname.split(" ");
-        const initials = nameParts.map((part) => part[0].toUpperCase()).join("");
-        return initials;
-    };
+
+export function AssignedMember({ members }) {
 
     return <div className="members">
         {members?.map((member) => (
-            <div key={member._id} className="member">
+            <div key={member._id} className="member"
+                style={{ backgroundColor: `${member.color}`, color: 'white' }}>
                 {getInitials(member.fullname)}
             </div>
         ))}

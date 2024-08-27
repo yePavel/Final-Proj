@@ -2,13 +2,11 @@ import { useEffect, useState } from "react";
 import { BiLabel } from "react-icons/bi";
 import { GoChecklist } from "react-icons/go";
 import { LuUser2 } from "react-icons/lu";
-import { useSelector } from "react-redux";
 import { useClick, useFloating, useInteractions, computePosition, autoUpdate } from "@floating-ui/react";
-import { PopOver } from "./PopOver.jsx";
+import { MainPopOver } from "./MainPopOver.jsx";
 
 
 export function CardSideBar() {
-    const task = useSelector(storeState => storeState.taskModule.task)
     const [isOpen, setIsOpen] = useState(false);
     const [chosenBtn, setChosenBtn] = useState(null)
 
@@ -70,7 +68,7 @@ export function CardSideBar() {
                         style={floatingStyles}
                         {...getFloatingProps()}
                     >
-                        <PopOver />
+                        <MainPopOver chosenCmp={chosenBtn} />
                     </div>
                 )}
             </section>

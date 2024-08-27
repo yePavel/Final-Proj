@@ -51,3 +51,9 @@ export function loadFromStorage(key) {
     const data = localStorage.getItem(key)
     return (data) ? JSON.parse(data) : undefined
 }
+
+export function getInitials(fullname) {
+    const nameParts = fullname.split(" ");
+    const initials = nameParts.map((part) => part[0].toUpperCase()).join("");
+    return initials;
+};
