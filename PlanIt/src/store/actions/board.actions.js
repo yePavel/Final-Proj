@@ -1,6 +1,7 @@
 import { boardService } from '../../services/board'
 import { store } from '../store'
-import { ADD_BOARD, REMOVE_BOARD, SET_BOARDS, SET_BOARD, UPDATE_BOARD, ADD_BOARD_MSG, SET_STARRED, ADD_STARRED_BOARD, REMOVE_STARRED_BOARD, SET_BACKGROUND_COLOR } from '../reducers/board.reducer'
+import { ADD_BOARD, REMOVE_BOARD, SET_BOARDS, SET_BOARD, UPDATE_BOARD, ADD_BOARD_MSG, SET_STARRED, ADD_STARRED_BOARD, REMOVE_STARRED_BOARD, SET_BACKGROUND_COLOR, SET_TASK, UPDATE_TASK_MEMBERS } from '../reducers/board.reducer'
+import { taskService } from '../../services/task/task.service.local'
 
 export async function loadBoards(filterBy) {
     try {
@@ -104,6 +105,27 @@ export function setBackgroundColor(color) {
     } catch (err) {
         console.log('Cannot set background color', err);
         throw err;
+    }
+}
+
+export async function loadTask(boardId, groupId, taskId) {
+
+    try {
+        const task = await taskService.query(boardId, groupId, taskId)
+        store.dispatch({ type: SET_TASK, task })
+    } catch (err) {
+        console.log('Task: err in loadTask', err)
+        throw err
+    }
+}
+
+export async function updateTaskMembers(boardId, groupId, taskId, memberId) {
+    try {
+        const board = await taskService.saveTaskMembers(boardId, groupId, taskId, memberId)
+        store.dispatch({ type: UPDATE_TASK_MEMBERS, board })
+    }
+    catch (err) {
+
     }
 }
 

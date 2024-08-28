@@ -4,20 +4,20 @@ import { LabelPreview } from "./LabelPreview.jsx";
 import { AssignedMember } from "./AssignedMember.jsx";
 import { GroupMenu } from "./GroupMenu.jsx";
 import { CardModal } from "./CardModal.jsx";
-import { loadTask } from "../store/actions/task.actions.js";
 import { useSelector } from "react-redux";
+import { loadTask } from "../store/actions/board.actions.js";
 
 export function BoardGroup({ groups, handleBoardUpdate }) {
   const currBoard = useSelector(storeState => storeState.boardModule.board)
   const [selectedTask, setSelectedTask] = useState(null)
 
   const [isAddingTask, setIsAddingTask] = useState(null);
-  const [groupName, setGroupName] = useState(null)
+  const [currGroup, setGroup] = useState(null)
 
-  async function handleTaskClick(boardId, groupId, taskId, groupName) {
-    await loadTask(boardId, groupId, taskId)
+  async function handleTaskClick(boardId, group, taskId) {
+    await loadTask(boardId, group.id, taskId)
     setSelectedTask(taskId)
-    setGroupName(groupName)
+    setGroup(group)
   };
 
   function handleCloseModal() {
@@ -37,16 +37,18 @@ export function BoardGroup({ groups, handleBoardUpdate }) {
               <h3 className="group-title">{group.title}</h3>
               <GroupMenu />
             </div>
+
             <div className="tasks">
               {group.tasks.map((task) => (
                 <div key={task.id} className="task"
-                  onClick={() => handleTaskClick(currBoard._id, group.id, task.id, group.title)}>
+                  onClick={() => handleTaskClick(currBoard._id, group, task.id)}>
                   <LabelPreview labels={task.labels} />
                   <p className="task-title">{task.title}</p>
                   <AssignedMember members={task.members} />
                 </div>
               ))}
             </div>
+
             <div className="add-task">
               {isAddingTask === group.id ? (
                 <AddTask
@@ -66,7 +68,7 @@ export function BoardGroup({ groups, handleBoardUpdate }) {
           </div>
         ))}
         {selectedTask && (
-          <CardModal groupName={groupName} onClose={handleCloseModal} />
+          <CardModal group={currGroup} onClose={handleCloseModal} />
         )}
       </div>
     </div>

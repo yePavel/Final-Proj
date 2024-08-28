@@ -6,30 +6,25 @@ import { useClick, useFloating, useInteractions, computePosition, autoUpdate } f
 import { MainPopOver } from "./MainPopOver.jsx";
 
 
-export function CardSideBar() {
+export function CardSideBar({ group }) {
     const [isOpen, setIsOpen] = useState(false);
     const [chosenBtn, setChosenBtn] = useState(null)
+
+    const referenceEl = document.querySelector(`#${chosenBtn}`);
+    const floatingEl = document.querySelector('#popover');
+
+    if (referenceEl && floatingEl) {
+        computePosition(referenceEl, floatingEl, { placement: 'bottom-start', }).then(({ x, y }) => {
+            Object.assign(floatingEl.style, {
+                left: `${x}px`,
+                top: `${y}px`,
+            });
+        });
+    }
 
     function handlePopOver(type) {
         setChosenBtn(prevRes => prevRes = type)
     }
-
-
-    const button = document.querySelector(`#${chosenBtn}`);
-    const tooltip = document.querySelector('#popover');
-    computePosition(button, tooltip).then(({ x, y }) => {
-        Object.assign(tooltip.style, {
-            left: `${x}px`,
-            top: `${y}px`,
-        });
-    });
-
-
-    // const cleanup = autoUpdate(referenceEl, floatingEl, () => {
-    //     computePosition(referenceEl, floatingEl).then(({ x, y }) => {
-    //         // ...
-    //     });
-    // });
 
     const { refs, floatingStyles, context } = useFloating({
         open: isOpen,
@@ -42,7 +37,6 @@ export function CardSideBar() {
         click,
     ]);
 
-
     return (
         <>
             <section className="card-sidebar">
@@ -52,11 +46,9 @@ export function CardSideBar() {
                     <button id="members" className="sidebar-item" onClick={() => handlePopOver('members')}>
                         <LuUser2 /> Members
                     </button>
-
                     <button id="labels" className="sidebar-item" onClick={() => handlePopOver('labels')}>
                         <BiLabel /> Labels
                     </button>
-
                     <button id="checklist" className="sidebar-item" onClick={() => handlePopOver('checklist')}>
                         <GoChecklist /> Checklist
                     </button>
@@ -68,11 +60,10 @@ export function CardSideBar() {
                         style={floatingStyles}
                         {...getFloatingProps()}
                     >
-                        <MainPopOver chosenCmp={chosenBtn} />
+                        <MainPopOver chosenCmp={chosenBtn} group={group} />
                     </div>
                 )}
             </section>
-
         </>
     );
 }

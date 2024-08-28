@@ -4,7 +4,7 @@ import { CardDetailData } from "./CardDetailData";
 import { useSelector } from "react-redux";
 
 export function CardMainCol() {
-    const task = useSelector(storeState => storeState.taskModule.task)
+    const task = useSelector(storeState => storeState.boardModule.task)
 
     return <div className="card-main-col">
         <CardDetailData task={task} />

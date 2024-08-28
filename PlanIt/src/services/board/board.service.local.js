@@ -685,7 +685,6 @@ function getById(boardId) {
 }
 
 async function remove(boardId) {
-  // throw new Error('Nope')
   await storageService.remove(STORAGE_KEY, boardId)
 }
 

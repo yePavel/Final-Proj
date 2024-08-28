@@ -10,12 +10,16 @@ export const ADD_STARRED_BOARD = 'ADD_STARRED_BOARD'
 export const REMOVE_STARRED_BOARD = 'REMOVE_STARRED_BOARD'
 
 export const SET_BACKGROUND_COLOR = 'SET_BACKGROUND_COLOR'
+export const SET_TASK = 'SET_TASK'
+export const UPDATE_TASK_MEMBERS = 'UPDATE_TASK_MEMBERS'
 
 const initialState = {
     boards: [],
     board: null,
     starredBoards: [],
     backgroundColor: '#ffffff',
+    task: [],
+    taskMembers: [],
 }
 
 export function boardReducer(state = initialState, action) {
@@ -70,8 +74,13 @@ export function boardReducer(state = initialState, action) {
                     }
                 }
             };
+        case SET_TASK:
+            return { ...state, task: action.task }
             break
+        case UPDATE_TASK_MEMBERS:
+            console.log('action.board:', action.board)
         default:
+
     }
     return newState
 }

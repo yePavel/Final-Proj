@@ -4,7 +4,7 @@ import { LabelPreview } from "./LabelPreview"
 
 
 export function CardDetailData() {
-    const task = useSelector(storeState => storeState.taskModule.task)
+    const task = useSelector(storeState => storeState.boardModule.task)
 
     return <div className="card-detail-data">
         {task.members &&

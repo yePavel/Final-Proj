@@ -5,8 +5,8 @@ import { CardMainCol } from "./CardMainCol";
 import { CardSideBar } from "./CardSideBar";
 import { useSelector } from "react-redux";
 
-export function CardModal({ groupName, onClose }) {
-    const currTask = useSelector(storeState => storeState.taskModule.task)
+export function CardModal({ group, onClose }) {
+    const currTask = useSelector(storeState => storeState.boardModule.task)
 
     return (
         <section className="click-screen" onClick={onClose} >
@@ -16,10 +16,10 @@ export function CardModal({ groupName, onClose }) {
                         <PiSubtitlesBold />
                         <span>{currTask.title}</span>
                     </div>
-                    <div className="card-group-info">in list: <span>{`${groupName}`}</span>  <IoEyeOutline /></div>
+                    <div className="card-group-info">in list: <span>{`${group.title}`}</span>  <IoEyeOutline /></div>
                 </div>
                 <CardMainCol />
-                <CardSideBar />
+                <CardSideBar group={group} />
             </div>
         </section>
     );
