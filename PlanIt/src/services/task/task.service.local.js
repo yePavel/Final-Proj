@@ -23,25 +23,24 @@ async function query(boardId, groupId, taskId) {
     }
 }
 
-async function saveTaskMembers(boardId, groupId, taskId, memberId) {
+async function saveTaskMembers(boardId, groupId, updatedTask) {
+    await _saveTask(boardId, groupId, updatedTask)
+    return updatedTask
+}
+
+
+async function _saveTask(boardId, groupId, updatedTask) {
     const boards = await storageService.query(STORAGE_KEY)
     const board = boards.find(board => board._id === boardId)
 
     const group = board.groups.find(group => group.id === groupId)
-    const taskIndex = group.tasks.findIndex(task => task.id === taskId)
+    const taskIndex = group.tasks.findIndex(task => task.id === updatedTask.id)
 
-    const members = group.tasks[taskIndex].members.filter(member => member._id !== memberId);
-
-    const updatedTask = { ...group.tasks[taskIndex], members };
     group.tasks[taskIndex] = updatedTask;
 
     const groupIndex = board.groups.findIndex(g => g.id === groupId);
     board.groups[groupIndex] = { ...group };
 
-    return await boardService.save(board)
-}
-
-
-async function _getTask(boardId, groupId, taskId) {
+    await boardService.save(board)
 
 }

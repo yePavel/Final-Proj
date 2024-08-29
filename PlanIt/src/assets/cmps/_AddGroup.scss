@@ -2,19 +2,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 8px;
     margin-top: 60px;
-    background-color: rgba(236, 240, 241, 0.5);
-    border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     margin-top: 20px;
 
     .add-group-btn {
-        border-radius: 6px;
-        padding: 16px;
         display: flex;
-        justify-content: center;
+        border-radius: 12px;
+        padding: 16px;
         align-items: center;
         cursor: pointer;
         min-width: 250px;
@@ -31,6 +26,7 @@
             font-weight: bold;
         }
     }
+
     .cancel-add-group {
         background-color: #e0e0e0;
         color: #333;

@@ -84,8 +84,8 @@
         font-weight: 500;
 
         &:hover {
-          background-color: #0055cc;
-          color: white;
+          background-color: #091e421c;
+          color: #44546f;
         }
 
         svg {
@@ -137,6 +137,7 @@
       position: relative;
       display: flex;
       align-items: center;
+
     }
 
     .notification-icon {

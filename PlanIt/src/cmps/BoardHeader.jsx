@@ -5,6 +5,7 @@ import { MenuHeader } from './MenuHeader.jsx';
 import { Map } from './Map.jsx';
 import { CustomCalendar } from './Calendar.jsx';
 import { AssignedMember } from './AssignedMember.jsx';
+import { MdOutlineStarOutline } from 'react-icons/md';
 
 export function BoardHeader({ board }) {
     const [showMap, setShowMap] = useState(false);
@@ -30,7 +31,7 @@ export function BoardHeader({ board }) {
         <header className="board-header">
             <div className="board-header-left">
                 <h2 className="board-title">{board.title}</h2>
-                <img src={StarIcon} alt="Star Icon" className="board-star" />
+                <MdOutlineStarOutline alt='Star Icon' className='board-star' />
                 <button className="board-button">Board</button>
                 <button className="board-button">Table</button>
                 <button className="board-button" onClick={handleCalendarButtonClick}>Calendar</button>

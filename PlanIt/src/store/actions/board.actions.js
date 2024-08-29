@@ -119,10 +119,11 @@ export async function loadTask(boardId, groupId, taskId) {
     }
 }
 
-export async function updateTaskMembers(boardId, groupId, taskId, memberId) {
+export async function updateTaskMembers(boardId, groupId, updatedTask) {
     try {
-        const board = await taskService.saveTaskMembers(boardId, groupId, taskId, memberId)
-        store.dispatch({ type: UPDATE_TASK_MEMBERS, board })
+        const task = await taskService.saveTaskMembers(boardId, groupId, updatedTask)
+        console.log('task:', task)
+        store.dispatch({ type: SET_TASK, task })
     }
     catch (err) {
 

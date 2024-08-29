@@ -21,13 +21,11 @@ export function BoardDetails() {
             .then(updatedBoards => setBoards(updatedBoards));
     }
 
-    console.log({board})
-
     if (!board) return <div>Loading...</div>;
 
     return (
-        <section 
-            className="board-list" 
+        <section
+            className="board-list"
             style={{ background: board.style.background || '#ffffff' }}>
             <BoardHeader board={board} />
             <div className="board-card">
