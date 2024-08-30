@@ -64,7 +64,6 @@ export function BoardHeader({ board }) {
                 <div className='members'>
                     <AssignedMember members={board.members} />
                 </div>
-                <button className="board-button">Share</button>
                 <MenuHeader />
             </div>
         </header>
