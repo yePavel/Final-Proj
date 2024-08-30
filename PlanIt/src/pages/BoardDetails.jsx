@@ -18,7 +18,6 @@ export function BoardDetails() {
 
     function handleBoardUpdate(updatedBoard) {
         updateBoard(updatedBoard)
-            .then(updatedBoards => setBoards(updatedBoards));
     }
 
     if (!board) return <div>Loading...</div>;

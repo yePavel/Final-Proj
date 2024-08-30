@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { updateBoard } from "../store/actions/board.actions";
 
 
 export function AddTask({ groupId, onCancel, handleBoardUpdate }) {

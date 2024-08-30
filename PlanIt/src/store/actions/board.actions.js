@@ -109,7 +109,6 @@ export function setBackgroundColor(color) {
 }
 
 export async function loadTask(boardId, groupId, taskId) {
-
     try {
         const task = await taskService.query(boardId, groupId, taskId)
         store.dispatch({ type: SET_TASK, task })
@@ -121,9 +120,11 @@ export async function loadTask(boardId, groupId, taskId) {
 
 export async function updateTaskMembers(boardId, groupId, updatedTask) {
     try {
-        const task = await taskService.saveTaskMembers(boardId, groupId, updatedTask)
-        console.log('task:', task)
+        const res = await taskService.saveTaskMembers(boardId, groupId, updatedTask)
+        const { task, board } = res
+
         store.dispatch({ type: SET_TASK, task })
+        store.dispatch(getCmdSetBoard(board))
     }
     catch (err) {
 

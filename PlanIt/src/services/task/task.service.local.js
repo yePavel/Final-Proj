@@ -1,4 +1,3 @@
-import { updateBoard } from '../../store/actions/board.actions'
 import { storageService } from '../async-storage.service'
 import { boardService } from '../board'
 
@@ -24,23 +23,30 @@ async function query(boardId, groupId, taskId) {
 }
 
 async function saveTaskMembers(boardId, groupId, updatedTask) {
-    await _saveTask(boardId, groupId, updatedTask)
-    return updatedTask
+    try {
+        const board = await _saveTask(boardId, groupId, updatedTask)
+        return { board, task: updatedTask }
+    } catch (err) {
+        return console.log('Felid to save task:', err)
+    }
 }
 
 
 async function _saveTask(boardId, groupId, updatedTask) {
-    const boards = await storageService.query(STORAGE_KEY)
-    const board = boards.find(board => board._id === boardId)
+    try {
+        const boards = await storageService.query(STORAGE_KEY)
+        const board = boards.find(board => board._id === boardId)
 
-    const group = board.groups.find(group => group.id === groupId)
-    const taskIndex = group.tasks.findIndex(task => task.id === updatedTask.id)
+        const group = board.groups.find(group => group.id === groupId)
+        const taskIndex = group.tasks.findIndex(task => task.id === updatedTask.id)
 
-    group.tasks[taskIndex] = updatedTask;
+        group.tasks[taskIndex] = updatedTask;
 
-    const groupIndex = board.groups.findIndex(g => g.id === groupId);
-    board.groups[groupIndex] = { ...group };
+        const groupIndex = board.groups.findIndex(g => g.id === groupId);
+        board.groups[groupIndex] = { ...group };
 
-    await boardService.save(board)
-
+        return await boardService.save(board)
+    } catch (err) {
+        return console.log('Felid to save task:', err)
+    }
 }
