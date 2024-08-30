@@ -1,4 +1,6 @@
 .add-task {
+    padding: 8px 8px 0;
+
     .add-a-card-btn {
         font-size: 14px;
         line-height: 20px;
@@ -38,7 +40,7 @@
         letter-spacing: normal;
 
         border-radius: 8px;
-        box-shadow:rgba(9, 30, 66, 0.25) 0px 1px 1px 0px, rgba(9, 30, 66, 0.31) 0px 0px 1px 0px;
+        box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px 0px, rgba(9, 30, 66, 0.31) 0px 0px 1px 0px;
         transition: border-color 0.2s ease-in-out;
     }
 
