@@ -34,6 +34,27 @@
             color: #44546f;
             z-index: 60;
         }
+
+        .close-pop{
+            display: block;
+            position: relative;
+            border: none;
+            border-radius: 8px;
+            line-height: 20px;
+            
+            grid-row: 1;
+            
+            background: none;
+            color: #172b4d;
+
+            cursor: pointer;
+
+            &:hover {
+                background-color: #091e42;
+                opacity: 14.0%;
+            }
+        }
+
     }
 
     .pop-content-container {
@@ -74,29 +95,23 @@
             padding: 0;
 
             li {
-                display: list-item;
-
                 button {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    justify-content: flex-start;
-                    border-radius: 3px;
-                    width: 100%;
-                    height: 40px;
-                    margin: 0;
-                    padding: 4px 8px 4px 4px;
+                    flex: 1;
 
                     .member {
                         margin-right: 8px;
                     }
 
-                    .member-name {
-                        flex: 1;
-                    }
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: flex-start;
+                    width: 100%;
+                    height: 40px;
+                    margin: 0;
+                    padding: 4px 8px 4px 4px;
 
                     .remove-user {
-                        display: block;
                         justify-content: right;
                     }
                 }

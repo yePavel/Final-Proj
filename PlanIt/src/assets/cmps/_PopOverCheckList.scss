@@ -1,0 +1,76 @@
+.add-checklist{
+    width: 74px;
+    height: 32px;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: normal;
+    margin: 14px;
+
+    background-color: #0c66e4;
+    color: #ffff;
+
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #075cd1;
+    }
+}
+
+.checklists {
+    .checklist {
+        margin-bottom: 15px;
+
+        .checklist-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .checklist-items {
+            list-style: none;
+            padding-left: 0;
+
+            li {
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+
+                input[type="checkbox"] {
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        .checklist-item-adder {
+            display: flex;
+            margin-top: 10px;
+
+            input {
+                flex-grow: 1;
+            }
+        }
+        // .add-item{
+        //     width: 74px;
+        //     height: 32px;
+        //     font-size: 14px;
+        //     line-height: 20px;
+        //     text-align: center;
+        //     letter-spacing: normal;
+        //     margin: 14px;
+        
+        //     background-color: #0c66e4;
+        //     color: #ffff;
+        
+        //     border-radius: 3px;
+        //     border: none;
+        //     cursor: pointer;
+        
+        //     &:hover {
+        //         background-color: #075cd1;
+        //     }
+        // }
+    }
+}
