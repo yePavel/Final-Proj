@@ -10,15 +10,23 @@ export const ADD_STARRED_BOARD = 'ADD_STARRED_BOARD'
 export const REMOVE_STARRED_BOARD = 'REMOVE_STARRED_BOARD'
 
 export const SET_BACKGROUND_COLOR = 'SET_BACKGROUND_COLOR'
+
 export const SET_TASK = 'SET_TASK'
 export const UPDATE_TASK_MEMBERS = 'UPDATE_TASK_MEMBERS'
+
+export const ADD_CHECKLIST = 'ADD_CHECKLIST'
+export const ADD_CHECKLIST_ITEM = 'ADD_CHECKLIST_ITEM';
+
 
 const initialState = {
     boards: [],
     board: null,
     starredBoards: [],
     backgroundColor: '#ffffff',
-    task: [],
+    task: [{
+        checklist: [],
+    }
+    ],
     taskMembers: [],
 }
 
@@ -79,6 +87,23 @@ export function boardReducer(state = initialState, action) {
             break
         case UPDATE_TASK_MEMBERS:
             console.log('action.board:', action.board)
+            break
+        case ADD_CHECKLIST:
+            const updatedTaskChecklist = { ...state.task, checklists: [...state.task.checklists || [], action.checklist] };
+            newState = { ...state, task: updatedTaskChecklist };
+            break
+        case ADD_CHECKLIST_ITEM:
+            const updatedChecklists = state.task.checklists.map(checklist => {
+                if (checklist.title === action.checklistTitle) {
+                    return {
+                        ...checklist,
+                        items: [...checklist.items || [], action.item]
+                    };
+                }
+                return checklist;
+            });
+            newState = { ...state, task: { ...state.task, checklists: updatedChecklists } };
+            break;
         default:
 
     }
