@@ -57,3 +57,9 @@ export function getInitials(fullname) {
     const initials = nameParts.map((part) => part[0].toUpperCase()).join("");
     return initials;
 };
+
+export function calculateChecklistProgress(checklist) {
+    if (!checklist.items || checklist.items.length === 0) return 0;
+    const completedItems = checklist.items.filter(item => item.isChecked).length;
+    return (completedItems / checklist.items.length) * 100;
+}

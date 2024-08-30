@@ -6,6 +6,7 @@ import { CardActivity } from "./CardActivity";
 
 import checklistIcon from '../assets/imgs/checklist-icon.svg';
 import { ImParagraphLeft } from "react-icons/im";
+import { calculateChecklistProgress } from "../services/util.service";
 
 export function CardMainCol() {
     const task = useSelector(storeState => storeState.boardModule.task);
@@ -32,10 +33,14 @@ export function CardMainCol() {
                                 <img src={checklistIcon} alt="Checklist Icon" />
                                 {checklist.title}
                             </div>
+                            <div className="checklist-progress">
+                                <progress value={calculateChecklistProgress(checklist)} max="100"></progress>
+                                <span>{Math.round(calculateChecklistProgress(checklist))}%</span>
+                            </div>
                             <ul className="checklist-items">
                                 {checklist.items && checklist.items.map((item, idx) => (
                                     <li key={idx}>
-                                        <input type="checkbox" onChange={item.isChecked} />
+                                        <input className="checkbox-item" type="checkbox" onChange={item.isChecked} />
                                         {item.title}
                                     </li>
                                 ))}
