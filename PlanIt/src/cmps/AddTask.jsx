@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { getDefaultTask } from "../services/task/task.service.local";
 
 
 export function AddTask({ groupId, onCancel, handleBoardUpdate }) {
@@ -12,11 +13,14 @@ export function AddTask({ groupId, onCancel, handleBoardUpdate }) {
     }
 
     function onAddTask() {
+        const newTask = getDefaultTask()
+        newTask.id = Date.now()
+        newTask.title = taskTitle
         const updatedBoard = {
             ...board,
             groups: board.groups.map(group =>
                 group.id === groupId
-                    ? { ...group, tasks: [...group.tasks, { id: Date.now(), title: taskTitle }] }
+                    ? { ...group, tasks: [...group.tasks, newTask] }
                     : group
             )
         }

@@ -5,7 +5,8 @@ const STORAGE_KEY = 'board'
 
 export const taskService = {
     query,
-    saveTaskMembers
+    saveTaskMembers,
+    getDefaultTask
 }
 
 async function query(boardId, groupId, taskId) {
@@ -48,5 +49,30 @@ async function _saveTask(boardId, groupId, updatedTask) {
         return await boardService.save(board)
     } catch (err) {
         return console.log('Felid to save task:', err)
+    }
+}
+
+export function getDefaultTask() {
+    return {
+        id: "",
+        title: "",
+        archivedAt: null,
+        status: "todo",
+        priority: "low",
+        dueDate: null,
+        description: "",
+        comments: [],
+        checklists: [],
+        members: [],
+        labels: [],
+        byMember: {
+            _id: "",
+            fullname: "",
+            color: "",
+            imgUrl: ""
+        },
+        style: {
+            backgroundColor: ""
+        }
     }
 }
