@@ -99,8 +99,8 @@ export async function removeStaredBoard(board) {
 
 export function setBackgroundColor(color) {
     try {
-        const backgroundColor = getCmdSetBackgroundColor(color)
-
+        localStorage.setItem('backgroundColor', color); 
+        const backgroundColor = getCmdSetBackgroundColor(color);
         return backgroundColor;
     } catch (err) {
         console.log('Cannot set background color', err);
