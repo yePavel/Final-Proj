@@ -1,13 +1,12 @@
 .add-group {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 60px;
-    cursor: pointer;
-    margin-top: 20px;
+    border-radius: 12px;
+    padding: 6px 6px 6px 6px;
+    background-color: $group-color;
+    margin-top: 15px;
 
-    .add-group-btn {
-        display: flex;
+.add-group-btn {
+        flex-direction: column;
+        gap: 10px;
         border-radius: 12px;
         padding: 16px;
         align-items: center;
@@ -27,17 +26,51 @@
         }
     }
 
-    .cancel-add-group {
-        background-color: #e0e0e0;
-        color: #333;
-        padding: 8px;
+    .group-input {
+        padding: 8px 12px 8px 12px;
+        width: 256px;
+
+        font-size: 14px;
+        line-height: 20px;
+        text-align: start;
+        letter-spacing: normal;
+
+        border-radius: 3px;
+    }
+
+    .add-new-group {
+        width: 82px;
+        height: 32px;
+        margin-top: 10px;
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+        letter-spacing: normal;
+
+        background-color: #0c66e4;
+        color: #ffff;
+
         border-radius: 3px;
         border: none;
-        font-size: 14px;
         cursor: pointer;
 
         &:hover {
-            background-color: #c0c0c0;
+            background-color: #075cd1;
+        }
+    }
+
+    .cancel-add-group {
+        color: #172b4d;
+        background: none;
+        font-size: 16px;
+        border: none;
+        padding: 6px 12px;
+        cursor: pointer;
+        transition: color 0.2s ease-in-out;
+        align-self: flex-start;
+
+        &:hover {
+            color: #8b99a5;
         }
     }
 }
