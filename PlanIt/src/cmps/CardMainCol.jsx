@@ -34,8 +34,8 @@ export function CardMainCol() {
                                 {checklist.title}
                             </div>
                             <div className="checklist-progress">
+                                <span className="checklist-percent">{Math.round(calculateChecklistProgress(checklist))}%</span>
                                 <progress value={calculateChecklistProgress(checklist)} max="100"></progress>
-                                <span>{Math.round(calculateChecklistProgress(checklist))}%</span>
                             </div>
                             <ul className="checklist-items">
                                 {checklist.items && checklist.items.map((item, idx) => (

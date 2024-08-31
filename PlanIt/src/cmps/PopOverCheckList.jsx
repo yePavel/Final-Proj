@@ -13,7 +13,9 @@ export function PopOverCheckList() {
         setIsVisible(false);
     };
 
-    function handleAddChecklist() {
+    function addChecklist() {
+        if(!title) return
+        
         const checklist = {
             title,
             items: items.filter(item => item.trim() !== "")
@@ -41,7 +43,7 @@ export function PopOverCheckList() {
                     onChange={(e) => setTitle(e.target.value)}
                 />
             </div>
-            <button className="add-checklist" onClick={handleAddChecklist}>
+            <button className="add-checklist" onClick={addChecklist}>
                 Add
             </button>
         </>

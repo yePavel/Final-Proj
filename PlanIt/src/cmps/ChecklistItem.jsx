@@ -6,7 +6,9 @@ export function ChecklistItem({ checklistTitle }) {
     const [item, setItem] = useState("");
     const dispatch = useDispatch();
 
-    function handleAddItem() {
+    function addItem() {
+        if(!item) return
+        
         dispatch({
             type: ADD_CHECKLIST_ITEM,
             checklistTitle,
@@ -23,7 +25,7 @@ export function ChecklistItem({ checklistTitle }) {
                 value={item}
                 onChange={(e) => setItem(e.target.value)}
             />
-            <button className="add-checklist" onClick={handleAddItem}>
+            <button className="add-checklist" onClick={addItem}>
                 Add
             </button>
         </div>

@@ -5,6 +5,8 @@ import { CardMainCol } from "./CardMainCol";
 import { CardSideBar } from "./CardSideBar";
 import { useSelector } from "react-redux";
 
+import CloseBtn from '../assets/imgs/close-btn.svg'
+
 export function CardModal({ group, onClose }) {
     const currTask = useSelector(storeState => storeState.boardModule.task)
 
@@ -13,6 +15,9 @@ export function CardModal({ group, onClose }) {
             <div className="card-details-modal" onClick={(e) => e.stopPropagation()}>
                 <div className="card-header">
                     <div className="card-title">
+                        <button onClick={onClose} className="close-modal">
+                        <img src={CloseBtn} alt="close-btn Icon" />
+                        </button>
                         <PiSubtitlesBold />
                         <span>{currTask.title}</span>
                     </div>

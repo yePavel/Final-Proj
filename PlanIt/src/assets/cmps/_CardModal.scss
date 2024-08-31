@@ -11,6 +11,11 @@
     scrollbar-gutter: stable;
     overflow: scroll;
 
+    .close-modal {
+        border: none;
+        margin-left: 710px;
+    }
+
     .card-details-modal {
         height: 866px;
         width: 768px;
