@@ -1,16 +1,25 @@
+import { useState } from 'react';
 
-export function LabelPreview({ labels }) {
+export function LabelPreview({ labels, onLabelClick }) {
+    const [selectedLabel, setSelectedLabel] = useState(null);
 
-    return <div className="labels">
-        <span>
+    function handleLabelClick(label) {
+        setSelectedLabel(label);
+        onLabelClick(label); 
+    }
+
+    return (
+        <div className="labels">
             {labels?.map((label) => (
                 <span
                     key={label.id}
-                    className="label"
-                    style={{ backgroundColor: label.color }}>
+                    className={`label ${selectedLabel === label ? 'selected' : ''}`}
+                    style={{ backgroundColor: label.color }}
+                    onClick={() => handleLabelClick(label)}
+                >
                     {label.title}
                 </span>
             ))}
-        </span>
-    </div>
+        </div>
+    );
 }
