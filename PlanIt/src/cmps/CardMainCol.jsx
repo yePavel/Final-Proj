@@ -1,15 +1,23 @@
-import { useSelector } from "react-redux";
-
+import { useSelector, useDispatch } from "react-redux";
 import { CardDetailData } from "./CardDetailData";
 import { ChecklistItem } from "./ChecklistItem";
 import { CardActivity } from "./CardActivity";
-
 import checklistIcon from '../assets/imgs/checklist-icon.svg';
 import { ImParagraphLeft } from "react-icons/im";
 import { calculateChecklistProgress } from "../services/util.service";
+import { TOGGLE_CHECKLIST_ITEM } from "../store/reducers/board.reducer";
 
 export function CardMainCol() {
     const task = useSelector(storeState => storeState.boardModule.task);
+    const dispatch = useDispatch();
+
+    function checkboxChange(checklistTitle, itemIndex){
+        dispatch({
+            type: TOGGLE_CHECKLIST_ITEM,
+            checklistTitle,
+            itemIndex
+        });
+    };
 
     return (
         <div className="card-main-col">
@@ -34,13 +42,23 @@ export function CardMainCol() {
                                 {checklist.title}
                             </div>
                             <div className="checklist-progress">
-                                <span className="checklist-percent">{Math.round(calculateChecklistProgress(checklist))}%</span>
-                                <progress value={calculateChecklistProgress(checklist)} max="100"></progress>
+                                <span className="checklist-percent">
+                                    {Math.round(calculateChecklistProgress(checklist))}%
+                                </span>
+                                <progress
+                                    value={calculateChecklistProgress(checklist)}
+                                    max="100"
+                                ></progress>
                             </div>
                             <ul className="checklist-items">
                                 {checklist.items && checklist.items.map((item, idx) => (
                                     <li key={idx}>
-                                        <input className="checkbox-item" type="checkbox" onChange={item.isChecked} />
+                                        <input
+                                            className="checkbox-item"
+                                            type="checkbox"
+                                            checked={item.isChecked}
+                                            onChange={() => checkboxChange(checklist.title, idx)}
+                                        />
                                         {item.title}
                                     </li>
                                 ))}
@@ -52,7 +70,6 @@ export function CardMainCol() {
             )}
 
             <CardActivity />
-
         </div>
     );
 }

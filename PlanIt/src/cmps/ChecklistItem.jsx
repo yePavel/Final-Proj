@@ -23,8 +23,7 @@ export function ChecklistItem({ checklistTitle }) {
                 type="text"
                 placeholder="Add an item"
                 value={item}
-                onChange={(e) => setItem(e.target.value)}
-            />
+                onChange={(e) => setItem(e.target.value)}/>
             <button className="add-checklist" onClick={addItem}>
                 Add
             </button>

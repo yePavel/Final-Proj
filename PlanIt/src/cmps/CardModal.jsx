@@ -15,11 +15,11 @@ export function CardModal({ group, onClose }) {
             <div className="card-details-modal" onClick={(e) => e.stopPropagation()}>
                 <div className="card-header">
                     <div className="card-title">
+                        <PiSubtitlesBold />
+                        <span>{currTask.title}</span>
                         <button onClick={onClose} className="close-modal">
                         <img src={CloseBtn} alt="close-btn Icon" />
                         </button>
-                        <PiSubtitlesBold />
-                        <span>{currTask.title}</span>
                     </div>
                     <div className="card-group-info">in list: <span>{`${group.title}`}</span>  <IoEyeOutline /></div>
                 </div>

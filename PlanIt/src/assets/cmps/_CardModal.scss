@@ -13,7 +13,9 @@
 
     .close-modal {
         border: none;
-        margin-left: 710px;
+        margin-left: auto;
+        background: transparent;
+        padding: 0;
     }
 
     .card-details-modal {
@@ -40,15 +42,20 @@
             z-index: 1;
 
             .card-title {
-                display: grid;
-                grid-template-columns: 30px 1fr;
+                display: flex;
                 align-items: center;
+                justify-content: space-between;
                 font-size: 20px;
                 padding: 12px 0 0;
 
                 svg {
                     width: 24px;
                     height: 24px;
+                }
+
+                span {
+                    flex-grow: 1;
+                    margin-left: 8px;
                 }
             }
 

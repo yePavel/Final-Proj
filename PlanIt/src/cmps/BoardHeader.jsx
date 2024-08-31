@@ -33,7 +33,6 @@ export function BoardHeader({ board }) {
                 <h2 className="board-title">{board.title}</h2>
                 <MdOutlineStarOutline alt='Star Icon' className='board-star' />
                 <button className="board-button">Board</button>
-                <button className="board-button">Table</button>
                 <button className="board-button" onClick={handleCalendarButtonClick}>Calendar</button>
                 {showCalendar && (
                     <div className="calendar-modal">
@@ -43,8 +42,6 @@ export function BoardHeader({ board }) {
                         </div>
                     </div>
                 )}
-                <button className="board-button">Dashboard</button>
-                <button className="board-button">Timeline</button>
                 <div className='map'>
                     <button className="board-button" onClick={handleMapButtonClick}>Map</button>
                 </div>
@@ -56,9 +53,6 @@ export function BoardHeader({ board }) {
                         </div>
                     </div>
                 )}
-                <div className="dropdown">
-                    <img src={DropDownIcon} alt="drop-down Icon" className="board-drop-down" />
-                </div>
             </div>
             <div className="board-header-right">
                 <div className='members'>

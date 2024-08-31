@@ -40,8 +40,7 @@ export function PopOverCheckList() {
                     type="text" 
                     placeholder="Add a checklist title" 
                     value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                />
+                    onChange={(e) => setTitle(e.target.value)}/>
             </div>
             <button className="add-checklist" onClick={addChecklist}>
                 Add

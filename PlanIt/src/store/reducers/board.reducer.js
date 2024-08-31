@@ -16,6 +16,7 @@ export const UPDATE_TASK_MEMBERS = 'UPDATE_TASK_MEMBERS'
 
 export const ADD_CHECKLIST = 'ADD_CHECKLIST'
 export const ADD_CHECKLIST_ITEM = 'ADD_CHECKLIST_ITEM';
+export const TOGGLE_CHECKLIST_ITEM = 'TOGGLE_CHECKLIST_ITEM';
 
 
 const initialState = {
@@ -104,6 +105,25 @@ export function boardReducer(state = initialState, action) {
             });
             newState = { ...state, task: { ...state.task, checklists: updatedChecklists } };
             break;
+        case TOGGLE_CHECKLIST_ITEM:
+            return {
+                ...state,
+                task: {
+                    ...state.task,
+                    checklists: state.task.checklists.map(checklist =>
+                        checklist.title === action.checklistTitle
+                            ? {
+                                ...checklist,
+                                items: checklist.items.map((item, idx) =>
+                                    idx === action.itemIndex
+                                        ? { ...item, isChecked: !item.isChecked }
+                                        : item
+                                )
+                            }
+                            : checklist
+                    )
+                }
+            };
         default:
 
     }
