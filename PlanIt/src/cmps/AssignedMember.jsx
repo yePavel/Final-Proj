@@ -1,6 +1,5 @@
 import { getInitials } from "../services/util.service";
 
-
 export function AssignedMember({ members }) {
 
     return <div className="members">
