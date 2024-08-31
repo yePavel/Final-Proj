@@ -23,15 +23,15 @@ export function AddGroup({ onCancel }) {
     }
 
     return (
-        <section className="add-group-form">
-            <input
+        <section className="add-group">
+            <input className="group-input"
                 type="text"
                 value={groupTitle}
                 onChange={(e) => setGroupTitle(e.target.value)}
-                placeholder="Enter list title"
+                placeholder="Enter list name..."
             />
-            <button onClick={() => addGroup()}>Add List</button>
-            <button onClick={() => onCancel()}>X</button>
+            <button className="add-new-group" onClick={() => addGroup()}>Add List</button>
+            <button className="cancel-add-group" onClick={() => onCancel()}>X</button>
         </section>
     );
 }
