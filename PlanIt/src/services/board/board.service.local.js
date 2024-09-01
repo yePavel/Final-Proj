@@ -65,19 +65,19 @@ const data = [
       {
         _id: "u102",
         fullname: "Sean Mamistalov",
-        color: "red",
+        color: "rgb(255, 152, 0)",
         imgUrl: "",
       },
       {
         _id: "u103",
         fullname: "Pavel Yelsukov",
-        color: "green",
+        color: "rgb(0, 150, 136)",
         imgUrl: "",
       },
       {
         _id: "u101",
         fullname: "Daniel Yacovi",
-        color: "blue",
+        color: "rgb(33, 150, 243)",
         imgUrl: "",
       },
     ],
@@ -124,7 +124,7 @@ const data = [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
-                color: "red",
+                color: "rgb(255, 152, 0)",
                 imgUrl: "",
               },
             ],
@@ -138,7 +138,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -171,13 +171,13 @@ const data = [
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
-                color: "green",
+                color: "rgb(0, 150, 136)",
                 imgUrl: "",
               },
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: "blue",
+                color: "rgb(33, 150, 243)",
                 imgUrl: "",
               },
             ],
@@ -191,7 +191,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -242,14 +242,14 @@ const data = [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
-                color: "red",
+                color: "rgb(255, 152, 0)",
                 imgUrl: "",
               },
 
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: "blue",
+                color: "rgb(33, 150, 243)",
                 imgUrl: "",
               },
             ],
@@ -263,7 +263,7 @@ const data = [
             byMember: {
               _id: "u102",
               fullname: "Sean Mamistalov",
-              color: "red",
+              color: "rgb(255, 152, 0)",
               imgUrl: "",
             },
             style: {
@@ -307,7 +307,7 @@ const data = [
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: "blue",
+                color: "rgb(33, 150, 243)",
                 imgUrl: "",
               },
             ],
@@ -321,7 +321,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -369,7 +369,7 @@ const data = [
             byMember: {
               _id: "u101",
               fullname: "Daniel Yacovi",
-              color: "blue",
+              color: "rgb(33, 150, 243)",
               imgUrl: "",
             },
             style: {
@@ -413,7 +413,7 @@ const data = [
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: "blue",
+                color: "rgb(33, 150, 243)",
                 imgUrl: "",
               },
             ],
@@ -427,7 +427,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -476,7 +476,7 @@ const data = [
             byMember: {
               _id: "u101",
               fullname: "Daniel Yacovi",
-              color: "blue",
+              color: "rgb(33, 150, 243)",
               imgUrl: "",
             },
             style: {
@@ -527,7 +527,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -567,7 +567,7 @@ const data = [
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
-                color: "green",
+                color: "rgb(0, 150, 136)",
                 imgUrl: "",
               },
             ],
@@ -581,7 +581,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -625,7 +625,7 @@ const data = [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
-                color: "red",
+                color: "rgb(255, 152, 0)",
                 imgUrl: "",
               },
             ],
@@ -639,7 +639,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -686,7 +686,7 @@ const data = [
             byMember: {
               _id: "u101",
               fullname: "Daniel Yacovi",
-              color: "blue",
+              color: "rgb(33, 150, 243)",
               imgUrl: "",
             },
             style: {
@@ -731,7 +731,7 @@ const data = [
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
-                color: "green",
+                color: "rgb(0, 150, 136)",
                 imgUrl: "",
               },
             ],
@@ -745,7 +745,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -827,19 +827,19 @@ const data = [
       {
         _id: "u102",
         fullname: "Sean Mamistalov",
-        color: "red",
+        color: "rgb(255, 152, 0)",
         imgUrl: "",
       },
       {
         _id: "u103",
         fullname: "Pavel Yelsukov",
-        color: "green",
+        color: "rgb(0, 150, 136)",
         imgUrl: "",
       },
       {
         _id: "u101",
         fullname: "Daniel Yacovi",
-        color: "blue",
+        color: "rgb(33, 150, 243)",
         imgUrl: "",
       },
     ],
@@ -886,7 +886,7 @@ const data = [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
-                color: "red",
+                color: "rgb(255, 152, 0)",
                 imgUrl: "",
               },
             ],
@@ -900,7 +900,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -933,13 +933,13 @@ const data = [
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
-                color: "green",
+                color: "rgb(0, 150, 136)",
                 imgUrl: "",
               },
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: "blue",
+                color: "rgb(33, 150, 243)",
                 imgUrl: "",
               },
             ],
@@ -953,7 +953,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -1004,14 +1004,14 @@ const data = [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
-                color: "red",
+                color: "rgb(255, 152, 0)",
                 imgUrl: "",
               },
 
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: "blue",
+                color: "rgb(33, 150, 243)",
                 imgUrl: "",
               },
             ],
@@ -1025,7 +1025,7 @@ const data = [
             byMember: {
               _id: "u102",
               fullname: "Sean Mamistalov",
-              color: "red",
+              color: "rgb(255, 152, 0)",
               imgUrl: "",
             },
             style: {
@@ -1069,7 +1069,7 @@ const data = [
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: "blue",
+                color: "rgb(33, 150, 243)",
                 imgUrl: "",
               },
             ],
@@ -1083,7 +1083,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -1131,7 +1131,7 @@ const data = [
             byMember: {
               _id: "u101",
               fullname: "Daniel Yacovi",
-              color: "blue",
+              color: "rgb(33, 150, 243)",
               imgUrl: "",
             },
             style: {
@@ -1175,7 +1175,7 @@ const data = [
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: "blue",
+                color: "rgb(33, 150, 243)",
                 imgUrl: "",
               },
             ],
@@ -1189,7 +1189,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -1238,7 +1238,7 @@ const data = [
             byMember: {
               _id: "u101",
               fullname: "Daniel Yacovi",
-              color: "blue",
+              color: "rgb(33, 150, 243)",
               imgUrl: "",
             },
             style: {
@@ -1289,7 +1289,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -1329,7 +1329,7 @@ const data = [
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
-                color: "green",
+                color: "rgb(0, 150, 136)",
                 imgUrl: "",
               },
             ],
@@ -1343,7 +1343,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -1387,7 +1387,7 @@ const data = [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
-                color: "red",
+                color: "rgb(255, 152, 0)",
                 imgUrl: "",
               },
             ],
@@ -1401,7 +1401,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -1448,7 +1448,7 @@ const data = [
             byMember: {
               _id: "u101",
               fullname: "Daniel Yacovi",
-              color: "blue",
+              color: "rgb(33, 150, 243)",
               imgUrl: "",
             },
             style: {
@@ -1493,7 +1493,7 @@ const data = [
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
-                color: "green",
+                color: "rgb(0, 150, 136)",
                 imgUrl: "",
               },
             ],
@@ -1507,7 +1507,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -1589,19 +1589,19 @@ const data = [
       {
         _id: "u102",
         fullname: "Sean Mamistalov",
-        color: "red",
+        color: "rgb(255, 152, 0)",
         imgUrl: "",
       },
       {
         _id: "u103",
         fullname: "Pavel Yelsukov",
-        color: "green",
+        color: "rgb(0, 150, 136)",
         imgUrl: "",
       },
       {
         _id: "u101",
         fullname: "Daniel Yacovi",
-        color: "blue",
+        color: "rgb(33, 150, 243)",
         imgUrl: "",
       },
     ],
@@ -1648,7 +1648,7 @@ const data = [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
-                color: "red",
+                color: "rgb(255, 152, 0)",
                 imgUrl: "",
               },
             ],
@@ -1662,7 +1662,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -1695,13 +1695,13 @@ const data = [
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
-                color: "green",
+                color: "rgb(0, 150, 136)",
                 imgUrl: "",
               },
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: "blue",
+                color: "rgb(33, 150, 243)",
                 imgUrl: "",
               },
             ],
@@ -1715,7 +1715,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -1766,14 +1766,14 @@ const data = [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
-                color: "red",
+                color: "rgb(255, 152, 0)",
                 imgUrl: "",
               },
 
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: "blue",
+                color: "rgb(33, 150, 243)",
                 imgUrl: "",
               },
             ],
@@ -1787,7 +1787,7 @@ const data = [
             byMember: {
               _id: "u102",
               fullname: "Sean Mamistalov",
-              color: "red",
+              color: "rgb(255, 152, 0)",
               imgUrl: "",
             },
             style: {
@@ -1831,7 +1831,7 @@ const data = [
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: "blue",
+                color: "rgb(33, 150, 243)",
                 imgUrl: "",
               },
             ],
@@ -1845,7 +1845,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -1893,7 +1893,7 @@ const data = [
             byMember: {
               _id: "u101",
               fullname: "Daniel Yacovi",
-              color: "blue",
+              color: "rgb(33, 150, 243)",
               imgUrl: "",
             },
             style: {
@@ -1937,7 +1937,7 @@ const data = [
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: "blue",
+                color: "rgb(33, 150, 243)",
                 imgUrl: "",
               },
             ],
@@ -1951,7 +1951,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -2000,7 +2000,7 @@ const data = [
             byMember: {
               _id: "u101",
               fullname: "Daniel Yacovi",
-              color: "blue",
+              color: "rgb(33, 150, 243)",
               imgUrl: "",
             },
             style: {
@@ -2051,7 +2051,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -2091,7 +2091,7 @@ const data = [
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
-                color: "green",
+                color: "rgb(0, 150, 136)",
                 imgUrl: "",
               },
             ],
@@ -2105,7 +2105,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -2149,7 +2149,7 @@ const data = [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
-                color: "red",
+                color: "rgb(255, 152, 0)",
                 imgUrl: "",
               },
             ],
@@ -2163,7 +2163,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -2210,7 +2210,7 @@ const data = [
             byMember: {
               _id: "u101",
               fullname: "Daniel Yacovi",
-              color: "blue",
+              color: "rgb(33, 150, 243)",
               imgUrl: "",
             },
             style: {
@@ -2255,7 +2255,7 @@ const data = [
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
-                color: "green",
+                color: "rgb(0, 150, 136)",
                 imgUrl: "",
               },
             ],
@@ -2269,7 +2269,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -2351,19 +2351,19 @@ const data = [
       {
         _id: "u102",
         fullname: "Sean Mamistalov",
-        color: "red",
+        color: "rgb(255, 152, 0)",
         imgUrl: "",
       },
       {
         _id: "u103",
         fullname: "Pavel Yelsukov",
-        color: "green",
+        color: "rgb(0, 150, 136)",
         imgUrl: "",
       },
       {
         _id: "u101",
         fullname: "Daniel Yacovi",
-        color: "blue",
+        color: "rgb(33, 150, 243)",
         imgUrl: "",
       },
     ],
@@ -2410,7 +2410,7 @@ const data = [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
-                color: "red",
+                color: "rgb(255, 152, 0)",
                 imgUrl: "",
               },
             ],
@@ -2424,7 +2424,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -2457,13 +2457,13 @@ const data = [
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
-                color: "green",
+                color: "rgb(0, 150, 136)",
                 imgUrl: "",
               },
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: "blue",
+                color: "rgb(33, 150, 243)",
                 imgUrl: "",
               },
             ],
@@ -2477,7 +2477,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -2528,14 +2528,14 @@ const data = [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
-                color: "red",
+                color: "rgb(255, 152, 0)",
                 imgUrl: "",
               },
 
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: "blue",
+                color: "rgb(33, 150, 243)",
                 imgUrl: "",
               },
             ],
@@ -2549,7 +2549,7 @@ const data = [
             byMember: {
               _id: "u102",
               fullname: "Sean Mamistalov",
-              color: "red",
+              color: "rgb(255, 152, 0)",
               imgUrl: "",
             },
             style: {
@@ -2593,7 +2593,7 @@ const data = [
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: "blue",
+                color: "rgb(33, 150, 243)",
                 imgUrl: "",
               },
             ],
@@ -2607,7 +2607,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -2655,7 +2655,7 @@ const data = [
             byMember: {
               _id: "u101",
               fullname: "Daniel Yacovi",
-              color: "blue",
+              color: "rgb(33, 150, 243)",
               imgUrl: "",
             },
             style: {
@@ -2699,7 +2699,7 @@ const data = [
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: "blue",
+                color: "rgb(33, 150, 243)",
                 imgUrl: "",
               },
             ],
@@ -2713,7 +2713,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -2762,7 +2762,7 @@ const data = [
             byMember: {
               _id: "u101",
               fullname: "Daniel Yacovi",
-              color: "blue",
+              color: "rgb(33, 150, 243)",
               imgUrl: "",
             },
             style: {
@@ -2813,7 +2813,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -2853,7 +2853,7 @@ const data = [
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
-                color: "green",
+                color: "rgb(0, 150, 136)",
                 imgUrl: "",
               },
             ],
@@ -2867,7 +2867,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -2911,7 +2911,7 @@ const data = [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
-                color: "red",
+                color: "rgb(255, 152, 0)",
                 imgUrl: "",
               },
             ],
@@ -2925,7 +2925,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -2972,7 +2972,7 @@ const data = [
             byMember: {
               _id: "u101",
               fullname: "Daniel Yacovi",
-              color: "blue",
+              color: "rgb(33, 150, 243)",
               imgUrl: "",
             },
             style: {
@@ -3017,7 +3017,7 @@ const data = [
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
-                color: "green",
+                color: "rgb(0, 150, 136)",
                 imgUrl: "",
               },
             ],
@@ -3031,7 +3031,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -3113,19 +3113,19 @@ const data = [
       {
         _id: "u102",
         fullname: "Sean Mamistalov",
-        color: "red",
+        color: "rgb(255, 152, 0)",
         imgUrl: "",
       },
       {
         _id: "u103",
         fullname: "Pavel Yelsukov",
-        color: "green",
+        color: "rgb(0, 150, 136)",
         imgUrl: "",
       },
       {
         _id: "u101",
         fullname: "Daniel Yacovi",
-        color: "blue",
+        color: "rgb(33, 150, 243)",
         imgUrl: "",
       },
     ],
@@ -3172,7 +3172,7 @@ const data = [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
-                color: "red",
+                color: "rgb(255, 152, 0)",
                 imgUrl: "",
               },
             ],
@@ -3186,7 +3186,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -3219,13 +3219,13 @@ const data = [
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
-                color: "green",
+                color: "rgb(0, 150, 136)",
                 imgUrl: "",
               },
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: "blue",
+                color: "rgb(33, 150, 243)",
                 imgUrl: "",
               },
             ],
@@ -3239,7 +3239,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -3290,14 +3290,14 @@ const data = [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
-                color: "red",
+                color: "rgb(255, 152, 0)",
                 imgUrl: "",
               },
 
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: "blue",
+                color: "rgb(33, 150, 243)",
                 imgUrl: "",
               },
             ],
@@ -3311,7 +3311,7 @@ const data = [
             byMember: {
               _id: "u102",
               fullname: "Sean Mamistalov",
-              color: "red",
+              color: "rgb(255, 152, 0)",
               imgUrl: "",
             },
             style: {
@@ -3355,7 +3355,7 @@ const data = [
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: "blue",
+                color: "rgb(33, 150, 243)",
                 imgUrl: "",
               },
             ],
@@ -3369,7 +3369,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -3417,7 +3417,7 @@ const data = [
             byMember: {
               _id: "u101",
               fullname: "Daniel Yacovi",
-              color: "blue",
+              color: "rgb(33, 150, 243)",
               imgUrl: "",
             },
             style: {
@@ -3461,7 +3461,7 @@ const data = [
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: "blue",
+                color: "rgb(33, 150, 243)",
                 imgUrl: "",
               },
             ],
@@ -3475,7 +3475,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -3524,7 +3524,7 @@ const data = [
             byMember: {
               _id: "u101",
               fullname: "Daniel Yacovi",
-              color: "blue",
+              color: "rgb(33, 150, 243)",
               imgUrl: "",
             },
             style: {
@@ -3575,7 +3575,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -3615,7 +3615,7 @@ const data = [
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
-                color: "green",
+                color: "rgb(0, 150, 136)",
                 imgUrl: "",
               },
             ],
@@ -3629,7 +3629,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -3673,7 +3673,7 @@ const data = [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
-                color: "red",
+                color: "rgb(255, 152, 0)",
                 imgUrl: "",
               },
             ],
@@ -3687,7 +3687,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {
@@ -3734,7 +3734,7 @@ const data = [
             byMember: {
               _id: "u101",
               fullname: "Daniel Yacovi",
-              color: "blue",
+              color: "rgb(33, 150, 243)",
               imgUrl: "",
             },
             style: {
@@ -3779,7 +3779,7 @@ const data = [
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
-                color: "green",
+                color: "rgb(0, 150, 136)",
                 imgUrl: "",
               },
             ],
@@ -3793,7 +3793,7 @@ const data = [
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
-              color: "green",
+              color: "rgb(0, 150, 136)",
               imgUrl: "",
             },
             style: {

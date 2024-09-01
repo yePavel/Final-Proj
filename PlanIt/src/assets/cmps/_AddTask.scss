@@ -2,19 +2,31 @@
     padding: 8px 8px 0;
 
     .add-a-card-btn {
-        font-size: 14px;
-        line-height: 20px;
-        text-align: left;
-        letter-spacing: normal;
-        box-shadow: none;
-        background: none;
-        border: none;
-        border-radius: 8px;
-        padding: 6px 12px 6px 8px;
+        display: flex;
+        align-items: center;
         width: 220px;
         height: 32px;
-        cursor: pointer;
+
+        line-height: 20px;
+        text-align: left;
+        font-size: 14px;
+        letter-spacing: normal;
+        font-weight: 500;
+        box-shadow: none;
+        background: none;
+        color: #44546f;
+        border: none;
+        border-radius: 8px;
+
+        padding: 6px 12px 6px 8px;
         transition: background-color 0.2s ease-in-out;
+        cursor: pointer;
+
+        .plus-icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+        }
 
         &:hover {
             background-color: #dfe1e6;

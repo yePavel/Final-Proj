@@ -6,6 +6,7 @@ import { GroupMenu } from "./GroupMenu.jsx";
 import { CardModal } from "./CardModal.jsx";
 import { useSelector } from "react-redux";
 import { loadTask } from "../store/actions/board.actions.js";
+import { GoPlus } from "react-icons/go";
 
 export function BoardGroup({ groups, handleBoardUpdate }) {
   const currBoard = useSelector(storeState => storeState.boardModule.board)
@@ -61,7 +62,7 @@ export function BoardGroup({ groups, handleBoardUpdate }) {
                   onClick={() => setIsAddingTask(group.id)}
                   className="add-a-card-btn"
                 >
-                  + Add a card
+                  <GoPlus className="plus-icon" />Add a card
                 </button>
               )}
             </div>
