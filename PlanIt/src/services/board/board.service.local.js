@@ -27,7 +27,7 @@ const data = [
       imgUrl: "",
     },
     style: {
-      background: "",
+      background: { name: '', first: '', second: '' },
     },
     labels: [
       {

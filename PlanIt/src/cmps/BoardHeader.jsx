@@ -6,8 +6,10 @@ import { Map } from './Map.jsx';
 import { CustomCalendar } from './Calendar.jsx';
 import { AssignedMember } from './AssignedMember.jsx';
 import { MdOutlineStarOutline } from 'react-icons/md';
+import { useSelector } from 'react-redux';
 
 export function BoardHeader({ board }) {
+
     const [showMap, setShowMap] = useState(false);
     const [showCalendar, setShowCalendar] = useState(false);
 
@@ -26,9 +28,9 @@ export function BoardHeader({ board }) {
     const handleCloseCalendar = () => {
         setShowCalendar(false);
     };
-
+    console.log('board:', board)
     return (
-        <header className="board-header">
+        <header className="board-header" style={{ background: `linear-gradient(to right, ${board?.style.background.first}, ${board?.style.background.second})`, color: '#F5F5F5' }}>
             <div className="board-header-left">
                 <h2 className="board-title">{board.title}</h2>
                 <MdOutlineStarOutline alt='Star Icon' className='board-star' />

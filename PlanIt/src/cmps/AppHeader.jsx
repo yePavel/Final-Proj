@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Notifications } from "./Notifications";
 import { NavItem } from "./NavItem";
+import { useSelector } from "react-redux";
 
 export function AppHeader() {
+  const board = useSelector(storeState => storeState.boardModule.board);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
   const [notifications, setNotifications] = useState([
     "New comment on your task",
     "Task deadline approaching",
@@ -49,7 +52,7 @@ export function AppHeader() {
   const initials = getInitials(userName);
 
   return (
-    <header className="app-header">
+    <header className="app-header" style={{ background: `${board?.style.background.first}`, color: '#F5F5F5' }}>
       <div className="left-section">
         <img
           src="/menu.svg"

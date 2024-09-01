@@ -20,12 +20,13 @@ export function BoardDetails() {
         updateBoard(updatedBoard)
     }
 
+
     if (!board) return <div>Loading...</div>;
 
     return (
         <section
             className="board-list"
-            style={{ background: board.style.background || '#ffffff' }}>
+            style={{ background: `linear-gradient(to bottom right, ${board?.style.background.first}, ${board?.style.background.second})` }}>
             <BoardHeader board={board} />
             <div className="board-card">
                 <BoardGroup handleBoardUpdate={handleBoardUpdate} groups={board.groups} />

@@ -100,7 +100,8 @@ export async function removeStaredBoard(board) {
 
 export function setBackgroundColor(color) {
     try {
-        localStorage.setItem('backgroundColor', color); 
+
+        localStorage.setItem('backgroundColor', color);
         const backgroundColor = getCmdSetBackgroundColor(color);
         return backgroundColor;
     } catch (err) {
@@ -135,9 +136,9 @@ export async function updateTaskMembers(boardId, groupId, updatedTask) {
 export async function addChecklist(boardId, groupId, checklist) {
     try {
         const savedChecklist = await taskService.saveTaskChecklist(boardId, groupId, checklist);
-        
+
         store.dispatch({ type: ADD_CHECKLIST, checklist: { title } });
-        
+
         return savedChecklist;
     } catch (err) {
         console.log('Cannot add checklist', err);

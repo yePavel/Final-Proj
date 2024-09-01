@@ -4,21 +4,13 @@ import { MdMailOutline } from "react-icons/md";
 import { useState } from "react";
 import { ColorPicker } from './ColorPicker';
 
-import { useDispatch } from 'react-redux';
-import { setBackgroundColor } from '../store/actions/board.actions';
-import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { updateBoard } from '../store/actions/board.actions';
 
 export function MenuHeader() {
-    const dispatch = useDispatch();
+    const board = useSelector(storeState => storeState.boardModule.board)
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isColorPickerOpen, setIsColorPickerOpen] = useState(false);
-
-    useEffect(() => {
-        const savedColor = localStorage.getItem('backgroundColor');
-        if (savedColor) {
-            dispatch(setBackgroundColor(savedColor));
-        }
-    }, [dispatch]);
 
     function toggleMenu() {
         setIsMenuOpen(!isMenuOpen);
@@ -26,7 +18,9 @@ export function MenuHeader() {
     }
 
     function handleColorSelect(color) {
-        dispatch(setBackgroundColor(color));
+        board.style.background = color
+        console.log('color:', color)
+        updateBoard(board)
         setIsColorPickerOpen(false);
     }
 

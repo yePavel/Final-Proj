@@ -41,7 +41,7 @@ section {
     ul {
         list-style: none;
         padding: 0;
-        
+
         li {
             margin-bottom: 10px;
         }
@@ -76,12 +76,13 @@ section {
         display: block;
     }
 
-    .end-section{
+    .end-section {
+        font-size: 16px;
+        color: #172b4d;
         border-bottom: 1px solid lightgray;
-        
     }
 
-    .menu-actions{
+    .menu-actions {
         font-size: 14px;
         line-height: 20px;
         text-align: left;
