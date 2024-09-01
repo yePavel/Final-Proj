@@ -13,6 +13,8 @@ export function AddTask({ groupId, onCancel, handleBoardUpdate }) {
     }
 
     function onAddTask() {
+        if (taskTitle.trim() === '') return; 
+
         const newTask = getDefaultTask()
         newTask.id = Date.now()
         newTask.title = taskTitle
@@ -29,12 +31,19 @@ export function AddTask({ groupId, onCancel, handleBoardUpdate }) {
         onCancel();
     };
 
+    function handleKeyDown(event) {
+        if (event.key === 'Enter') {
+            onAddTask();
+        }
+    }
+
     return (
         <section className="task-input">
             <input
                 type="text"
                 value={taskTitle}
                 onChange={handleInputChange}
+                onKeyDown={handleKeyDown}
                 placeholder="Enter a name for this card..."
             />
             <div className="task-actions">
