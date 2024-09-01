@@ -18,6 +18,8 @@ export const ADD_CHECKLIST = 'ADD_CHECKLIST'
 export const ADD_CHECKLIST_ITEM = 'ADD_CHECKLIST_ITEM';
 export const TOGGLE_CHECKLIST_ITEM = 'TOGGLE_CHECKLIST_ITEM';
 
+export const ADD_LABEL = 'ADD_LABEL'
+export const UPDATE_LABEL = 'UPDATE_LABEL'
 
 const initialState = {
     boards: [],
@@ -105,6 +107,20 @@ export function boardReducer(state = initialState, action) {
             });
             newState = { ...state, task: { ...state.task, checklists: updatedChecklists } };
             break;
+            case ADD_LABEL:
+                const updatedTaskWithLabel = {
+                    ...state.task,
+                    labels: [...state.task.labels || [], action.label]
+                };
+                newState = { ...state, task: updatedTaskWithLabel };
+                break;
+    
+            case UPDATE_LABEL:
+                const updatedLabels = state.task.labels.map(label => 
+                    label.id === action.label.id ? { ...label, ...action.label } : label
+                );
+                newState = { ...state, task: { ...state.task, labels: updatedLabels } };
+                break;   
         case TOGGLE_CHECKLIST_ITEM:
             return {
                 ...state,

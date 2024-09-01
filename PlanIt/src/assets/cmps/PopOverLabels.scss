@@ -1,0 +1,53 @@
+.pop-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    background-color: #f7f7f7;
+
+    h3 {
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .close-pop {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        color: #333;
+    }
+}
+
+.pop-content-container {
+    padding: 10px;
+}
+
+.label-options {
+    .label-option {
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        margin-bottom: 5px;
+        border-radius: 4px;
+        transition: background-color 0.2s;
+
+        &:hover {
+            background-color: #f4f4f4;
+        }
+
+        .label-color {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        span {
+            font-size: 14px;
+        }
+    }
+}

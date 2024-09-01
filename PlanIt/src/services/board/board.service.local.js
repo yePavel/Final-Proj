@@ -1,8 +1,8 @@
-import { storageService } from '../async-storage.service'
-import { loadFromStorage, makeId, saveToStorage } from '../util.service'
-import { userService } from '../user'
+import { storageService } from "../async-storage.service";
+import { loadFromStorage, makeId, saveToStorage } from "../util.service";
+import { userService } from "../user";
 
-const STORAGE_KEY = 'board'
+const STORAGE_KEY = "board";
 
 export const boardService = {
   query,
@@ -10,13 +10,14 @@ export const boardService = {
   save,
   remove,
   addBoardMsg,
-  getStarredBoards
-}
-window.cs = boardService
+  getStarredBoards,
+  getLabels,
+};
+window.cs = boardService;
 
 const data = [
   {
-    _id: 'b1',
+    _id: "b1",
     title: "Final Proj",
     isStarred: true,
     archivedAt: 1589983468418,
@@ -46,7 +47,7 @@ const data = [
       },
       {
         id: "l104",
-        title: "Check Befor Done",
+        title: "Check Before Done",
         color: "#f87168",
       },
       {
@@ -64,19 +65,19 @@ const data = [
       {
         _id: "u102",
         fullname: "Sean Mamistalov",
-        color: 'red',
+        color: "red",
         imgUrl: "",
       },
       {
         _id: "u103",
         fullname: "Pavel Yelsukov",
-        color: 'green',
+        color: "green",
         imgUrl: "",
       },
       {
         _id: "u101",
         fullname: "Daniel Yacovi",
-        color: 'blue',
+        color: "blue",
         imgUrl: "",
       },
     ],
@@ -102,9 +103,9 @@ const data = [
                 byMember: {
                   _id: "u101",
                   fullname: "Daniel Yacovi",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -114,16 +115,16 @@ const data = [
                   {
                     id: "212jX",
                     title: "Verify login error handling",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
-                color: 'red',
+                color: "red",
                 imgUrl: "",
               },
             ],
@@ -131,18 +132,18 @@ const data = [
               {
                 id: "l103",
                 title: "bug",
-                color: "#ff4757"
-              }
+                color: "#ff4757",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#26de81"
-            }
+              backgroundColor: "#26de81",
+            },
           },
           {
             id: "c102",
@@ -161,22 +162,22 @@ const data = [
                   {
                     id: "212jX2",
                     title: "Design dark mode color scheme",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
-                color: 'green',
+                color: "green",
                 imgUrl: "",
               },
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: 'blue',
+                color: "blue",
                 imgUrl: "",
               },
             ],
@@ -184,18 +185,18 @@ const data = [
               {
                 id: "l104",
                 title: "feature",
-                color: "#1e90ff"
-              }
+                color: "#1e90ff",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#fd9644"
-            }
+              backgroundColor: "#fd9644",
+            },
           },
         ],
         style: {},
@@ -220,9 +221,9 @@ const data = [
                 byMember: {
                   _id: "u101",
                   fullname: "Daniel Yacovi",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -232,23 +233,23 @@ const data = [
                   {
                     id: "212jX3",
                     title: "Optimize API calls",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
-                color: 'red',
+                color: "red",
                 imgUrl: "",
               },
 
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: 'blue',
+                color: "blue",
                 imgUrl: "",
               },
             ],
@@ -256,18 +257,18 @@ const data = [
               {
                 id: "l105",
                 title: "refactor",
-                color: "#ff6b81"
-              }
+                color: "#ff6b81",
+              },
             ],
             byMember: {
               _id: "u102",
               fullname: "Sean Mamistalov",
               color: "red",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#26de81"
-            }
+              backgroundColor: "#26de81",
+            },
           },
           {
             id: "c104",
@@ -285,9 +286,9 @@ const data = [
                 byMember: {
                   _id: "u101",
                   fullname: "Daniel Yacovi",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -297,16 +298,16 @@ const data = [
                   {
                     id: "212jX",
                     title: "To Do 1",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: 'blue',
+                color: "blue",
                 imgUrl: "",
               },
             ],
@@ -314,18 +315,18 @@ const data = [
               {
                 id: "l103",
                 title: "full of bugs",
-                color: "#579dff"
-              }
+                color: "#579dff",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#26de81"
-            }
+              backgroundColor: "#26de81",
+            },
           },
         ],
         style: {},
@@ -352,30 +353,28 @@ const data = [
                   {
                     id: "212jX4",
                     title: "Update README file",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
-            members: [
-
-            ],
+            members: [],
             labels: [
               {
                 id: "l106",
                 title: "documentation",
-                color: "#a55eea"
-              }
+                color: "#a55eea",
+              },
             ],
             byMember: {
               _id: "u101",
               fullname: "Daniel Yacovi",
               color: "blue",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#fed330"
-            }
+              backgroundColor: "#fed330",
+            },
           },
           {
             id: "c106",
@@ -393,9 +392,9 @@ const data = [
                 byMember: {
                   _id: "u102",
                   fullname: "Sean Mamistalov",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -405,16 +404,16 @@ const data = [
                   {
                     id: "212jX6",
                     title: "Research CI/CD tools",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: 'blue',
+                color: "blue",
                 imgUrl: "",
               },
             ],
@@ -422,18 +421,18 @@ const data = [
               {
                 id: "l107",
                 title: "deployment",
-                color: "#20bf6b"
-              }
+                color: "#20bf6b",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#26de81"
-            }
+              backgroundColor: "#26de81",
+            },
           },
         ],
         style: {},
@@ -450,7 +449,8 @@ const data = [
             status: "done",
             priority: "medium",
             dueDate: "2024-09-21",
-            description: "Configure development environment for new developers.",
+            description:
+              "Configure development environment for new developers.",
             comments: [],
             checklists: [
               {
@@ -460,30 +460,28 @@ const data = [
                   {
                     id: "212jX7",
                     title: "Install necessary tools",
-                    isDone: true
-                  }
-                ]
-              }
+                    isDone: true,
+                  },
+                ],
+              },
             ],
-            members: [
-
-            ],
+            members: [],
             labels: [
               {
                 id: "l108",
                 title: "setup",
-                color: "#4b7bec"
-              }
+                color: "#4b7bec",
+              },
             ],
             byMember: {
               _id: "u101",
               fullname: "Daniel Yacovi",
               color: "blue",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#f7b731"
-            }
+              backgroundColor: "#f7b731",
+            },
           },
           {
             id: "c108",
@@ -501,9 +499,9 @@ const data = [
                 byMember: {
                   _id: "u102",
                   fullname: "Sean Mamistalov",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -513,30 +511,28 @@ const data = [
                   {
                     id: "212jX8",
                     title: "Check session management",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
-            members: [
-
-            ],
+            members: [],
             labels: [
               {
                 id: "l109",
                 title: "bug",
-                color: "#ff4757"
-              }
+                color: "#ff4757",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#fd9644"
-            }
+              backgroundColor: "#fd9644",
+            },
           },
         ],
         style: {},
@@ -562,16 +558,16 @@ const data = [
                   {
                     id: "212jX9",
                     title: "Design profile layout",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
-                color: 'green',
+                color: "green",
                 imgUrl: "",
               },
             ],
@@ -579,18 +575,18 @@ const data = [
               {
                 id: "l110",
                 title: "feature",
-                color: "#1e90ff"
-              }
+                color: "#1e90ff",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#26de81"
-            }
+              backgroundColor: "#26de81",
+            },
           },
           {
             id: "c111",
@@ -608,9 +604,9 @@ const data = [
                 byMember: {
                   _id: "u101",
                   fullname: "Daniel Yacovi",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -620,16 +616,16 @@ const data = [
                   {
                     id: "212jX11",
                     title: "Implement push notifications",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
-                color: 'red',
+                color: "red",
                 imgUrl: "",
               },
             ],
@@ -637,18 +633,18 @@ const data = [
               {
                 id: "l111",
                 title: "feature",
-                color: "#4b7bec"
-              }
+                color: "#4b7bec",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#f7b731"
-            }
+              backgroundColor: "#f7b731",
+            },
           },
         ],
         style: {},
@@ -674,30 +670,28 @@ const data = [
                   {
                     id: "212jX12",
                     title: "Add screen reader support",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
-            members: [
-
-            ],
+            members: [],
             labels: [
               {
                 id: "l112",
                 title: "accessibility",
-                color: "#a55eea"
-              }
+                color: "#a55eea",
+              },
             ],
             byMember: {
               _id: "u101",
               fullname: "Daniel Yacovi",
               color: "blue",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#fd9644"
-            }
+              backgroundColor: "#fd9644",
+            },
           },
           {
             id: "c113",
@@ -706,7 +700,8 @@ const data = [
             status: "todo",
             priority: "high",
             dueDate: "2024-10-02",
-            description: "Refactor the authentication system for better security.",
+            description:
+              "Refactor the authentication system for better security.",
             comments: [
               {
                 id: "ZdPnm13",
@@ -715,9 +710,9 @@ const data = [
                 byMember: {
                   _id: "u102",
                   fullname: "Sean Mamistalov",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -727,16 +722,16 @@ const data = [
                   {
                     id: "212jX13",
                     title: "Implement token-based authentication",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
-                color: 'green',
+                color: "green",
                 imgUrl: "",
               },
             ],
@@ -744,18 +739,18 @@ const data = [
               {
                 id: "l113",
                 title: "security",
-                color: "#eb3b5a"
-              }
+                color: "#eb3b5a",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#26de81"
-            }
+              backgroundColor: "#26de81",
+            },
           },
         ],
         style: {},
@@ -784,7 +779,7 @@ const data = [
     cmpsOrder: ["StatusPicker", "MemberPicker", "DatePicker"],
   },
   {
-    _id: 'b2',
+    _id: "b2",
     title: "CodeIt",
     isStarred: true,
     archivedAt: 1589983468418,
@@ -814,7 +809,7 @@ const data = [
       },
       {
         id: "l104",
-        title: "Check Befor Done",
+        title: "Check Before Done",
         color: "#f87168",
       },
       {
@@ -832,19 +827,19 @@ const data = [
       {
         _id: "u102",
         fullname: "Sean Mamistalov",
-        color: 'red',
+        color: "red",
         imgUrl: "",
       },
       {
         _id: "u103",
         fullname: "Pavel Yelsukov",
-        color: 'green',
+        color: "green",
         imgUrl: "",
       },
       {
         _id: "u101",
         fullname: "Daniel Yacovi",
-        color: 'blue',
+        color: "blue",
         imgUrl: "",
       },
     ],
@@ -870,9 +865,9 @@ const data = [
                 byMember: {
                   _id: "u101",
                   fullname: "Daniel Yacovi",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -882,16 +877,16 @@ const data = [
                   {
                     id: "212jX",
                     title: "Verify login error handling",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
-                color: 'red',
+                color: "red",
                 imgUrl: "",
               },
             ],
@@ -899,18 +894,18 @@ const data = [
               {
                 id: "l103",
                 title: "bug",
-                color: "#ff4757"
-              }
+                color: "#ff4757",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#26de81"
-            }
+              backgroundColor: "#26de81",
+            },
           },
           {
             id: "c102",
@@ -929,22 +924,22 @@ const data = [
                   {
                     id: "212jX2",
                     title: "Design dark mode color scheme",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
-                color: 'green',
+                color: "green",
                 imgUrl: "",
               },
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: 'blue',
+                color: "blue",
                 imgUrl: "",
               },
             ],
@@ -952,18 +947,18 @@ const data = [
               {
                 id: "l104",
                 title: "feature",
-                color: "#1e90ff"
-              }
+                color: "#1e90ff",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#fd9644"
-            }
+              backgroundColor: "#fd9644",
+            },
           },
         ],
         style: {},
@@ -988,9 +983,9 @@ const data = [
                 byMember: {
                   _id: "u101",
                   fullname: "Daniel Yacovi",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -1000,23 +995,23 @@ const data = [
                   {
                     id: "212jX3",
                     title: "Optimize API calls",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
-                color: 'red',
+                color: "red",
                 imgUrl: "",
               },
 
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: 'blue',
+                color: "blue",
                 imgUrl: "",
               },
             ],
@@ -1024,18 +1019,18 @@ const data = [
               {
                 id: "l105",
                 title: "refactor",
-                color: "#ff6b81"
-              }
+                color: "#ff6b81",
+              },
             ],
             byMember: {
               _id: "u102",
               fullname: "Sean Mamistalov",
               color: "red",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#26de81"
-            }
+              backgroundColor: "#26de81",
+            },
           },
           {
             id: "c104",
@@ -1053,9 +1048,9 @@ const data = [
                 byMember: {
                   _id: "u101",
                   fullname: "Daniel Yacovi",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -1065,16 +1060,16 @@ const data = [
                   {
                     id: "212jX",
                     title: "To Do 1",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: 'blue',
+                color: "blue",
                 imgUrl: "",
               },
             ],
@@ -1082,18 +1077,18 @@ const data = [
               {
                 id: "l103",
                 title: "full of bugs",
-                color: "#579dff"
-              }
+                color: "#579dff",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#26de81"
-            }
+              backgroundColor: "#26de81",
+            },
           },
         ],
         style: {},
@@ -1120,30 +1115,28 @@ const data = [
                   {
                     id: "212jX4",
                     title: "Update README file",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
-            members: [
-
-            ],
+            members: [],
             labels: [
               {
                 id: "l106",
                 title: "documentation",
-                color: "#a55eea"
-              }
+                color: "#a55eea",
+              },
             ],
             byMember: {
               _id: "u101",
               fullname: "Daniel Yacovi",
               color: "blue",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#fed330"
-            }
+              backgroundColor: "#fed330",
+            },
           },
           {
             id: "c106",
@@ -1161,9 +1154,9 @@ const data = [
                 byMember: {
                   _id: "u102",
                   fullname: "Sean Mamistalov",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -1173,16 +1166,16 @@ const data = [
                   {
                     id: "212jX6",
                     title: "Research CI/CD tools",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: 'blue',
+                color: "blue",
                 imgUrl: "",
               },
             ],
@@ -1190,18 +1183,18 @@ const data = [
               {
                 id: "l107",
                 title: "deployment",
-                color: "#20bf6b"
-              }
+                color: "#20bf6b",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#26de81"
-            }
+              backgroundColor: "#26de81",
+            },
           },
         ],
         style: {},
@@ -1218,7 +1211,8 @@ const data = [
             status: "done",
             priority: "medium",
             dueDate: "2024-09-21",
-            description: "Configure development environment for new developers.",
+            description:
+              "Configure development environment for new developers.",
             comments: [],
             checklists: [
               {
@@ -1228,30 +1222,28 @@ const data = [
                   {
                     id: "212jX7",
                     title: "Install necessary tools",
-                    isDone: true
-                  }
-                ]
-              }
+                    isDone: true,
+                  },
+                ],
+              },
             ],
-            members: [
-
-            ],
+            members: [],
             labels: [
               {
                 id: "l108",
                 title: "setup",
-                color: "#4b7bec"
-              }
+                color: "#4b7bec",
+              },
             ],
             byMember: {
               _id: "u101",
               fullname: "Daniel Yacovi",
               color: "blue",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#f7b731"
-            }
+              backgroundColor: "#f7b731",
+            },
           },
           {
             id: "c108",
@@ -1269,9 +1261,9 @@ const data = [
                 byMember: {
                   _id: "u102",
                   fullname: "Sean Mamistalov",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -1281,30 +1273,28 @@ const data = [
                   {
                     id: "212jX8",
                     title: "Check session management",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
-            members: [
-
-            ],
+            members: [],
             labels: [
               {
                 id: "l109",
                 title: "bug",
-                color: "#ff4757"
-              }
+                color: "#ff4757",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#fd9644"
-            }
+              backgroundColor: "#fd9644",
+            },
           },
         ],
         style: {},
@@ -1330,16 +1320,16 @@ const data = [
                   {
                     id: "212jX9",
                     title: "Design profile layout",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
-                color: 'green',
+                color: "green",
                 imgUrl: "",
               },
             ],
@@ -1347,18 +1337,18 @@ const data = [
               {
                 id: "l110",
                 title: "feature",
-                color: "#1e90ff"
-              }
+                color: "#1e90ff",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#26de81"
-            }
+              backgroundColor: "#26de81",
+            },
           },
           {
             id: "c111",
@@ -1376,9 +1366,9 @@ const data = [
                 byMember: {
                   _id: "u101",
                   fullname: "Daniel Yacovi",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -1388,16 +1378,16 @@ const data = [
                   {
                     id: "212jX11",
                     title: "Implement push notifications",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
-                color: 'red',
+                color: "red",
                 imgUrl: "",
               },
             ],
@@ -1405,18 +1395,18 @@ const data = [
               {
                 id: "l111",
                 title: "feature",
-                color: "#4b7bec"
-              }
+                color: "#4b7bec",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#f7b731"
-            }
+              backgroundColor: "#f7b731",
+            },
           },
         ],
         style: {},
@@ -1442,30 +1432,28 @@ const data = [
                   {
                     id: "212jX12",
                     title: "Add screen reader support",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
-            members: [
-
-            ],
+            members: [],
             labels: [
               {
                 id: "l112",
                 title: "accessibility",
-                color: "#a55eea"
-              }
+                color: "#a55eea",
+              },
             ],
             byMember: {
               _id: "u101",
               fullname: "Daniel Yacovi",
               color: "blue",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#fd9644"
-            }
+              backgroundColor: "#fd9644",
+            },
           },
           {
             id: "c113",
@@ -1474,7 +1462,8 @@ const data = [
             status: "todo",
             priority: "high",
             dueDate: "2024-10-02",
-            description: "Refactor the authentication system for better security.",
+            description:
+              "Refactor the authentication system for better security.",
             comments: [
               {
                 id: "ZdPnm13",
@@ -1483,9 +1472,9 @@ const data = [
                 byMember: {
                   _id: "u102",
                   fullname: "Sean Mamistalov",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -1495,16 +1484,16 @@ const data = [
                   {
                     id: "212jX13",
                     title: "Implement token-based authentication",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
-                color: 'green',
+                color: "green",
                 imgUrl: "",
               },
             ],
@@ -1512,18 +1501,18 @@ const data = [
               {
                 id: "l113",
                 title: "security",
-                color: "#eb3b5a"
-              }
+                color: "#eb3b5a",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#26de81"
-            }
+              backgroundColor: "#26de81",
+            },
           },
         ],
         style: {},
@@ -1552,7 +1541,7 @@ const data = [
     cmpsOrder: ["StatusPicker", "MemberPicker", "DatePicker"],
   },
   {
-    _id: 'b3',
+    _id: "b3",
     title: "PlanIt-example",
     isStarred: false,
     archivedAt: 1589983468418,
@@ -1582,7 +1571,7 @@ const data = [
       },
       {
         id: "l104",
-        title: "Check Befor Done",
+        title: "Check Before Done",
         color: "#f87168",
       },
       {
@@ -1600,19 +1589,19 @@ const data = [
       {
         _id: "u102",
         fullname: "Sean Mamistalov",
-        color: 'red',
+        color: "red",
         imgUrl: "",
       },
       {
         _id: "u103",
         fullname: "Pavel Yelsukov",
-        color: 'green',
+        color: "green",
         imgUrl: "",
       },
       {
         _id: "u101",
         fullname: "Daniel Yacovi",
-        color: 'blue',
+        color: "blue",
         imgUrl: "",
       },
     ],
@@ -1638,9 +1627,9 @@ const data = [
                 byMember: {
                   _id: "u101",
                   fullname: "Daniel Yacovi",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -1650,16 +1639,16 @@ const data = [
                   {
                     id: "212jX",
                     title: "Verify login error handling",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
-                color: 'red',
+                color: "red",
                 imgUrl: "",
               },
             ],
@@ -1667,18 +1656,18 @@ const data = [
               {
                 id: "l103",
                 title: "bug",
-                color: "#ff4757"
-              }
+                color: "#ff4757",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#26de81"
-            }
+              backgroundColor: "#26de81",
+            },
           },
           {
             id: "c102",
@@ -1697,22 +1686,22 @@ const data = [
                   {
                     id: "212jX2",
                     title: "Design dark mode color scheme",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
-                color: 'green',
+                color: "green",
                 imgUrl: "",
               },
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: 'blue',
+                color: "blue",
                 imgUrl: "",
               },
             ],
@@ -1720,18 +1709,18 @@ const data = [
               {
                 id: "l104",
                 title: "feature",
-                color: "#1e90ff"
-              }
+                color: "#1e90ff",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#fd9644"
-            }
+              backgroundColor: "#fd9644",
+            },
           },
         ],
         style: {},
@@ -1756,9 +1745,9 @@ const data = [
                 byMember: {
                   _id: "u101",
                   fullname: "Daniel Yacovi",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -1768,23 +1757,23 @@ const data = [
                   {
                     id: "212jX3",
                     title: "Optimize API calls",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
-                color: 'red',
+                color: "red",
                 imgUrl: "",
               },
 
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: 'blue',
+                color: "blue",
                 imgUrl: "",
               },
             ],
@@ -1792,18 +1781,18 @@ const data = [
               {
                 id: "l105",
                 title: "refactor",
-                color: "#ff6b81"
-              }
+                color: "#ff6b81",
+              },
             ],
             byMember: {
               _id: "u102",
               fullname: "Sean Mamistalov",
               color: "red",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#26de81"
-            }
+              backgroundColor: "#26de81",
+            },
           },
           {
             id: "c104",
@@ -1821,9 +1810,9 @@ const data = [
                 byMember: {
                   _id: "u101",
                   fullname: "Daniel Yacovi",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -1833,16 +1822,16 @@ const data = [
                   {
                     id: "212jX",
                     title: "To Do 1",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: 'blue',
+                color: "blue",
                 imgUrl: "",
               },
             ],
@@ -1850,18 +1839,18 @@ const data = [
               {
                 id: "l103",
                 title: "full of bugs",
-                color: "#579dff"
-              }
+                color: "#579dff",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#26de81"
-            }
+              backgroundColor: "#26de81",
+            },
           },
         ],
         style: {},
@@ -1888,30 +1877,28 @@ const data = [
                   {
                     id: "212jX4",
                     title: "Update README file",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
-            members: [
-
-            ],
+            members: [],
             labels: [
               {
                 id: "l106",
                 title: "documentation",
-                color: "#a55eea"
-              }
+                color: "#a55eea",
+              },
             ],
             byMember: {
               _id: "u101",
               fullname: "Daniel Yacovi",
               color: "blue",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#fed330"
-            }
+              backgroundColor: "#fed330",
+            },
           },
           {
             id: "c106",
@@ -1929,9 +1916,9 @@ const data = [
                 byMember: {
                   _id: "u102",
                   fullname: "Sean Mamistalov",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -1941,16 +1928,16 @@ const data = [
                   {
                     id: "212jX6",
                     title: "Research CI/CD tools",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: 'blue',
+                color: "blue",
                 imgUrl: "",
               },
             ],
@@ -1958,18 +1945,18 @@ const data = [
               {
                 id: "l107",
                 title: "deployment",
-                color: "#20bf6b"
-              }
+                color: "#20bf6b",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#26de81"
-            }
+              backgroundColor: "#26de81",
+            },
           },
         ],
         style: {},
@@ -1986,7 +1973,8 @@ const data = [
             status: "done",
             priority: "medium",
             dueDate: "2024-09-21",
-            description: "Configure development environment for new developers.",
+            description:
+              "Configure development environment for new developers.",
             comments: [],
             checklists: [
               {
@@ -1996,30 +1984,28 @@ const data = [
                   {
                     id: "212jX7",
                     title: "Install necessary tools",
-                    isDone: true
-                  }
-                ]
-              }
+                    isDone: true,
+                  },
+                ],
+              },
             ],
-            members: [
-
-            ],
+            members: [],
             labels: [
               {
                 id: "l108",
                 title: "setup",
-                color: "#4b7bec"
-              }
+                color: "#4b7bec",
+              },
             ],
             byMember: {
               _id: "u101",
               fullname: "Daniel Yacovi",
               color: "blue",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#f7b731"
-            }
+              backgroundColor: "#f7b731",
+            },
           },
           {
             id: "c108",
@@ -2037,9 +2023,9 @@ const data = [
                 byMember: {
                   _id: "u102",
                   fullname: "Sean Mamistalov",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -2049,30 +2035,28 @@ const data = [
                   {
                     id: "212jX8",
                     title: "Check session management",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
-            members: [
-
-            ],
+            members: [],
             labels: [
               {
                 id: "l109",
                 title: "bug",
-                color: "#ff4757"
-              }
+                color: "#ff4757",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#fd9644"
-            }
+              backgroundColor: "#fd9644",
+            },
           },
         ],
         style: {},
@@ -2098,16 +2082,16 @@ const data = [
                   {
                     id: "212jX9",
                     title: "Design profile layout",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
-                color: 'green',
+                color: "green",
                 imgUrl: "",
               },
             ],
@@ -2115,18 +2099,18 @@ const data = [
               {
                 id: "l110",
                 title: "feature",
-                color: "#1e90ff"
-              }
+                color: "#1e90ff",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#26de81"
-            }
+              backgroundColor: "#26de81",
+            },
           },
           {
             id: "c111",
@@ -2144,9 +2128,9 @@ const data = [
                 byMember: {
                   _id: "u101",
                   fullname: "Daniel Yacovi",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -2156,16 +2140,16 @@ const data = [
                   {
                     id: "212jX11",
                     title: "Implement push notifications",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
-                color: 'red',
+                color: "red",
                 imgUrl: "",
               },
             ],
@@ -2173,18 +2157,18 @@ const data = [
               {
                 id: "l111",
                 title: "feature",
-                color: "#4b7bec"
-              }
+                color: "#4b7bec",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#f7b731"
-            }
+              backgroundColor: "#f7b731",
+            },
           },
         ],
         style: {},
@@ -2210,30 +2194,28 @@ const data = [
                   {
                     id: "212jX12",
                     title: "Add screen reader support",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
-            members: [
-
-            ],
+            members: [],
             labels: [
               {
                 id: "l112",
                 title: "accessibility",
-                color: "#a55eea"
-              }
+                color: "#a55eea",
+              },
             ],
             byMember: {
               _id: "u101",
               fullname: "Daniel Yacovi",
               color: "blue",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#fd9644"
-            }
+              backgroundColor: "#fd9644",
+            },
           },
           {
             id: "c113",
@@ -2242,7 +2224,8 @@ const data = [
             status: "todo",
             priority: "high",
             dueDate: "2024-10-02",
-            description: "Refactor the authentication system for better security.",
+            description:
+              "Refactor the authentication system for better security.",
             comments: [
               {
                 id: "ZdPnm13",
@@ -2251,9 +2234,9 @@ const data = [
                 byMember: {
                   _id: "u102",
                   fullname: "Sean Mamistalov",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -2263,16 +2246,16 @@ const data = [
                   {
                     id: "212jX13",
                     title: "Implement token-based authentication",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
-                color: 'green',
+                color: "green",
                 imgUrl: "",
               },
             ],
@@ -2280,18 +2263,18 @@ const data = [
               {
                 id: "l113",
                 title: "security",
-                color: "#eb3b5a"
-              }
+                color: "#eb3b5a",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#26de81"
-            }
+              backgroundColor: "#26de81",
+            },
           },
         ],
         style: {},
@@ -2320,7 +2303,7 @@ const data = [
     cmpsOrder: ["StatusPicker", "MemberPicker", "DatePicker"],
   },
   {
-    _id: 'b4',
+    _id: "b4",
     title: "LetsDoIT",
     isStarred: false,
     archivedAt: 1589983468418,
@@ -2350,7 +2333,7 @@ const data = [
       },
       {
         id: "l104",
-        title: "Check Befor Done",
+        title: "Check Before Done",
         color: "#f87168",
       },
       {
@@ -2368,19 +2351,19 @@ const data = [
       {
         _id: "u102",
         fullname: "Sean Mamistalov",
-        color: 'red',
+        color: "red",
         imgUrl: "",
       },
       {
         _id: "u103",
         fullname: "Pavel Yelsukov",
-        color: 'green',
+        color: "green",
         imgUrl: "",
       },
       {
         _id: "u101",
         fullname: "Daniel Yacovi",
-        color: 'blue',
+        color: "blue",
         imgUrl: "",
       },
     ],
@@ -2406,9 +2389,9 @@ const data = [
                 byMember: {
                   _id: "u101",
                   fullname: "Daniel Yacovi",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -2418,16 +2401,16 @@ const data = [
                   {
                     id: "212jX",
                     title: "Verify login error handling",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
-                color: 'red',
+                color: "red",
                 imgUrl: "",
               },
             ],
@@ -2435,18 +2418,18 @@ const data = [
               {
                 id: "l103",
                 title: "bug",
-                color: "#ff4757"
-              }
+                color: "#ff4757",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#26de81"
-            }
+              backgroundColor: "#26de81",
+            },
           },
           {
             id: "c102",
@@ -2465,22 +2448,22 @@ const data = [
                   {
                     id: "212jX2",
                     title: "Design dark mode color scheme",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
-                color: 'green',
+                color: "green",
                 imgUrl: "",
               },
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: 'blue',
+                color: "blue",
                 imgUrl: "",
               },
             ],
@@ -2488,18 +2471,18 @@ const data = [
               {
                 id: "l104",
                 title: "feature",
-                color: "#1e90ff"
-              }
+                color: "#1e90ff",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#fd9644"
-            }
+              backgroundColor: "#fd9644",
+            },
           },
         ],
         style: {},
@@ -2524,9 +2507,9 @@ const data = [
                 byMember: {
                   _id: "u101",
                   fullname: "Daniel Yacovi",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -2536,23 +2519,23 @@ const data = [
                   {
                     id: "212jX3",
                     title: "Optimize API calls",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
-                color: 'red',
+                color: "red",
                 imgUrl: "",
               },
 
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: 'blue',
+                color: "blue",
                 imgUrl: "",
               },
             ],
@@ -2560,18 +2543,18 @@ const data = [
               {
                 id: "l105",
                 title: "refactor",
-                color: "#ff6b81"
-              }
+                color: "#ff6b81",
+              },
             ],
             byMember: {
               _id: "u102",
               fullname: "Sean Mamistalov",
               color: "red",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#26de81"
-            }
+              backgroundColor: "#26de81",
+            },
           },
           {
             id: "c104",
@@ -2589,9 +2572,9 @@ const data = [
                 byMember: {
                   _id: "u101",
                   fullname: "Daniel Yacovi",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -2601,16 +2584,16 @@ const data = [
                   {
                     id: "212jX",
                     title: "To Do 1",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: 'blue',
+                color: "blue",
                 imgUrl: "",
               },
             ],
@@ -2618,18 +2601,18 @@ const data = [
               {
                 id: "l103",
                 title: "full of bugs",
-                color: "#579dff"
-              }
+                color: "#579dff",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#26de81"
-            }
+              backgroundColor: "#26de81",
+            },
           },
         ],
         style: {},
@@ -2656,30 +2639,28 @@ const data = [
                   {
                     id: "212jX4",
                     title: "Update README file",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
-            members: [
-
-            ],
+            members: [],
             labels: [
               {
                 id: "l106",
                 title: "documentation",
-                color: "#a55eea"
-              }
+                color: "#a55eea",
+              },
             ],
             byMember: {
               _id: "u101",
               fullname: "Daniel Yacovi",
               color: "blue",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#fed330"
-            }
+              backgroundColor: "#fed330",
+            },
           },
           {
             id: "c106",
@@ -2697,9 +2678,9 @@ const data = [
                 byMember: {
                   _id: "u102",
                   fullname: "Sean Mamistalov",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -2709,16 +2690,16 @@ const data = [
                   {
                     id: "212jX6",
                     title: "Research CI/CD tools",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: 'blue',
+                color: "blue",
                 imgUrl: "",
               },
             ],
@@ -2726,18 +2707,18 @@ const data = [
               {
                 id: "l107",
                 title: "deployment",
-                color: "#20bf6b"
-              }
+                color: "#20bf6b",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#26de81"
-            }
+              backgroundColor: "#26de81",
+            },
           },
         ],
         style: {},
@@ -2754,7 +2735,8 @@ const data = [
             status: "done",
             priority: "medium",
             dueDate: "2024-09-21",
-            description: "Configure development environment for new developers.",
+            description:
+              "Configure development environment for new developers.",
             comments: [],
             checklists: [
               {
@@ -2764,30 +2746,28 @@ const data = [
                   {
                     id: "212jX7",
                     title: "Install necessary tools",
-                    isDone: true
-                  }
-                ]
-              }
+                    isDone: true,
+                  },
+                ],
+              },
             ],
-            members: [
-
-            ],
+            members: [],
             labels: [
               {
                 id: "l108",
                 title: "setup",
-                color: "#4b7bec"
-              }
+                color: "#4b7bec",
+              },
             ],
             byMember: {
               _id: "u101",
               fullname: "Daniel Yacovi",
               color: "blue",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#f7b731"
-            }
+              backgroundColor: "#f7b731",
+            },
           },
           {
             id: "c108",
@@ -2805,9 +2785,9 @@ const data = [
                 byMember: {
                   _id: "u102",
                   fullname: "Sean Mamistalov",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -2817,30 +2797,28 @@ const data = [
                   {
                     id: "212jX8",
                     title: "Check session management",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
-            members: [
-
-            ],
+            members: [],
             labels: [
               {
                 id: "l109",
                 title: "bug",
-                color: "#ff4757"
-              }
+                color: "#ff4757",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#fd9644"
-            }
+              backgroundColor: "#fd9644",
+            },
           },
         ],
         style: {},
@@ -2866,16 +2844,16 @@ const data = [
                   {
                     id: "212jX9",
                     title: "Design profile layout",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
-                color: 'green',
+                color: "green",
                 imgUrl: "",
               },
             ],
@@ -2883,18 +2861,18 @@ const data = [
               {
                 id: "l110",
                 title: "feature",
-                color: "#1e90ff"
-              }
+                color: "#1e90ff",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#26de81"
-            }
+              backgroundColor: "#26de81",
+            },
           },
           {
             id: "c111",
@@ -2912,9 +2890,9 @@ const data = [
                 byMember: {
                   _id: "u101",
                   fullname: "Daniel Yacovi",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -2924,16 +2902,16 @@ const data = [
                   {
                     id: "212jX11",
                     title: "Implement push notifications",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
-                color: 'red',
+                color: "red",
                 imgUrl: "",
               },
             ],
@@ -2941,18 +2919,18 @@ const data = [
               {
                 id: "l111",
                 title: "feature",
-                color: "#4b7bec"
-              }
+                color: "#4b7bec",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#f7b731"
-            }
+              backgroundColor: "#f7b731",
+            },
           },
         ],
         style: {},
@@ -2978,30 +2956,28 @@ const data = [
                   {
                     id: "212jX12",
                     title: "Add screen reader support",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
-            members: [
-
-            ],
+            members: [],
             labels: [
               {
                 id: "l112",
                 title: "accessibility",
-                color: "#a55eea"
-              }
+                color: "#a55eea",
+              },
             ],
             byMember: {
               _id: "u101",
               fullname: "Daniel Yacovi",
               color: "blue",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#fd9644"
-            }
+              backgroundColor: "#fd9644",
+            },
           },
           {
             id: "c113",
@@ -3010,7 +2986,8 @@ const data = [
             status: "todo",
             priority: "high",
             dueDate: "2024-10-02",
-            description: "Refactor the authentication system for better security.",
+            description:
+              "Refactor the authentication system for better security.",
             comments: [
               {
                 id: "ZdPnm13",
@@ -3019,9 +2996,9 @@ const data = [
                 byMember: {
                   _id: "u102",
                   fullname: "Sean Mamistalov",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -3031,16 +3008,16 @@ const data = [
                   {
                     id: "212jX13",
                     title: "Implement token-based authentication",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
-                color: 'green',
+                color: "green",
                 imgUrl: "",
               },
             ],
@@ -3048,18 +3025,18 @@ const data = [
               {
                 id: "l113",
                 title: "security",
-                color: "#eb3b5a"
-              }
+                color: "#eb3b5a",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#26de81"
-            }
+              backgroundColor: "#26de81",
+            },
           },
         ],
         style: {},
@@ -3088,7 +3065,7 @@ const data = [
     cmpsOrder: ["StatusPicker", "MemberPicker", "DatePicker"],
   },
   {
-    _id: 'b5',
+    _id: "b5",
     title: "Wo0w-Proj",
     isStarred: false,
     archivedAt: 1589983468418,
@@ -3118,7 +3095,7 @@ const data = [
       },
       {
         id: "l104",
-        title: "Check Befor Done",
+        title: "Check Before Done",
         color: "#f87168",
       },
       {
@@ -3136,19 +3113,19 @@ const data = [
       {
         _id: "u102",
         fullname: "Sean Mamistalov",
-        color: 'red',
+        color: "red",
         imgUrl: "",
       },
       {
         _id: "u103",
         fullname: "Pavel Yelsukov",
-        color: 'green',
+        color: "green",
         imgUrl: "",
       },
       {
         _id: "u101",
         fullname: "Daniel Yacovi",
-        color: 'blue',
+        color: "blue",
         imgUrl: "",
       },
     ],
@@ -3174,9 +3151,9 @@ const data = [
                 byMember: {
                   _id: "u101",
                   fullname: "Daniel Yacovi",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -3186,16 +3163,16 @@ const data = [
                   {
                     id: "212jX",
                     title: "Verify login error handling",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
-                color: 'red',
+                color: "red",
                 imgUrl: "",
               },
             ],
@@ -3203,18 +3180,18 @@ const data = [
               {
                 id: "l103",
                 title: "bug",
-                color: "#ff4757"
-              }
+                color: "#ff4757",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#26de81"
-            }
+              backgroundColor: "#26de81",
+            },
           },
           {
             id: "c102",
@@ -3233,22 +3210,22 @@ const data = [
                   {
                     id: "212jX2",
                     title: "Design dark mode color scheme",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
-                color: 'green',
+                color: "green",
                 imgUrl: "",
               },
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: 'blue',
+                color: "blue",
                 imgUrl: "",
               },
             ],
@@ -3256,18 +3233,18 @@ const data = [
               {
                 id: "l104",
                 title: "feature",
-                color: "#1e90ff"
-              }
+                color: "#1e90ff",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#fd9644"
-            }
+              backgroundColor: "#fd9644",
+            },
           },
         ],
         style: {},
@@ -3292,9 +3269,9 @@ const data = [
                 byMember: {
                   _id: "u101",
                   fullname: "Daniel Yacovi",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -3304,23 +3281,23 @@ const data = [
                   {
                     id: "212jX3",
                     title: "Optimize API calls",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
-                color: 'red',
+                color: "red",
                 imgUrl: "",
               },
 
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: 'blue',
+                color: "blue",
                 imgUrl: "",
               },
             ],
@@ -3328,18 +3305,18 @@ const data = [
               {
                 id: "l105",
                 title: "refactor",
-                color: "#ff6b81"
-              }
+                color: "#ff6b81",
+              },
             ],
             byMember: {
               _id: "u102",
               fullname: "Sean Mamistalov",
               color: "red",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#26de81"
-            }
+              backgroundColor: "#26de81",
+            },
           },
           {
             id: "c104",
@@ -3357,9 +3334,9 @@ const data = [
                 byMember: {
                   _id: "u101",
                   fullname: "Daniel Yacovi",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -3369,16 +3346,16 @@ const data = [
                   {
                     id: "212jX",
                     title: "To Do 1",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: 'blue',
+                color: "blue",
                 imgUrl: "",
               },
             ],
@@ -3386,18 +3363,18 @@ const data = [
               {
                 id: "l103",
                 title: "full of bugs",
-                color: "#579dff"
-              }
+                color: "#579dff",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#26de81"
-            }
+              backgroundColor: "#26de81",
+            },
           },
         ],
         style: {},
@@ -3424,30 +3401,28 @@ const data = [
                   {
                     id: "212jX4",
                     title: "Update README file",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
-            members: [
-
-            ],
+            members: [],
             labels: [
               {
                 id: "l106",
                 title: "documentation",
-                color: "#a55eea"
-              }
+                color: "#a55eea",
+              },
             ],
             byMember: {
               _id: "u101",
               fullname: "Daniel Yacovi",
               color: "blue",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#fed330"
-            }
+              backgroundColor: "#fed330",
+            },
           },
           {
             id: "c106",
@@ -3465,9 +3440,9 @@ const data = [
                 byMember: {
                   _id: "u102",
                   fullname: "Sean Mamistalov",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -3477,16 +3452,16 @@ const data = [
                   {
                     id: "212jX6",
                     title: "Research CI/CD tools",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u101",
                 fullname: "Daniel Yacovi",
-                color: 'blue',
+                color: "blue",
                 imgUrl: "",
               },
             ],
@@ -3494,18 +3469,18 @@ const data = [
               {
                 id: "l107",
                 title: "deployment",
-                color: "#20bf6b"
-              }
+                color: "#20bf6b",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#26de81"
-            }
+              backgroundColor: "#26de81",
+            },
           },
         ],
         style: {},
@@ -3522,7 +3497,8 @@ const data = [
             status: "done",
             priority: "medium",
             dueDate: "2024-09-21",
-            description: "Configure development environment for new developers.",
+            description:
+              "Configure development environment for new developers.",
             comments: [],
             checklists: [
               {
@@ -3532,30 +3508,28 @@ const data = [
                   {
                     id: "212jX7",
                     title: "Install necessary tools",
-                    isDone: true
-                  }
-                ]
-              }
+                    isDone: true,
+                  },
+                ],
+              },
             ],
-            members: [
-
-            ],
+            members: [],
             labels: [
               {
                 id: "l108",
                 title: "setup",
-                color: "#4b7bec"
-              }
+                color: "#4b7bec",
+              },
             ],
             byMember: {
               _id: "u101",
               fullname: "Daniel Yacovi",
               color: "blue",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#f7b731"
-            }
+              backgroundColor: "#f7b731",
+            },
           },
           {
             id: "c108",
@@ -3573,9 +3547,9 @@ const data = [
                 byMember: {
                   _id: "u102",
                   fullname: "Sean Mamistalov",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -3585,30 +3559,28 @@ const data = [
                   {
                     id: "212jX8",
                     title: "Check session management",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
-            members: [
-
-            ],
+            members: [],
             labels: [
               {
                 id: "l109",
                 title: "bug",
-                color: "#ff4757"
-              }
+                color: "#ff4757",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#fd9644"
-            }
+              backgroundColor: "#fd9644",
+            },
           },
         ],
         style: {},
@@ -3634,16 +3606,16 @@ const data = [
                   {
                     id: "212jX9",
                     title: "Design profile layout",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
-                color: 'green',
+                color: "green",
                 imgUrl: "",
               },
             ],
@@ -3651,18 +3623,18 @@ const data = [
               {
                 id: "l110",
                 title: "feature",
-                color: "#1e90ff"
-              }
+                color: "#1e90ff",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#26de81"
-            }
+              backgroundColor: "#26de81",
+            },
           },
           {
             id: "c111",
@@ -3680,9 +3652,9 @@ const data = [
                 byMember: {
                   _id: "u101",
                   fullname: "Daniel Yacovi",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -3692,16 +3664,16 @@ const data = [
                   {
                     id: "212jX11",
                     title: "Implement push notifications",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u102",
                 fullname: "Sean Mamistalov",
-                color: 'red',
+                color: "red",
                 imgUrl: "",
               },
             ],
@@ -3709,18 +3681,18 @@ const data = [
               {
                 id: "l111",
                 title: "feature",
-                color: "#4b7bec"
-              }
+                color: "#4b7bec",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#f7b731"
-            }
+              backgroundColor: "#f7b731",
+            },
           },
         ],
         style: {},
@@ -3746,30 +3718,28 @@ const data = [
                   {
                     id: "212jX12",
                     title: "Add screen reader support",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
-            members: [
-
-            ],
+            members: [],
             labels: [
               {
                 id: "l112",
                 title: "accessibility",
-                color: "#a55eea"
-              }
+                color: "#a55eea",
+              },
             ],
             byMember: {
               _id: "u101",
               fullname: "Daniel Yacovi",
               color: "blue",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#fd9644"
-            }
+              backgroundColor: "#fd9644",
+            },
           },
           {
             id: "c113",
@@ -3778,7 +3748,8 @@ const data = [
             status: "todo",
             priority: "high",
             dueDate: "2024-10-02",
-            description: "Refactor the authentication system for better security.",
+            description:
+              "Refactor the authentication system for better security.",
             comments: [
               {
                 id: "ZdPnm13",
@@ -3787,9 +3758,9 @@ const data = [
                 byMember: {
                   _id: "u102",
                   fullname: "Sean Mamistalov",
-                  imgUrl: ""
-                }
-              }
+                  imgUrl: "",
+                },
+              },
             ],
             checklists: [
               {
@@ -3799,16 +3770,16 @@ const data = [
                   {
                     id: "212jX13",
                     title: "Implement token-based authentication",
-                    isDone: false
-                  }
-                ]
-              }
+                    isDone: false,
+                  },
+                ],
+              },
             ],
             members: [
               {
                 _id: "u103",
                 fullname: "Pavel Yelsukov",
-                color: 'green',
+                color: "green",
                 imgUrl: "",
               },
             ],
@@ -3816,18 +3787,18 @@ const data = [
               {
                 id: "l113",
                 title: "security",
-                color: "#eb3b5a"
-              }
+                color: "#eb3b5a",
+              },
             ],
             byMember: {
               _id: "u103",
               fullname: "Pavel Yelsukov",
               color: "green",
-              imgUrl: ""
+              imgUrl: "",
             },
             style: {
-              backgroundColor: "#26de81"
-            }
+              backgroundColor: "#26de81",
+            },
           },
         ],
         style: {},
@@ -3857,8 +3828,7 @@ const data = [
   },
 ];
 
-_createBoard()
-
+_createBoard();
 
 // export const getProjectData = () => {
 //   const storedData = localStorage.getItem('boards')
@@ -3870,59 +3840,62 @@ _createBoard()
 //   }
 // }
 
-
-async function query(filterBy = { title: '' }) {
-  const boards = await storageService.query(STORAGE_KEY)
-  const { title } = filterBy
+async function query(filterBy = { title: "" }) {
+  const boards = await storageService.query(STORAGE_KEY);
+  const { title } = filterBy;
 
   if (title) {
-    const regex = new RegExp(filterBy.title, 'i')
-    boards = boards.filter(board => regex.test(board.group.title)) // || regex.test(board.description)
+    const regex = new RegExp(filterBy.title, "i");
+    boards = boards.filter((board) => regex.test(board.group.title)); // || regex.test(board.description)
   }
-  return boards
+  return boards;
+}
+
+function getLabels() {
+  return data[0].labels;
 }
 
 async function getStarredBoards() {
-  const boards = await storageService.query(STORAGE_KEY)
-  var starredBoards = boards.filter(board => board.isStarred === true)
-  if (!starredBoards) return
-  return starredBoards
+  const boards = await storageService.query(STORAGE_KEY);
+  var starredBoards = boards.filter((board) => board.isStarred === true);
+  if (!starredBoards) return;
+  return starredBoards;
 }
 
 function getById(boardId) {
-  return storageService.get(STORAGE_KEY, boardId)
+  return storageService.get(STORAGE_KEY, boardId);
 }
 
 async function remove(boardId) {
-  await storageService.remove(STORAGE_KEY, boardId)
+  await storageService.remove(STORAGE_KEY, boardId);
 }
 
 function save(board) {
   if (board._id) {
-    return storageService.put(STORAGE_KEY, board)
+    return storageService.put(STORAGE_KEY, board);
   } else {
-    return storageService.post(STORAGE_KEY, board)
+    return storageService.post(STORAGE_KEY, board);
   }
 }
 
 async function addBoardMsg(boardId, txt) {
   // Later, this is all done by the backend
-  const board = await getById(boardId)
+  const board = await getById(boardId);
 
   const msg = {
     id: makeId(),
     by: userService.getLoggedinUser(),
-    txt
-  }
-  board.msgs.push(msg)
-  await storageService.put(STORAGE_KEY, board)
+    txt,
+  };
+  board.msgs.push(msg);
+  await storageService.put(STORAGE_KEY, board);
 
-  return msg
+  return msg;
 }
 
 function _createBoard() {
-  let boards = loadFromStorage(STORAGE_KEY)
+  let boards = loadFromStorage(STORAGE_KEY);
   if (!boards || !boards.length) {
-    saveToStorage(STORAGE_KEY, data)
+    saveToStorage(STORAGE_KEY, data);
   }
 }
