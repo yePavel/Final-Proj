@@ -8,7 +8,7 @@ import { BoardIndex } from "./pages/BoardIndex.jsx";
 
 export function RootCmp() {
     return (
-        <section className="app">
+        <div className="app">
             <AppHeader />
             <main className="main-layout">
                 <Routes>
@@ -17,6 +17,6 @@ export function RootCmp() {
                     <Route path="/boards/:boardId" element={<BoardDetails />} />
                 </Routes>
             </main>
-        </section>
+        </div>
     )
 }

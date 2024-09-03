@@ -52,7 +52,10 @@ export function AppHeader() {
   const initials = getInitials(userName);
 
   return (
-    <header className="app-header" style={{ background: `${board?.style.background.first}`, color: '#F5F5F5' }}>
+    <header className="app-header" style={{
+      background: `${board?.style.background.first}`,
+      color: `${board?.style.background.name ? '#F5F5F5' : `#172b4d`}`
+    }}>
       <div className="left-section">
         <img
           src="/menu.svg"

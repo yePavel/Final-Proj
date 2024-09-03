@@ -7,11 +7,12 @@ import { CardModal } from "./CardModal.jsx";
 import { useSelector } from "react-redux";
 import { loadTask } from "../store/actions/board.actions.js";
 import { GoPlus } from "react-icons/go";
+import { AddGroup } from "./AddGroup.jsx";
 
 export function BoardGroup({ groups, handleBoardUpdate }) {
-  const currBoard = useSelector(storeState => storeState.boardModule.board)
+  const board = useSelector(storeState => storeState.boardModule.board)
   const [selectedTask, setSelectedTask] = useState(null)
-
+  const [isAddingGroup, setIsAddingGroup] = useState(null);
   const [isAddingTask, setIsAddingTask] = useState(null);
   const [currGroup, setGroup] = useState(null)
 
@@ -27,9 +28,8 @@ export function BoardGroup({ groups, handleBoardUpdate }) {
 
   if (!groups) return <div>loading</div>;
 
-
   return (
-    <div className="board-container">
+    <ol className="board-container">
 
       <div className="board-golders">
         {groups.map((group) => (
@@ -42,7 +42,7 @@ export function BoardGroup({ groups, handleBoardUpdate }) {
             <div className="tasks">
               {group.tasks.map((task) => (
                 <div key={task.id} className="task"
-                  onClick={() => handleTaskClick(currBoard._id, group, task.id)}>
+                  onClick={() => handleTaskClick(board._id, group, task.id)}>
                   <LabelPreview labels={task.labels} />
                   <p className="task-title">{task.title}</p>
                   <AssignedMember members={task.members} />
@@ -71,7 +71,19 @@ export function BoardGroup({ groups, handleBoardUpdate }) {
         {selectedTask && (
           <CardModal group={currGroup} onClose={handleCloseModal} />
         )}
+        <div className="add-group">
+          {isAddingGroup === board.id ? (
+            <AddGroup
+              onCancel={() => setIsAddingGroup(null)} />
+          ) : (
+            <button
+              onClick={() => setIsAddingGroup(board.id)}
+              className="add-group-btn">
+              + Add another list
+            </button>
+          )}
+        </div>
       </div>
-    </div>
+    </ol>
   );
 }

@@ -20,28 +20,16 @@ export function BoardDetails() {
         updateBoard(updatedBoard)
     }
 
-
     if (!board) return <div>Loading...</div>;
 
     return (
         <section
             className="board-list"
             style={{ background: `linear-gradient(to bottom right, ${board?.style.background.first}, ${board?.style.background.second})` }}>
+            {/* <div className='side-board-menu'></div> */}
             <BoardHeader board={board} />
             <div className="board-card">
                 <BoardGroup handleBoardUpdate={handleBoardUpdate} groups={board.groups} />
-            </div>
-            <div className="add-group">
-                {isAddingGroup === board.id ? (
-                    <AddGroup
-                        onCancel={() => setIsAddingGroup(null)} />
-                ) : (
-                    <button
-                        onClick={() => setIsAddingGroup(board.id)}
-                        className="add-group-btn">
-                        + Add another list
-                    </button>
-                )}
             </div>
         </section>
     );
