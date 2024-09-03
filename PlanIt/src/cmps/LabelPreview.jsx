@@ -16,9 +16,7 @@ export function LabelPreview({ labels, onLabelClick }) {
           className={`label ${selectedLabel === label ? "selected" : ""}`}
           style={{ backgroundColor: label.color }}
           onClick={() => handleLabelClick(label)}
-        >
-          {label.title}
-        </span>
+        ></span>
       ))}
     </div>
   );
