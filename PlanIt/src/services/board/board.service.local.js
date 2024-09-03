@@ -3851,8 +3851,15 @@ async function query(filterBy = { title: "" }) {
   return boards;
 }
 
-function getLabels() {
-  return data[0].labels;
+async function getLabels(boardId) {
+  try {
+      const boards = await storageService.query(STORAGE_KEY);
+      const board = boards.find(board => board._id === boardId);
+      return board ? board.labels : [];
+  } catch (err) {
+      console.log('Failed to get labels:', err);
+      return [];
+  }
 }
 
 async function getStarredBoards() {

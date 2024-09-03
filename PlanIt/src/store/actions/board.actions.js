@@ -133,6 +133,23 @@ export async function updateTaskMembers(boardId, groupId, updatedTask) {
     }
 }
 
+export async function updateTaskLabels(boardId, groupId, updatedTask, label) {
+    try {
+        const res = await taskService.saveTaskLabels(boardId, groupId, updatedTask);
+        const { task, board } = res;
+
+        if (label.isNew) {
+            store.dispatch({ type: ADD_LABEL, label });
+        } else {
+            store.dispatch({ type: UPDATE_LABEL, label });
+        }
+
+        store.dispatch(getCmdSetBoard(board));
+    } catch (err) {
+        console.error('Failed to update task:', err);
+    }
+}
+
 export async function addChecklist(boardId, groupId, checklist) {
     try {
         const savedChecklist = await taskService.saveTaskChecklist(boardId, groupId, checklist);

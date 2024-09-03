@@ -6,6 +6,7 @@ const STORAGE_KEY = 'board'
 export const taskService = {
     query,
     saveTaskMembers,
+    saveTaskLabels,
     saveTaskChecklist,
     getDefaultTask
 }
@@ -32,6 +33,16 @@ async function saveTaskMembers(boardId, groupId, updatedTask) {
         return console.log('Felid to save task:', err)
     }
 }
+
+async function saveTaskLabels(boardId, groupId, updatedTask) {
+    try {
+        const board = await _saveTask(boardId, groupId, updatedTask);
+        return { board, task: updatedTask };
+    } catch (err) {
+        return console.log('Failed to save task:', err);
+    }
+}
+
 
 async function saveTaskChecklist(boardId, groupId, updatedTask) {
     await _saveTask(boardId, groupId, updatedTask);

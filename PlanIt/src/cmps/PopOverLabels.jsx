@@ -1,36 +1,42 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { addLabel, updateLabel } from "../store/actions/board.actions";
+import { updateTaskLabels } from "../store/actions/board.actions";
 import { boardService } from "../services/board/board.service.local";
 import { IoMdClose } from "react-icons/io";
 
-export function PopOverLabels({ onSave, existingLabel }) {
+export function PopOverLabels({ onSave, existingLabel, task = { labels: [] }, boardId, groupId }) {
   const [labels, setLabels] = useState([]);
   const [selectedLabel, setSelectedLabel] = useState(null);
   const [isVisible, setIsVisible] = useState(true);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const fetchedLabels = boardService.getLabels();
-    setLabels(fetchedLabels);
+    async function fetchLabels() {
+      const fetchedLabels = await boardService.getLabels(boardId);
+      setLabels(fetchedLabels);
+    }
+    fetchLabels();
 
     if (existingLabel) {
       setSelectedLabel(existingLabel);
     }
-  }, [existingLabel]);
+  }, [existingLabel, boardId]);
 
   function handleLabelSelect(label) {
     setSelectedLabel(label);
 
-    const labelToSave = { title: label.title, color: label.color };
+    const isNew = !existingLabel;
 
-    if (existingLabel) {
-      dispatch(updateLabel({ ...existingLabel, ...labelToSave }));
-    } else {
-      dispatch(addLabel(labelToSave));
-    }
+    const updatedTask = {
+      ...task,
+      labels: isNew 
+        ? [...task.labels, label] 
+        : task.labels.map(l => l.id === label.id ? label : l)
+    };
 
-    onSave(labelToSave);
+    dispatch(updateTaskLabels(boardId, groupId, updatedTask));
+
+    onSave(label);
     setIsVisible(false);
   }
 
@@ -53,7 +59,7 @@ export function PopOverLabels({ onSave, existingLabel }) {
           {labels.map((label) => (
             <div
               key={label.id}
-              className="label-option"
+              className={`label-option ${selectedLabel?.id === label.id ? 'selected' : ''}`}
               onClick={() => handleLabelSelect(label)}
             >
               <div
