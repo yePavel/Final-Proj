@@ -19,18 +19,11 @@
     }
 
     .card-details-modal {
-        height: 866px;
+        height: 90vh;
         width: 768px;
         background-color: #f0f0f0;
         border-radius: 8px;
         z-index: 20;
-
-        svg {
-            width: 17px;
-            height: 17px;
-            align-self: center;
-            grid-column: 1/2;
-        }
 
         .card-header {
             display: flex;
@@ -68,10 +61,6 @@
                     text-decoration: underline;
                 }
 
-                svg {
-                    width: 14px;
-                    height: 14px;
-                }
             }
         }
 

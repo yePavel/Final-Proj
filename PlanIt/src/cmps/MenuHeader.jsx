@@ -1,6 +1,5 @@
 import GroupMenuIcon from '../assets/imgs/group-menu-icon.svg';
 import { PiWarningCircleBold } from "react-icons/pi";
-import { MdMailOutline } from "react-icons/md";
 import { useState } from "react";
 import { ColorPicker } from './ColorPicker';
 

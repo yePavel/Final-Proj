@@ -28,9 +28,12 @@ export function BoardHeader({ board }) {
     const handleCloseCalendar = () => {
         setShowCalendar(false);
     };
-    console.log('board:', board)
+
     return (
-        <header className="board-header" style={{ background: `linear-gradient(to right, ${board?.style.background.first}, ${board?.style.background.second})`, color: '#F5F5F5' }}>
+        <header className="board-header" style={{
+            background: `linear-gradient(to right, ${board?.style.background.first}, ${board?.style.background.second})`,
+            color: `${board?.style.background.name ? '#F5F5F5' : `#172b4d`}`
+        }}>
             <div className="board-header-left">
                 <h2 className="board-title">{board.title}</h2>
                 <MdOutlineStarOutline alt='Star Icon' className='board-star' />

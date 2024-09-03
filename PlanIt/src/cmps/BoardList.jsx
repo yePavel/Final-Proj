@@ -10,5 +10,4 @@ export function BoardList({ boards }) {
             </li>
         )}
     </ul>
-
 }

@@ -1,31 +1,11 @@
-.board-container {
-  height: calc(100vh - 200px);
-  overflow-x: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-sizing: border-box;
-  padding: 0 10px;
-}
-
-.board-list {
-  display: flex;
-  gap: 16px;
-  padding: 20px;
-  overflow-x: auto;
-  align-items: flex-start;
-  margin-top: 100px;
-  flex-wrap: nowrap;
-  box-sizing: border-box;
-}
-
 .board-card {
+  display: flex;
+  margin-top: 12px;
   border-radius: 6px;
   padding-block-end: 35px;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  display: flex;
+  overflow: auto;
   flex-direction: column;
-  box-sizing: border-box;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 
   .board-title {
     width: 100%;
@@ -37,7 +17,6 @@
     letter-spacing: normal;
     color: #172b4d;
     background-color: #ffffff;
-    overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
@@ -49,7 +28,6 @@
     flex-wrap: nowrap;
     align-items: flex-start;
     box-sizing: border-box;
-    overflow: hidden;
   }
 
   .group-card {
@@ -176,6 +154,26 @@
     }
   }
 }
+
+.board-container {
+  display: flex;
+  flex-direction: column;
+  // height: calc(100vh - 200px);
+  overflow-x: auto;
+  justify-content: space-between;
+  padding: 0 10px;
+  margin: 0;
+}
+
+.board-list {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100vh;
+}
+
+
 
 /* Responsive Styles */
 @media (max-width: 900px) {
