@@ -5,6 +5,17 @@
     width: 70%;
     padding: 0 8px 8px 16px;
 
+    svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    h3 {
+        font-size: 16px;
+        align-self: end;
+        color: #172b4d;
+    }
+
     .close-btn {
         position: absolute;
         top: 16px;
@@ -63,11 +74,6 @@
         display: grid;
         grid-template-columns: 30px 1fr;
         margin-top: 30px;
-
-        svg {
-            width: 20px;
-            height: 20px;
-        }
 
         .new-activity {
             grid-column: 1/-1;

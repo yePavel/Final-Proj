@@ -12,6 +12,7 @@
             margin: 0;
             font-size: 12px;
             margin: 0 14px 8px 0;
+            text-align: justify;
         }
 
         &.labels {
@@ -22,6 +23,44 @@
                 color: #ffffff;
                 border-radius: 4px;
                 text-align: center;
+            }
+        }
+
+        .watching-btn {
+            display: flex;
+            position: relative;
+            gap: 6px;
+            align-items: center;
+            height: 32px;
+            overflow: hidden;
+            padding: 6px 12px;
+            background-color: #091e420f;
+            cursor: pointer;
+
+            &.on {
+                width: 138px;
+            }
+
+            .isOn {
+                position: absolute;
+                height: 20px;
+                width: 28px;
+                margin-left: 6px;
+                padding: 2px 4px;
+                background-color: #626f86;
+                border-radius: 3px;
+
+                .checkmark {
+                    display: flex;
+                    color: white;
+                }
+            }
+
+            .icon {
+                svg {
+                    width: 16px;
+                }
+
             }
         }
     }

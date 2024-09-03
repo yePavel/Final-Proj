@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import CloseBtn from '../assets/imgs/close-btn.svg'
 
 export function CardModal({ group, onClose }) {
-    const currTask = useSelector(storeState => storeState.boardModule.task)
+    const task = useSelector(storeState => storeState.boardModule.task)
 
     return (
         <section className="click-screen" onClick={onClose} >
@@ -16,9 +16,9 @@ export function CardModal({ group, onClose }) {
                 <div className="card-header">
                     <div className="card-title">
                         <PiSubtitlesBold />
-                        <span>{currTask.title}</span>
+                        <span>{task.title}</span>
                         <button onClick={onClose} className="close-modal">
-                        <img src={CloseBtn} alt="close-btn Icon" />
+                            <img src={CloseBtn} alt="close-btn Icon" />
                         </button>
                     </div>
                     <div className="card-group-info">in list: <span>{`${group.title}`}</span>  <IoEyeOutline /></div>

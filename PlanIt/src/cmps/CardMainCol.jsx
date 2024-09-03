@@ -6,12 +6,13 @@ import checklistIcon from '../assets/imgs/checklist-icon.svg';
 import { ImParagraphLeft } from "react-icons/im";
 import { calculateChecklistProgress } from "../services/util.service";
 import { TOGGLE_CHECKLIST_ITEM } from "../store/reducers/board.reducer";
+import { BsTextParagraph } from "react-icons/bs";
 
 export function CardMainCol() {
     const task = useSelector(storeState => storeState.boardModule.task);
     const dispatch = useDispatch();
 
-    function checkboxChange(checklistTitle, itemIndex){
+    function checkboxChange(checklistTitle, itemIndex) {
         dispatch({
             type: TOGGLE_CHECKLIST_ITEM,
             checklistTitle,
@@ -24,7 +25,7 @@ export function CardMainCol() {
             <CardDetailData task={task} />
 
             <div className="card-description">
-                <ImParagraphLeft />
+                <BsTextParagraph />
                 <h3>Description</h3>
                 {task.description && task.description.length ? (
                     <p>{task.description}</p>
@@ -37,14 +38,12 @@ export function CardMainCol() {
                 <div className="checklists">
                     {task.checklists.map((checklist, index) => (
                         <div key={index} className="checklist">
-                            <div className="checklist-header">
-                                <img src={checklistIcon} alt="Checklist Icon" />
-                                {checklist.title}
-                            </div>
+                            <img src={checklistIcon} alt="Checklist Icon" />
+                            <h3>{checklist.title}</h3>
+                            <span className="checklist-percent">
+                                {Math.round(calculateChecklistProgress(checklist))}%
+                            </span>
                             <div className="checklist-progress">
-                                <span className="checklist-percent">
-                                    {Math.round(calculateChecklistProgress(checklist))}%
-                                </span>
                                 <progress
                                     value={calculateChecklistProgress(checklist)}
                                     max="100"

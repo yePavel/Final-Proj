@@ -1,4 +1,4 @@
-.add-checklist{
+.add-checklist {
     width: 74px;
     height: 32px;
     font-size: 14px;
@@ -20,53 +20,38 @@
 }
 
 .checklists {
+    margin-top: 30px;
+
     .checklist {
+        display: grid;
+        grid-template-columns: 30px 1fr;
+        row-gap: 10px;
         margin-bottom: 15px;
 
+        img {
+            width: 24px;
+            height: 24px;
+        }
+
         .checklist-header {
+            grid-column: 1/-1;
             display: flex;
             align-items: center;
             margin-bottom: 10px;
-            margin-top: 48px;
         }
 
-        .checklist-items {
-            list-style: none;
-            padding-left: 0;
-
-            li {
-                display: flex;
-                align-items: center;
-                margin-bottom: 5px;
-
-                input[type="checkbox"] {
-                    margin-right: 10px;
-                }
-            }
-        }
-    }
-    .checkbox-item{
-        cursor: pointer;
-        width: 16px;
-        height: 16px;
-    }
-}
-
-
-.checklists {
-    .checklist {
-        margin-bottom: 15px;
-
-        .checklist-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
+        .checklist-percent {
+            justify-self: end;
+            grid-column: 1/2;
+            font-size: 11px;
+            justify-self: center;
         }
 
         .checklist-progress {
             display: flex;
+            grid-column: 2/-1;
             align-items: center;
-            margin-bottom: 10px;
+
 
             progress {
                 width: 100%;
@@ -91,7 +76,7 @@
                 font-weight: bold;
             }
 
-            .checklist-percent{
+            .checklist-percent {
                 margin-right: 10px;
                 font-size: 11px;
                 line-height: 10px;
@@ -101,28 +86,52 @@
             }
         }
 
-        .checklist-item-adder {
-            display: flex;
-            margin-top: 10px;
+        .checklist-items {
+            grid-column: 1/-1;
+            list-style: none;
+            padding-left: 0;
 
-            input {
-                flex-grow: 1;
-                margin-right: 5px;
+            li {
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+
+                input[type="checkbox"] {
+                    margin-right: 10px;
+                }
             }
 
-            button {
-                padding: 5px 10px;
-                background-color: $btn-color;
-                color: white;
-                border: none;
-                border-radius: 3px;
+            .checkbox-item {
                 cursor: pointer;
-
-                &:hover{
-                    background-color: $btn-hover-color;
-
-                }
+                width: 16px;
+                height: 16px;
             }
         }
     }
+
+    .checklist-item-adder {
+        display: flex;
+        grid-column: 2/-1;
+        margin-top: 10px;
+
+        input {
+            flex-grow: 1;
+            margin-right: 5px;
+        }
+
+        button {
+            padding: 5px 10px;
+            background-color: $btn-color;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $btn-hover-color;
+
+            }
+        }
+    }
+
 }
