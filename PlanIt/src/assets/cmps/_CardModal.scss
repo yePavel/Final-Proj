@@ -1,68 +1,62 @@
 .click-screen {
-    display: flex;
-    position: fixed;
-    justify-content: center;
-    align-items: center;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 10;
-    scrollbar-gutter: stable;
-    overflow: scroll;
+  display: grid;
+  justify-items: center;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  overflow-y: auto;
 
-    .close-modal {
-        border: none;
-        margin-left: auto;
-        background: transparent;
-        padding: 0;
-    }
+  .close-modal {
+    border: none;
+    margin-left: auto;
+    background: transparent;
+    padding: 0;
+  }
 
-    .card-details-modal {
-        height: 90vh;
-        width: 768px;
-        background-color: #f0f0f0;
-        border-radius: 8px;
-        z-index: 20;
+  .card-details-modal {
+    height: 90vh;
+    width: 768px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    z-index: 20;
 
-        .card-header {
-            display: flex;
-            flex-direction: column;
-            min-height: 32px;
-            gap: 10px;
-            padding: 8px 52px 8px 16px;
-            position: relative;
-            z-index: 1;
+    .card-header {
+      display: flex;
+      flex-direction: column;
+      min-height: 32px;
+      gap: 10px;
+      padding: 8px 52px 8px 16px;
+      position: relative;
+      z-index: 1;
 
-            .card-title {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                font-size: 20px;
-                padding: 12px 0 0;
+      .card-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 20px;
+        padding: 12px 0 0;
 
-                svg {
-                    width: 24px;
-                    height: 24px;
-                }
-
-                span {
-                    flex-grow: 1;
-                    margin-left: 8px;
-                }
-            }
-
-            .card-group-info {
-                font-size: 14px;
-                margin: 0 8px 8px 2px;
-                padding-left: 33px;
-
-                span {
-                    text-decoration: underline;
-                }
-
-            }
+        svg {
+          width: 24px;
+          height: 24px;
         }
 
+        span {
+          flex-grow: 1;
+          margin-left: 8px;
+        }
+      }
+
+      .card-group-info {
+        font-size: 14px;
+        margin: 0 8px 8px 2px;
+        padding-left: 33px;
+
+        span {
+          text-decoration: underline;
+        }
+      }
     }
+  }
 }
