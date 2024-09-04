@@ -2,11 +2,9 @@
   display: flex;
   margin-top: 12px;
   border-radius: 6px;
-  padding-block-end: 35px;
   overflow: auto;
   flex-direction: column;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  flex: 1;
   overflow-x: auto;
   width: 100%;
   align-self: stretch;
@@ -93,7 +91,7 @@
       margin-top: 8px;
       scrollbar-width: thin;
       padding: 2px;
-      flex:1;
+      flex: 1;
 
       .task {
         z-index: 10;

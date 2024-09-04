@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+
 import { BoardPreview } from "./BoardPreview.jsx";
 
 export function BoardList({ boards }) {

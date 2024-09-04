@@ -156,11 +156,18 @@
 
       li {
         display: flex;
+        position: relative;
         justify-content: start;
         width: 194px;
         height: 96px;
         border-radius: 3px;
         justify-content: space-between;
+
+        &:hover {
+          .star:not(.star-filled) {
+            transform: translateX(-30px);
+          }
+        }
 
         .board-name {
           color: white;
@@ -169,18 +176,20 @@
         }
 
         .star {
+          position: absolute;
+          right: 0px;
           margin: 0px 8px 6px 0px;
           color: white;
           align-self: flex-end;
-          transition: 0.4s;
+          transition: .2s;
+
+          &:not(.star-filled) {
+            right: -25px;
+          }
 
           svg {
             width: 18px;
             height: 18px;
-          }
-
-          &:hover {
-            color: yellow;
           }
 
           &.star-filled {
@@ -188,7 +197,7 @@
 
             &:hover {
               color: white;
-              transform: scale(1.3);
+              transform: scale(1.2);
             }
           }
         }
@@ -218,6 +227,8 @@
         &:nth-child(4) {
           background: linear-gradient(to right, #11998e, #38ef7d);
         }
+
+
       }
     }
 
