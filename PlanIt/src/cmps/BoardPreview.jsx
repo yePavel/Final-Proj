@@ -12,12 +12,17 @@ export function BoardPreview({ board }) {
         const currBoard = { ...board, isStarred: !starStatus }
         if (!currBoard.isStarred) removeStaredBoard(currBoard)
         else addStaredBoard(currBoard)
-
     }
 
+    const { style } = board
+    console.log('style:', style)
     return <article>
+
         <Link to={`${board._id}`}>
-            <li className="board-item">
+            <li
+                className="board-item"
+                style={style.background.name ? { background: `linear-gradient(to bottom right, ${style.background.first}, ${style.background.second})` }
+                    : { background: `linear-gradient(to bottom right, #172b4d, #b8b8b8)` }}>
                 <div className="board-name">{board.title}</div>
                 <div className={`star ${board.isStarred ? 'star-filled' : ''}`}>
                     {board.isStarred ?
