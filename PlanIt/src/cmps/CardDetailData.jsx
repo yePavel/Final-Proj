@@ -13,6 +13,7 @@ export function CardDetailData() {
     setIsWatching(res => !res)
   }
   console.log('task:', task)
+
   return (
     <div className="card-detail-data">
       {task.members && (

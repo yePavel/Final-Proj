@@ -40,18 +40,18 @@
                 width: 138px;
             }
 
-            .isOn {
-                position: absolute;
-                height: 20px;
-                width: 28px;
-                margin-left: 6px;
-                padding: 2px 4px;
-                background-color: #626f86;
-                border-radius: 3px;
+            .watching-on {
+                display: flex;
+                gap: 6px;
 
-                .checkmark {
-                    display: flex;
-                    color: white;
+                .isOn {
+                    height: 20px;
+                    border-radius: 3px;
+                    background-color: #6c7a91;
+
+                    .checkmark {
+                        color: white;
+                    }
                 }
             }
 
