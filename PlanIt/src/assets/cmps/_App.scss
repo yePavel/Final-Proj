@@ -3,12 +3,8 @@
     overflow: hidden;
     display: grid;
     grid-template-rows: auto 1fr;
-
 }
 
-.main-layout{
-    overflow: hidden;
-
+.main-layout {
+    overflow-y: auto;
 }
-
-

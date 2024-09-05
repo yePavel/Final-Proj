@@ -20,12 +20,12 @@
 }
 
 .checklists {
-    margin-top: 30px;
 
     .checklist {
         display: grid;
-        grid-template-columns: 30px 1fr;
-        row-gap: 10px;
+        grid-column: span 2;
+        gap: 10px;
+        grid-template-columns: subgrid;
         margin-bottom: 15px;
 
         img {

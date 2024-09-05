@@ -4,11 +4,13 @@ import { HomePage } from "./pages/HomePage.jsx";
 import { AppHeader } from "./cmps/AppHeader.jsx";
 import { BoardDetails } from "./pages/BoardDetails.jsx";
 import { BoardIndex } from "./pages/BoardIndex.jsx";
+import { useState } from "react";
 
 
 export function RootCmp() {
+
     return (
-        <div className="app">
+        <div className={'app'}>
             <AppHeader />
             <main className="main-layout">
                 <Routes>

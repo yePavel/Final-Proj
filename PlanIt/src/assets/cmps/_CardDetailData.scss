@@ -1,8 +1,7 @@
 .card-detail-data {
-    margin-top: 8px;
-    margin-left: 20px;
-    width: 85%;
-    height: 72px;
+    display: flex;
+    grid-column: 2/-1;
+
 
     .card-detail-item {
         float: left;

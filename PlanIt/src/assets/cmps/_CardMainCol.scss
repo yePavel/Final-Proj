@@ -1,10 +1,9 @@
 .card-main-col {
-    float: left;
-    position: relative;
-    min-height: 50%;
-    width: 70%;
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: span 2;
     padding: 0 8px 8px 16px;
-    
+
 
     svg {
         width: 24px;
@@ -56,7 +55,6 @@
 
     .card-description {
         display: grid;
-        grid-template-columns: 30px 1fr;
 
         .card-desc-info {
             grid-column: 2/-1;
@@ -73,8 +71,6 @@
 
     .card-activity {
         display: grid;
-        grid-template-columns: 30px 1fr;
-        margin-top: 30px;
 
         .new-activity {
             grid-column: 1/-1;
@@ -110,4 +106,15 @@
             }
         }
     }
+}
+
+.card-main-col>* {
+    display: grid;
+    grid-column: span 2;
+    grid-template-columns: subgrid;
+    margin-bottom: 24px;
+}
+
+.card-main-col>*>*:not(svg) {
+    grid-column: 2;
 }

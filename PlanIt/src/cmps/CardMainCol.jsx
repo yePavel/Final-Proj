@@ -7,6 +7,7 @@ import { ImParagraphLeft } from "react-icons/im";
 import { calculateChecklistProgress } from "../services/util.service";
 import { TOGGLE_CHECKLIST_ITEM } from "../store/reducers/board.reducer";
 import { BsTextParagraph } from "react-icons/bs";
+import { GoChecklist } from "react-icons/go";
 
 export function CardMainCol() {
     const task = useSelector(storeState => storeState.boardModule.task);
@@ -38,7 +39,7 @@ export function CardMainCol() {
                 <div className="checklists">
                     {task.checklists.map((checklist, index) => (
                         <div key={index} className="checklist">
-                            <img src={checklistIcon} alt="Checklist Icon" />
+                            <GoChecklist className="check-list-icon" />
                             <h3>{checklist.title}</h3>
                             <span className="checklist-percent">
                                 {Math.round(calculateChecklistProgress(checklist))}%
