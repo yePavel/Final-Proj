@@ -5,9 +5,14 @@ import { AddTask } from "./AddTask";
 import { GoPlus } from "react-icons/go";
 import { useState } from "react";
 import { TaskList } from "./TaskList";
+import { updateBoard } from "../store/actions/board.actions";
 
 export function MainGroupCard({ provided, el }) {
     const [isAddingTask, setIsAddingTask] = useState(null);
+
+    function handleBoardUpdate(updatedBoard) {
+        updateBoard(updatedBoard)
+    }
 
     return <div
         ref={provided.innerRef}
