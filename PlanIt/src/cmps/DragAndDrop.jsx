@@ -1,10 +1,5 @@
-import React, { useState } from "react";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-import { AssignedMember } from "./AssignedMember";
-import { GroupMenu } from "./GroupMenu";
-import { LabelPreview } from "./LabelPreview";
-import { AddTask } from "./AddTask";
-import { GoPlus } from "react-icons/go";
+import { useState } from "react";
+import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import { useSelector } from "react-redux";
 import { AddGroup } from "./AddGroup";
 import { MainGroupCard } from "./MainGroupCard";
@@ -19,8 +14,8 @@ const reorder = (list, startIndex, endIndex) => {
 
 
 const move = (source, destination, droppableSource, droppableDestination) => {
-    const sourceClone = Array.from(source);
-    const destClone = Array.from(destination);
+    const sourceClone = Array.from(source.tasks);
+    const destClone = Array.from(destination.tasks);
     const [removed] = sourceClone.splice(droppableSource.index, 1);
 
     destClone.splice(droppableDestination.index, 0, removed);
@@ -51,12 +46,15 @@ export function DragAndDrop({ handleBoardUpdate }) {
             const items = reorder(state[sInd], source.index, destination.index);
             const newState = [...state];
             newState[sInd].tasks = items;
-            handleBoardUpdate(board)
+            const updatedBoard = { ...board, groups: newState };
+            handleBoardUpdate(updatedBoard);
         } else {
             const result = move(state[sInd], state[dInd], source, destination);
             const newState = [...state];
-            newState[sInd] = result[sInd];
-            newState[dInd] = result[dInd];
+            newState[sInd].tasks = result[sInd];
+            newState[dInd].tasks = result[dInd];
+            const updatedBoard = { ...board, groups: newState };
+            handleBoardUpdate(updatedBoard);
         }
     }
 
