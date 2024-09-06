@@ -26,10 +26,7 @@ export function BoardDetails() {
             style={{ background: `linear-gradient(to bottom right, ${board?.style.background.first}, ${board?.style.background.second})` }}>
             {/* <div className='side-board-menu'></div> */}
             <BoardHeader board={board} />
-            <DragAndDrop groups={board.groups} />
-            <div className="board-card">
-                <BoardGroup handleBoardUpdate={handleBoardUpdate} groups={board.groups} />
-            </div>
+            <DragAndDrop handleBoardUpdate={handleBoardUpdate} />
         </section>
     );
 }

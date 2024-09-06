@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { getDefaultTask } from "../services/task/task.service.local";
+import { getRandomIntInclusive } from "../services/util.service";
 
 
 export function AddTask({ groupId, onCancel, handleBoardUpdate }) {
@@ -13,10 +14,10 @@ export function AddTask({ groupId, onCancel, handleBoardUpdate }) {
     }
 
     function onAddTask() {
-        if (taskTitle.trim() === '') return; 
+        if (taskTitle.trim() === '') return;
 
         const newTask = getDefaultTask()
-        newTask.id = Date.now()
+        newTask.id = 'c' + getRandomIntInclusive(10, 10000)
         newTask.title = taskTitle
         const updatedBoard = {
             ...board,
