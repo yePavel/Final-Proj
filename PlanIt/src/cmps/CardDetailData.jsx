@@ -12,7 +12,6 @@ export function CardDetailData() {
   function toggleIsWatching() {
     setIsWatching(res => !res)
   }
-  console.log('task:', task)
 
   return (
     <div className="card-detail-data">
