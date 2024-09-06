@@ -4,7 +4,7 @@ import { HomePage } from "./pages/HomePage.jsx";
 import { AppHeader } from "./cmps/AppHeader.jsx";
 import { BoardDetails } from "./pages/BoardDetails.jsx";
 import { BoardIndex } from "./pages/BoardIndex.jsx";
-import { useState } from "react";
+import { DragAndDrop } from "./cmps/DragAndDrop.jsx";
 
 
 export function RootCmp() {
@@ -17,6 +17,7 @@ export function RootCmp() {
                     <Route path="" element={<HomePage />} />
                     <Route path="/boards" element={<BoardIndex />} />
                     <Route path="/boards/:boardId" element={<BoardDetails />} />
+                    <Route path="/boards/drag" element={<DragAndDrop />} />
                 </Routes>
             </main>
         </div>

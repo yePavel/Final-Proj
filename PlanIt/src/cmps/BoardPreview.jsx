@@ -22,7 +22,7 @@ export function BoardPreview({ board }) {
             <li
                 className="board-item"
                 style={style.background.name ? { background: `linear-gradient(to bottom right, ${style.background.first}, ${style.background.second})` }
-                    : { background: `linear-gradient(to bottom right, #172b4d, #b8b8b8)` }}>
+                    : { background: `linear-gradient(to bottom right, rgb(0 0 0), rgb(0 90 110))` }}>
                 <div className="board-name">{board.title}</div>
                 <div className={`star ${board.isStarred ? 'star-filled' : ''}`}>
                     {board.isStarred ?

@@ -16,6 +16,7 @@ export function BoardGroup({ groups, handleBoardUpdate }) {
   const [isAddingTask, setIsAddingTask] = useState(null);
   const [currGroup, setGroup] = useState(null)
 
+
   async function handleTaskClick(boardId, group, taskId) {
     await loadTask(boardId, group.id, taskId)
     setSelectedTask(taskId)
