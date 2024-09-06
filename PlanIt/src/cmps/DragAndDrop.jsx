@@ -79,13 +79,14 @@ export function DragAndDrop({ groups }) {
                                             <GroupMenu />
                                         </div>
 
+                                        <div className="tasks">
+
                                         {el.tasks.map((item, index) => (
                                             <Draggable
                                                 key={item.id}
                                                 draggableId={item.id}
                                                 index={index}
                                             >
-                                                {/* <div className="tasks"> */}
                                                 {(provided, snapshot) => (
                                                     <div className="task"
                                                         ref={provided.innerRef}
@@ -102,11 +103,13 @@ export function DragAndDrop({ groups }) {
                                                         <AssignedMember members={item.members} />
                                                     </div>
                                                 )}
-                                                {/* </div> */}
                                             </Draggable>
                                         ))}
                                         {provided.placeholder}
+                                        </div>
+
                                     </div>
+
                                 )}
                             </Droppable>
                         ))}
