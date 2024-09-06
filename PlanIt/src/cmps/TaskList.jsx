@@ -8,7 +8,7 @@ export function TaskList({ el, provided }) {
         {el.tasks.map((item, index) => (
             <Draggable
                 key={item.id}
-                draggableId={item.id}
+                draggableId={item.id.toString()}
                 index={index}
             >
                 {(provided, snapshot) => (
