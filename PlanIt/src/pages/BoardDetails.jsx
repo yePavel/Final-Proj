@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { loadBoard, updateBoard } from '../store/actions/board.actions.js';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { BoardGroup } from '../cmps/BoardGroup.jsx';
 import { BoardHeader } from '../cmps/BoardHeader.jsx';
 import { DragAndDrop } from '../cmps/DragAndDrop.jsx';
 
