@@ -65,9 +65,9 @@ export function DragAndDrop({ handleBoardUpdate }) {
 
                     <DragDropContext onDragEnd={onDragEnd} >
                         {state.map((el, ind) => (
-                            < Droppable key={ind} droppableId={`${ind}`}>
+                            <Droppable key={ind} droppableId={`${ind}`}>
                                 {(provided, snapshot) => (
-                                    <MainGroupCard provided={provided} el={el} />
+                                    <MainGroupCard provided={provided} snapshot={snapshot} el={el} />
                                 )}
                             </Droppable>
                         ))}

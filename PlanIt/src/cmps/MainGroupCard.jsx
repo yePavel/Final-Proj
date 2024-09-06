@@ -7,7 +7,7 @@ import { useState } from "react";
 import { TaskList } from "./TaskList";
 import { updateBoard } from "../store/actions/board.actions";
 
-export function MainGroupCard({ provided, el }) {
+export function MainGroupCard({ provided, snapshot, el }) {
     const [isAddingTask, setIsAddingTask] = useState(null);
 
     function handleBoardUpdate(updatedBoard) {
@@ -18,7 +18,6 @@ export function MainGroupCard({ provided, el }) {
         ref={provided.innerRef}
         className="group-card"
     >
-
         <div className="group-header">
             <h3 className="group-title">{el.title}</h3>
             <GroupMenu />
