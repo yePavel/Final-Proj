@@ -1,7 +1,7 @@
 .add-group {
     border-radius: 12px;
     padding: 6px 6px 6px 6px;
-
+    background-color: $group-color;
 
     .add-group-btn {
         display: flex;
@@ -13,35 +13,24 @@
         padding: 16px;
         border-radius: 12px;
         border: none;
-        background-color: #ffffff3d;
-        ;
         cursor: pointer;
 
         &:hover {
-            background-color: #ffffff25;
-        }
-
-        .add-list-text {
-            font-size: 1.2rem;
-            color: #333333;
-            font-weight: bold;
+            background-color: #4343433d;
         }
     }
 
     .group-input {
-        padding: 8px 12px 8px 12px;
-        width: 256px;
-
-        font-size: 14px;
-        line-height: 20px;
-        text-align: start;
-        letter-spacing: normal;
-
-        border-radius: 3px;
-
-        &:focus-visible {
-            outline: none;
-        }
+        min-height: 20px;
+        max-height: 256px;
+        margin: 0;
+        padding: 6px 12px;
+        overflow: hidden;
+        border-radius: 4px;
+        color: var(--ds-text, #172b4d);
+        font-weight: 600;
+        resize: none;
+        overflow-wrap: break-word;
     }
 
     .add-new-group {
