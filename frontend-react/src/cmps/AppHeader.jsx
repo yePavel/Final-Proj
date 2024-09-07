@@ -51,7 +51,7 @@ export function AppHeader() {
 
   const userName = "Sean Mamistalov";
   const initials = getInitials(userName);
-
+  console.log('board:', board)
   return (
     <header className="app-header" style={{
       background: `${board?.style.background.first}`,

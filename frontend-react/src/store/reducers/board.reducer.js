@@ -40,6 +40,7 @@ export function boardReducer(state = initialState, action) {
     switch (action.type) {
         case SET_BOARDS:
             const noStarBoards = action.boards.filter(board => !board.isStarred)
+            console.log('noStarBoards:', noStarBoards)
             newState = { ...state, boards: noStarBoards }
             break
         case SET_BOARD:
@@ -107,20 +108,20 @@ export function boardReducer(state = initialState, action) {
             });
             newState = { ...state, task: { ...state.task, checklists: updatedChecklists } };
             break;
-            case ADD_LABEL:
-                const updatedTaskWithLabel = {
-                    ...state.task,
-                    labels: [...state.task.labels || [], action.label]
-                };
-                newState = { ...state, task: updatedTaskWithLabel };
-                break;
-    
-            case UPDATE_LABEL:
-                const updatedLabels = state.task.labels.map(label => 
-                    label.id === action.label.id ? { ...label, ...action.label } : label
-                );
-                newState = { ...state, task: { ...state.task, labels: updatedLabels } };
-                break;   
+        case ADD_LABEL:
+            const updatedTaskWithLabel = {
+                ...state.task,
+                labels: [...state.task.labels || [], action.label]
+            };
+            newState = { ...state, task: updatedTaskWithLabel };
+            break;
+
+        case UPDATE_LABEL:
+            const updatedLabels = state.task.labels.map(label =>
+                label.id === action.label.id ? { ...label, ...action.label } : label
+            );
+            newState = { ...state, task: { ...state.task, labels: updatedLabels } };
+            break;
         case TOGGLE_CHECKLIST_ITEM:
             return {
                 ...state,

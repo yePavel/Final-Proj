@@ -5,10 +5,14 @@ export const boardService = {
     getById,
     save,
     remove,
-    addBoardMsg
+    addBoardMsg,
+    getStarredBoards,
+    getLabels
+
 }
 
 async function query(filterBy = { txt: '', price: 0 }) {
+    console.log('REMOTE MODE',)
     return httpService.get(`board`, filterBy)
 }
 
@@ -32,4 +36,18 @@ async function save(board) {
 async function addBoardMsg(boardId, txt) {
     const savedMsg = await httpService.post(`board/${boardId}/msg`, { txt })
     return savedMsg
+}
+
+async function getStarredBoards() {
+    const boards = await httpService.get('board');
+    var starredBoards = boards.filter((board) => board.isStarred === true);
+    if (!starredBoards) return;
+    return starredBoards;
+}
+
+async function getLabels() {
+    const boards = await httpService.get('board');
+    var labels = boards.filter(board => board[0].labels)
+    console.log('labels:', labels)
+    return labels
 }
