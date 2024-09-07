@@ -17,10 +17,11 @@ export function MainGroupCard({ provided, snapshot, el }) {
     return <div
         ref={provided.innerRef}
         className="group-card"
+        style={{ background: `linear-gradient(to bottom right, ${el.style?.color}, #cacaca)` }}
     >
         <div className="group-header">
             <h3 className="group-title">{el.title}</h3>
-            <GroupMenu />
+            <GroupMenu group={el} />
         </div>
 
         <TaskList el={el} provided={provided} />
