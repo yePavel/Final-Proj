@@ -13,9 +13,8 @@ export function BoardPreview({ board }) {
         if (!currBoard.isStarred) removeStaredBoard(currBoard)
         else addStaredBoard(currBoard)
     }
-
     const { style } = board
-    console.log('style:', style)
+
     return <article>
 
         <Link to={`${board._id}`}>

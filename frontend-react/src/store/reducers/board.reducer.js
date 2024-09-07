@@ -40,7 +40,6 @@ export function boardReducer(state = initialState, action) {
     switch (action.type) {
         case SET_BOARDS:
             const noStarBoards = action.boards.filter(board => !board.isStarred)
-            console.log('noStarBoards:', noStarBoards)
             newState = { ...state, boards: noStarBoards }
             break
         case SET_BOARD:
@@ -90,7 +89,6 @@ export function boardReducer(state = initialState, action) {
             return { ...state, task: action.task }
             break
         case UPDATE_TASK_MEMBERS:
-            console.log('action.board:', action.board)
             break
         case ADD_CHECKLIST:
             const updatedTaskChecklist = { ...state.task, checklists: [...state.task.checklists || [], action.checklist] };

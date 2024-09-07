@@ -17,6 +17,7 @@ export async function loadBoards(filterBy) {
 export async function loadBoard(boardId) {
     try {
         const board = await boardService.getById(boardId)
+        console.log("🚀 ~ loadBoard ~ board:", board)
         store.dispatch(getCmdSetBoard(board))
     } catch (err) {
         console.log('Cannot load board', err)

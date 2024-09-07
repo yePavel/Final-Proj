@@ -3,7 +3,8 @@ import path from 'path'
 import cors from 'cors'
 import express from 'express'
 import cookieParser from 'cookie-parser'
-
+import { logger } from './services/logger.service.js'
+import { boardRoutes } from './api/board/board.routes.js'
 // import { authRoutes } from './api/auth/auth.routes.js'
 // import { userRoutes } from './api/user/user.routes.js'
 // import { reviewRoutes } from './api/review/review.routes.js'
@@ -42,17 +43,11 @@ app.use('/api/board', boardRoutes)
 
 // setupSocketAPI(server)
 
-// Make every unhandled server-side-route match index.html
-// so when requesting http://localhost:3030/unhandled-route... 
-// it will still serve the index.html file
-// and allow vue/react-router to take it from there
 
 app.get('/**', (req, res) => {
     res.sendFile(path.resolve('public/index.html'))
 })
 
-import { logger } from './services/logger.service.js'
-import { boardRoutes } from './api/board/board.routes.js'
 const port = process.env.PORT || 3030
 
 server.listen(port, () => {

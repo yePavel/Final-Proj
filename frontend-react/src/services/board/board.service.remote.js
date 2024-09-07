@@ -8,16 +8,15 @@ export const boardService = {
     addBoardMsg,
     getStarredBoards,
     getLabels
-
 }
 
 async function query(filterBy = { txt: '', price: 0 }) {
-    console.log('REMOTE MODE',)
     return httpService.get(`board`, filterBy)
 }
 
-function getById(boardId) {
-    return httpService.get(`boards/${boardId}`)
+async function getById(boardId) {
+    const board = await httpService.get(`boards/${boardId}`)
+    console.log("🚀 ~ getById ~ board:", board)
 }
 
 async function remove(boardId) {
