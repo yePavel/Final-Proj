@@ -3841,12 +3841,12 @@ _createBoard();
 // }
 
 async function query(filterBy = { title: "" }) {
-  const boards = await storageService.query(STORAGE_KEY);
+  var boards = await storageService.query(STORAGE_KEY);
   const { title } = filterBy;
 
   if (title) {
     const regex = new RegExp(filterBy.title, "i");
-    boards = boards.filter((board) => regex.test(board.group.title)); // || regex.test(board.description)
+    boards = boards.filter((board) => regex.test(board.group.title));
   }
   return boards;
 }
