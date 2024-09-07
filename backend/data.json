@@ -1,0 +1,1376 @@
+[
+    {
+        "_id": "b1",
+        "title": "Final Proj",
+        "isStarred": true,
+        "archivedAt": 1589983468418,
+        "createdBy": {
+            "_id": "u101",
+            "fullname": "Daniel Yacovi",
+            "imgUrl": ""
+        },
+        "style": {
+            "background": {
+                "name": "",
+                "first": "",
+                "second": ""
+            }
+        },
+        "labels": [
+            {
+                "id": "l101",
+                "title": "Done",
+                "color": "#4bce97"
+            },
+            {
+                "id": "l102",
+                "title": "Progress",
+                "color": "#9f8fef"
+            },
+            {
+                "id": "l103",
+                "title": "Full Of Bugs",
+                "color": "#579dff"
+            },
+            {
+                "id": "l104",
+                "title": "Check Before Done",
+                "color": "#f87168"
+            },
+            {
+                "id": "l105",
+                "title": "Next Round",
+                "color": "#fea362"
+            },
+            {
+                "id": "l106",
+                "title": "To Do",
+                "color": "#9f8fef"
+            }
+        ],
+        "members": [
+            {
+                "_id": "u102",
+                "fullname": "Sean Mamistalov",
+                "color": "rgb(255, 152, 0)",
+                "imgUrl": ""
+            },
+            {
+                "_id": "u103",
+                "fullname": "Pavel Yelsukov",
+                "color": "rgb(0, 150, 136)",
+                "imgUrl": ""
+            },
+            {
+                "_id": "u101",
+                "fullname": "Daniel Yacovi",
+                "color": "rgb(33, 150, 243)",
+                "imgUrl": ""
+            }
+        ],
+        "groups": [
+            {
+                "id": "g101",
+                "title": "Backlog Server",
+                "archivedAt": 1589983468418,
+                "tasks": [
+                    {
+                        "id": "c101",
+                        "title": "Fix Login Bug",
+                        "archivedAt": null,
+                        "status": "inProgress",
+                        "priority": "high",
+                        "dueDate": "2024-09-20",
+                        "description": "Resolve the issue where users can't log in.",
+                        "comments": [
+                            {
+                                "id": "ZdPnm",
+                                "title": "@seanm please review the login logic.",
+                                "createdAt": 1590999817436,
+                                "byMember": {
+                                    "_id": "u101",
+                                    "fullname": "Daniel Yacovi",
+                                    "imgUrl": ""
+                                }
+                            }
+                        ],
+                        "checklists": [
+                            {
+                                "id": "YEhmF",
+                                "title": "Checklist",
+                                "todos": [
+                                    {
+                                        "id": "212jX",
+                                        "title": "Verify login error handling",
+                                        "isDone": false
+                                    }
+                                ]
+                            }
+                        ],
+                        "members": [
+                            {
+                                "_id": "u102",
+                                "fullname": "Sean Mamistalov",
+                                "color": "rgb(255, 152, 0)",
+                                "imgUrl": ""
+                            }
+                        ],
+                        "labels": [
+                            {
+                                "id": "l103",
+                                "title": "bug",
+                                "color": "#ff4757"
+                            }
+                        ],
+                        "byMember": {
+                            "_id": "u103",
+                            "fullname": "Pavel Yelsukov",
+                            "color": "rgb(0, 150, 136)",
+                            "imgUrl": ""
+                        },
+                        "style": {
+                            "backgroundColor": "#26de81"
+                        }
+                    },
+                    {
+                        "id": "c102",
+                        "title": "Implement Dark Mode",
+                        "archivedAt": null,
+                        "status": "todo",
+                        "priority": "medium",
+                        "dueDate": "2024-09-22",
+                        "description": "Add a dark mode toggle to the settings.",
+                        "comments": [],
+                        "checklists": [
+                            {
+                                "id": "YEhmF2",
+                                "title": "Checklist",
+                                "todos": [
+                                    {
+                                        "id": "212jX2",
+                                        "title": "Design dark mode color scheme",
+                                        "isDone": false
+                                    }
+                                ]
+                            }
+                        ],
+                        "members": [
+                            {
+                                "_id": "u103",
+                                "fullname": "Pavel Yelsukov",
+                                "color": "rgb(0, 150, 136)",
+                                "imgUrl": ""
+                            },
+                            {
+                                "_id": "u101",
+                                "fullname": "Daniel Yacovi",
+                                "color": "rgb(33, 150, 243)",
+                                "imgUrl": ""
+                            }
+                        ],
+                        "labels": [
+                            {
+                                "id": "l104",
+                                "title": "feature",
+                                "color": "#1e90ff"
+                            }
+                        ],
+                        "byMember": {
+                            "_id": "u103",
+                            "fullname": "Pavel Yelsukov",
+                            "color": "rgb(0, 150, 136)",
+                            "imgUrl": ""
+                        },
+                        "style": {
+                            "backgroundColor": "#fd9644"
+                        }
+                    }
+                ],
+                "style": {}
+            },
+            {
+                "id": "g102",
+                "title": "Backlog Client",
+                "tasks": [
+                    {
+                        "id": "c103",
+                        "title": "Refactor Dashboard",
+                        "archivedAt": null,
+                        "status": "inProgress",
+                        "priority": "high",
+                        "dueDate": "2024-09-25",
+                        "description": "Clean up the dashboard code and improve performance.",
+                        "comments": [
+                            {
+                                "id": "ZdPnm3",
+                                "title": "This needs to be done ASAP.",
+                                "createdAt": 1590999817437,
+                                "byMember": {
+                                    "_id": "u101",
+                                    "fullname": "Daniel Yacovi",
+                                    "imgUrl": ""
+                                }
+                            }
+                        ],
+                        "checklists": [
+                            {
+                                "id": "YEhmF3",
+                                "title": "Checklist",
+                                "todos": [
+                                    {
+                                        "id": "212jX3",
+                                        "title": "Optimize API calls",
+                                        "isDone": false
+                                    }
+                                ]
+                            }
+                        ],
+                        "members": [
+                            {
+                                "_id": "u102",
+                                "fullname": "Sean Mamistalov",
+                                "color": "rgb(255, 152, 0)",
+                                "imgUrl": ""
+                            },
+                            {
+                                "_id": "u101",
+                                "fullname": "Daniel Yacovi",
+                                "color": "rgb(33, 150, 243)",
+                                "imgUrl": ""
+                            }
+                        ],
+                        "labels": [
+                            {
+                                "id": "l105",
+                                "title": "refactor",
+                                "color": "#ff6b81"
+                            }
+                        ],
+                        "byMember": {
+                            "_id": "u102",
+                            "fullname": "Sean Mamistalov",
+                            "color": "rgb(255, 152, 0)",
+                            "imgUrl": ""
+                        },
+                        "style": {
+                            "backgroundColor": "#26de81"
+                        }
+                    },
+                    {
+                        "id": "c104",
+                        "title": "Help me",
+                        "archivedAt": 1589983468418,
+                        "status": "inProgress",
+                        "priority": "high",
+                        "dueDate": "2024-09-24",
+                        "description": "Please help me to fix this bug",
+                        "comments": [
+                            {
+                                "id": "ZdPnm",
+                                "title": "also @yaronb please CR this",
+                                "createdAt": 1590999817436,
+                                "byMember": {
+                                    "_id": "u101",
+                                    "fullname": "Daniel Yacovi",
+                                    "imgUrl": ""
+                                }
+                            }
+                        ],
+                        "checklists": [
+                            {
+                                "id": "YEhmF",
+                                "title": "Checklist",
+                                "todos": [
+                                    {
+                                        "id": "212jX",
+                                        "title": "To Do 1",
+                                        "isDone": false
+                                    }
+                                ]
+                            }
+                        ],
+                        "members": [
+                            {
+                                "_id": "u101",
+                                "fullname": "Daniel Yacovi",
+                                "color": "rgb(33, 150, 243)",
+                                "imgUrl": ""
+                            }
+                        ],
+                        "labels": [
+                            {
+                                "id": "l103",
+                                "title": "full of bugs",
+                                "color": "#579dff"
+                            }
+                        ],
+                        "byMember": {
+                            "_id": "u103",
+                            "fullname": "Pavel Yelsukov",
+                            "color": "rgb(0, 150, 136)",
+                            "imgUrl": ""
+                        },
+                        "style": {
+                            "backgroundColor": "#26de81"
+                        }
+                    }
+                ],
+                "style": {}
+            },
+            {
+                "id": "g103",
+                "title": "In development",
+                "archivedAt": 1589983468418,
+                "tasks": [
+                    {
+                        "id": "c105",
+                        "title": "Update Documentation",
+                        "archivedAt": null,
+                        "status": "todo",
+                        "priority": "low",
+                        "dueDate": "2024-09-30",
+                        "description": "Review and update project documentation.",
+                        "comments": [],
+                        "checklists": [
+                            {
+                                "id": "YEhmF4",
+                                "title": "Checklist",
+                                "todos": [
+                                    {
+                                        "id": "212jX4",
+                                        "title": "Update README file",
+                                        "isDone": false
+                                    }
+                                ]
+                            }
+                        ],
+                        "members": [],
+                        "labels": [
+                            {
+                                "id": "l106",
+                                "title": "documentation",
+                                "color": "#a55eea"
+                            }
+                        ],
+                        "byMember": {
+                            "_id": "u101",
+                            "fullname": "Daniel Yacovi",
+                            "color": "rgb(33, 150, 243)",
+                            "imgUrl": ""
+                        },
+                        "style": {
+                            "backgroundColor": "#fed330"
+                        }
+                    },
+                    {
+                        "id": "c106",
+                        "title": "Implement CI/CD Pipeline",
+                        "archivedAt": null,
+                        "status": "todo",
+                        "priority": "high",
+                        "dueDate": "2024-09-28",
+                        "description": "Set up continuous integration and delivery pipeline.",
+                        "comments": [
+                            {
+                                "id": "ZdPnm6",
+                                "title": "This will improve our deployment process.",
+                                "createdAt": 1590999817438,
+                                "byMember": {
+                                    "_id": "u102",
+                                    "fullname": "Sean Mamistalov",
+                                    "imgUrl": ""
+                                }
+                            }
+                        ],
+                        "checklists": [
+                            {
+                                "id": "YEhmF6",
+                                "title": "Checklist",
+                                "todos": [
+                                    {
+                                        "id": "212jX6",
+                                        "title": "Research CI/CD tools",
+                                        "isDone": false
+                                    }
+                                ]
+                            }
+                        ],
+                        "members": [
+                            {
+                                "_id": "u101",
+                                "fullname": "Daniel Yacovi",
+                                "color": "rgb(33, 150, 243)",
+                                "imgUrl": ""
+                            }
+                        ],
+                        "labels": [
+                            {
+                                "id": "l107",
+                                "title": "deployment",
+                                "color": "#20bf6b"
+                            }
+                        ],
+                        "byMember": {
+                            "_id": "u103",
+                            "fullname": "Pavel Yelsukov",
+                            "color": "rgb(0, 150, 136)",
+                            "imgUrl": ""
+                        },
+                        "style": {
+                            "backgroundColor": "#26de81"
+                        }
+                    }
+                ],
+                "style": {}
+            },
+            {
+                "id": "g104",
+                "title": "Done",
+                "archivedAt": 1589983468418,
+                "tasks": [
+                    {
+                        "id": "c107",
+                        "title": "Setup Dev Environment",
+                        "archivedAt": null,
+                        "status": "done",
+                        "priority": "medium",
+                        "dueDate": "2024-09-21",
+                        "description": "Configure development environment for new developers.",
+                        "comments": [],
+                        "checklists": [
+                            {
+                                "id": "YEhmF7",
+                                "title": "Checklist",
+                                "todos": [
+                                    {
+                                        "id": "212jX7",
+                                        "title": "Install necessary tools",
+                                        "isDone": true
+                                    }
+                                ]
+                            }
+                        ],
+                        "members": [],
+                        "labels": [
+                            {
+                                "id": "l108",
+                                "title": "setup",
+                                "color": "#4b7bec"
+                            }
+                        ],
+                        "byMember": {
+                            "_id": "u101",
+                            "fullname": "Daniel Yacovi",
+                            "color": "rgb(33, 150, 243)",
+                            "imgUrl": ""
+                        },
+                        "style": {
+                            "backgroundColor": "#f7b731"
+                        }
+                    },
+                    {
+                        "id": "c108",
+                        "title": "Fix Logout Bug",
+                        "archivedAt": null,
+                        "status": "inProgress",
+                        "priority": "medium",
+                        "dueDate": "2024-09-26",
+                        "description": "Resolve the issue where users can't log out.",
+                        "comments": [
+                            {
+                                "id": "ZdPnm8",
+                                "title": "@pavel check the session timeout.",
+                                "createdAt": 1590999817439,
+                                "byMember": {
+                                    "_id": "u102",
+                                    "fullname": "Sean Mamistalov",
+                                    "imgUrl": ""
+                                }
+                            }
+                        ],
+                        "checklists": [
+                            {
+                                "id": "YEhmF8",
+                                "title": "Checklist",
+                                "todos": [
+                                    {
+                                        "id": "212jX8",
+                                        "title": "Check session management",
+                                        "isDone": false
+                                    }
+                                ]
+                            }
+                        ],
+                        "members": [],
+                        "labels": [
+                            {
+                                "id": "l109",
+                                "title": "bug",
+                                "color": "#ff4757"
+                            }
+                        ],
+                        "byMember": {
+                            "_id": "u103",
+                            "fullname": "Pavel Yelsukov",
+                            "color": "rgb(0, 150, 136)",
+                            "imgUrl": ""
+                        },
+                        "style": {
+                            "backgroundColor": "#fd9644"
+                        }
+                    }
+                ],
+                "style": {}
+            },
+            {
+                "id": "g105",
+                "title": "QA",
+                "tasks": [
+                    {
+                        "id": "c109",
+                        "title": "Create User Profiles",
+                        "archivedAt": null,
+                        "status": "todo",
+                        "priority": "high",
+                        "dueDate": "2024-09-27",
+                        "description": "Implement user profile functionality.",
+                        "comments": [],
+                        "checklists": [
+                            {
+                                "id": "YEhmF9",
+                                "title": "Checklist",
+                                "todos": [
+                                    {
+                                        "id": "212jX9",
+                                        "title": "Design profile layout",
+                                        "isDone": false
+                                    }
+                                ]
+                            }
+                        ],
+                        "members": [
+                            {
+                                "_id": "u103",
+                                "fullname": "Pavel Yelsukov",
+                                "color": "rgb(0, 150, 136)",
+                                "imgUrl": ""
+                            }
+                        ],
+                        "labels": [
+                            {
+                                "id": "l110",
+                                "title": "feature",
+                                "color": "#1e90ff"
+                            }
+                        ],
+                        "byMember": {
+                            "_id": "u103",
+                            "fullname": "Pavel Yelsukov",
+                            "color": "rgb(0, 150, 136)",
+                            "imgUrl": ""
+                        },
+                        "style": {
+                            "backgroundColor": "#26de81"
+                        }
+                    },
+                    {
+                        "id": "c111",
+                        "title": "Implement Notifications",
+                        "archivedAt": null,
+                        "status": "todo",
+                        "priority": "medium",
+                        "dueDate": "2024-09-30",
+                        "description": "Add notification functionality for task updates.",
+                        "comments": [
+                            {
+                                "id": "ZdPnm11",
+                                "title": "Make sure to include push notifications.",
+                                "createdAt": 1590999817441,
+                                "byMember": {
+                                    "_id": "u101",
+                                    "fullname": "Daniel Yacovi",
+                                    "imgUrl": ""
+                                }
+                            }
+                        ],
+                        "checklists": [
+                            {
+                                "id": "YEhmF11",
+                                "title": "Checklist",
+                                "todos": [
+                                    {
+                                        "id": "212jX11",
+                                        "title": "Implement push notifications",
+                                        "isDone": false
+                                    }
+                                ]
+                            }
+                        ],
+                        "members": [
+                            {
+                                "_id": "u102",
+                                "fullname": "Sean Mamistalov",
+                                "color": "rgb(255, 152, 0)",
+                                "imgUrl": ""
+                            }
+                        ],
+                        "labels": [
+                            {
+                                "id": "l111",
+                                "title": "feature",
+                                "color": "#4b7bec"
+                            }
+                        ],
+                        "byMember": {
+                            "_id": "u103",
+                            "fullname": "Pavel Yelsukov",
+                            "color": "rgb(0, 150, 136)",
+                            "imgUrl": ""
+                        },
+                        "style": {
+                            "backgroundColor": "#f7b731"
+                        }
+                    }
+                ],
+                "style": {}
+            },
+            {
+                "id": "g106",
+                "title": "Ready for Production",
+                "tasks": [
+                    {
+                        "id": "c112",
+                        "title": "Improve Accessibility",
+                        "archivedAt": null,
+                        "status": "inProgress",
+                        "priority": "high",
+                        "dueDate": "2024-09-28",
+                        "description": "Enhance accessibility for visually impaired users.",
+                        "comments": [
+                            {
+                                "id": "ZdPnm12",
+                                "title": "Ensure WCAG compliance.",
+                                "createdAt": 1590999817442,
+                                "byMember": {
+                                    "_id": "u102",
+                                    "fullname": "Sean Mamistalov",
+                                    "imgUrl": ""
+                                }
+                            }
+                        ],
+                        "checklists": [
+                            {
+                                "id": "YEhmF12",
+                                "title": "Checklist",
+                                "todos": [
+                                    {
+                                        "id": "212jX12",
+                                        "title": "Check color contrast",
+                                        "isDone": true
+                                    },
+                                    {
+                                        "id": "212jX13",
+                                        "title": "Add screen reader support",
+                                        "isDone": false
+                                    }
+                                ]
+                            }
+                        ],
+                        "members": [],
+                        "labels": [
+                            {
+                                "id": "l112",
+                                "title": "accessibility",
+                                "color": "#f39c12"
+                            }
+                        ],
+                        "byMember": {
+                            "_id": "u103",
+                            "fullname": "Pavel Yelsukov",
+                            "color": "rgb(0, 150, 136)",
+                            "imgUrl": ""
+                        },
+                        "style": {
+                            "backgroundColor": "#e74c3c"
+                        }
+                    }
+                ],
+                "style": {}
+            }
+        ]
+    },
+    {
+        "_id": "b2",
+        "title": "CodeIt",
+        "isStarred": true,
+        "archivedAt": 1589983468418,
+        "createdBy": {
+            "_id": "u101",
+            "fullname": "Daniel Yacovi",
+            "imgUrl": ""
+        },
+        "style": {
+            "background": ""
+        },
+        "labels": [
+            {
+                "id": "l101",
+                "title": "Done",
+                "color": "#4bce97"
+            },
+            {
+                "id": "l102",
+                "title": "Progress",
+                "color": "#9f8fef"
+            },
+            {
+                "id": "l103",
+                "title": "Full Of Bugs",
+                "color": "#579dff"
+            },
+            {
+                "id": "l104",
+                "title": "Check Before Done",
+                "color": "#f87168"
+            },
+            {
+                "id": "l105",
+                "title": "Next Round",
+                "color": "#fea362"
+            },
+            {
+                "id": "l106",
+                "title": "To Do",
+                "color": "#9f8fef"
+            }
+        ],
+        "members": [
+            {
+                "_id": "u102",
+                "fullname": "Sean Mamistalov",
+                "color": "rgb(255, 152, 0)",
+                "imgUrl": ""
+            },
+            {
+                "_id": "u103",
+                "fullname": "Pavel Yelsukov",
+                "color": "rgb(0, 150, 136)",
+                "imgUrl": ""
+            },
+            {
+                "_id": "u101",
+                "fullname": "Daniel Yacovi",
+                "color": "rgb(33, 150, 243)",
+                "imgUrl": ""
+            }
+        ],
+        "groups": [
+            {
+                "id": "g101",
+                "title": "Backlog Server",
+                "archivedAt": 1589983468418,
+                "tasks": [
+                    {
+                        "id": "c101",
+                        "title": "Fix Login Bug",
+                        "archivedAt": null,
+                        "status": "inProgress",
+                        "priority": "high",
+                        "dueDate": "2024-09-20",
+                        "description": "Resolve the issue where users can't log in.",
+                        "comments": [
+                            {
+                                "id": "ZdPnm",
+                                "title": "@seanm please review the login logic.",
+                                "createdAt": 1590999817436,
+                                "byMember": {
+                                    "_id": "u101",
+                                    "fullname": "Daniel Yacovi",
+                                    "imgUrl": ""
+                                }
+                            }
+                        ],
+                        "checklists": [
+                            {
+                                "id": "YEhmF",
+                                "title": "Checklist",
+                                "todos": [
+                                    {
+                                        "id": "212jX",
+                                        "title": "Verify login error handling",
+                                        "isDone": false
+                                    }
+                                ]
+                            }
+                        ],
+                        "members": [
+                            {
+                                "_id": "u102",
+                                "fullname": "Sean Mamistalov",
+                                "color": "rgb(255, 152, 0)",
+                                "imgUrl": ""
+                            }
+                        ],
+                        "labels": [
+                            {
+                                "id": "l103",
+                                "title": "bug",
+                                "color": "#ff4757"
+                            }
+                        ],
+                        "byMember": {
+                            "_id": "u103",
+                            "fullname": "Pavel Yelsukov",
+                            "color": "rgb(0, 150, 136)",
+                            "imgUrl": ""
+                        },
+                        "style": {
+                            "backgroundColor": "#26de81"
+                        }
+                    },
+                    {
+                        "id": "c102",
+                        "title": "Implement Dark Mode",
+                        "archivedAt": null,
+                        "status": "todo",
+                        "priority": "medium",
+                        "dueDate": "2024-09-22",
+                        "description": "Add a dark mode toggle to the settings.",
+                        "comments": [],
+                        "checklists": [
+                            {
+                                "id": "YEhmF2",
+                                "title": "Checklist",
+                                "todos": [
+                                    {
+                                        "id": "212jX2",
+                                        "title": "Design dark mode color scheme",
+                                        "isDone": false
+                                    }
+                                ]
+                            }
+                        ],
+                        "members": [
+                            {
+                                "_id": "u103",
+                                "fullname": "Pavel Yelsukov",
+                                "color": "rgb(0, 150, 136)",
+                                "imgUrl": ""
+                            },
+                            {
+                                "_id": "u101",
+                                "fullname": "Daniel Yacovi",
+                                "color": "rgb(33, 150, 243)",
+                                "imgUrl": ""
+                            }
+                        ],
+                        "labels": [
+                            {
+                                "id": "l104",
+                                "title": "feature",
+                                "color": "#1e90ff"
+                            }
+                        ],
+                        "byMember": {
+                            "_id": "u103",
+                            "fullname": "Pavel Yelsukov",
+                            "color": "rgb(0, 150, 136)",
+                            "imgUrl": ""
+                        },
+                        "style": {
+                            "backgroundColor": "#fd9644"
+                        }
+                    }
+                ],
+                "style": {}
+            },
+            {
+                "id": "g102",
+                "title": "Backlog Client",
+                "tasks": [
+                    {
+                        "id": "c103",
+                        "title": "Refactor Dashboard",
+                        "archivedAt": null,
+                        "status": "inProgress",
+                        "priority": "high",
+                        "dueDate": "2024-09-25",
+                        "description": "Clean up the dashboard code and improve performance.",
+                        "comments": [
+                            {
+                                "id": "ZdPnm3",
+                                "title": "This needs to be done ASAP.",
+                                "createdAt": 1590999817437,
+                                "byMember": {
+                                    "_id": "u101",
+                                    "fullname": "Daniel Yacovi",
+                                    "imgUrl": ""
+                                }
+                            }
+                        ],
+                        "checklists": [
+                            {
+                                "id": "YEhmF3",
+                                "title": "Checklist",
+                                "todos": [
+                                    {
+                                        "id": "212jX3",
+                                        "title": "Optimize API calls",
+                                        "isDone": false
+                                    }
+                                ]
+                            }
+                        ],
+                        "members": [
+                            {
+                                "_id": "u102",
+                                "fullname": "Sean Mamistalov",
+                                "color": "rgb(255, 152, 0)",
+                                "imgUrl": ""
+                            },
+                            {
+                                "_id": "u101",
+                                "fullname": "Daniel Yacovi",
+                                "color": "rgb(33, 150, 243)",
+                                "imgUrl": ""
+                            }
+                        ],
+                        "labels": [
+                            {
+                                "id": "l105",
+                                "title": "refactor",
+                                "color": "#ff6b81"
+                            }
+                        ],
+                        "byMember": {
+                            "_id": "u102",
+                            "fullname": "Sean Mamistalov",
+                            "color": "rgb(255, 152, 0)",
+                            "imgUrl": ""
+                        },
+                        "style": {
+                            "backgroundColor": "#26de81"
+                        }
+                    },
+                    {
+                        "id": "c104",
+                        "title": "Help me",
+                        "archivedAt": 1589983468418,
+                        "status": "inProgress",
+                        "priority": "high",
+                        "dueDate": "2024-09-24",
+                        "description": "Please help me to fix this bug",
+                        "comments": [
+                            {
+                                "id": "ZdPnm",
+                                "title": "also @yaronb please CR this",
+                                "createdAt": 1590999817436,
+                                "byMember": {
+                                    "_id": "u101",
+                                    "fullname": "Daniel Yacovi",
+                                    "imgUrl": ""
+                                }
+                            }
+                        ],
+                        "checklists": [
+                            {
+                                "id": "YEhmF",
+                                "title": "Checklist",
+                                "todos": [
+                                    {
+                                        "id": "212jX",
+                                        "title": "To Do 1",
+                                        "isDone": false
+                                    }
+                                ]
+                            }
+                        ],
+                        "members": [
+                            {
+                                "_id": "u101",
+                                "fullname": "Daniel Yacovi",
+                                "color": "rgb(33, 150, 243)",
+                                "imgUrl": ""
+                            }
+                        ],
+                        "labels": [
+                            {
+                                "id": "l103",
+                                "title": "full of bugs",
+                                "color": "#579dff"
+                            }
+                        ],
+                        "byMember": {
+                            "_id": "u103",
+                            "fullname": "Pavel Yelsukov",
+                            "color": "rgb(0, 150, 136)",
+                            "imgUrl": ""
+                        },
+                        "style": {
+                            "backgroundColor": "#26de81"
+                        }
+                    }
+                ],
+                "style": {}
+            },
+            {
+                "id": "g103",
+                "title": "In development",
+                "archivedAt": 1589983468418,
+                "tasks": [
+                    {
+                        "id": "c105",
+                        "title": "Update Documentation",
+                        "archivedAt": null,
+                        "status": "inProgress",
+                        "priority": "medium",
+                        "dueDate": "2024-09-29",
+                        "description": "Ensure all documentation is up to date.",
+                        "comments": [],
+                        "checklists": [
+                            {
+                                "id": "YEhmF4",
+                                "title": "Checklist",
+                                "todos": [
+                                    {
+                                        "id": "212jX4",
+                                        "title": "Update API documentation",
+                                        "isDone": false
+                                    }
+                                ]
+                            }
+                        ],
+                        "members": [
+                            {
+                                "_id": "u101",
+                                "fullname": "Daniel Yacovi",
+                                "color": "rgb(33, 150, 243)",
+                                "imgUrl": ""
+                            },
+                            {
+                                "_id": "u103",
+                                "fullname": "Pavel Yelsukov",
+                                "color": "rgb(0, 150, 136)",
+                                "imgUrl": ""
+                            }
+                        ],
+                        "labels": [
+                            {
+                                "id": "l104",
+                                "title": "documentation",
+                                "color": "#4bce97"
+                            }
+                        ],
+                        "byMember": {
+                            "_id": "u101",
+                            "fullname": "Daniel Yacovi",
+                            "color": "rgb(33, 150, 243)",
+                            "imgUrl": ""
+                        },
+                        "style": {
+                            "backgroundColor": "#fd9644"
+                        }
+                    },
+                    {
+                        "id": "c106",
+                        "title": "Implement CI/CD Pipeline",
+                        "archivedAt": null,
+                        "status": "todo",
+                        "priority": "medium",
+                        "dueDate": "2024-09-30",
+                        "description": "Set up CI/CD pipeline for automatic deployments.",
+                        "comments": [],
+                        "checklists": [
+                            {
+                                "id": "YEhmF5",
+                                "title": "Checklist",
+                                "todos": [
+                                    {
+                                        "id": "212jX5",
+                                        "title": "Configure Jenkins",
+                                        "isDone": false
+                                    }
+                                ]
+                            }
+                        ],
+                        "members": [
+                            {
+                                "_id": "u102",
+                                "fullname": "Sean Mamistalov",
+                                "color": "rgb(255, 152, 0)",
+                                "imgUrl": ""
+                            },
+                            {
+                                "_id": "u103",
+                                "fullname": "Pavel Yelsukov",
+                                "color": "rgb(0, 150, 136)",
+                                "imgUrl": ""
+                            }
+                        ],
+                        "labels": [
+                            {
+                                "id": "l106",
+                                "title": "deployment",
+                                "color": "#fea362"
+                            }
+                        ],
+                        "byMember": {
+                            "_id": "u102",
+                            "fullname": "Sean Mamistalov",
+                            "color": "rgb(255, 152, 0)",
+                            "imgUrl": ""
+                        },
+                        "style": {
+                            "backgroundColor": "#ff6b81"
+                        }
+                    }
+                ],
+                "style": {}
+            },
+            {
+                "id": "g104",
+                "title": "Done",
+                "tasks": [
+                    {
+                        "id": "c107",
+                        "title": "Setup Dev Environment",
+                        "archivedAt": null,
+                        "status": "done",
+                        "priority": "medium",
+                        "dueDate": "2024-09-10",
+                        "description": "Set up the development environment.",
+                        "comments": [],
+                        "checklists": [],
+                        "members": [
+                            {
+                                "_id": "u101",
+                                "fullname": "Daniel Yacovi",
+                                "color": "rgb(33, 150, 243)",
+                                "imgUrl": ""
+                            }
+                        ],
+                        "labels": [
+                            {
+                                "id": "l106",
+                                "title": "setup",
+                                "color": "#fea362"
+                            }
+                        ],
+                        "byMember": {
+                            "_id": "u101",
+                            "fullname": "Daniel Yacovi",
+                            "color": "rgb(33, 150, 243)",
+                            "imgUrl": ""
+                        },
+                        "style": {
+                            "backgroundColor": "#fd9644"
+                        }
+                    },
+                    {
+                        "id": "c108",
+                        "title": "Fix Logout Bug",
+                        "archivedAt": null,
+                        "status": "done",
+                        "priority": "high",
+                        "dueDate": "2024-09-12",
+                        "description": "Fix the issue where users are not logged out correctly.",
+                        "comments": [],
+                        "checklists": [],
+                        "members": [
+                            {
+                                "_id": "u103",
+                                "fullname": "Pavel Yelsukov",
+                                "color": "rgb(0, 150, 136)",
+                                "imgUrl": ""
+                            }
+                        ],
+                        "labels": [
+                            {
+                                "id": "l103",
+                                "title": "bug",
+                                "color": "#ff4757"
+                            }
+                        ],
+                        "byMember": {
+                            "_id": "u103",
+                            "fullname": "Pavel Yelsukov",
+                            "color": "rgb(0, 150, 136)",
+                            "imgUrl": ""
+                        },
+                        "style": {
+                            "backgroundColor": "#ff6b81"
+                        }
+                    }
+                ],
+                "style": {}
+            },
+            {
+                "id": "g105",
+                "title": "QA",
+                "tasks": [
+                    {
+                        "id": "c109",
+                        "title": "Create User Profiles",
+                        "archivedAt": null,
+                        "status": "todo",
+                        "priority": "high",
+                        "dueDate": "2024-09-28",
+                        "description": "Create user profiles for new users.",
+                        "comments": [],
+                        "checklists": [
+                            {
+                                "id": "YEhmF6",
+                                "title": "Checklist",
+                                "todos": [
+                                    {
+                                        "id": "212jX6",
+                                        "title": "Design user profile UI",
+                                        "isDone": false
+                                    }
+                                ]
+                            }
+                        ],
+                        "members": [
+                            {
+                                "_id": "u103",
+                                "fullname": "Pavel Yelsukov",
+                                "color": "rgb(0, 150, 136)",
+                                "imgUrl": ""
+                            },
+                            {
+                                "_id": "u102",
+                                "fullname": "Sean Mamistalov",
+                                "color": "rgb(255, 152, 0)",
+                                "imgUrl": ""
+                            }
+                        ],
+                        "labels": [
+                            {
+                                "id": "l105",
+                                "title": "feature",
+                                "color": "#1e90ff"
+                            }
+                        ],
+                        "byMember": {
+                            "_id": "u103",
+                            "fullname": "Pavel Yelsukov",
+                            "color": "rgb(0, 150, 136)",
+                            "imgUrl": ""
+                        },
+                        "style": {
+                            "backgroundColor": "#ff6b81"
+                        }
+                    },
+                    {
+                        "id": "c110",
+                        "title": "Implement Notifications",
+                        "archivedAt": null,
+                        "status": "todo",
+                        "priority": "medium",
+                        "dueDate": "2024-09-27",
+                        "description": "Add notification functionality to the application.",
+                        "comments": [],
+                        "checklists": [
+                            {
+                                "id": "YEhmF7",
+                                "title": "Checklist",
+                                "todos": [
+                                    {
+                                        "id": "212jX7",
+                                        "title": "Create notification API",
+                                        "isDone": false
+                                    }
+                                ]
+                            }
+                        ],
+                        "members": [
+                            {
+                                "_id": "u103",
+                                "fullname": "Pavel Yelsukov",
+                                "color": "rgb(0, 150, 136)",
+                                "imgUrl": ""
+                            }
+                        ],
+                        "labels": [
+                            {
+                                "id": "l106",
+                                "title": "feature",
+                                "color": "#fea362"
+                            }
+                        ],
+                        "byMember": {
+                            "_id": "u103",
+                            "fullname": "Pavel Yelsukov",
+                            "color": "rgb(0, 150, 136)",
+                            "imgUrl": ""
+                        },
+                        "style": {
+                            "backgroundColor": "#ff6b81"
+                        }
+                    }
+                ],
+                "style": {}
+            },
+            {
+                "id": "g106",
+                "title": "Ready for Production",
+                "tasks": [
+                    {
+                        "id": "c111",
+                        "title": "Improve Accessibility",
+                        "archivedAt": null,
+                        "status": "todo",
+                        "priority": "medium",
+                        "dueDate": "2024-10-01",
+                        "description": "Enhance accessibility features.",
+                        "comments": [],
+                        "checklists": [
+                            {
+                                "id": "YEhmF8",
+                                "title": "Checklist",
+                                "todos": [
+                                    {
+                                        "id": "212jX8",
+                                        "title": "Audit for accessibility issues",
+                                        "isDone": false
+                                    }
+                                ]
+                            }
+                        ],
+                        "members": [
+                            {
+                                "_id": "u101",
+                                "fullname": "Daniel Yacovi",
+                                "color": "rgb(33, 150, 243)",
+                                "imgUrl": ""
+                            },
+                            {
+                                "_id": "u102",
+                                "fullname": "Sean Mamistalov",
+                                "color": "rgb(255, 152, 0)",
+                                "imgUrl": ""
+                            }
+                        ],
+                        "labels": [
+                            {
+                                "id": "l104",
+                                "title": "accessibility",
+                                "color": "#4bce97"
+                            }
+                        ],
+                        "byMember": {
+                            "_id": "u101",
+                            "fullname": "Daniel Yacovi",
+                            "color": "rgb(33, 150, 243)",
+                            "imgUrl": ""
+                        },
+                        "style": {
+                            "backgroundColor": "#fd9644"
+                        }
+                    }
+                ],
+                "style": {}
+            }
+        ]
+    }
+]
