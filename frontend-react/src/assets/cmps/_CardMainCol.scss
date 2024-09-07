@@ -1,0 +1,120 @@
+.card-main-col {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: span 2;
+    padding: 0 8px 8px 16px;
+
+
+    svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    h3 {
+        font-size: 16px;
+        align-self: end;
+        color: #172b4d;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: #333;
+
+        &:hover {
+            color: #000;
+        }
+    }
+
+    h3 {
+        justify-self: left;
+        grid-column: 2/-1;
+        margin: 0;
+    }
+
+    .member {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        float: left;
+        border-radius: 25em;
+        height: 32px;
+        margin: 0 4px 4px 0;
+        width: 32px;
+        border: none;
+        color: white;
+        cursor: pointer;
+
+        background-color: rgb(45, 81, 199);
+    }
+
+    .card-description {
+        display: grid;
+
+        .card-desc-info {
+            grid-column: 2/-1;
+            height: 56px;
+            margin-top: 12px;
+            padding: 8px 12px;
+            background-color: #091e420f;
+        }
+
+        p {
+            grid-column: 2/-1;
+        }
+    }
+
+    .card-activity {
+        display: grid;
+
+        .new-activity {
+            grid-column: 1/-1;
+            margin: 12px 0 0 0;
+
+            .member {
+                cursor: none;
+                color: #dbdbdb;
+                background-color: rgb(11, 85, 17);
+            }
+
+            .input-container {
+                display: flex;
+                height: 36px;
+
+                input {
+                    border-radius: 8px;
+                    border: none;
+                    padding: 8px 12px;
+                    width: 100%;
+                    outline: none;
+                    font-size: 14px;
+                    background-color: white;
+                    transition: 0.5s;
+
+                    &:hover {
+                        background-color: #f5f5f5;
+                        cursor: pointer;
+                    }
+                }
+
+
+            }
+        }
+    }
+}
+
+.card-main-col>* {
+    display: grid;
+    grid-column: span 2;
+    grid-template-columns: subgrid;
+    margin-bottom: 24px;
+}
+
+.card-main-col>*>*:not(svg) {
+    grid-column: 2;
+}

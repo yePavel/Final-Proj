@@ -1,0 +1,10 @@
+.app {
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.main-layout {
+    overflow-y: auto;
+}

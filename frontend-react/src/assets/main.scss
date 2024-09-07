@@ -1,0 +1,35 @@
+// BASICS
+@import './basics/base';
+
+// SETUP
+@import './setup/typography';
+@import './setup/variables';
+@import './setup/functions';
+
+//CMPS
+@import './cmps/App.scss';
+@import './cmps/App-header.scss';
+@import './cmps/Home-page.scss';
+@import './cmps/BoardIndex';
+@import './cmps/BoardList.scss';
+@import './cmps/AddGroup.scss';
+@import './cmps/AddTask.scss';
+@import './cmps/GroupMenu.scss';
+@import './cmps/MenuHeader.scss';
+@import './cmps/ColorPicker.scss';
+@import './cmps/Calendar.scss';
+@import './cmps/Map.scss';
+@import './cmps/CardModal.scss';
+@import './cmps/CardMainCol.scss';
+@import './cmps/CardDetailData.scss';
+@import './cmps/cardSideBar.scss';
+@import './cmps/PopOver.scss';
+@import './cmps/_PopOverCheckList.scss';
+@import './cmps/PopOverLabels.scss';
+@import './cmps/GroupMenuDropDown.scss';
+
+// <<<<<<< HEAD
+@import './cmps/TaskModal.scss';
+// =======
+@import './cmps/BoardHeader.scss'
+// >>>>>>> BoardHeader
