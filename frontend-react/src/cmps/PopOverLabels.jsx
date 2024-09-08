@@ -60,6 +60,7 @@ export function PopOverLabels({ onSave, existingLabel }) {
                 className="label-color"
                 style={{
                   backgroundColor: label.color,
+                  
                 }}
               />
               <span>{label.title}</span>

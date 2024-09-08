@@ -1,66 +1,74 @@
 .card-detail-data {
-    display: flex;
-    grid-column: 2/-1;
+  display: flex;
+  grid-column: 2/-1;
 
+  .card-detail-item {
+    float: left;
+    margin-right: 12px;
 
-    .card-detail-item {
-        float: left;
-        margin-right: 12px;
-
-        h3 {
-            margin: 0;
-            font-size: 12px;
-            margin: 0 14px 8px 0;
-            text-align: justify;
-        }
-
-        &.labels {
-            .label {
-                margin-right: 3px;
-                padding: 4px 8px;
-                font-size: 0.8rem;
-                color: #ffffff;
-                border-radius: 4px;
-                text-align: center;
-            }
-        }
-
-        .watching-btn {
-            display: flex;
-            position: relative;
-            gap: 6px;
-            align-items: center;
-            height: 32px;
-            overflow: hidden;
-            padding: 6px 12px;
-            background-color: #091e420f;
-            cursor: pointer;
-
-            &.on {
-                width: 138px;
-            }
-
-            .watching-on {
-                display: flex;
-                gap: 6px;
-
-                .isOn {
-                    height: 20px;
-                    border-radius: 3px;
-                    background-color: #6c7a91;
-
-                    .checkmark {
-                        color: white;
-                    }
-                }
-            }
-
-            .icon {
-                svg {
-                    width: 16px;
-                }
-
-            }
-        }
+    h3 {
+      margin: 0;
+      font-size: 12px;
+      margin: 0 14px 8px 0;
+      text-align: justify;
     }
+
+    &.labels {
+      .label {
+        display: inline-block;
+        position: relative;
+        box-sizing: border-box;
+        overflow: hidden;
+        text-align: left;
+        text-overflow: ellipsis;
+        padding: 0px 12px;
+        height: 32px;
+        min-width: 48px;
+        max-width: 100%;
+        font-size: 14px;
+        font-weight: 500;
+        border-radius: 3px;
+        margin-bottom: 0;
+        color: #ffffff;
+        border-radius: 4px;
+      }
+    }
+
+    .watching-btn {
+      display: flex;
+      position: relative;
+      gap: 6px;
+      align-items: center;
+      height: 32px;
+      overflow: hidden;
+      padding: 6px 12px;
+      background-color: #091e420f;
+      cursor: pointer;
+
+      &.on {
+        width: 138px;
+      }
+
+      .watching-on {
+        display: flex;
+        gap: 6px;
+
+        .isOn {
+          height: 20px;
+          border-radius: 3px;
+          background-color: #6c7a91;
+
+          .checkmark {
+            color: white;
+          }
+        }
+      }
+
+      .icon {
+        svg {
+          width: 16px;
+        }
+      }
+    }
+  }
 }

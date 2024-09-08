@@ -1,5 +1,5 @@
 .pop-content-container {
-  padding: 10px;
+  padding: 4px 0 8px;
 }
 
 .label-options {
@@ -21,14 +21,25 @@
     }
 
     .label-color {
-      width: 20px;
-      height: 20px;
-      margin-right: 10px;
-      border-radius: 50%;
+      display: inline-block;
+      position: relative;
+      box-sizing: border-box;
+      min-width: 48px;
+      max-width: 100%;
+      width: 100%;
+      height: 32px;
+      margin-bottom: 0;
+      padding: 0 12px;
+      overflow: hidden;
+      border-radius: 3px;
     }
 
     span {
       font-size: 14px;
+      text-align: center;
+      z-index: 1;
+      pointer-events: none;
+      width: 100%;
     }
   }
 }
