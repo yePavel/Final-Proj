@@ -19,6 +19,7 @@ export function TaskList({ el, provided }) {
     }
 
     function onCloseModal() {
+        console.log('im here:')
         setIsModalOpen(false);
     }
 

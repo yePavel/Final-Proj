@@ -15,13 +15,13 @@ async function query(filterBy = { txt: '', price: 0 }) {
 }
 
 async function getById(boardId) {
-    const board = await httpService.get(`boards/${boardId}`)
-    console.log("🚀 ~ getById ~ board:", board)
+    return await httpService.get(`board/${boardId}`)
 }
 
 async function remove(boardId) {
     return httpService.delete(`board/${boardId}`)
 }
+
 async function save(board) {
     var savedBoard
     if (board._id) {

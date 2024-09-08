@@ -1,8 +1,9 @@
 import { boardService } from '../../services/board'
 import { store } from '../store'
 import { ADD_BOARD, REMOVE_BOARD, SET_BOARDS, SET_BOARD, UPDATE_BOARD, ADD_BOARD_MSG, SET_STARRED, ADD_STARRED_BOARD, REMOVE_STARRED_BOARD, SET_BACKGROUND_COLOR, SET_TASK, UPDATE_TASK_MEMBERS, ADD_CHECKLIST } from '../reducers/board.reducer'
-import { taskService } from '../../services/task/task.service.local'
+
 import { ADD_LABEL, UPDATE_LABEL } from '../reducers/board.reducer';
+import { taskService } from '../../services/task';
 
 export async function loadBoards(filterBy) {
     try {
@@ -17,7 +18,6 @@ export async function loadBoards(filterBy) {
 export async function loadBoard(boardId) {
     try {
         const board = await boardService.getById(boardId)
-        console.log("🚀 ~ loadBoard ~ board:", board)
         store.dispatch(getCmdSetBoard(board))
     } catch (err) {
         console.log('Cannot load board', err)

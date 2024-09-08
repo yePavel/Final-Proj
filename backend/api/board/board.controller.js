@@ -15,6 +15,7 @@ export async function getBoardById(req, res) {
     try {
         const boardId = req.params.boardId
         const board = await boardService.getById(boardId)
+
         res.json(board)
     } catch (err) {
         logger.error('Failed to get board', err)
@@ -23,10 +24,10 @@ export async function getBoardById(req, res) {
 }
 
 export async function addBoard(req, res) {
-    const { loggedinUser, body: board } = req
+    // const { loggedinUser, body: board } = req
 
     try {
-        board.owner = loggedinUser
+        // board.owner = loggedinUser
         const addedBoard = await boardService.add(board)
         res.json(addedBoard)
     } catch (err) {
@@ -36,13 +37,14 @@ export async function addBoard(req, res) {
 }
 
 export async function updateBoard(req, res) {
-    const { loggedinUser, body: board } = req
-    const { _id: userId, isAdmin } = loggedinUser
+    const { body: board } = req
+    // const { loggedinUser, body: board } = req
+    // const { _id: userId, isAdmin } = loggedinUser
 
-    if (!isAdmin && board.owner._id !== userId) {
-        res.status(403).send('Not your board...')
-        return
-    }
+    // if (!isAdmin && board.owner._id !== userId) {
+    //     res.status(403).send('Not your board...')
+    //     return
+    // }
 
     try {
         const updatedBoard = await boardService.update(board)
