@@ -79,7 +79,7 @@ export function AppHeader() {
               fill="currentColor"
             />
           </svg>
-          <a href="/" className="logo">
+          <a href="/" className="logo" >
             PlanIt
           </a>
         </div>

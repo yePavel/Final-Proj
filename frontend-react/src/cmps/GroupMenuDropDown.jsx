@@ -2,16 +2,16 @@ import { useSelector } from "react-redux";
 import { updateBoard } from "../store/actions/board.actions";
 
 const colors = [
-    '#FFD1DC', // Pastel Pink
-    '#B2F5EA', // Mint Green
-    '#E6E6FA', // Lavender
-    '#87CEFA', // Light Sky Blue
-    '#FFDAB9', // Peach Puff
-    '#EEE8AA', // Pale Goldenrod
-    '#F08080', // Light Coral
-    '#B0E0E6', // Powder Blue
-    '#F0FFF0', // Honeydew
-    '#FFFACD'  // Lemon Chiffon
+    '#E6BCC4',
+    '#A4E2D6',
+    '#D1D1E1',
+    '#7AB8E4',
+    '#E6C3A3',
+    '#D6D096',
+    '#D67070',
+    '#A2CDD1',
+    '#D9E6D9',
+    '#E6E0B8'
 ];
 
 export function GroupMenuDropDown({ group }) {

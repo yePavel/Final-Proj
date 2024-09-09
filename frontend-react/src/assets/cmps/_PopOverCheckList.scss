@@ -24,7 +24,7 @@
     .checklist {
         display: grid;
         grid-column: span 2;
-        gap: 10px;
+        gap: 10px 0px;
         grid-template-columns: subgrid;
         margin-bottom: 15px;
 
@@ -41,10 +41,10 @@
         }
 
         .checklist-percent {
-            justify-self: end;
+            justify-self: start;
             grid-column: 1/2;
             font-size: 11px;
-            justify-self: center;
+            padding-inline-start: 3px;
         }
 
         .checklist-progress {

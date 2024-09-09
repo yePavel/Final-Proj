@@ -11,9 +11,12 @@
     }
 
     h3 {
+        grid-column: 2/-1;
+        align-self: start;
+        justify-self: left;
         font-size: 16px;
-        align-self: end;
         color: #172b4d;
+        margin: 0;
     }
 
     .close-btn {
@@ -31,11 +34,6 @@
         }
     }
 
-    h3 {
-        justify-self: left;
-        grid-column: 2/-1;
-        margin: 0;
-    }
 
     .member {
         display: flex;
@@ -65,6 +63,7 @@
         }
 
         p {
+            font-size: 14px;
             grid-column: 2/-1;
         }
     }
