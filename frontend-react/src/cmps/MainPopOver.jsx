@@ -7,7 +7,7 @@ export function MainPopOver({ chosenCmp, group }) {
     <div className="pop-over" id="popover">
       {chosenCmp === "members" && <PopOverMembers group={group} />}
       {chosenCmp === "labels" && <PopOverLabels />}
-      {chosenCmp === "checklist" && <PopOverCheckList />}
+      {chosenCmp === "checklist" && <PopOverCheckList group={group} />}
     </div>
   );
 }

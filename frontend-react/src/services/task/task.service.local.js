@@ -34,8 +34,12 @@ async function saveTaskMembers(boardId, groupId, updatedTask) {
 }
 
 async function saveTaskChecklist(boardId, groupId, updatedTask) {
-    await _saveTask(boardId, groupId, updatedTask);
-    return updatedTask;
+    try {
+        const board = await _saveTask(boardId, groupId, updatedTask);
+        return { board, task: updatedTask };
+    } catch (err) {
+        return console.log('Failed to save checklist:', err);
+    }
 }
 
 async function _saveTask(boardId, groupId, updatedTask) {

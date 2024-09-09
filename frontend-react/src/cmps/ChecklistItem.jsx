@@ -19,7 +19,7 @@ export function ChecklistItem({ checklistTitle }) {
 
     return (
         <div className="checklist-item-adder">
-            <input
+            <input className="item-input"
                 type="text"
                 placeholder="Add an item"
                 value={item}

@@ -2,8 +2,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { CardDetailData } from "./CardDetailData";
 import { ChecklistItem } from "./ChecklistItem";
 import { CardActivity } from "./CardActivity";
-import checklistIcon from '../assets/imgs/checklist-icon.svg';
-import { ImParagraphLeft } from "react-icons/im";
 import { calculateChecklistProgress } from "../services/util.service";
 import { TOGGLE_CHECKLIST_ITEM } from "../store/reducers/board.reducer";
 import { BsTextParagraph } from "react-icons/bs";
