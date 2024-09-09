@@ -51,16 +51,15 @@ export function TaskList({ el, provided }) {
                         <LabelPreview labels={item.labels} />
                         <p className="task-title">{item.title}</p>
                         <AssignedMember members={item.members} />
-
-                        {isModalOpen && (
-                            <CardModal group={currGroup} onClose={onCloseModal} />
-                        )}
-
                     </div>
                 )}
             </Draggable>
         ))}
         {provided.placeholder}
+
+        {isModalOpen && (
+            <CardModal group={currGroup} onClose={onCloseModal} />
+        )}
     </div>
 
 }
