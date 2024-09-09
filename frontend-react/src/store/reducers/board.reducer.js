@@ -14,7 +14,6 @@ export const SET_BACKGROUND_COLOR = 'SET_BACKGROUND_COLOR'
 export const SET_TASK = 'SET_TASK'
 export const UPDATE_TASK_MEMBERS = 'UPDATE_TASK_MEMBERS'
 
-export const ADD_CHECKLIST = 'ADD_CHECKLIST'
 export const ADD_CHECKLIST_ITEM = 'ADD_CHECKLIST_ITEM';
 export const TOGGLE_CHECKLIST_ITEM = 'TOGGLE_CHECKLIST_ITEM';
 
@@ -89,10 +88,6 @@ export function boardReducer(state = initialState, action) {
             return { ...state, task: action.task }
             break
         case UPDATE_TASK_MEMBERS:
-            break
-        case ADD_CHECKLIST:
-            const updatedTaskChecklist = { ...state.task, checklists: [...state.task.checklists || [], action.checklist] };
-            newState = { ...state, task: updatedTaskChecklist };
             break
         case ADD_CHECKLIST_ITEM:
             const updatedChecklists = state.task.checklists.map(checklist => {

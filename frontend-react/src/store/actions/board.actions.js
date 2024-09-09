@@ -1,6 +1,6 @@
 import { boardService } from '../../services/board'
 import { store } from '../store'
-import { ADD_BOARD, REMOVE_BOARD, SET_BOARDS, SET_BOARD, UPDATE_BOARD, ADD_BOARD_MSG, SET_STARRED, ADD_STARRED_BOARD, REMOVE_STARRED_BOARD, SET_BACKGROUND_COLOR, SET_TASK, UPDATE_TASK_MEMBERS, ADD_CHECKLIST } from '../reducers/board.reducer'
+import { ADD_BOARD, REMOVE_BOARD, SET_BOARDS, SET_BOARD, UPDATE_BOARD, ADD_BOARD_MSG, SET_STARRED, ADD_STARRED_BOARD, REMOVE_STARRED_BOARD, SET_BACKGROUND_COLOR, SET_TASK, UPDATE_TASK_MEMBERS } from '../reducers/board.reducer'
 
 import { ADD_LABEL, UPDATE_LABEL } from '../reducers/board.reducer';
 import { taskService } from '../../services/task';
@@ -134,15 +134,15 @@ export async function updateTaskMembers(boardId, groupId, updatedTask) {
     }
 }
 
-export async function addChecklist(boardId, groupId, checklist) {
+export async function updateTaskChecklists(boardId, groupId, updatedTask) {
     try {
-        const savedChecklist = await taskService.saveTaskChecklist(boardId, groupId, checklist);
+        const res = await taskService.saveTaskChecklist(boardId, groupId, updatedTask);
+        const { task, board } = res;
 
-        store.dispatch({ type: ADD_CHECKLIST, checklist: { title } });
-
-        return savedChecklist;
+        store.dispatch({ type: SET_TASK, task });
+        store.dispatch(getCmdSetBoard(board));
     } catch (err) {
-        console.log('Cannot add checklist', err);
+        console.error('Cannot add checklist', err);
         throw err;
     }
 }
@@ -214,12 +214,7 @@ function getCmdSetBackgroundColor(color) {
     };
 }
 
-export function getCmdAddChecklist(checklist) {
-    return {
-        type: ADD_CHECKLIST,
-        checklist,
-    };
-}
+
 
 export function addLabel(label) {
     return {
