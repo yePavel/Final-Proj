@@ -12,17 +12,18 @@ export function TaskList({ el, provided }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [currGroup, setGroup] = useState(null);
 
-    async function onTaskClick(boardId, group, taskId) {
+    async function onTaskClick(ev, boardId, group, taskId) {
+        ev.stopPropagation();
+        ev.preventDefault();
         await loadTask(boardId, group.id, taskId);
         setIsModalOpen(true);
         setGroup(group);
     }
 
     function onCloseModal() {
-        console.log('im here:')
         setIsModalOpen(false);
     }
-
+    console.log('isModalOpen:', isModalOpen)
     return <div className="tasks">
         {el.tasks.map((item, index) => (
             <Draggable
@@ -45,7 +46,7 @@ export function TaskList({ el, provided }) {
                             transition: 'transform 0.1s ease',
                             opacity: snapshot.isDragging ? 0.2 : 1,
                         }}
-                        onClick={() => onTaskClick(board._id, el, item.id)}
+                        onClick={(ev) => onTaskClick(ev, board._id, el, item.id)}
                     >
                         <LabelPreview labels={item.labels} />
                         <p className="task-title">{item.title}</p>

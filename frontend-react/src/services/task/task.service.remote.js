@@ -6,7 +6,8 @@ export const taskService = {
     query,
     saveTaskMembers,
     saveTaskChecklist,
-    getDefaultTask
+    getDefaultTask,
+    save
 }
 
 async function query(boardId, groupId, taskId) {
@@ -35,6 +36,17 @@ async function saveTaskChecklist(boardId, groupId, updatedTask) {
     return updatedTask;
 }
 
+async function save(board) {
+    var savedBoard
+    if (board._id) {
+        savedBoard = await httpService.put(`board/${board._id}`, board)
+    } else {
+        savedBoard = await httpService.post('board', board)
+    }
+    console.log('savedBoard:', savedBoard)
+    return savedBoard
+}
+
 async function _saveTask(boardId, groupId, updatedTask) {
 
     try {
@@ -48,7 +60,7 @@ async function _saveTask(boardId, groupId, updatedTask) {
         const groupIndex = board.groups.findIndex(g => g.id === groupId);
         board.groups[groupIndex] = { ...group };
 
-        return await boardService.save(board)
+        return await save(board)
     } catch (err) {
         return console.log('Felid to save task:', err)
     }

@@ -29,7 +29,7 @@ export function PopOverMembers({ group }) {
         const updatedTask = { ...task, members: updatedMembers }
         updateTaskMembers(board._id, group.id, updatedTask)
     }
-
+    console.log('board:', board)
     return <>
         <div className="pop-header">
             <h3>Members</h3>

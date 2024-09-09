@@ -35,6 +35,8 @@ async function getById(boardId) {
         const board = await collection.findOne(criteria)
 
         board.createdAt = board._id.getTimestamp()
+        console.log("🚀 ~ getById ~ board:", board)
+
         return board
     } catch (err) {
         logger.error(`while finding board ${boardId}`, err)
@@ -78,12 +80,13 @@ async function add(board) {
 async function update(board) {
     // const boardToSave = { ...board }
     // console.log("🚀 ~ update ~ boardToSave:", boardToSave)
+    const boardToSave = { ...board }
 
     try {
-        const criteria = { _id: ObjectId.createFromHexString(board._id) }
-        delete board._id
+        const criteria = { _id: ObjectId.createFromHexString(boardToSave._id) }
+        delete boardToSave._id
         const collection = await dbService.getCollection('board')
-        await collection.updateOne(criteria, { $set: board })
+        await collection.updateOne(criteria, { $set: boardToSave })
 
         return board
     } catch (err) {
