@@ -1,45 +1,45 @@
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { IoMdClose } from "react-icons/io";
-import { updateTaskChecklists } from "../store/actions/board.actions";
+import { useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { IoMdClose } from "react-icons/io"
+import { updateTaskChecklists } from "../store/actions/board.actions"
 
 export function PopOverCheckList({ group }) {
-    const [isVisible, setIsVisible] = useState(true);
-    const [title, setTitle] = useState("");
-    const [items, setItems] = useState([""]);
+    const [isVisible, setIsVisible] = useState(true)
+    const [title, setTitle] = useState("")
+    const [items, setItems] = useState([""])
 
-    const board = useSelector(storeState => storeState.boardModule.board);
-    const task = useSelector(storeState => storeState.boardModule.task);
-    const dispatch = useDispatch();
+    const board = useSelector(storeState => storeState.boardModule.board)
+    const task = useSelector(storeState => storeState.boardModule.task)
+    const dispatch = useDispatch()
 
     const handleClose = () => {
-        setIsVisible(false);
-    };
+        setIsVisible(false)
+    }
 
-    const addChecklist = () => {
-        if (!title) return;
+    function addChecklist() {
+        if (!title) return
     
         const newChecklist = {
             id: Date.now().toString(),
             title,
-            items: items.filter(item => item.trim() !== "")
-        };
+            items: items.filter(item => item)
+        }
     
         if (!group || !group.id) {
-            console.error('Group or group ID is missing.');
-            return;
+            console.error('Group or group ID is missing.')
+            return
         }
     
         const updatedTask = {
             ...task,
             checklists: [...(task.checklists || []), newChecklist]
-        };
+        }
     
-        dispatch(updateTaskChecklists(board._id, group.id, updatedTask));
-        setIsVisible(false);
-    };
+        dispatch(updateTaskChecklists(board._id, group.id, updatedTask))
+        setIsVisible(false)
+    }
     
-    if (!isVisible) return null;
+    if (!isVisible) return null
 
     return (
         <>
@@ -62,5 +62,5 @@ export function PopOverCheckList({ group }) {
                 Add
             </button>
         </>
-    );
+    )
 }
