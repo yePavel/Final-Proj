@@ -23,7 +23,7 @@ export function TaskList({ el, provided }) {
     function onCloseModal() {
         setIsModalOpen(false);
     }
-    console.log('isModalOpen:', isModalOpen)
+
     return <div className="tasks">
         {el.tasks.map((item, index) => (
             <Draggable
