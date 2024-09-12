@@ -23,7 +23,7 @@ export function CardModal({ group, onClose }) {
                     </div>
                     <div className="card-group-info">in list: <span>{`${group.title}`}</span>  <IoEyeOutline /></div>
                 </div>
-                <CardMainCol />
+                <CardMainCol group={group} />
                 <CardSideBar group={group} />
             </div>
         </section>

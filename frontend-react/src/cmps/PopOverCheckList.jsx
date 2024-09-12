@@ -10,7 +10,6 @@ export function PopOverCheckList({ group }) {
 
     const board = useSelector(storeState => storeState.boardModule.board)
     const task = useSelector(storeState => storeState.boardModule.task)
-    const dispatch = useDispatch()
 
     const handleClose = () => {
         setIsVisible(false)
@@ -25,13 +24,12 @@ export function PopOverCheckList({ group }) {
             todos: []
         }
 
-
         const updatedTask = {
             ...task,
             checklists: [...(task.checklists || []), newChecklist]
         }
 
-        dispatch(updateTaskChecklists(board?._id, group?.id, updatedTask))
+        updateTaskChecklists(board?._id, group?.id, updatedTask)
         setIsVisible(false)
     }
 

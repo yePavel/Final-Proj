@@ -3870,16 +3870,16 @@ async function remove(boardId) {
   await storageService.remove(STORAGE_KEY, boardId);
 }
 
-function save(board) {
+async function save(board) {
   if (board._id) {
-    return storageService.put(STORAGE_KEY, board);
+    return await storageService.put(STORAGE_KEY, board);
   } else {
     return storageService.post(STORAGE_KEY, board);
   }
 }
 
 async function addBoardMsg(boardId, txt) {
-  // Later, this is all done by the backend
+
   const board = await getById(boardId);
 
   const msg = {

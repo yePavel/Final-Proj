@@ -18,7 +18,6 @@ export function BoardDetails() {
     }
 
     if (!board) return <div>Loading...</div>;
-    console.log('board:', board)
 
     return (
         <section

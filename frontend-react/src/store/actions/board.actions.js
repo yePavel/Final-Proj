@@ -124,13 +124,13 @@ export async function loadTask(boardId, groupId, taskId) {
 export async function updateTaskMembers(boardId, groupId, updatedTask) {
     try {
         const res = await taskService.saveTaskMembers(boardId, groupId, updatedTask)
+        console.log('res:', res)
         const { task, board } = res
 
         store.dispatch({ type: SET_TASK, task })
         store.dispatch(getCmdSetBoard(board))
     }
     catch (err) {
-
     }
 }
 
@@ -144,6 +144,7 @@ export async function updateTaskChecklists(boardId, groupId, updatedTask) {
         throw err;
     }
 }
+
 
 // Command Creators:
 function getCmdSetBoards(boards) {

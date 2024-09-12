@@ -33,6 +33,29 @@
             height: 24px;
         }
 
+        .checklist-title {
+            display: flex;
+            justify-content: space-between;
+
+            .delete-checklist-btn {
+                display: flex;
+                justify-items: center;
+                align-items: center;
+                height: 32px;
+                gap: 8px;
+                border: none;
+                border-radius: 3px;
+                background-color: rgba(9, 30, 66, 0.0588235294);
+                color: #172b4d;
+                padding: 6px 12px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #091e4223;
+                }
+            }
+        }
+
         .checklist-header {
             grid-column: 1/-1;
             display: flex;
