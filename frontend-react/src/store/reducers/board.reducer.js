@@ -121,13 +121,13 @@ export function boardReducer(state = initialState, action) {
                 task: {
                     ...state.task,
                     checklists: state.task.checklists.map(checklist =>
-                        checklist.title === action.checklistTitle
+                        checklist.id === action.checklistIdx
                             ? {
                                 ...checklist,
-                                items: checklist.items.map((item, idx) =>
-                                    idx === action.itemIndex
-                                        ? { ...item, isChecked: !item.isChecked }
-                                        : item
+                                todos: checklist.todos.map((todo, idx) =>
+                                    idx === action.todoIndex
+                                        ? { ...todo, isDone: !todo.isDone }
+                                        : todo
                                 )
                             }
                             : checklist
@@ -135,7 +135,6 @@ export function boardReducer(state = initialState, action) {
                 }
             };
         default:
-
     }
     return newState
 }

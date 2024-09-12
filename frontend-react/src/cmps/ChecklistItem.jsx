@@ -14,6 +14,7 @@ export function ChecklistItem({ checklist, group }) {
 
     function addTodo() {
         if (!todoTitle) return
+
         const updatedTodo = { id: makeId(4), title: todoTitle, isDone: false }
         const checklistIdx = task.checklists.findIndex(cl => cl.id === checklist.id)
         const updatedTodos = [...task.checklists[checklistIdx].todos, updatedTodo]
@@ -30,7 +31,6 @@ export function ChecklistItem({ checklist, group }) {
         updateTaskChecklists(board?._id, group?.id, updatedTask)
         setTodoTitle("");
     }
-
 
     return (
         <div className="checklist-item-adder">

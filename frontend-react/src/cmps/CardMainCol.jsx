@@ -12,14 +12,15 @@ export function CardMainCol({ group }) {
     const task = useSelector(storeState => storeState.boardModule.task);
     const board = useSelector(storeState => storeState.boardModule.board);
 
-
     const dispatch = useDispatch();
 
-    function checkboxChange(checklistTitle, itemIndex) {
+    function checkboxChange(checklist, todoIndex) {
+        console.log('checklist:', checklist)
+        const checklistIdx = checklist.id
         dispatch({
             type: TOGGLE_CHECKLIST_ITEM,
-            checklistTitle,
-            itemIndex
+            checklistIdx,
+            todoIndex
         });
     };
 
@@ -72,7 +73,7 @@ export function CardMainCol({ group }) {
                                             className="checkbox-item"
                                             type="checkbox"
                                             checked={item.isDone}
-                                            onChange={() => checkboxChange(checklist.title, idx)}
+                                            onChange={() => checkboxChange(checklist, idx)}
                                         />
                                         {item.title}
                                     </li>

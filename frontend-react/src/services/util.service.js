@@ -94,11 +94,11 @@ export function getInitials(fullname) {
 }
 
 export function calculateChecklistProgress(checklist) {
-  if (!checklist.items || checklist.items.length === 0) return 0;
-  const completedItems = checklist.items.filter(
-    (item) => item.isChecked
+  if (!checklist.todos || checklist.todos.length === 0) return 0;
+  const completedItems = checklist.todos.filter(
+    (item) => item.isDone
   ).length;
-  return (completedItems / checklist.items.length) * 100;
+  return (completedItems / checklist.todos.length) * 100;
 }
 
 export function getRandomColor() {
