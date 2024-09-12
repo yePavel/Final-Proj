@@ -4,7 +4,7 @@ import { GoChecklist } from "react-icons/go";
 import { LuUser2 } from "react-icons/lu";
 import { useClick, useFloating, useInteractions, computePosition, autoUpdate } from "@floating-ui/react";
 import { MainPopOver } from "./MainPopOver.jsx";
-
+import { IoMdTime } from "react-icons/io";
 
 export function CardSideBar({ group }) {
     const [isOpen, setIsOpen] = useState(false);
@@ -51,6 +51,9 @@ export function CardSideBar({ group }) {
                     </button>
                     <button id="checklist" className="sidebar-item" onClick={() => handlePopOver('checklist')}>
                         <GoChecklist /> Checklist
+                    </button>
+                    <button id="dates" className="sidebar-item" onClick={() => handlePopOver('dates')}>
+                        <IoMdTime /> Dates
                     </button>
 
                 </div>

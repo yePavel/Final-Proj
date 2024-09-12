@@ -145,6 +145,19 @@ export async function updateTaskChecklists(boardId, groupId, updatedTask) {
     }
 }
 
+export async function updateTaskDates(boardId, groupId, updatedTask) {
+    try {
+        const res = await taskService.saveTaskDates(boardId, groupId, updatedTask);
+        console.log('res:', res);
+        const { task, board } = res;
+
+        store.dispatch({ type: SET_TASK, task });
+        store.dispatch(getCmdSetBoard(board));
+    } catch (err) {
+        console.error('Failed to update task dates', err);
+    }
+}
+
 
 // Command Creators:
 function getCmdSetBoards(boards) {

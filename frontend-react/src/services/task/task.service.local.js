@@ -7,7 +7,8 @@ export const taskService = {
     query,
     saveTaskMembers,
     saveTaskChecklist,
-    getDefaultTask
+    getDefaultTask,
+    saveTaskDates
 }
 
 async function query(boardId, groupId, taskId) {
@@ -42,6 +43,16 @@ async function saveTaskChecklist(boardId, groupId, updatedTask) {
     }
 }
 
+async function saveTaskDates(boardId, groupId, updatedTask) {
+    try {
+        const board = await _saveTask(boardId, groupId, updatedTask);
+        if (board) return { board, task: updatedTask };
+    } catch (err) {
+        console.error('Failed to save task dates', err);
+        throw err;
+    }
+}
+
 async function _saveTask(boardId, groupId, updatedTask) {
     try {
         const boards = await storageService.query(STORAGE_KEY)
@@ -72,6 +83,7 @@ export function getDefaultTask() {
         dueDate: null,
         description: "",
         comments: [],
+        dates: [],
         checklists: [],
         members: [],
         labels: [],
