@@ -13,15 +13,17 @@ export function CardDetailData() {
     setIsWatching(res => !res)
   }
 
+  console.log('task:', task)
+
   return (
     <div className="card-detail-data">
-      {task.members && (
+      {task.members.length > 0 && (
         <div className="card-detail-item">
           <h3>Members</h3>
           <AssignedMember members={task.members} />
         </div>
       )}
-      {task.labels && (
+      {task.labels.length > 0 && (
         <div className="card-detail-item labels">
           <h3>Labels</h3>
           <LabelPreview labels={task.labels} onLabelClick={() => { }} />

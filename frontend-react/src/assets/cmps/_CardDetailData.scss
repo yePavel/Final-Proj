@@ -14,6 +14,13 @@
     }
 
     &.labels {
+
+      .labels {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+
       .label {
         display: inline-block;
         position: relative;
@@ -32,6 +39,7 @@
         color: #ffffff;
         border-radius: 4px;
       }
+
     }
 
     .watching-btn {

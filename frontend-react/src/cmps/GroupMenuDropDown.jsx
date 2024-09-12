@@ -17,7 +17,7 @@ const colors = [
 export function GroupMenuDropDown({ group }) {
     const board = useSelector(storeState => storeState.boardModule.board)
     const { groups } = board
-    console.log('group:', group)
+
 
     function changeGroupColor(clr) {
         const groupIdx = groups.findIndex(g => g.id === group.id)
