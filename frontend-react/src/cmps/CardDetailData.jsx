@@ -32,7 +32,7 @@ export function CardDetailData() {
       <div className="card-detail-item">
         <h3>Notifications</h3>
         <div className={`watching-btn ${isWatching ? 'on' : ''} `} href="" onClick={toggleIsWatching}>
-          <span className="icon"><IoEyeOutline /></span>
+          <span className="eye-icon"><IoEyeOutline /></span>
 
           {isWatching ?
             <div className="watching-on">

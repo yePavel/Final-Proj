@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 import { loadTask } from "../store/actions/board.actions.js";
 import { CardModal } from "./CardModal.jsx";
+import { TaskModalPrev } from "./TaskModalPrev.jsx";
 
 export function TaskList({ el, provided }) {
     const board = useSelector(storeState => storeState.boardModule.board)
@@ -50,7 +51,10 @@ export function TaskList({ el, provided }) {
                     >
                         <LabelPreview labels={item.labels} />
                         <p className="task-title">{item.title}</p>
-                        <AssignedMember members={item.members} />
+                        <div className="task-prev">
+                            <TaskModalPrev task={item} />
+                            <AssignedMember members={item.members} />
+                        </div>
                     </div>
                 )}
             </Draggable>

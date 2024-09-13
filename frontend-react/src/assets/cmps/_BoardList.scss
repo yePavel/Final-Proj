@@ -94,7 +94,7 @@
       flex: 1;
 
       .task {
-        z-index: 10;
+        display: flex;
         min-height: 24px;
         padding: 8px 12px 4px;
         background-color: #ffffff;
@@ -103,14 +103,13 @@
           0px 0px 1px rgba(9, 30, 66, 0.31);
         padding: 8px;
         margin-bottom: 8px;
-        display: flex;
         flex-direction: column;
         gap: 4px;
 
         .task-title {
           margin: 0;
           font-size: 14px;
-          color: #333333;
+          color: #44546f;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;

@@ -1,0 +1,19 @@
+.task-prev {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .task-modal-prev {
+        display: flex;
+        float: left;
+        column-gap: 6px;
+        font-size: 14px;
+
+        .task-prev-item {
+            display: flex;
+            line-height: 1;
+            color: #44546f;
+            gap: 2px;
+        }
+    }
+}
