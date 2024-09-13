@@ -7,6 +7,10 @@
   width: 304px;
   z-index: 50;
 
+  .add-checklist {
+    margin-left: 12px;
+  }
+
   .pop-header {
     display: grid;
     position: relative;
@@ -77,10 +81,6 @@
         outline-color: #388bff;
       }
 
-    }
-
-    .add-checklist {
-      margin-left: 12px;
     }
 
     h4 {
