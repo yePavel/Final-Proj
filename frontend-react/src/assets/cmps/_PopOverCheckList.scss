@@ -125,6 +125,21 @@
                 input[type="checkbox"] {
                     margin-right: 10px;
                 }
+
+                span {
+                    border-radius: 12px;
+                    padding: 6px 8px;
+                    word-break: break-word;
+
+                    width: 100%;
+
+                    &:hover {
+                        background-color: #091e420f;
+                        cursor: pointer;
+                    }
+                }
+
+                ;
             }
 
             .checkbox-item {

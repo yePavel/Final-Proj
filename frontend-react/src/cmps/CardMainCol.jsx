@@ -15,6 +15,21 @@ export function CardMainCol({ group }) {
     const dispatch = useDispatch();
 
     function checkboxChange(checklist, todoIndex) {
+        const updatedChecklist = {
+            ...checklist,
+            todos: checklist.todos.map((todo, index) =>
+                index === todoIndex ? { ...todo, isDone: !todo.isDone } : todo
+            )
+        };
+
+        const updatedTask = {
+            ...task,
+            checklists: task.checklists.map(cl =>
+                cl.id === checklist.id ? updatedChecklist : cl
+            )
+        }
+        updateTaskChecklists(board?._id, group?.id, updatedTask)
+
         const checklistIdx = checklist.id
         dispatch({
             type: TOGGLE_CHECKLIST_ITEM,
@@ -74,14 +89,14 @@ export function CardMainCol({ group }) {
 
                             <ul className="checklist-items">
                                 {checklist.todos && checklist.todos.map((item, idx) => (
-                                    <li key={idx}>
+                                    <li key={idx} onClick={() => checkboxChange(checklist, idx)}>
                                         <input
                                             className="checkbox-item"
                                             type="checkbox"
                                             checked={item.isDone}
                                             onChange={() => checkboxChange(checklist, idx)}
                                         />
-                                        {item.title}
+                                        <span>{item.title}</span>
                                     </li>
                                 ))}
                             </ul>

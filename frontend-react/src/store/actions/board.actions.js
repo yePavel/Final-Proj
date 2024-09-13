@@ -134,8 +134,11 @@ export async function updateTaskMembers(boardId, groupId, updatedTask) {
 
 export async function updateTaskChecklists(boardId, groupId, updatedTask) {
     try {
-        const task = await taskService.saveTaskChecklist(boardId, groupId, updatedTask);
-        store.dispatch({ type: SET_TASK, task });
+        const res = await taskService.saveTask(boardId, groupId, updatedTask)
+        const { task, board } = res
+
+        store.dispatch({ type: SET_TASK, task })
+        store.dispatch(getCmdSetBoard(board))
 
     } catch (err) {
         console.error('Cannot add checklist', err);
