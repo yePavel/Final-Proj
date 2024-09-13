@@ -60,6 +60,9 @@
       .watching-on {
         display: flex;
         gap: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        align-content: space-evenly;
 
         .isOn {
           height: 22px;
@@ -82,4 +85,5 @@
       }
     }
   }
+
 }

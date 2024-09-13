@@ -23,6 +23,8 @@
     margin-bottom: 20px;
     padding-bottom: 100px;
     background-color: #f0f0f0;
+    color: #172b4dd4;
+
     border-radius: 8px;
     z-index: 20;
     cursor: auto;
@@ -62,6 +64,10 @@
 
         span {
           text-decoration: underline;
+        }
+
+        svg {
+          margin-left: 10px;
         }
       }
     }

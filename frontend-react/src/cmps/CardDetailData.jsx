@@ -37,11 +37,11 @@ export function CardDetailData({ group }) {
           <span className="eye-icon"><IoEyeOutline /></span>
           {task.isWatching ?
             <div className="watching-on">
-              <span>Watching</span>
+              <span className="watch-txt">Watching</span>
               <span className="isOn"><IoIosCheckmark className="checkmark" /></span>
             </div> :
-            <div>
-              <span>Watch</span>
+            <div >
+              <span className="watching-on">Watch</span>
             </div>
           }
 

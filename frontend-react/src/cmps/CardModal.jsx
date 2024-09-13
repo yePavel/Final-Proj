@@ -21,7 +21,11 @@ export function CardModal({ group, onClose }) {
                             <img src={CloseBtn} alt="close-btn Icon" />
                         </button>
                     </div>
-                    <div className="card-group-info">in list: <span>{`${group.title}`}</span>  <IoEyeOutline /></div>
+                    <div className="card-group-info">
+                        in list:
+                        <span> {`${group.title}`}</span>
+                        {task.isWatching && <IoEyeOutline />}
+                    </div>
                 </div>
                 <CardMainCol group={group} />
                 <CardSideBar group={group} />
