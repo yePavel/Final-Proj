@@ -144,6 +144,7 @@ const data = [
             style: {
               backgroundColor: "#26de81",
             },
+            coverColor: ''
           },
           {
             id: "c102",

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { BiLabel } from "react-icons/bi";
+import { BiLabel, BiWindow } from "react-icons/bi";
 import { GoChecklist } from "react-icons/go";
 import { LuUser2 } from "react-icons/lu";
-import { useClick, useFloating, useInteractions, computePosition, autoUpdate } from "@floating-ui/react";
+import { useClick, useFloating, useInteractions, computePosition } from "@floating-ui/react";
 import { MainPopOver } from "./MainPopOver.jsx";
 import { IoMdTime } from "react-icons/io";
 
@@ -54,6 +54,9 @@ export function CardSideBar({ group }) {
                     </button>
                     <button id="dates" className="sidebar-item" onClick={() => handlePopOver('dates')}>
                         <IoMdTime /> Dates
+                    </button>
+                    <button id="cover" className="sidebar-item" onClick={() => handlePopOver('cover')}>
+                        <BiWindow /> Cover
                     </button>
 
                 </div>

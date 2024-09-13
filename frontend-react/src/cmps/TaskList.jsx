@@ -34,7 +34,7 @@ export function TaskList({ el, provided }) {
                 index={index}
             >
                 {(provided, snapshot) => (
-                    <div className="task"
+                    <div className={`task ${item.coverColor ? 'cover' : ''}`}
                         ref={provided.innerRef}
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
@@ -49,11 +49,14 @@ export function TaskList({ el, provided }) {
                         }}
                         onClick={(ev) => onTaskClick(ev, board._id, el, item.id)}
                     >
-                        <LabelPreview labels={item.labels} />
-                        <p className="task-title">{item.title}</p>
-                        <div className="task-prev">
-                            <TaskModalPrev task={item} />
-                            <AssignedMember members={item.members} />
+                        {item.coverColor && <div className="task-prev-cover" style={{ background: `${item.coverColor}` }}></div>}
+                        <div className="task-main-content">
+                            <LabelPreview labels={item.labels} />
+                            <p className="task-title">{item.title}</p>
+                            <div className="task-prev">
+                                <TaskModalPrev task={item} />
+                                <AssignedMember members={item.members} />
+                            </div>
                         </div>
                     </div>
                 )}

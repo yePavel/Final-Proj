@@ -96,7 +96,6 @@
       .task {
         display: flex;
         min-height: 24px;
-        padding: 8px 12px 6px;
         background-color: #ffffff;
         border-radius: 8px;
         box-shadow: 0px 1px 1px rgba(9, 30, 66, 0.25),
@@ -105,8 +104,19 @@
         flex-direction: column;
         gap: 4px;
 
+
+        .task-prev-cover {
+          height: 36px;
+          border-radius: 8px 8px 0 0;
+        }
+
+        .task-main-content {
+          padding: 6px 12px 6px;
+
+        }
+
         .task-title {
-          margin: 0;
+          margin: 2px 0px 4px 0px;
           font-size: 14px;
           color: #44546f;
           white-space: nowrap;

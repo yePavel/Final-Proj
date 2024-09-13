@@ -132,6 +132,18 @@ export async function updateTaskMembers(boardId, groupId, updatedTask) {
     }
 }
 
+export async function updateTaskCover(boardId, groupId, updatedTask) {
+    try {
+        const res = await taskService.saveTask(boardId, groupId, updatedTask)
+        const { task, board } = res
+
+        store.dispatch({ type: SET_TASK, task })
+        store.dispatch(getCmdSetBoard(board))
+    }
+    catch (err) {
+    }
+}
+
 export async function updateTaskChecklists(boardId, groupId, updatedTask) {
     try {
         const res = await taskService.saveTask(boardId, groupId, updatedTask)

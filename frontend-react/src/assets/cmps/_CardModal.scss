@@ -29,6 +29,13 @@
     z-index: 20;
     cursor: auto;
 
+    .task-cover {
+      grid-column: 1/-1;
+      width: 100%;
+      height: 116px;
+      border-radius: 8px 8px 0px 0px;
+    }
+
     .card-header {
       grid-column: 1/-1;
       display: flex;

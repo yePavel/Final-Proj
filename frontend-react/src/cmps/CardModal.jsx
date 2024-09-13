@@ -13,6 +13,7 @@ export function CardModal({ group, onClose }) {
     return (
         <section className="click-screen" onClick={onClose} >
             <div className="card-details-modal" onClick={(e) => e.stopPropagation()}>
+                {task.coverColor && <div className="task-cover" style={{ background: `${task.coverColor}` }}></div>}
                 <div className="card-header">
                     <div className="card-title">
                         <HiOutlineCreditCard />
