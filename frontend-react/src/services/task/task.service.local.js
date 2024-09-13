@@ -5,7 +5,7 @@ const STORAGE_KEY = 'board'
 
 export const taskService = {
     query,
-    saveTaskMembers,
+    saveTask,
     saveTaskChecklist,
     getDefaultTask,
     saveTaskDates
@@ -25,7 +25,7 @@ async function query(boardId, groupId, taskId) {
     }
 }
 
-async function saveTaskMembers(boardId, groupId, updatedTask) {
+async function saveTask(boardId, groupId, updatedTask) {
     try {
         const board = await _saveTask(boardId, groupId, updatedTask)
         return { board, task: updatedTask }

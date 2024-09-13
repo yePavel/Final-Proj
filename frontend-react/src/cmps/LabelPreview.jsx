@@ -12,7 +12,7 @@ export function LabelPreview({ labels, onLabelClick }) {
     <div className="labels">
       {labels?.map((label) => (
         <span
-          key={label.id}
+          key={label?.id}
           className={`label ${selectedLabel === label ? "selected" : ""}`}
           style={{ backgroundColor: label.color }}
           onClick={() => handleLabelClick(label)}

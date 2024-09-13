@@ -101,7 +101,6 @@ export async function removeStaredBoard(board) {
 
 export function setBackgroundColor(color) {
     try {
-
         localStorage.setItem('backgroundColor', color);
         const backgroundColor = getCmdSetBackgroundColor(color);
         return backgroundColor;
@@ -123,8 +122,7 @@ export async function loadTask(boardId, groupId, taskId) {
 
 export async function updateTaskMembers(boardId, groupId, updatedTask) {
     try {
-        const res = await taskService.saveTaskMembers(boardId, groupId, updatedTask)
-        console.log('res:', res)
+        const res = await taskService.saveTask(boardId, groupId, updatedTask)
         const { task, board } = res
 
         store.dispatch({ type: SET_TASK, task })
@@ -144,11 +142,23 @@ export async function updateTaskChecklists(boardId, groupId, updatedTask) {
         throw err;
     }
 }
+export async function updateIsWatching(boardId, groupId, updatedTask) {
+    try {
+        const res = await taskService.saveTask(boardId, groupId, updatedTask)
+        const { task, board } = res
+
+        store.dispatch({ type: SET_TASK, task })
+        store.dispatch(getCmdSetBoard(board))
+
+    } catch (err) {
+        console.error('Cannot handle is watching', err);
+        throw err;
+    }
+}
 
 export async function updateTaskDates(boardId, groupId, updatedTask) {
     try {
         const res = await taskService.saveTaskDates(boardId, groupId, updatedTask);
-        console.log('res:', res);
         const { task, board } = res;
 
         store.dispatch({ type: SET_TASK, task });

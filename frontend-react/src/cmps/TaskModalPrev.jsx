@@ -3,7 +3,6 @@ import { IoEyeOutline } from "react-icons/io5"
 import { LuClock4 } from "react-icons/lu"
 
 export function TaskModalPrev({ task }) {
-    console.log('task.isWatching:', task.isWatching)
 
     return <div className="task-modal-prev">
         {task.isWatching &&

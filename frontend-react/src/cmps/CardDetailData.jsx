@@ -4,16 +4,18 @@ import { LabelPreview } from "./LabelPreview";
 import { useState } from "react";
 import { IoEyeOutline } from "react-icons/io5";
 import { IoIosCheckmark } from "react-icons/io";
+import { updateIsWatching } from "../store/actions/board.actions";
 
-export function CardDetailData() {
+export function CardDetailData({ group }) {
+  const board = useSelector((storeState) => storeState.boardModule.board);
   const task = useSelector((storeState) => storeState.boardModule.task);
   const [isWatching, setIsWatching] = useState(false)
 
-  function toggleIsWatching() {
+  function handleIsWatching() {
     setIsWatching(res => !res)
+    task.isWatching = isWatching
+    updateIsWatching(board._id, group.id, task)
   }
-
-  console.log('task:', task)
 
   return (
     <div className="card-detail-data">
@@ -31,10 +33,9 @@ export function CardDetailData() {
       )}
       <div className="card-detail-item">
         <h3>Notifications</h3>
-        <div className={`watching-btn ${isWatching ? 'on' : ''} `} href="" onClick={toggleIsWatching}>
+        <div className={`watching-btn ${task.isWatching ? 'on' : ''}`} href="" onClick={handleIsWatching}>
           <span className="eye-icon"><IoEyeOutline /></span>
-
-          {isWatching ?
+          {task.isWatching ?
             <div className="watching-on">
               <span>Watching</span>
               <span className="isOn"><IoIosCheckmark className="checkmark" /></span>

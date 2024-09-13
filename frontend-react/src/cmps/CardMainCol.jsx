@@ -15,7 +15,6 @@ export function CardMainCol({ group }) {
     const dispatch = useDispatch();
 
     function checkboxChange(checklist, todoIndex) {
-        console.log('checklist:', checklist)
         const checklistIdx = checklist.id
         dispatch({
             type: TOGGLE_CHECKLIST_ITEM,
@@ -32,7 +31,7 @@ export function CardMainCol({ group }) {
 
     return (
         <div className="card-main-col">
-            <CardDetailData task={task} />
+            <CardDetailData task={task} group={group} />
 
             <div className="card-description">
                 <BsTextParagraph />
