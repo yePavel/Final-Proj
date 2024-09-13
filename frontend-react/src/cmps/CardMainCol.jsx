@@ -44,6 +44,13 @@ export function CardMainCol({ group }) {
                 )}
             </div>
 
+            {task.dueDate && (
+                <div className="card-due-date">
+                    <h3>Due Date</h3>
+                    <p>{new Date(task.dueDate).toLocaleDateString()}</p>
+                </div>
+            )}
+
             {task.checklists && task.checklists.length > 0 && (
                 <div className="checklists">
                     {task.checklists.map((checklist, index) => (

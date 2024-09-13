@@ -1,7 +1,6 @@
 .pop-over {
   position: absolute;
   display: block;
-  width: max-content;
   background: #fff;
   border-radius: 8px;
   overflow: hidden;
@@ -54,8 +53,6 @@
         opacity: 14%;
       }
     }
-
-
   }
 
   .pop-content-container {
