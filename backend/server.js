@@ -7,9 +7,7 @@ import { logger } from './services/logger.service.js'
 import { boardRoutes } from './api/board/board.routes.js'
 // import { authRoutes } from './api/auth/auth.routes.js'
 // import { userRoutes } from './api/user/user.routes.js'
-// import { reviewRoutes } from './api/review/review.routes.js'
-// import { boardRoutes } from './api/board/board.routes.js'
-// import { setupSocketAPI } from './services/socket.service.js'
+import { setupSocketAPI } from './services/socket.service.js'
 
 // import { setupAsyncLocalStorage } from './middlewares/setupAls.middleware.js'
 
@@ -41,7 +39,7 @@ if (process.env.NODE_ENV === 'production') {
 // app.use('/api/review', reviewRoutes)
 app.use('/api/board', boardRoutes)
 
-// setupSocketAPI(server)
+setupSocketAPI(server)
 
 
 app.get('/**', (req, res) => {

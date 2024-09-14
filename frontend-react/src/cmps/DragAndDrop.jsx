@@ -27,7 +27,6 @@ const move = (source, destination, droppableSource, droppableDestination) => {
     return result;
 };
 
-
 export function DragAndDrop({ handleBoardUpdate }) {
     const board = useSelector(storeState => storeState.boardModule.board)
     const [isAddingGroup, setIsAddingGroup] = useState(null);

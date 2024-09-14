@@ -1,4 +1,5 @@
 import { logger } from '../../services/logger.service.js'
+import { socketService } from '../../services/socket.service.js'
 import { boardService } from './board.service.js'
 
 export async function getBoards(req, res) {
@@ -48,6 +49,7 @@ export async function updateBoard(req, res) {
 
     try {
         const updatedBoard = await boardService.update(board)
+        socketService.broadcast({ type: 'board-updated', room: board._id, data: updatedBoard })
         res.json(updatedBoard)
     } catch (err) {
         logger.error('Failed to update board', err)

@@ -231,7 +231,7 @@ function getCmdAddBoard(board) {
         board
     }
 }
-function getCmdUpdateBoard(board) {
+export function getCmdUpdateBoard(board) {
     return {
         type: UPDATE_BOARD,
         board

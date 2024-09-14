@@ -35,7 +35,6 @@ async function getById(boardId) {
         const board = await collection.findOne(criteria)
 
         board.createdAt = board._id.getTimestamp()
-        console.log("🚀 ~ getById ~ board:", board)
 
         return board
     } catch (err) {
@@ -78,8 +77,6 @@ async function add(board) {
 }
 
 async function update(board) {
-    // const boardToSave = { ...board }
-    // console.log("🚀 ~ update ~ boardToSave:", boardToSave)
     const boardToSave = { ...board }
 
     try {

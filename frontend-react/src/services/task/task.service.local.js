@@ -26,7 +26,6 @@ async function query(boardId, groupId, taskId) {
 }
 
 async function saveTask(boardId, groupId, updatedTask) {
-    console.log(':', boardId, groupId, updatedTask)
     try {
         const board = await _saveTask(boardId, groupId, updatedTask)
         return { board, task: updatedTask }
