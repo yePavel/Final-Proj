@@ -13,7 +13,9 @@ export function HomePage() {
     function getBoardIndex(ev) {
         navigate('/boards')
     }
-
+    function getSignUp(ev) {
+        navigate('/signup')
+    }
     return (
         <section className='homepage'>
 
@@ -25,7 +27,7 @@ export function HomePage() {
                         <form action="">
                             <input type="text"
                                 placeholder='Email' />
-                            <button>Sign up - it's free!</button>
+                            <button onClick={() => getSignUp()}>Sign up - it's free!</button>
                             <button onClick={() => getBoardIndex()}>Start Free trail</button>
                         </form>
                     </div>
