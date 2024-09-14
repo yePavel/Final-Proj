@@ -7,6 +7,30 @@
   width: 304px;
   z-index: 50;
 
+  .remove-cover-btn {
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+    width: 100%;
+    gap: 8px;
+    border: none;
+    border-radius: 3px;
+
+    background-color: #091e420f;
+    color: #172b4d;
+
+    margin-top: 8px;
+    padding: 6px 12px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #091e4223;
+    }
+  }
+
+
   .add-checklist {
     margin-left: 12px;
   }

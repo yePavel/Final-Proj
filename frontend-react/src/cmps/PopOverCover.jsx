@@ -19,14 +19,20 @@ export function PopOverCover({ group }) {
         '#7D8796'   // grey
     ];
 
-    function handleSetCover(clr) {
-        const updatedTask = { ...task, coverColor: clr || '' }
+    function setCover(clr) {
+        const updatedTask = { ...task, coverColor: clr }
+        updateTaskCover(board._id, group.id, updatedTask)
+    }
+
+    function removeCover(clr) {
+        const updatedTask = { ...task, coverColor: clr }
         updateTaskCover(board._id, group.id, updatedTask)
     }
 
     return <>
         <div className="pop-header">
             <h3>Cover</h3>
+            {task.coverColor && <button className="remove-cover-btn" onClick={() => removeCover('')}>Remove cover</button>}
         </div>
         <div className="pop-content-container">
             <h4>Colors</h4>
@@ -35,7 +41,7 @@ export function PopOverCover({ group }) {
                     <button
                         key={color}
                         className="dropmenu-colored-btn"
-                        onClick={() => handleSetCover(color)}
+                        onClick={() => setCover(color)}
                         style={{ background: `${color}` }}
                     >
                     </button>
