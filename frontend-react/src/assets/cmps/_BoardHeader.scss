@@ -12,6 +12,33 @@
   width: 100%;
   inset: 0;
 
+  .header-down-menu-btn {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    padding: 8px;
+    line-height: 1;
+    border: none;
+    margin-left: 5px;
+    background: #DCDFE4;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #f3f4f7;
+    }
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+
+    svg {
+      transform: scale(1.5);
+    }
+  }
+
   .board-header-left {
     display: flex;
     align-items: center;
