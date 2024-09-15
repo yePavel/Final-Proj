@@ -1,0 +1,50 @@
+@media (max-width: 1500px) {
+    .card-details-modal {
+        display: grid;
+        grid-template-columns: 50px 1fr 192px;
+    }
+
+    .click-screen {
+        padding: 40px;
+    }
+
+    .card-header {
+        grid-column: span 3;
+    }
+
+    .task-cover {
+        grid-column: span 3;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-details-modal {
+        display: grid;
+        grid-template-columns: 50px 1fr;
+    }
+
+    .card-sidebar {
+        grid-column: span 3;
+    }
+
+    .click-screen {
+        padding: 15px;
+    }
+
+    .task-cover {
+        grid-column: span 3;
+    }
+
+    .card-main-col {
+        grid-column: span 3;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-details-modal {
+        display: grid;
+        grid-template-columns: 50px;
+    }
+
+
+}

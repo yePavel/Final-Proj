@@ -3,6 +3,7 @@ import { DragDropContext, Droppable } from "react-beautiful-dnd";
 import { useSelector } from "react-redux";
 import { AddGroup } from "./AddGroup";
 import { MainGroupCard } from "./MainGroupCard";
+import { FaPlus } from "react-icons/fa";
 
 const reorder = (list, startIndex, endIndex) => {
     const { tasks } = list
@@ -80,7 +81,7 @@ export function DragAndDrop({ handleBoardUpdate }) {
                             <button
                                 onClick={() => setIsAddingGroup(board.id)}
                                 className="add-group-btn">
-                                + Add another list
+                                <FaPlus />  Add another list
                             </button>
                         )}
                     </div>
