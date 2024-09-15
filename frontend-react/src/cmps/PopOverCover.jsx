@@ -49,8 +49,26 @@ export function PopOverCover({ group }) {
                 }
             </div>
         </div>
-        <div className="pop-content-container">
+        <div className="task-cover-photos">
             <h4>Photos from Unsplash</h4>
+            <div>
+                <img src="./../src/assets/imgs/task_imgs/1.jpg" alt="" />
+            </div>
+            <div>
+                <img src="./../src/assets/imgs/task_imgs/1.jpg" alt="" />
+            </div>
+            <div>
+                <img src="./../src/assets/imgs/task_imgs/1.jpg" alt="" />
+            </div>
+            <div>
+                <img src="./../src/assets/imgs/task_imgs/1.jpg" alt="" />
+            </div>
+            <div>
+                <img src="./../src/assets/imgs/task_imgs/1.jpg" alt="" />
+            </div>
+            <div>
+                <img src="./../src/assets/imgs/task_imgs/1.jpg" alt="" />
+            </div>
         </div>
     </>
 }
