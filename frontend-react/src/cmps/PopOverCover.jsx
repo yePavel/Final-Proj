@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { updateTaskCover } from "../store/actions/board.actions";
+import { useState } from "react";
 
 
 export function PopOverCover({ group }) {
@@ -18,16 +19,33 @@ export function PopOverCover({ group }) {
         '#EC7FB5',  // pink
         '#7D8796'   // grey
     ];
+    const imgs = [
+        '1',
+        '2',
+        '3',
+        '4',
+        '5',
+        '6',
+        '7',
+    ];
 
-    function setCover(clr) {
-        const updatedTask = { ...task, coverColor: clr }
-        updateTaskCover(board._id, group.id, updatedTask)
+    function setCover(val) {
+        const type = val.length > 3 ? 'color' : 'img'
+        console.log('type:', type)
+        if (type === 'color') {
+            const updatedTask = { ...task, coverColor: val, coverImg: null }
+            updateTaskCover(board._id, group.id, updatedTask)
+        } else {
+            const updatedTask = { ...task, coverImg: val, coverColor: null }
+            updateTaskCover(board._id, group.id, updatedTask)
+        }
     }
 
     function removeCover(clr) {
         const updatedTask = { ...task, coverColor: clr }
         updateTaskCover(board._id, group.id, updatedTask)
     }
+
 
     return <>
         <div className="pop-header">
@@ -51,24 +69,11 @@ export function PopOverCover({ group }) {
         </div>
         <div className="task-cover-photos">
             <h4>Photos from Unsplash</h4>
-            <div>
-                <img src="./../src/assets/imgs/task_imgs/1.jpg" alt="" />
-            </div>
-            <div>
-                <img src="./../src/assets/imgs/task_imgs/1.jpg" alt="" />
-            </div>
-            <div>
-                <img src="./../src/assets/imgs/task_imgs/1.jpg" alt="" />
-            </div>
-            <div>
-                <img src="./../src/assets/imgs/task_imgs/1.jpg" alt="" />
-            </div>
-            <div>
-                <img src="./../src/assets/imgs/task_imgs/1.jpg" alt="" />
-            </div>
-            <div>
-                <img src="./../src/assets/imgs/task_imgs/1.jpg" alt="" />
-            </div>
+            {imgs.map(img =>
+                <div className='cover-img' onClick={() => setCover(img)}>
+                    <img src={`./../src/assets/imgs/task_imgs/${img}.jpg`} alt="" />
+                </div>
+            )}
         </div>
     </>
 }

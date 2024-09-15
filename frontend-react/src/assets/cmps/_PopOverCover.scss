@@ -18,7 +18,7 @@
     grid-template-columns: repeat(3, 88px);
     justify-content: center;
     margin-bottom: 10px;
-    gap: 10px;
+    gap: 8px;
 
     h4 {
         grid-column: 1/-1;
@@ -33,5 +33,6 @@
         width: 88px;
         height: 48px;
         border-radius: 3px;
+        cursor: pointer;
     }
 }

@@ -49,7 +49,9 @@ export function TaskList({ el, provided }) {
                         }}
                         onClick={(ev) => onTaskClick(ev, board._id, el, item.id)}
                     >
-                        {item.coverColor && <div className="task-prev-cover" style={{ background: `${item.coverColor}` }}></div>}
+                        {item.coverColor?.length > 3 ? <div className="task-prev-cover" style={{ background: `${item.coverColor}` }}></div> :
+                            <img className="top-prev-cover-img" src={`./../src/assets/imgs/task_imgs/${item.coverImg}.jpg`} alt="" />
+                        }
                         <div className="task-main-content">
                             <LabelPreview labels={item.labels} />
                             <p className="task-title">{item.title}</p>
