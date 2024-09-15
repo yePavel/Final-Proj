@@ -75,6 +75,7 @@ export function AppHeader() {
     >
       <nav>
         <div className="left-section">
+        <div className="logo-container">
           <img
             src="/menu.svg"
             alt="Menu"
@@ -84,20 +85,22 @@ export function AppHeader() {
           <a href="/" className="logo">
             PlanIt
           </a>
+          </div>
           {!isAuthenticated && (
             <div className="auth-buttons">
+                     <button
+                className="auth-button log-in-button"
+                onClick={handleLogIn}
+              >
+                Log In
+              </button>
               <button
                 className="auth-button sign-up-button"
                 onClick={handleSignUp}
               >
                 Get Planit for free
               </button>
-              <button
-                className="auth-button log-in-button"
-                onClick={handleLogIn}
-              >
-                Log In
-              </button>
+       
             </div>
           )}
         </div>

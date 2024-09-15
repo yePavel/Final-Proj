@@ -27,8 +27,8 @@ export function HomePage() {
                         <form action="">
                             <input type="text"
                                 placeholder='Email' />
-                            <button onClick={() => getSignUp()}>Sign up - it's free!</button>
-                            <button onClick={() => getBoardIndex()}>Start Free trail</button>
+                            <button onClick={() => getSignUp()}>Sign Up - it's free!</button>
+                            <button onClick={() => getBoardIndex()}>Start Free Trial</button>
                         </form>
                     </div>
                     <img className='conversation-img' src="/src/assets/imgs/TrelloUICollage.png" alt="" />
