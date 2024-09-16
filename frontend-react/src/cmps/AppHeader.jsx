@@ -119,7 +119,7 @@ export function AppHeader() {
                     onClick={handleBoardSelection}
                     className="dropdown-item"
                   >
-                    Trello Workspace
+                    PlanIt Workspace
                   </span>,
                 ]}
               />

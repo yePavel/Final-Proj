@@ -23,7 +23,7 @@ export function GroupMenu({ onDeleteGroup, group }) {
                     <div className='menu-dropdown-header'>
                         <h3>List actions</h3>
                     </div>
-                    <button onClick={onDeleteGroup}>Delete Group</button>
+                    {/* <button onClick={onDeleteGroup}>Delete Group</button> */}
                     <button onClick={() => setIsColorPickerOpen(!isColorPickerOpen)}>Group Color</button>
                     {isColorPickerOpen && <GroupMenuDropDown group={group} />}
                 </div>
