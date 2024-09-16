@@ -10,6 +10,7 @@ export function ChecklistItem({ checklist, group }) {
     const board = useSelector(storeState => storeState.boardModule.board);
 
     const [todoTitle, setTodoTitle] = useState('');
+    const [showInput, setShowInput] = useState(false); // State to show/hide input
     const dispatch = useDispatch();
 
     function addTodo() {
@@ -30,18 +31,26 @@ export function ChecklistItem({ checklist, group }) {
 
         updateTaskChecklists(board?._id, group?.id, updatedTask)
         setTodoTitle("");
+        setShowInput(false);
     }
 
     return (
         <div className="checklist-item-adder">
-            <input className="item-input"
-                type="text"
-                placeholder="Add an item"
-                value={todoTitle}
-                onChange={(e) => setTodoTitle(e.target.value)} />
-            <button className="add-checklist" onClick={addTodo}>
-                Add
-            </button>
-        </div>
-    );
+        {!showInput && (
+            <button className="add-input" onClick={() => setShowInput(true)}>Add an item</button>
+        )}
+        {showInput && (
+            <>
+                <input className="item-input"
+                    type="text"
+                    placeholder="Add an item"
+                    value={todoTitle}
+                    onChange={(e) => setTodoTitle(e.target.value)} />
+                <button className="add-checklist" onClick={addTodo}>
+                    Add
+                </button>
+            </>
+        )}
+    </div>
+);
 }
