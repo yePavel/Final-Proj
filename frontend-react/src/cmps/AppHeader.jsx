@@ -119,5 +119,5 @@ export function AppHeader() {
         <div className="user-logo">{initials}</div>
       </div>
     </header>
-  );
+  )
 }
