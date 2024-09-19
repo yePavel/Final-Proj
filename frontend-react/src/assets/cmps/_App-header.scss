@@ -40,10 +40,8 @@
 
       .hover-icon {
         fill: #44546f;
-        transition: opacity 0.3s ease-in-out;
-        animation: moveAnimation 2s infinite;
-        width: 100%;
-        height: 100%;
+        transition: opacity 0.8s ease-in-out;
+        animation: moveAnimation 3s infinite;
 
         &:hover {
           fill: #0079bf;
@@ -52,9 +50,11 @@
     }
 
     .logo {
-      font-size: 20px;
-      font-weight: bold;
-      color: #44546f;
+      font-size: 24px;
+      line-height: 16px;
+      letter-spacing: 0.1em;
+      font-weight: bolder;
+      color: #626F86;
       margin-right: 20px;
       text-decoration: none;
     }
@@ -146,8 +146,8 @@
     }
 
     .notification-icon img {
-      width: 24px;
-      height: 24px;
+      width: 28px;
+      height: 28px;
     }
 
     .notification-badge {
@@ -179,7 +179,7 @@
 
     .notification-item {
       padding: 10px;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid #a09191;
       font-size: 14px;
       color: #333;
     }
@@ -195,22 +195,40 @@
     .search-container {
       display: flex;
       align-items: center;
-      width: 100%;
+      height: 100%;
+      bottom: 0;
+      width: 200px;
+      max-width: none;
+      max-width: none;
+      border-radius: 5px;
+      padding-left: 7px;
+      border-width: 1px;
+      border: 1px solid #dfe1e6;
+      color: #626f86;
+      background-color: #fff;
+
     }
 
     .search-bar {
+      background-color: transparent; 
+      color: dfe1e6;
+      border: none;
+      outline: none;
       height: 32px;
       width: 100%;
-      padding: 0.75rem 0px 0.75rem 30px;
+      padding: 0.75rem 0px 0.75rem 10px;
       box-sizing: border-box;
+      outline: none;
       font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
         Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif;
-      outline: none;
       border-radius: 5px;
       font-size: 14px;
       line-height: 20px;
-      border: 1px solid hsla(0, 0%, 100%, 0.16);
       box-shadow: none;
+    }
+
+    .input.search-bar {
+      color: #0079bf;
     }
 
     .icon {
@@ -227,11 +245,13 @@
     }
 
     .user-logo {
-      width: 24px;
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+        Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif;
+      display: inline-flex;
+      width: 27px;
       height: 24px;
       background-color: #0079bf;
       color: #ffffff;
-      display: flex;
       justify-content: center;
       align-items: center;
       border-radius: 50%;
@@ -281,3 +301,4 @@
   line-height: 20px;
   width: 18px;
 }
+

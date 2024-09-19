@@ -79,6 +79,7 @@ export function AppHeader() {
               fill="currentColor"
             />
           </svg>
+          
           <a href="/" className="logo" >
             PlanIt
           </a>
@@ -105,7 +106,7 @@ export function AppHeader() {
 
       <div className="right-section">
         <div className="search-container">
-          {/* <BsSearch className="search-icon" /> */}
+        <BsSearch className="search-icon" />
           <input type="text" className="search-bar" placeholder="Search..." />
         </div>
         <div className="icon-container">
