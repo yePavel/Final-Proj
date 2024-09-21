@@ -52,12 +52,14 @@ export function AppHeader() {
   const userName = "Sean Mamistalov";
   const initials = getInitials(userName);
 
-
   return (
-    <header className="app-header" style={{
-      background: `${board?.style.background.first}`,
-      color: `${board?.style.background.name ? '#F5F5F5' : `#172b4d`}`
-    }}>
+    <header
+      className="app-header"
+      style={{
+        background: `${board?.style.background.first}`,
+        color: `${board?.style.background.name ? "#F5F5F5" : `#172b4d`}`,
+      }}
+    >
       <div className="left-section">
         <img
           src="/menu.svg"
@@ -65,8 +67,8 @@ export function AppHeader() {
           className="menu-icon"
           onClick={handleMenuClick}
         />
-        <div className="icon-container">
-          <svg
+        {/* <div className="icon-container"> */}
+        {/* <svg
             className="hover-icon"
             width="24"
             height="24"
@@ -78,11 +80,15 @@ export function AppHeader() {
               d="M3 5C3 3.89543 3.89543 3 5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5ZM5 6C5 5.44772 5.44772 5 6 5H10C10.5523 5 11 5.44772 11 6V16C11 16.5523 10.5523 17 10 17H6C5.44772 17 5 16.5523 5 16V6ZM14 5C13.4477 5 13 5.44772 13 6V12C13 12.5523 13.4477 13 14 13H18C18.5523 13 19 12.5523 19 12V6C19 5.44772 18.5523 5 18 5H14Z"
               fill="currentColor"
             />
-          </svg>
-          <a href="/" className="logo" >
-            PlanIt
-          </a>
+          </svg> */}
+        <div className="logo">
+          <img src="/trelloicon.gif" alt="iconlogo" className="gificon" />
+          <div className="planit-logo">
+            <a href="/">PlanIt</a>
+          </div>
         </div>
+
+        {/* </div> */}
         <nav className="nav">
           <NavItem
             label="Workspaces"
@@ -96,7 +102,8 @@ export function AppHeader() {
                 onClick={handleBoardSelection}
                 className="dropdown-item"
               >
-                Trello Workspace
+                <div className="letter-p">P</div>
+                <span className="workspace-label">PlanIt Workspace</span>
               </span>,
             ]}
           />
@@ -105,7 +112,7 @@ export function AppHeader() {
 
       <div className="right-section">
         <div className="search-container">
-          {/* <BsSearch className="search-icon" /> */}
+          <BsSearch className="search-icon" />
           <input type="text" className="search-bar" placeholder="Search..." />
         </div>
         <div className="icon-container">
@@ -119,5 +126,5 @@ export function AppHeader() {
         <div className="user-logo">{initials}</div>
       </div>
     </header>
-  )
+  );
 }

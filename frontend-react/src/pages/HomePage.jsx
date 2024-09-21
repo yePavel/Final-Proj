@@ -38,7 +38,6 @@ export function HomePage() {
             <section className='productivity-container'>
 
                 <div className='productivity-text'>
-                    <p>PlanIt 999</p>
                     <h2>A productivity powerhouse</h2>
                     <p>Simple, flexible, and powerful. All it takes are boards, lists,
                         and cards to get a clear view of who’s doing what and what needs to get done.
