@@ -15,7 +15,7 @@ export function CardModal({ group, onClose }) {
         <section className="click-screen" onClick={onClose} >
             <div className="card-details-modal" onClick={(e) => e.stopPropagation()}>
                 {task.coverColor?.length > 3 ? <div className="task-cover" style={{ background: `${task.coverColor}` }}></div> :
-                    <img className="top-cover-img" src={`./../src/assets/imgs/task_imgs/${task.coverImg}.jpg`} alt="" />
+                    <img className="top-cover-img" src={`${task.coverImg}`} alt="" />
                 }
                 <div className="card-header">
                     <div className="card-title">

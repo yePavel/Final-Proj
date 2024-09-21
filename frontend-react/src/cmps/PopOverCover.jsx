@@ -20,17 +20,18 @@ export function PopOverCover({ group }) {
         '#7D8796'   // grey
     ];
     const imgs = [
-        '1',
-        '2',
-        '3',
-        '4',
-        '5',
-        '6',
-        '7',
+        'https://res.cloudinary.com/dzsweus7f/image/upload/v1726913807/rma3fusj4evq9h2lmx09.jpg',
+        'https://res.cloudinary.com/dzsweus7f/image/upload/v1726913953/yszp4jz7uprkqfeil3ts.jpg',
+        'https://res.cloudinary.com/dzsweus7f/image/upload/v1726915175/ajtaufq5t61bfpwvoekb.jpg',
+        'https://res.cloudinary.com/dzsweus7f/image/upload/v1726915199/g9oxksv20rwanuqe0z2l.jpg',
+        'https://res.cloudinary.com/dzsweus7f/image/upload/v1726915215/lamt3oi7nbingpekor6z.jpg',
+        'https://res.cloudinary.com/dzsweus7f/image/upload/v1726915231/v1romawnxpcklauz3dxb.jpg',
+        'https://res.cloudinary.com/dzsweus7f/image/upload/v1726915242/g9sdjr4pubjimghe58yj.jpg',
+        'https://res.cloudinary.com/dzsweus7f/image/upload/v1726915256/ns23khea2qjjgp3rkg8i.jpg'
     ];
 
     function setCover(val) {
-        const type = val.length > 3 ? 'color' : 'img'
+        const type = val.length === 7 ? 'color' : 'img'
         console.log('type:', type)
         if (type === 'color') {
             const updatedTask = { ...task, coverColor: val, coverImg: null }
@@ -71,7 +72,7 @@ export function PopOverCover({ group }) {
             <h4>Photos from Unsplash</h4>
             {imgs.map(img =>
                 <div className='cover-img' onClick={() => setCover(img)}>
-                    <img src={`./../src/assets/imgs/task_imgs/${img}.jpg`} alt="" />
+                    <img src={`${img}`} alt="" />
                 </div>
             )}
         </div>
