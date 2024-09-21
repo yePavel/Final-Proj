@@ -19,10 +19,8 @@
       width: 20px;
       height: 20px;
       cursor: pointer;
-      margin-left: 4px;
-      margin-right: 12px;
+      margin: -4px 12px 0px 4px;
       transition: transform 0.2s ease-in-out;
-
       &:hover {
         transform: scale(1.1);
       }
@@ -50,15 +48,17 @@
     }
 
     .logo {
+      margin: unset;
+      margin-top: -2px;
       position: relative;
       font-size: 24px;
       line-height: 16px;
       letter-spacing: 0.1em;
       font-weight: bolder;
-      color: #626F86;
       margin-right: 20px;
       text-decoration: none;
     }
+
     .create-button {
       color: white;
       background-color: $primary-color;
@@ -110,7 +110,7 @@
           visibility: hidden;
 
           &:hover {
-            background-color: #e0e0e0; 
+            background-color: #e0e0e0;
           }
           &.show {
             opacity: 1;
@@ -130,10 +130,9 @@
     }
   }
 
-    .dropdown-menu:hover {
-      background-color: #e0e0e0;
-
-    }
+  .dropdown-menu:hover {
+    background-color: #e0e0e0;
+  }
   .right-section {
     display: flex;
     align-items: center;
@@ -203,9 +202,9 @@
       align-items: center;
       height: 100%;
       box-sizing: border-box;
-      outline :none;
+      outline: none;
       line-height: 20px;
-    
+
       bottom: 0;
       width: 200px;
       max-width: none;
@@ -214,13 +213,12 @@
       padding-left: 7px;
       border-width: 1px;
       border: 1px solid #dfe1e6;
-      color: #626f86;      
+      color: #626f86;
       background-color: rgba(255, 255, 255, 0.2);
-
     }
 
     .search-bar {
-      background-color: transparent; 
+      background-color: transparent;
       color: dfe1e6;
       border: none;
       outline: none;
@@ -311,36 +309,33 @@
   line-height: 20px;
   width: 18px;
   display: flex;
-  align-items: center; // Align items vertically
-  padding: 8px; // Add padding for a better look
+  align-items: center;
+  padding: 8px;
   gap: 10px;
 }
 
 .gificon {
-  width: 100px; 
-  height: auto; 
-  display: block;
+  width: 100px;
+  height: auto;
   position: relative;
-  background-color: transparent;
- }
- 
+  filter: brightness(0.05);
+}
+
 .planit-logo {
-  background-color: b;
+  background-color: #fff;
+  margin: unset;
   position: absolute;
-  top: 50%; 
-  left: 50%; 
-  width: 50%;
-  transform: translate(-50%, -50%); 
-  font-size: 27px; 
+  top: -1.5px;
+  left: 23px;
+  padding: 3px;
+  font-size: 27px;
   font-weight: bold;
   text-align: center;
   text-decoration: none;
-  right:0;
-  color: black;
 }
 
 .planit-logo a {
-  text-decoration: none; 
+  text-decoration: none;
   color: inherit;
 }
 
@@ -362,9 +357,7 @@
 }
 
 .letter-p {
-
-background-color: #e0e0e0;
-
+  background-color: #e0e0e0;
 }
 
 .workspace-label:hover {
