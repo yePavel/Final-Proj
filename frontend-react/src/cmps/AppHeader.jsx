@@ -52,12 +52,14 @@ export function AppHeader() {
   const userName = "Sean Mamistalov";
   const initials = getInitials(userName);
 
-
   return (
-    <header className="app-header" style={{
-      background: `${board?.style.background.first}`,
-      color: `${board?.style.background.name ? '#F5F5F5' : `#172b4d`}`
-    }}>
+    <header
+      className="app-header"
+      style={{
+        background: `${board?.style.background.first}`,
+        color: `${board?.style.background.name ? "#F5F5F5" : `#172b4d`}`,
+      }}
+    >
       <div className="left-section">
         <img
           src="/menu.svg"
@@ -66,7 +68,7 @@ export function AppHeader() {
           onClick={handleMenuClick}
         />
         {/* <div className="icon-container"> */}
-          {/* <svg
+        {/* <svg
             className="hover-icon"
             width="24"
             height="24"
@@ -79,12 +81,12 @@ export function AppHeader() {
               fill="currentColor"
             />
           </svg> */}
-    <div className="logo">
-  <img src="/trelloicon.gif" alt="iconlogo" className="gificon" />
-  <div className="planit-logo">
-    <a href="/">PlanIt</a>
-  </div>
-</div>
+        <div className="logo">
+          <img src="/trelloicon.gif" alt="iconlogo" className="gificon" />
+          <div className="planit-logo">
+            <a href="/">PlanIt</a>
+          </div>
+        </div>
 
         {/* </div> */}
         <nav className="nav">
@@ -100,7 +102,8 @@ export function AppHeader() {
                 onClick={handleBoardSelection}
                 className="dropdown-item"
               >
-                PlanIt Workspace
+                <div className="letter-p">P</div>
+                <span className="workspace-label">PlanIt Workspace</span>
               </span>,
             ]}
           />
@@ -109,7 +112,7 @@ export function AppHeader() {
 
       <div className="right-section">
         <div className="search-container">
-        <BsSearch className="search-icon" />
+          <BsSearch className="search-icon" />
           <input type="text" className="search-bar" placeholder="Search..." />
         </div>
         <div className="icon-container">
@@ -123,5 +126,5 @@ export function AppHeader() {
         <div className="user-logo">{initials}</div>
       </div>
     </header>
-  )
+  );
 }
