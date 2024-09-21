@@ -5,7 +5,7 @@ import { ADD_BOARD, REMOVE_BOARD, SET_BOARDS, SET_BOARD, UPDATE_BOARD, ADD_BOARD
 import { ADD_LABEL, UPDATE_LABEL } from '../reducers/board.reducer';
 import { taskService } from '../../services/task';
 
-export async function loadBoards(filterBy) {
+export async function loadBoards(filterBy = { title: '' }) {
     try {
         const boards = await boardService.query(filterBy)
         store.dispatch(getCmdSetBoards(boards))
