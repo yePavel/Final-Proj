@@ -53,7 +53,6 @@
       position: relative;
       font-size: 24px;
       line-height: 16px;
-      letter-spacing: 0.1em;
       font-weight: bolder;
       margin-right: 20px;
       text-decoration: none;
@@ -318,14 +317,14 @@
   width: 100px;
   height: auto;
   position: relative;
-  filter: brightness(0.05);
+  filter: grayscale(50%) brightness(0.8);
 }
 
 .planit-logo {
   background-color: #fff;
   margin: unset;
   position: absolute;
-  top: -1.5px;
+  top: -1px;
   left: 23px;
   padding: 3px;
   font-size: 27px;
@@ -335,8 +334,8 @@
 }
 
 .planit-logo a {
+  color:rgb(189, 187, 187);
   text-decoration: none;
-  color: inherit;
 }
 
 .letter-p {
