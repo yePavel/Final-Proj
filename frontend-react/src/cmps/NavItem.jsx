@@ -6,14 +6,19 @@ export function NavItem({
   onClick,
   isDropdownOpen,
   dropdownItems,
-  onDropdownItemClick = () => {},
+  onDropdownItemClick = () => { },
   isCreateButton,
   isDropdown,
+  board
 }) {
   return (
     <div
       className={`nav-item ${isCreateButton ? "create-button" : ""}`}
       onClick={onClick}
+      style={{
+        background: `${board?.style.background.first}`,
+        color: `${board?.style.background.name ? "#F5F5F5" : `rgb(23 43 77 / 75%)`}`,
+      }}
     >
       {label}
       {iconPath && (

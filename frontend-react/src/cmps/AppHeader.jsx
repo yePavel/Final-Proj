@@ -4,6 +4,8 @@ import { Notifications } from "./Notifications";
 import { NavItem } from "./NavItem";
 import { useSelector } from "react-redux";
 import { BsSearch } from "react-icons/bs";
+import { FaTrello } from "react-icons/fa";
+import { CgMenuGridO } from "react-icons/cg";
 
 export function AppHeader() {
   const board = useSelector((storeState) => storeState.boardModule.board);
@@ -61,25 +63,37 @@ export function AppHeader() {
       }}
     >
       <div className="left-section">
-        <img
+        {/* <img
           src="/menu.svg"
           alt="Menu"
           className="menu-icon"
           onClick={handleMenuClick}
-        />
-    
+          style={{
+            background: `${board?.style.background.first}`,
+            color: `${board?.style.background.name ? "#F5F5F5" : `rgb(23 43 77 / 75%)`}`,
+          }}
+        /> */}
+        <CgMenuGridO className="menu-icon" style={{
+          background: `${board?.style.background.first}`,
+          color: `${board?.style.background.name ? "#F5F5F5" : `rgb(23 43 77 / 75%)`}`,
+        }} />
         <div className="logo">
-          <img src="/trelloicon.gif" alt="iconlogo" className="gificon" />
-          <div className="planit-logo"  style={{
-        background: `${board?.style.background.first}`,
-        color: `${board?.style.background.name ? "#F5F5F5" : `#172b4d`}`,
-      }}>
-            <a href="/">PlanIt</a>
+          <FaTrello style={{
+            background: `${board?.style.background.first}`,
+            color: `${board?.style.background.name ? "#F5F5F5" : `rgb(23 43 77 / 75%)`}`,
+          }} />
+          <div className="planit-logo" style={{
+            background: `${board?.style.background.first}`,
+            color: `${board?.style.background.name ? "#F5F5F5" : `rgb(23 43 77 / 75%)`}`,
+          }}>
+            <a href="/" style={{
+              color: `${board?.style.background.name ? "#F5F5F5" : `rgb(23 43 77 / 75%)`}`,
+            }}>PlanIt</a>
           </div>
         </div>
 
         <nav className="nav">
-          <NavItem
+          <NavItem board={board}
             label="Workspaces"
             iconPath="M11.2929 16.7071L4.22185 9.63606C3.83132 9.24554 3.83132 8.61237 4.22185 8.22185C4.61237 7.83133 5.24554 7.83133 5.63606 8.22185L12 14.5858L18.364 8.22185C18.7545 7.83132 19.3877 7.83132 19.7782 8.22185C20.1687 8.61237 20.1687 9.24554 19.7782 9.63606L12.7071 16.7071C12.3166 17.0977 11.6834 17.0977 11.2929 16.7071Z"
             onClick={handleWorkspaceClick}

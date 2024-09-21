@@ -19,8 +19,9 @@
       width: 20px;
       height: 20px;
       cursor: pointer;
-      margin: -4px 12px 0px 4px;
+      margin: 0px 10px 0px 5px;
       transition: transform 0.2s ease-in-out;
+
       &:hover {
         transform: scale(1.1);
       }
@@ -48,14 +49,14 @@
     }
 
     .logo {
-      margin: unset;
-      margin-top: -2px;
-      position: relative;
-      font-size: 24px;
-      line-height: 16px;
-      font-weight: bolder;
-      margin-right: 20px;
-      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 20px;
+
+      svg {
+        width: 16px;
+      }
     }
 
     .create-button {
@@ -77,7 +78,8 @@
         display: flex;
         align-items: center;
         gap: 8px;
-        padding: 8px;
+        margin-inline-start: 10px;
+        padding: 9px 8px 8px 8px;
         border-radius: 4px;
         transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
         font-weight: 500;
@@ -111,6 +113,7 @@
           &:hover {
             background-color: #e0e0e0;
           }
+
           &.show {
             opacity: 1;
             visibility: visible;
@@ -132,6 +135,7 @@
   .dropdown-menu:hover {
     background-color: #e0e0e0;
   }
+
   .right-section {
     display: flex;
     align-items: center;
@@ -322,19 +326,19 @@
 
 .planit-logo {
   background-color: #fff;
-  margin: unset;
-  position: absolute;
-  top: -1px;
-  left: 23px;
-  padding: 3px;
-  font-size: 27px;
+  // margin: unset;
+  // position: absolute;
+  // top: -1px;
+  // left: 23px;
+  // padding: 3px;
+  // font-size: 27px;
   font-weight: bold;
   text-align: center;
   text-decoration: none;
 }
 
 .planit-logo a {
-  color:rgb(189, 187, 187);
+  color: rgb(189, 187, 187);
   text-decoration: none;
 }
 
