@@ -63,16 +63,6 @@ export function AppHeader() {
       }}
     >
       <div className="left-section">
-        {/* <img
-          src="/menu.svg"
-          alt="Menu"
-          className="menu-icon"
-          onClick={handleMenuClick}
-          style={{
-            background: `${board?.style.background.first}`,
-            color: `${board?.style.background.name ? "#F5F5F5" : `rgb(23 43 77 / 75%)`}`,
-          }}
-        /> */}
         <CgMenuGridO className="menu-icon" style={{
           background: `${board?.style.background.first}`,
           color: `${board?.style.background.name ? "#F5F5F5" : `rgb(23 43 77 / 75%)`}`,

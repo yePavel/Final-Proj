@@ -4,10 +4,8 @@
 
   .homepage-container {
     grid-column: 1/-1;
-    background: url(https://images.ctfassets.net/rz1oowkt5gyp/7lTGeXbBRNRLaVk2MdBjtJ/99c266ed4cb8cc63bd0c388071f01ff6/white-wave-bg.svg)
-        center bottom -0.5px / 100% 14% no-repeat scroll padding-box border-box,
-      linear-gradient(60deg, rgb(82, 67, 170), rgb(237, 80, 180)) 0% 0% / auto
-        repeat scroll padding-box border-box rgb(82, 67, 170);
+    background: url(https://images.ctfassets.net/rz1oowkt5gyp/7lTGeXbBRNRLaVk2MdBjtJ/99c266ed4cb8cc63bd0c388071f01ff6/white-wave-bg.svg) center bottom -0.5px / 100% 14% no-repeat scroll padding-box border-box,
+      linear-gradient(60deg, rgb(82, 67, 170), rgb(237, 80, 180)) 0% 0% / auto repeat scroll padding-box border-box rgb(82, 67, 170);
     height: 705.2px;
 
     .main-prev {
@@ -86,8 +84,7 @@
     justify-items: center;
     grid-template-columns: $layoutPadding * 2 1fr $layoutPadding * 2;
     grid-template-rows: 1fr 3fr;
-    background: linear-gradient(0deg, rgb(230, 252, 255), rgb(255, 255, 255)) 0%
-      0% / auto repeat scroll padding-box border-box rgb(178, 212, 255);
+    background: linear-gradient(0deg, rgb(230, 252, 255), rgb(255, 255, 255)) 0% 0% / auto repeat scroll padding-box border-box rgb(178, 212, 255);
 
     .productivity-text {
       width: 482px;
@@ -135,12 +132,9 @@
 
   .homepage-get-started {
     grid-column: 1/-1;
-    background: url(https://images.ctfassets.net/rz1oowkt5gyp/6Q4l8SJeMZGSu1m6W9vAjL/1021a10f6940ce44c50d0ffaefec223e/BigSwingFooterHeroGraphic__Left.svg)
-        left center / contain no-repeat scroll padding-box border-box,
-      url(https://images.ctfassets.net/rz1oowkt5gyp/7KsuX6srvRqJVzeAIdIzIb/da1a3319c278d251ecbd078fcffdcd23/BigSwingFooterHeroGraphic__Right.svg)
-        right center / contain no-repeat scroll padding-box border-box,
-      linear-gradient(60deg, rgb(82, 67, 170), rgb(237, 80, 180)) 0% 0% / auto
-        repeat scroll padding-box border-box rgb(82, 67, 170);
+    background: url(https://images.ctfassets.net/rz1oowkt5gyp/6Q4l8SJeMZGSu1m6W9vAjL/1021a10f6940ce44c50d0ffaefec223e/BigSwingFooterHeroGraphic__Left.svg) left center / contain no-repeat scroll padding-box border-box,
+      url(https://images.ctfassets.net/rz1oowkt5gyp/7KsuX6srvRqJVzeAIdIzIb/da1a3319c278d251ecbd078fcffdcd23/BigSwingFooterHeroGraphic__Right.svg) right center / contain no-repeat scroll padding-box border-box,
+      linear-gradient(60deg, rgb(82, 67, 170), rgb(237, 80, 180)) 0% 0% / auto repeat scroll padding-box border-box rgb(82, 67, 170);
     color: white;
     height: 282px;
 
@@ -192,13 +186,87 @@
   }
 
   .main-footer {
+    display: grid;
+    grid-template-columns: subgrid;
+    color: white;
+    padding: 10px;
     grid-column: 1/-1;
     background-color: rgb(23, 43, 77);
     height: 215px;
 
     .upper-footer {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 8px;
       grid-column: 2/3;
-      box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
+      grid-row: 1/2;
+      box-shadow: 0px 1px 0px 0px rgb(255 255 255 / 40%);
+      width: 100%;
+
+      .footer-logo {
+        display: flex;
+        font-size: 30px;
+        gap: 5px;
+      }
+
+      .footer-card {
+        display: flex;
+        padding: 8px;
+        justify-items: center;
+        flex-direction: column;
+        gap: 5px;
+
+        &:hover {
+          background-color: rgb(52, 69, 99);
+        }
+      }
+    }
+
+    .lower-footer {
+      display: flex;
+      padding: 20px;
+      grid-column: 2/3;
+      justify-content: space-between;
+      align-items: center;
+
+      .language-logo {
+        display: flex;
+        font-size: 20px;
+        gap: 5px;
+      }
+
+      .footer-rights {
+        display: flex;
+        gap: 50px;
+        font-size: 14px;
+      }
+
+      .contact-logos {
+        display: flex;
+        gap: 15px;
+
+        button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 4px;
+          color: white;
+          border: 1px solid;
+          border-radius: 60%;
+          background: none;
+          color: white;
+
+          &:hover {
+            transition: .1s;
+
+            svg {
+              transform: scale(0.8);
+              transition: transform 0.3s ease;
+            }
+          }
+        }
+      }
     }
   }
 }
