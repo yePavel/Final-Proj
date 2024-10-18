@@ -1,4 +1,6 @@
 @media (max-width: 2200px) {
+
+    // CARD-MODAL ~~~~~~~~~~~~~~~~~~~
     .card-details-modal {
         display: grid;
         grid-template-columns: 50px 1fr 192px;
@@ -22,6 +24,63 @@
 }
 
 @media (max-width: 768px) {
+
+    // MAIN-HOMEPAGE ~~~~~~~~~~~~~~~~~~~
+
+    .homepage {
+        grid-template-columns: 4px 1fr 4px;
+
+        .homepage-container {
+            height: 100%;
+
+            .main-prev {
+                align-items: center;
+                flex-direction: column;
+
+                .intro {
+                    padding: 0;
+                }
+
+                .conversation-img {
+                    padding-top: 1rem;
+                    width: 30rem;
+                }
+            }
+        }
+
+        .productivity-container {
+            grid-template-columns: 4px 1fr 4px;
+            justify-content: center;
+
+            &>* {
+                grid-column: 2/3;
+            }
+
+            .productivity-text {
+                display: flex;
+                justify-content: center;
+                text-align-last: center;
+                flex-direction: column;
+                width: auto;
+            }
+
+            .productivity-slider {
+                flex-direction: column;
+
+                .cards {
+                    text-align-last: center;
+                    width: fit-content;
+                }
+            }
+
+        }
+
+        .homepage-get-started {
+            .sign-up {}
+        }
+    }
+
+    // CARD-MODAL ~~~~~~~~~~~~~~~~~~~
     .card-details-modal {
         display: grid;
         grid-template-columns: 50px 1fr;
@@ -45,6 +104,102 @@
 }
 
 @media (max-width: 480px) {
+
+    // HEADER ~~~~~~~~~~~~~~~~~~~
+    .app-header {
+        .right-section {
+            .search-container {
+                display: none;
+            }
+        }
+    }
+
+    // MAIN ~~~~~~~~~~~~~~~~~~~
+    .homepage {
+        overflow-x: hidden;
+        grid-template-columns: 2px 1fr 2px;
+
+        .homepage-container {
+            .main-prev {
+                margin: 5px;
+
+                .intro {
+                    h1 {
+                        font-size: 2rem;
+                    }
+
+                    form {
+                        button {
+                            padding: 5px;
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
+
+                .conversation-img {
+                    width: 25rem;
+                }
+            }
+
+        }
+
+        .productivity-container {
+            grid-template-columns: 2px 1fr 2px;
+
+            .productivity-text {
+                max-width: 420px;
+            }
+
+            .productivity-slider {
+                width: 410px;
+
+                .slider {
+                    img {
+                        width: 410px;
+                    }
+                }
+            }
+        }
+
+        .homepage-get-started {
+            .sign-up {
+                backdrop-filter: contrast(0.7);
+
+                form {
+                    h2 {
+                        font-size: medium;
+                    }
+
+                    button {
+                        padding: 0;
+                    }
+                }
+            }
+        }
+
+        .main-footer {
+            grid-template-columns: 2px 1fr 2px;
+            height: auto;
+
+
+
+            .upper-footer {
+                font-size: 1rem;
+
+                .footer-logo {
+                    font-size: 20px;
+                }
+            }
+
+            .lower-footer {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    }
+
+
+    // CARD-MODAL ~~~~~~~~~~~~~~~~~~~
     .card-details-modal {
         display: grid;
         grid-template-columns: 50px;

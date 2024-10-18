@@ -51,7 +51,7 @@ export function AppHeader() {
     }
   };
 
-  const userName = "Sean Mamistalov";
+  const userName = "Pavel Lavie";
   const initials = getInitials(userName);
 
   return (

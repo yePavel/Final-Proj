@@ -1,6 +1,6 @@
 // BASICS
 @import "./basics/base";
-@import "./basics/layout";
+
 
 // SETUP
 @import "./setup/typography";
@@ -37,3 +37,4 @@
 @import "./cmps/TaskModal.scss";
 // =======
 @import "./cmps/BoardHeader.scss"; // >>>>>>> BoardHeader
+@import "./basics/layout";
