@@ -23,6 +23,20 @@
     }
 }
 
+@media (max-width: 1100px) {
+
+    .main-boards-container {
+        .board-list-container {
+
+            .starred-boards-list {
+                grid-template-columns: repeat(2, 194px);
+
+            }
+        }
+    }
+
+}
+
 @media (max-width: 768px) {
 
     // MAIN-HOMEPAGE ~~~~~~~~~~~~~~~~~~~
@@ -75,9 +89,16 @@
 
         }
 
-        .homepage-get-started {
-            .sign-up {}
+    }
+
+    // BOARD-INDEX ~~~~~~~~~~~~~~~~~~
+    .main-boards-container {
+        grid-template-columns: 1fr;
+
+        .boards-manu {
+            grid-column: 1 / -1;
         }
+
     }
 
     // CARD-MODAL ~~~~~~~~~~~~~~~~~~~
@@ -198,6 +219,23 @@
         }
     }
 
+    // BOARD-INDEX ~~~~~~~~~~~~~~~~~~
+    .main-boards-container {
+        margin: 0;
+        justify-items: center;
+
+        .board-list-container {
+
+            .starred-boards-list {
+                grid-template-columns: repeat(3, 120px);
+
+                li {
+                    max-width: 120px;
+                }
+
+            }
+        }
+    }
 
     // CARD-MODAL ~~~~~~~~~~~~~~~~~~~
     .card-details-modal {
