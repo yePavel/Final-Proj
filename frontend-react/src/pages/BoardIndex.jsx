@@ -7,6 +7,7 @@ import { UppderMenu } from "../cmps/UppderMenu.jsx";
 import { StarredBoardList } from "../cmps/StarredBoardList.jsx";
 
 export function BoardIndex() {
+    const loggedInUser = useSelector(storeState => storeState.userModule.user)
     const boards = useSelector(storeState => storeState.boardModule.boards)
     const starredBoards = useSelector(storeState => storeState.boardModule.starredBoards)
 

@@ -1,0 +1,97 @@
+.user-login {
+    display: grid;
+    grid-template-columns: 20% 1fr 20%;
+    height: 100%;
+
+    &>* {
+        grid-column: 2/3;
+    }
+
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+        align-items: center;
+        gap: 20px;
+        height: 90%;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;
+        padding: 32px 40px;
+        margin-top: 50px;
+        min-width: 60%;
+
+        .header {
+            display: flex;
+            grid-row: 1/2;
+            justify-self: start;
+            align-items: center;
+            gap: 10px;
+
+            .planIt-logo {
+                color: #1c74cd;
+                width: 22px;
+                height: 22px;
+            }
+
+            h2 {
+                margin: 0;
+                color: #2e405d;
+            }
+        }
+
+        .user-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            gap: 5px;
+
+            input {
+                margin-top: 12px;
+                border: 1px solid grey;
+                padding: 6px;
+                height: 30px;
+                width: 100%;
+            }
+
+            .continue-btn {
+                border: none;
+                background: none;
+                padding: 0.5rem 1.5rem;
+                font-size: 1.2rem;
+                width: 100%;
+                height: 30px;
+                font-size: 0.8rem;
+                font-weight: 500;
+                color: white;
+                background: rgb(0, 101, 255);
+
+            }
+
+        }
+
+        .connect-btns {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 15px;
+
+            button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+                background: none;
+                border: 1px solid grey;
+                border-radius: 3px;
+                width: 100%;
+                height: 2.5rem;
+
+                svg {
+                    height: 1.5rem;
+                    width: 1.5rem;
+                }
+
+            }
+        }
+    }
+}

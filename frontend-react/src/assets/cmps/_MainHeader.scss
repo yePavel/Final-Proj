@@ -1,0 +1,69 @@
+.main-header {
+    display: grid;
+    grid-template-columns: 80px 1fr 80px;
+    grid-template-rows: 1fr;
+    height: 60px;
+
+    &>* {
+        grid-column: 2 / 3;
+    }
+
+    .left-section {
+        display: flex;
+        grid-row: 1/2;
+        justify-self: start;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+
+        .planIt-logo {
+            color: #1c74cd;
+            width: 22px;
+            height: 22px;
+        }
+
+        h2 {
+            margin: 0;
+            color: #2e405d;
+        }
+    }
+
+    .right-section {
+        display: flex;
+        grid-row: 1/2;
+        justify-self: end;
+        cursor: pointer;
+
+        &.mobile {
+            display: none;
+            align-self: center;
+
+            svg {
+                width: 30px;
+                height: 30px;
+            }
+
+            .dropdown-menu {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                width: fit-content;
+                right: -314px;
+                top: 45px;
+                background: white;
+            }
+        }
+
+        button {
+            border: none;
+            background: none;
+            padding: 0.5rem 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .start-free-btn {
+            color: white;
+            background: rgb(0, 101, 255);
+        }
+    }
+}

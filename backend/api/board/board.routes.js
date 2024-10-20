@@ -4,16 +4,17 @@ import express from 'express'
 import { log } from '../../middlewares/logger.middleware.js'
 
 import { getBoards, getBoardById, addBoard, updateBoard, removeBoard, addBoardMsg, removeBoardMsg } from './board.controller.js'
+import { requireAuth } from '../../middlewares/requireAuth.middleware.js'
 
 const router = express.Router()
 
 // We can add a middleware for the entire router:
 // router.use(requireAuth)
 
-router.get('/', log, getBoards)
-router.get('/:boardId', log, getBoardById)
-router.post('/', log, addBoard)
-router.put('/:boardId', updateBoard)
+router.get('/', log, requireAuth, getBoards)
+router.get('/:boardId', log, requireAuth, getBoardById)
+router.post('/', log, requireAuth, addBoard)
+router.put('/:boardId', requireAuth, updateBoard)
 // router.delete('/:id', requireAuth, removeBoard)
 // router.delete('/:id', requireAuth, requireAdmin, removeBoard)
 

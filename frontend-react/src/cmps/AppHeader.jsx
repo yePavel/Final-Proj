@@ -6,8 +6,11 @@ import { useSelector } from "react-redux";
 import { BsSearch } from "react-icons/bs";
 import { FaTrello } from "react-icons/fa";
 import { CgMenuGridO } from "react-icons/cg";
+import { getInitials } from "../services/util.service";
+import { MdLogout } from "react-icons/md";
+import { logout } from "../store/actions/user.actions";
 
-export function AppHeader() {
+export function AppHeader({ loggedInUser }) {
   const board = useSelector((storeState) => storeState.boardModule.board);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -29,10 +32,6 @@ export function AppHeader() {
     navigate("/boards");
   };
 
-  const handleMenuClick = () => {
-    navigate("/boards");
-  };
-
   const handleNotificationClick = () => {
     if (isNotificationsOpen) {
       setNotifications([]);
@@ -40,19 +39,12 @@ export function AppHeader() {
     setIsNotificationsOpen(!isNotificationsOpen);
   };
 
-  const getInitials = (name) => {
-    const nameParts = name.split(" ");
-    if (nameParts.length > 1) {
-      const firstInitial = nameParts[0][0].toUpperCase();
-      const lastInitial = nameParts[nameParts.length - 1][0].toUpperCase();
-      return `${firstInitial}${lastInitial}`;
-    } else {
-      return name[0].toUpperCase();
-    }
-  };
+  async function onLogout() {
+    await logout()
+    navigate('/')
+  }
 
-  const userName = "Pavel Lavie";
-  const initials = getInitials(userName);
+  const initials = getInitials(loggedInUser.fullname);
 
   return (
     <header
@@ -117,7 +109,9 @@ export function AppHeader() {
         </div>
         <img src="/questionmark.svg" alt="Help" className="icon help-icon" />
         <div className="user-logo">{initials}</div>
+        <button className="logout-btn" onClick={onLogout}><MdLogout />LOGOUT</button>
       </div>
+
     </header>
   );
 }

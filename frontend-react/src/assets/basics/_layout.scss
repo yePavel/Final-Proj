@@ -126,6 +126,30 @@
 
 @media (max-width: 480px) {
 
+    // HOMEPAGE HEADER ~~~~~~~~~~~~~~~~~~~
+    .main-header {
+        grid-template-columns: 30px 1fr 30px;
+
+        .right-section {
+            display: none;
+
+            &.mobile {
+                display: flex;
+                position: relative;
+
+                .dropdown-menu {
+
+                    &.active {
+                        right: -14px;
+                    }
+                }
+
+            }
+        }
+
+    }
+
+
     // HEADER ~~~~~~~~~~~~~~~~~~~
     .app-header {
         .right-section {
